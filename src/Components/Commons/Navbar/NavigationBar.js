@@ -1,6 +1,10 @@
 import React from 'react';
 import {Nav, Navbar, NavDropdown} from 'react-bootstrap';
 import {about, career, contact, home, news, sustainability} from "../../../routes/routes";
+import './NavigationBar.css';
+import './DropdownItem.css';
+import DropdownItem from "./DropdownItem";
+import {Link} from "react-router-dom";
 
 const NavigationBar = ({className,logo}) => {
     return (
@@ -12,33 +16,29 @@ const NavigationBar = ({className,logo}) => {
                 <Navbar.Toggle aria-controls="basic-navbar-nav"/>
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav activeKey={home} className="ml-auto mr-lg-2 navbar-nav">
-                        <Nav.Link href={home}>Home</Nav.Link>
-                        <Nav.Link href={about}>About</Nav.Link>
+                        <Link className="nav-link" to={home}>Home</Link>
+                        <Link className="nav-link" to={about}>About</Link>
                         <NavDropdown title="Subscidiaries" id="basic-nav-dropdown">
                             <div className="d-flex">
                                 <div className="flex-item">
-                                    <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-                                    <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
-                                    <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
+                                    <DropdownItem title={'Patec Foods'} link={'patec-food'} />
+                                    <DropdownItem title={'Quatlity Packaging'} link={'/quality-packaging'} />
                                 </div>
                                 <div className="flex-item">
-                                    <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-                                    <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
-                                    <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
+                                    <DropdownItem title={'Colorado Farms'} link={'colorado-farms'} />
+                                    <DropdownItem title={'Golden Foods'} link={'/golden-foods'} />
                                 </div>
                                 <div className="flex-item">
-                                    <NavDropdown.Item href="#action/3.1">Action</NavDropdown.Item>
-                                    <NavDropdown.Item href="#action/3.2">Another action</NavDropdown.Item>
-                                    <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
+                                    <DropdownItem title={'Trevali Food Distribution'} link={'/traveli-food-distribution'} />
                                 </div>
                             </div>
 
 
                         </NavDropdown>
-                        <Nav.Link href={career}>Careers</Nav.Link>
-                        <Nav.Link href={sustainability}>Sustainability</Nav.Link>
-                        <Nav.Link href={news}>News/Events</Nav.Link>
-                        <Nav.Link href={contact}>Contact</Nav.Link>
+                        <Link className="nav-link" to={career}>Careers</Link>
+                        <Link className="nav-link" to={sustainability}>Sustainability</Link>
+                        <Link className="nav-link" to={news}>News/Events</Link>
+                        <Link className="nav-link" to={contact}>Contact</Link>
                     </Nav>
                 </Navbar.Collapse>
             </Navbar>
