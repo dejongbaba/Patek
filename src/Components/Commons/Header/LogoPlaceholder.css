@@ -1,0 +1,18 @@
+.logo-placeholder{
+    bottom: 11rem;
+    right: 3rem;
+    width: 30%;
+    z-index: 1000;
+    height: 300px;
+    box-shadow: 0px 10px 30px rgba(0,0,0,0.05);
+}
+.placeholder-label{
+    bottom: 10px;
+    left: 10px;
+}
+.text-underline{
+    text-decoration:underline;
+}
+.w-500px{
+    width: 500px;
+}

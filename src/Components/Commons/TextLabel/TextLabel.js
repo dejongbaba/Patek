@@ -8,7 +8,7 @@ const TextLabel = ({text, icon=threeCircleIcon, className='patek-green', positio
                 <p className={`text-uppercase mb-0 hk-grotesk-bold text-label ls-1 mr-lg-3 ${className ? className : ''}`}>
                     {text}
                 </p>
-                <img src={icon} alt="patek icon"/>
+                <img src={icon} style={{width:'40px'}} alt="patek icon"/>
             </div>
         </>
     );

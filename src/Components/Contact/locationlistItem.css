@@ -1,0 +1,12 @@
+.number-template {
+    /*background-color: #64B900;*/
+    color: #64B900;
+    height: 40px;
+    width: 40px;
+    line-height: 40px;
+    border-radius: 50%;
+}
+
+.patek-light-bg{
+    background-color: #EDFCDB;
+}

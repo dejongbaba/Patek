@@ -13,6 +13,7 @@ import whiteCircle from "../../assets/img/white-circle-icons.svg"
 import truckImage from "../../assets/img/truck-img@2x.png"
 import monkImage from "../../assets/img/monk-forest@2x.png"
 import monkImageCut from "../../assets/img/forest-img-cut@2x.png"
+import homePageArtImage from "../../assets/img/homepage-article-img@2x.png"
 import Header from "../Commons/Header/Header";
 import {Col, Row} from "react-bootstrap";
 import TextLabel from "../Commons/TextLabel/TextLabel";
@@ -23,9 +24,9 @@ import Button from "../Commons/Button/Button";
 import SectionText from "../Commons/Section/SectionText";
 import SlideCarousel from "../Commons/Carousel/SlideCarousel";
 import Footer from "../Commons/Footer/Footer";
-import ArticlePlaceholder from "../Commons/ArticlePlaceholder/ArticlePlaceholder";
-import SubscriptionForm from "../Commons/SubscriptionForm/SubcriptionForm";
+import ArticleLayout from "../Commons/ArticleLayout/ArticleLayout";
 import SubscriptionSection from "../Commons/SubscriptionSection/SubscriptionSection";
+import ArticleImage from "../Commons/ArticleImage/ArticleImage";
 
 
 const valueText = 'Patec Group, founded in 2010 and headquartered \n' +
@@ -88,8 +89,10 @@ const Home = () => {
                 <Row>
                     <Col lg={{span: 6, offset: 6}}>
                         <div className="pt-lg-5">
-                            <TextLabel className='patek-green'  icon={threeCircleIcon} text='patek'/>
-                            <HeaderText className={'text-white mt-lg-5 fs-4-5'}
+                            <div className="mt-lg-5">
+                                <TextLabel className='patek-green ' icon={threeCircleIcon} text='patec'/>
+                            </div>
+                            <HeaderText className={'text-white mt-lg-5 fs-4 with-square'}
                                         text={["We Stay ahead ", <br/>, " of the Curve"]}/>
                             <ParagraphText text={'Embracing Innovation and Technology'} className={'text-white '}/>
                         </div>
@@ -98,7 +101,11 @@ const Home = () => {
             </Header>
             <Section bgImg={greenLeafBg}>
                 <Row className='py-lg-5 px-lg-5'>
-                    <Col lg={{span: 6, offset: 6}}>
+                    <Col lg={{span: 6}}>
+                        <ArticleImage type={'fluid'} image={homePageArtImage}/>
+                    </Col>
+
+                    <Col lg={{span: 6}}>
                         <TextLabel className='patek-green' icon={threeCircleIcon} text='who we are'/>
                         <HeaderText className={'my-lg-3 fs-2-5 '} text={'Patec - '}/>
                         <ParagraphText text={valueText} className={'light-black pr-lg-5 mb-lg-5'}/>
@@ -139,6 +146,9 @@ const Home = () => {
                     </Col>
                 </Row>
             </Section>
+
+
+
             <Section className={'bg-patek-light-green'} rightBgImg={leafBGImg}>
                 <Row className='pt-lg-5'>
                     <Col lg={{span: 4}}>
@@ -179,7 +189,7 @@ const Home = () => {
                         <SectionText
                             textAlign={'left'}
                             icon={avocadoCircle}
-                            title={'Sustainability'}
+                            title={'Food'}
                             description={'Our work models and operation policies are sustainable and replicable considering long term situations'}
                         />
                         <SectionText
@@ -218,7 +228,7 @@ const Home = () => {
                     </Col>
                 </Row>
             </Section>
-            <Section className={'bg-patek-light-green mh-vh-50'}>
+            <Section className={'bg-patek-light-green mh-vh-70'}>
                 <Row className='pt-lg-5 text-center'>
                     <Col lg={{span: 8, offset: 2}}>
                         <HeaderText className={'my-lg-3 fs-2-5 patek-deep-green '}
@@ -234,24 +244,24 @@ const Home = () => {
                     <div className="first-item">
                         <TextLabel positionClass={'my-lg-4'} className={'text-white'} text={'updates'}
                                    icon={whiteCircle}/>
-                        <HeaderText text={'In the News'} className='text-white'/>
+                        <HeaderText text={'In the News'} className='text-white fs-2-5'/>
                     </div>
-                    <ArticlePlaceholder img={truckImage}
-                                        category={'News'}
-                                        text={'More wet weather could continue to delay the U.S. harvest activity,this week'}
-                                        topic={'Corn Harvest Only 30% Complete, USDA Says'}
-                                        className={'second-item grid-row-span-1-3 grid-column-span-2-4'}/>
+                    <ArticleLayout img={truckImage}
+                                   category={'News'}
+                                   text={'More wet weather could continue to delay the U.S. harvest activity,this week'}
+                                   topic={'Corn Harvest Only 30% Complete, USDA Says'}
+                                   className={'second-item grid-row-span-1-3 grid-column-span-2-4'}/>
 
-                    <ArticlePlaceholder img={monkImage} category={'Article'} topic={'The Agro - Allied way'}
-                                        text={'Read more...'}/>
+                    <ArticleLayout img={monkImage} category={'Article'} topic={'The Agro - Allied way'}
+                                   text={'Read more...'}/>
 
-                    <ArticlePlaceholder img={monkImage} category={'Article'} topic={'The Agro - Allied way'}
-                                        text={'Read more...'}/>
+                    <ArticleLayout img={monkImage} category={'Article'} topic={'The Agro - Allied way'}
+                                   text={'Read more...'}/>
 
-                    <ArticlePlaceholder img={monkImageCut} category={'News'}
-                                        className={"fifth-item grid-column-span-2-4"}
-                                        topic={'Corn Harvest Only 30% Complete, USDA Says'}
-                                        text={'More wet weather could continue to delay the U.S. harvest activity, this week'}
+                    <ArticleLayout img={monkImageCut} category={'News'}
+                                   className={"fifth-item grid-column-span-2-4"}
+                                   topic={'Corn Harvest Only 30% Complete, USDA Says'}
+                                   text={'More wet weather could continue to delay the U.S. harvest activity, this week'}
                     />
 
                 </div>

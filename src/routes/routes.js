@@ -4,3 +4,6 @@ export const contact = '/contact';
 export const career = '/career';
 export const sustainability = '/sustainability';
 export const news = '/news';
+export const team = '/team';
+export const subscidiary = '/subscidiary';
+export const patecFood = '/patec-food';

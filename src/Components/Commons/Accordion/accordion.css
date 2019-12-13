@@ -1,0 +1,26 @@
+
+.bg-white.ant-collapse-icon-position-right > .ant-collapse-item > .ant-collapse-header {
+    position: relative;
+    padding: 4rem 5rem;
+    background-color: white;
+}
+
+.bg-white.ant-collapse-icon-position-right > .ant-collapse-item > .ant-collapse-header:before {
+    content: url("../../../assets/img/faded-circle-dot.svg");
+    position: absolute;
+    padding-right: 1rem;
+    background-color: white;
+    left: 2rem;
+}
+
+
+/*content active*/
+.bg-white.ant-collapse-borderless > .ant-collapse-item > .ant-collapse-content {
+    background-color: white !important;
+}
+
+/*arrow position*/
+.bg-white.ant-collapse-icon-position-right > .ant-collapse-item > .ant-collapse-header .ant-collapse-arrow {
+    right: 5rem;
+    left: auto;
+}

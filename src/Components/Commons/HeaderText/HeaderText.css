@@ -1,0 +1,10 @@
+.with-square{
+
+}
+.with-square:after{
+    content: '';
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background-color: #64B900;
+}

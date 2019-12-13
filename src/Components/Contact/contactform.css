@@ -1,0 +1,40 @@
+.contact-input .ant-input {
+    border-color: transparent;
+    border-bottom: 1px solid var(--patek-green);
+    padding: 2rem 1rem;
+    border-radius: 0px;
+    font-size: 1.1rem;
+}
+
+.contact-input .ant-form-item-label > label {
+    color: #313131;
+    font-size: 1rem;
+}
+
+.contact-input .ant-form-item-label > label {
+    color: #313131;
+    font-size: 1rem;
+}
+
+button.contact-input {
+    background-color: var(--patek-green);
+    color: rgba(255, 255, 255, 0.8);
+    text-transform: uppercase;
+    height: 64px;
+    border-color: transparent;
+    transition: all .5s ease-in-out;
+    box-shadow:none;
+}
+
+button.contact-input:hover, button.contact-input:focus {
+    background-color: var(--patek-green-light);
+    color: white;
+    border-color: transparent;
+    box-shadow: 0px 10px 20px rgba(100,185,0,0.3);
+}
+.right-9{
+    right: 9%;
+}
+.mt-15{
+    margin-top: 15rem;
+}

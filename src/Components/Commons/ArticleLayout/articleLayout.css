@@ -1,0 +1,18 @@
+.line-after:after{
+    position: absolute;
+    display: block;
+
+}
+
+.border-left-green {
+    border-left: 1px solid #90E224 !important;
+}
+.flex-basis-250px{
+    flex-basis: 250px;
+}
+.w-150px{
+    width: 150px;
+}
+.bs-3{
+    box-shadow: 0 0 30px rgba(0,0,0,0.2);
+}

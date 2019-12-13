@@ -1,12 +1,12 @@
 import React from 'react';
 import {Nav, Navbar, NavDropdown} from 'react-bootstrap';
-import {about, career, contact, home, news, sustainability} from "../../../routes/routes";
+import {about, career, contact, home, news, sustainability, team} from "../../../routes/routes";
 import './NavigationBar.css';
 import './DropdownItem.css';
 import DropdownItem from "./DropdownItem";
-import {Link} from "react-router-dom";
+import {Link, NavLink} from "react-router-dom";
 
-const NavigationBar = ({className,logo}) => {
+const NavigationBar = ({className, logo}) => {
     return (
         <>
             <Navbar className={`px-lg-5 pt-lg-3 z-index-1 navigation ${className ? className : ''}`} expand="lg">
@@ -15,30 +15,34 @@ const NavigationBar = ({className,logo}) => {
                 </Navbar.Brand>
                 <Navbar.Toggle aria-controls="basic-navbar-nav"/>
                 <Navbar.Collapse id="basic-navbar-nav">
-                    <Nav activeKey={home} className="ml-auto mr-lg-2 navbar-nav">
-                        <Link className="nav-link" to={home}>Home</Link>
-                        <Link className="nav-link" to={about}>About</Link>
+                    <Nav className="ml-auto mr-lg-2 navbar-nav">
+                        <NavLink activeClassName={'active'} className="nav-link" to={home}>Home</NavLink>
+                        <NavDropdown title="About" id="first-nav-dropdown">
+                            <DropdownItem title={'about us'} link={about}/>
+                            <DropdownItem title={'team'} link={team}/>
+                        </NavDropdown>
                         <NavDropdown title="Subscidiaries" id="basic-nav-dropdown">
                             <div className="d-flex">
                                 <div className="flex-item">
-                                    <DropdownItem title={'Patec Foods'} link={'patec-food'} />
-                                    <DropdownItem title={'Quatlity Packaging'} link={'/quality-packaging'} />
+                                    <DropdownItem title={'Patec Foods'} link={'patec-food'}/>
+                                    <DropdownItem title={'Quatlity Packaging'} link={'/quality-packaging'}/>
                                 </div>
                                 <div className="flex-item">
-                                    <DropdownItem title={'Colorado Farms'} link={'colorado-farms'} />
-                                    <DropdownItem title={'Golden Foods'} link={'/golden-foods'} />
+                                    <DropdownItem title={'Colorado Farms'} link={'colorado-farms'}/>
+                                    <DropdownItem title={'Golden Foods'} link={'/golden-foods'}/>
                                 </div>
                                 <div className="flex-item">
-                                    <DropdownItem title={'Trevali Food Distribution'} link={'/traveli-food-distribution'} />
+                                    <DropdownItem title={'Trevali Food Distribution'}
+                                                  link={'/traveli-food-distribution'}/>
                                 </div>
                             </div>
 
 
                         </NavDropdown>
-                        <Link className="nav-link" to={career}>Careers</Link>
-                        <Link className="nav-link" to={sustainability}>Sustainability</Link>
-                        <Link className="nav-link" to={news}>News/Events</Link>
-                        <Link className="nav-link" to={contact}>Contact</Link>
+                        <NavLink activeClassName={'active'} className="nav-link" to={career}>Careers</NavLink>
+                        <NavLink activeClassName={'active'} className="nav-link" to={sustainability}>Sustainability</NavLink>
+                        <NavLink activeClassName={'active'} className="nav-link" to={news}>News/Events</NavLink>
+                        <NavLink activeClassName={'active'} className="nav-link" to={contact}>Contact</NavLink>
                     </Nav>
                 </Navbar.Collapse>
             </Navbar>

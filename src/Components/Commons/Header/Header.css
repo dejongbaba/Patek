@@ -1,0 +1,21 @@
+@keyframes leftUp {
+    0% {transform: rotate(0deg)}
+    50% {transform: rotate(60deg)}
+    100% {transform: rotate(0deg)}
+    /*from {*/
+    /*    filter: brightness(0.5)*/
+    /*}*/
+    /*to {*/
+    /*    filter: brightness(0.1)*/
+    /*}*/
+}
+
+.left-up {
+    -webkit-animation-name: leftUp; /* Safari 4.0 - 8.0 */
+    -webkit-animation-duration: 4s; /* Safari 4.0 - 8.0 */
+    animation-name: leftUp;
+    animation-duration: 4s;
+    animation-delay: 3s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+}

@@ -1,0 +1,20 @@
+.green-tab .ant-tabs-nav .ant-tabs-tab-active {
+    font-weight:bold;
+    color: var(--patek-deep-green);
+}
+.green-tab .ant-tabs-nav .ant-tabs-tab {
+    text-transform: uppercase;
+    letter-spacing: .2rem;
+    padding: 2rem 2rem;
+    font-family: var(--quenales-regular);
+}
+.green-tab .ant-tabs-nav .ant-tabs-tab:hover {
+    color: var(--patek-green);
+}
+.green-tab .ant-tabs-ink-bar {
+    background-color:var(--patek-green);
+    height: 10px;
+}
+.green-tab .ant-tabs-bar {
+    border-bottom-color: #E9F3DC;
+}

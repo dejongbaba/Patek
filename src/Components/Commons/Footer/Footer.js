@@ -4,11 +4,11 @@ import facebookIcon from "../../../assets/img/facebook.svg";
 import footerLogo from "../../../assets/img/patek-logo-white.svg";
 import footerBg from "../../../assets/img/footer-bg.svg";
 import {Col, Container, Row} from "react-bootstrap";
-
+import './footer.css';
 
 const Footer = ({className, text, logo}) => {
     return (
-        <div className='position-relative mh-vh-50'
+        <div className='position-relative mh-vh-50 footer'
              style={{background: `url(${footerBg})`, backgroundSize: 'cover'}}
         >
             <Container>
