@@ -64,13 +64,13 @@ const carouselItems = [
 
     }];
 
-const CarouselItemStructure = (item) => <Row className='py-5'>
-    <Col lg={{span: 6, offset: 1}}>
-        <img src={CarouselLeaf} className={'w-75'} alt="patek carousel image"/>
+const CarouselItemStructure = (item) => <Row className='py-lg-5'>
+    <Col lg={{span: 6}}>
+        <img src={CarouselLeaf} className={'w-70'} alt="patek carousel image"/>
     </Col>
     <Col lg={5}>
-        <HeaderText className={'my-lg-3 fs-2-5 '} text={item.title}/>
-        <ParagraphText text={item.desc} className={'light-black pr-lg-5 mb-lg-5'}/>
+        <HeaderText className={'my-lg-5 fs-2-5 mh-lg-90'} text={item.title}/>
+        <ParagraphText text={item.desc} className={'light-black pr-lg-5 pb-lg-5 mb-lg-5'}/>
         <Button className={'btn-patek-green text-uppercase'} text={'more details'}/>
     </Col>
 </Row>;
@@ -88,23 +88,25 @@ const Home = () => {
             >
                 <Row>
                     <Col lg={{span: 6, offset: 6}}>
-                        <div className="pt-lg-5">
+                        <div className="pt-lg-5 pb-5 pb-lg-0">
                             <div className="mt-lg-5">
-                                <TextLabel className='patek-green ' icon={threeCircleIcon} text='patec'/>
+                                <TextLabel className='patek-green'
+                                           positionClass={'my-5 mt-lg-0'}
+                                           icon={threeCircleIcon} text='patec'/>
                             </div>
-                            <HeaderText className={'text-white mt-lg-5 fs-4 with-square'}
+                            <HeaderText className={'text-white mt-lg-5 fs-lg-4 with-square mb-5 mb-lg-0'}
                                         text={["We Stay ahead ", <br/>, " of the Curve"]}/>
-                            <ParagraphText text={'Embracing Innovation and Technology'} className={'text-white '}/>
+                            <ParagraphText text={'Embracing Innovation and Technology'}
+                                           className={'text-white mb-5 mb-lg-0'}/>
                         </div>
                     </Col>
                 </Row>
             </Header>
             <Section bgImg={greenLeafBg}>
-                <Row className='py-lg-5 px-lg-5'>
+                <Row className='py-lg-5 px-lg-5 my-5 my-lg-0'>
                     <Col lg={{span: 6}}>
                         <ArticleImage type={'fluid'} image={homePageArtImage}/>
                     </Col>
-
                     <Col lg={{span: 6}}>
                         <TextLabel className='patek-green' icon={threeCircleIcon} text='who we are'/>
                         <HeaderText className={'my-lg-3 fs-2-5 '} text={'Patec - '}/>
@@ -114,10 +116,11 @@ const Home = () => {
                 </Row>
             </Section>
             <Section className={'bg-patek-light-green'}>
-                <Row className='pt-lg-5 px-lg-5'>
+                <Row className='pt-lg-5 px-lg-5 py-5 pb-lg-0'>
                     <Col lg={{span: 4, offset: 4}}>
-                        <TextLabel className='patek-green' icon={threeCircleIcon} text='DYNAMIC'/>
-                        <HeaderText className={'my-lg-3 fs-2-5 patek-deep-green text-center'}
+                        <TextLabel className='patek-green' positionClass={'mb-3 mb-lg-0'}
+                                   icon={threeCircleIcon} text='DYNAMIC'/>
+                        <HeaderText className={'my-lg-3 fs-2-5 patek-deep-green text-lg-center'}
                                     text={'Vision, Mission & Core Values'}/>
                     </Col>
                 </Row>
@@ -150,9 +153,9 @@ const Home = () => {
 
 
             <Section className={'bg-patek-light-green'} rightBgImg={leafBGImg}>
-                <Row className='pt-lg-5'>
+                <Row className='pt-5 pb-3 pb-lg-0'>
                     <Col lg={{span: 4}}>
-                        <TextLabel className='patek-green' icon={threeCircleIcon} text='VALUES'/>
+                        <TextLabel className='patek-green' positionClass={'mb-3 mb-lg-0'} icon={threeCircleIcon} text='VALUES'/>
                         <HeaderText className={'my-lg-3 fs-2-5 patek-deep-green '} text={'Our Core Values'}/>
                     </Col>
                 </Row>
@@ -215,30 +218,31 @@ const Home = () => {
                     </Col>
                 </Row>
             </Section>
-            <Section className={'bg-gray-gradient-30'} bgImg={leafBGImg}>
-                <Row className='pt-lg-5'>
+            <Section className={'bg-gray-gradient-30 pb-5 pb-lg-0'} bgImg={leafBGImg}>
+                <Row className='py-5 pb-lg-0'>
                     <Col lg={{span: 4}}>
                         <TextLabel className='patek-green' icon={threeCircleIcon} text='SUBSIDIARIES'/>
                         <HeaderText className={'my-lg-3 fs-2-5 patek-deep-green '} text={'Our Subsidiaries'}/>
                     </Col>
                 </Row>
-                <Row className={'mt-5'}>
+                <Row className={'mt-lg-5 mb-5 pb-5 mb-lg-0 pb-lg-0'}>
                     <Col lg={{span: 12}}>
                         <SlideCarousel items={carouselItems} itemStructure={CarouselItemStructure}/>
                     </Col>
                 </Row>
             </Section>
             <Section className={'bg-patek-light-green mh-vh-70'}>
-                <Row className='pt-lg-5 text-center'>
+                <Row className='pt-5 pb-5 pb-lg-0 text-lg-center'>
                     <Col lg={{span: 8, offset: 2}}>
-                        <HeaderText className={'my-lg-3 fs-2-5 patek-deep-green '}
-                                    text={'" An Amazing Company at the frontiers of agro allied Development in West AFrica "'}/>
+                        <HeaderText className={'my-lg-3 fs-2 patek-deep-green'}
+                                    text={'" An Amazing Company at the frontiers of agro allied Development in West AFrica "'}
+                        />
                         <TextLabel className='patek-green' positionClass='justify-content-lg-center'
                                    icon={threeCircleIcon} text='DYNAMIC'/>
                     </Col>
                 </Row>
             </Section>
-            <Section className={'px-lg-5 py-lg-5 bg-black mh-vh-130'}>
+            <Section className={'px-lg-5 py-5 bg-black mh-vh-130'}>
                 <div
                     className="d-grid my-lg-5 w-100 calc-height-100-10 grid-template-3-3 grid-row-gap-1 grid-column-gap-1">
                     <div className="first-item">
@@ -252,13 +256,20 @@ const Home = () => {
                                    topic={'Corn Harvest Only 30% Complete, USDA Says'}
                                    className={'second-item grid-row-span-1-3 grid-column-span-2-4'}/>
 
-                    <ArticleLayout img={monkImage} category={'Article'} topic={'The Agro - Allied way'}
-                                   text={'Read more...'}/>
+                    <ArticleLayout img={monkImage}
+                                   category={'Article'}
+                                   topic={'The Agro - Allied way'}
+                                   text={'Read more...'}
+                    />
 
-                    <ArticleLayout img={monkImage} category={'Article'} topic={'The Agro - Allied way'}
-                                   text={'Read more...'}/>
+                    <ArticleLayout img={monkImage}
+                                   category={'Article'}
+                                   topic={'The Agro - Allied way'}
+                                   text={'Read more...'}
+                    />
 
-                    <ArticleLayout img={monkImageCut} category={'News'}
+                    <ArticleLayout img={monkImageCut}
+                                   category={'News'}
                                    className={"fifth-item grid-column-span-2-4"}
                                    topic={'Corn Harvest Only 30% Complete, USDA Says'}
                                    text={'More wet weather could continue to delay the U.S. harvest activity, this week'}

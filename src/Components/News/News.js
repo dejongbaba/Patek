@@ -22,18 +22,16 @@ import meetMeBg from "../../assets/img/Meet-me-bg@2x.png";
 const News = () => {
     return (
         <>
-            <Header img={AboutBgImg} type='half'>
-                <Row className={'ml-lg-5'}>
-                    <Col lg={{span: 6}} className={'text-center pt-lg-5 px-lg-0 '}>
+            <Header img={AboutBgImg} type='half'
+                    align={'left'}
+                    logo={true}
+                    logoText={'Corn Harvest Only 30% Complete, USDA Says'}
+                    logoType={'blog'}
+                    logoDate={'8 | 11 | 2019'}
+                    category={'NEWS'}
+            >
                         <TextLabel className='text-white'  icon={threeWhiteDots} text='NEWS & EVENTS'/>
                         <HeaderText className={'text-left text-white'} text={'News & Events'}/>
-                    </Col>
-                </Row>
-                <LogoPlaceholder type={'blog'}
-                                 category={'NEWS'}
-                                 text={'Corn Harvest Only 30% Complete, USDA Says'}
-                                 date={'8 | 11 | 2019'}
-                />
             </Header>
 
             <div className={'py-lg-5 bg-patek-light-green'}>

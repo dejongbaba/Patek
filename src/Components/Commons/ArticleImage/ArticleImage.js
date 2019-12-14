@@ -6,13 +6,8 @@ const ArticleImage = ({image, bgImagePosition = 'left',type}) => {
 
     if(type==='line'){
         return (
-            <div className='d-inline-block' style={{
-                backgroundImage: `url(${LinebgImage})`,
-                backgroundSize:'85%',
-                backgroundPosition: '-31% -120%' ,
-                backgroundRepeat:'no-repeat',
-            }}>
-                <img src={image} alt="article image"/>
+            <div>
+                <img src={image}  alt="article image"/>
             </div>
         )
 

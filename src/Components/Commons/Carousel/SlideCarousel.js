@@ -1,6 +1,6 @@
 import React, {useState} from 'react';
 import {Carousel} from 'react-bootstrap';
-
+import './carousel.css';
 const SlideCarousel = ({children, items, itemStructure}) => {
 
     const [index, setIndex] = useState(0);
@@ -15,6 +15,7 @@ const SlideCarousel = ({children, items, itemStructure}) => {
         <div>
             <Carousel activeIndex={index}
                       direction={direction}
+                      className={'slide-carousel'}
                       onSelect={handleSelect}
                       indicators={false}
             >

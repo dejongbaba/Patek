@@ -10,8 +10,8 @@ const ArticleLayout = ({img, className, category, topic, text, type, link, date}
         return (
             <>
                 <div className="mb-5 border-top-line pt-5">
-                    <div className={`d-flex align-items-center 
-                    ${topic?'justify-content-between':'justify-content-start' } 
+                    <div className={`d-flex flex-column flex-lg-row align-items-lg-center 
+                    ${topic?'justify-content-lg-between':'justify-content-lg-start' } 
                     mb-5`}>
                         <h3 className='quenales-bold text-capitalize patek-deep-green'>
                             {topic}
@@ -75,7 +75,7 @@ const ArticleLayout = ({img, className, category, topic, text, type, link, date}
                  className={`position-relative ${className ? className : ''}`}>
                 <div
                     className="position-absolute ls-0-5 fs-0-7 text-uppercase text-white
-                     z-index-1 left-bottom-10-40 py-lg-2 px-lg-4 bg-black bottom-center">
+                     z-index-1 left-bottom-10-40 py-2 px-4 bg-black bottom-center">
                     {category}
                 </div>
                 <div

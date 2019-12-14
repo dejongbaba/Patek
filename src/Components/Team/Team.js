@@ -21,14 +21,13 @@ import manWorking from "../../assets/img/man-working@2x.png";
 import womanInOffice from "../../assets/img/woman-in-office@2x.png";
 import "./team.css";
 import {about, home, team} from "../../routes/routes";
+import CareerSection from "../Commons/CareerSection/CareerSection";
 
 const Team = () => {
     return (
         <>
             <Header img={AboutBgImg} type='half'>
-                <Row>
-                    <Col lg={{span: 6, offset: 3}} className={'text-center pt-lg-5 '}>
-                        <Breadcrumb containerClass={'mb-lg-5'}
+                        <Breadcrumb containerClass={'mb-5'}
                                     links={
                                         [
                                             {name: 'home', path: home},
@@ -38,16 +37,14 @@ const Team = () => {
                                     }/>
                         <TextLabel positionClass={'justify-content-center'} text={'MEET THE TEAM'}/>
                         <HeaderText className={'text-white'} text={'The Team'}/>
-                    </Col>
-                </Row>
             </Header>
-            <Section className={'py-lg-5 '}>
+            <Section className={'bg-patek-light-green py-lg-5 '}>
                 <Row className={'py-lg-5'}>
                     <Col lg={{span: 6}}>
-                        <img src={womanInOffice} className='mt-lg-5 pt-lg-5 img-fluid' alt="woman in office"/>
+                        <img src={womanInOffice} className='mt-lg-5 mb-5 mb-lg-0 pt-lg-5 img-fluid' alt="woman in office"/>
                     </Col>
                     <Col lg={{span: 6}}>
-                        <img src={manWorking} className='img-fluid' alt="man working"/>
+                        <img src={manWorking} className='img-fluid mb-5 mb-lg-0' alt="man working"/>
                     </Col>
                 </Row>
             </Section>
@@ -55,8 +52,8 @@ const Team = () => {
                 <Row className={'py-lg-5'}>
                     <Col lg={{span: 6, offset: 3}}>
                         <TextLabel positionClass={'my-lg-5 justify-content-center'} text={'WHO WE ARE'}/>
-                        <HeaderText className={'text-center'} text={'Our Team-'}/>
-                        <HeaderText className={'text-center my-lg-3 fs-2-5 patek-deep-green '}
+                        <ParagraphText className={'text-center fs-lg-2-5 text-gray-2'} text={'Our Team-'}/>
+                        <HeaderText className={'text-center my-lg-3 fs-2 fs-lg-2-5  patek-deep-green '}
                                     text={'\n' +
                                     'Highly Skilled Professionals\n' +
                                     'continually striving for Excellence'}/>
@@ -78,21 +75,10 @@ const Team = () => {
                 </Row>
             </Section>
 
-            <Section className={'bg-patek-light-green py-lg-5 '}>
-                <Row className={'py-lg-5 text-center'}>
-                    <Col lg={{span: 8, offset: 2}}>
-                        <div className="pt-lg-2 mt-lg-5">
-                            <HeaderText className='text-white mt-lg-5 pt-lg-5 position-relative z-index-1'
-                                        text={'Interested in Working With Us?'}/>
-                            <ParagraphText className={'text-white mb-lg-5 pb-lg-1 text-center position-relative z-index-1'}
-                                           text={'Join us In making a difference'}/>
-                            <Button text={'EXPLORE CAREERS'} className={'position-relative z-index-1'}/>
-                        </div>
-                    </Col>
-                </Row>
-                <img src={meetMeBg} className='position-absolute w-75 filter-brightness-0-3 center-center'
-                     alt="meet me background"/>
-            </Section>
+            <CareerSection header={'Interested in Working With Us?'}
+                           text={'Join us In making a difference'}
+                           button={'EXPLORE CAREERS'}
+            />
             <SubscriptionSection/>
             <Footer/>
         </>

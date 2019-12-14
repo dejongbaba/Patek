@@ -22,13 +22,13 @@ class SubcriptionForm extends Component {
                 <Form className={'py-5 px-5'}>
                     <InputGroup className="mb-3">
                         <FormControl
-                            className={'subscribe-control'}
+                            className={'subscribe-control mb-5 mb-lg-0'}
                             placeholder="Enter e-mail address"
                             aria-label="email address"
                             aria-describedby="basic-addon2"
                         />
                         <InputGroup.Append>
-                            <Button className={'py-0 px-5'} text={'Subscribe'} onClick={() => this.subscribe}/>
+                            <Button className={'py-lg-0 px-5'} text={'Subscribe'} onClick={() => this.subscribe}/>
                         </InputGroup.Append>
                     </InputGroup>
 

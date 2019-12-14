@@ -1,0 +1,22 @@
+.subscription{
+
+}
+.subscription .subscription--text-label{
+
+}
+.subscription .subscription--header-text{
+
+}
+
+
+@media all and (max-width: 480px){
+    .subscription{
+
+    }
+    .subscription .subscription--text-label{
+        letter-spacing: .2rem;
+    }
+    .subscription .subscription--header-text{
+        font-size: 2rem;
+    }
+}

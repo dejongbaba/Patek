@@ -1,12 +1,12 @@
 .dotted-arch-position-1{
-    top: 32%;
-    left: 26%;
-    width: 50%;
-    transform: rotate(3deg);
+    top: 28% !important;
+    left: 29%!important;
+    width: 37%!important;
+    transform: rotate(6deg)!important;
 }
 .dotted-arch-position-2{
-    bottom: 2%;
-    left: 35%;
-    width: 26%;
-    transform: rotate(-9deg);
+    bottom: 15%!important;
+    left: 35%!important;
+    width: 22%!important;
+    transform: rotate(-9deg)!important;
 }

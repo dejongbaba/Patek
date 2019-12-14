@@ -6,21 +6,15 @@ import TextLabel from "../Commons/TextLabel/TextLabel";
 import HeaderText from "../Commons/HeaderText/HeaderText";
 import Breadcrumb from "../Commons/Breadcrumb/Breadcrumb";
 import Section from "../Commons/Section/Section";
-import greenLeafBg from "../../assets/img/green-leaf-bg.svg";
 import meetMeBg from "../../assets/img/Meet-me-bg@2x.png";
-import aboutLeaf from "../../assets/img/about-leaf-bg.svg";
 import ParagraphText from "../Commons/ParagraphText/ParagraphText";
 import Footer from "../Commons/Footer/Footer";
 import SubscriptionSection from "../Commons/SubscriptionSection/SubscriptionSection";
 import Button from "../Commons/Button/Button";
-import SectionGrid from "../Commons/SectionGrid/SectionGrid";
-import SectionGridItem from "../Commons/SectionGridItem/SectionGridItem";
-import threeCircleIcon from "../../assets/img/three-circle-icon.svg";
-import agriCommodity from "../../assets/img/agri-commodity.svg";
 import manWorking from "../../assets/img/man-working@2x.png";
 import womanInOffice from "../../assets/img/woman-in-office@2x.png";
 import "./sustainability.css";
-import {about, home, sustainability, team} from "../../routes/routes";
+import {home, sustainability} from "../../routes/routes";
 import leafBGImg from "../../assets/img/green-leaf-bg-right.svg";
 import SectionText from "../Commons/Section/SectionText";
 import leafInCircle from "../../assets/img/white-leaf-in-circle.svg";
@@ -30,6 +24,7 @@ import susImg3 from "../../assets/img/sustainability-img-3@2x.png";
 import ArticleLayout from "../Commons/ArticleLayout/ArticleLayout";
 import ArticleImage from "../Commons/ArticleImage/ArticleImage";
 import CircleIcon from "../Commons/ArticleImage/CircleIcon";
+import CareerSection from "../Commons/CareerSection/CareerSection";
 
 const Sustainability = () => {
     return (
@@ -37,14 +32,14 @@ const Sustainability = () => {
             <Header img={AboutBgImg} type='half'>
                 <Row>
                     <Col lg={{span: 6, offset: 3}} className={'text-center pt-lg-5 '}>
-                        <Breadcrumb containerClass={'mb-lg-5'}
+                        <Breadcrumb containerClass={'mb-5'}
                                     links={
                                         [
                                             {name: 'home', path: home},
                                             {name: 'Sustainability', path: sustainability},
                                         ]
                                     }/>
-                        <TextLabel positionClass={'justify-content-center'} text={'SUSTAINABILTY'}/>
+                        <TextLabel positionClass={'justify-content-center mb-3 mb-lg-0'} text={'SUSTAINABILTY'}/>
                         <HeaderText className={'text-white'} text={'Sustainability'}/>
                     </Col>
                 </Row>
@@ -52,7 +47,7 @@ const Sustainability = () => {
             <Section className={'py-lg-5 '} colRightImg={leafBGImg}>
                 <Row className={'py-lg-5'}>
                     <Col lg={{span: 6, offset: 3}}>
-                        <HeaderText className={'text-center my-lg-3 fs-2-5 patek-deep-green '}
+                        <HeaderText className={'text-center mb-5 my-lg-3 fs-1-5 fs-lg-2 patek-deep-green '}
                                     text={'We are Committed to building\n' +
                                     'a global sustainable future for all by infusing\n' +
                                     'sustainable practices in our work'}/>
@@ -60,17 +55,17 @@ const Sustainability = () => {
                 </Row>
                 <Row className={'py-lg-5'}>
                     <Col lg={{span: 4}}>
-                        <img src={womanInOffice} className='mt-lg-5 pt-lg-5 img-fluid' alt="woman in office"/>
+                        <img src={womanInOffice} className='mt-lg-5 mb-5 mb-lg-0 pt-lg-5 img-fluid' alt="woman in office"/>
                     </Col>
                     <Col lg={{span: 4}}>
-                        <img src={manWorking} className='img-fluid' alt="man working"/>
+                        <img src={manWorking} className='img-fluid mb-5 mb-lg-0' alt="man working"/>
                     </Col>
                     <Col lg={{span: 4}}>
-                        <img src={manWorking} className='img-fluid' alt="man working"/>
+                        <img src={manWorking} className='img-fluid mb-5 mb-lg-0' alt="man working"/>
                     </Col>
                 </Row>
             </Section>
-            <Section className={'bg-patek-light-green py-lg-5 '} >
+            <Section className={'bg-patek-light-green py-lg-5 '}>
                 <Row className='pt-lg-5'>
                     <Col lg={{span: 4}}>
                         <SectionText
@@ -83,7 +78,7 @@ const Sustainability = () => {
                 </Row>
                 <Row className={'py-lg-5'}>
                     <Col lg={{span: 7}}>
-                        <ArticleImage image={susImg1} type={'fluid'} />
+                        <ArticleImage image={susImg1} type={'fluid'}/>
                     </Col>
                     <Col lg={{span: 4}}>
                         <ArticleLayout
@@ -148,7 +143,7 @@ const Sustainability = () => {
                         />
                     </Col>
                     <Col lg={{span: 7}}>
-                        <ArticleImage image={susImg2} type={'fluid'} />
+                        <ArticleImage image={susImg2} type={'fluid'}/>
                     </Col>
 
                 </Row>
@@ -157,7 +152,7 @@ const Sustainability = () => {
             <Section className={'bg-patek-light-green py-lg-5 '}>
                 <Row className={'py-lg-5'}>
                     <Col lg={{span: 7}}>
-                        <ArticleImage image={susImg3} type={'fluid'} />
+                        <ArticleImage image={susImg3} type={'fluid'}/>
                     </Col>
                     <Col lg={{span: 4}}>
                         <SectionText
@@ -175,8 +170,9 @@ const Sustainability = () => {
                             'design the packaging we do use so it can be reused, \n' +
                             'recycled or composted.'}
                         />
-                        <CircleIcon/>
+                        <CircleIcon />
                         <ParagraphText
+                            className={'mt-3'}
                             text={'We minimise waste by reducing, reusing and recycling our \n' +
                             'own waste and encouraging consumers to do the same. \n' +
                             'We want to move towards a more circular economy, \n' +
@@ -187,21 +183,11 @@ const Sustainability = () => {
                 </Row>
             </Section>
 
-            <Section className={'bg-patek-light-green py-lg-5 '}>
-                <Row className={'py-lg-5 text-center'}>
-                    <Col lg={{span: 8, offset: 2}}>
-                        <div className="pt-lg-2 mt-lg-5">
-                            <HeaderText className='text-white mt-lg-5 pt-lg-5 position-relative z-index-1'
-                                        text={'Interested in Working With Us?'}/>
-                            <ParagraphText className={'text-white mb-lg-5 pb-lg-1 text-center position-relative z-index-1'}
-                                           text={'Join us In making a difference'}/>
-                            <Button text={'EXPLORE CAREERS'} className={'position-relative z-index-1'}/>
-                        </div>
-                    </Col>
-                </Row>
-                <img src={meetMeBg} className='position-absolute w-75 filter-brightness-0-3 center-center'
-                     alt="meet me background"/>
-            </Section>
+            <CareerSection
+                header={'" An Amazing Company at the frontiers of agro allied \n' +
+                'Development in West AFrica "'}
+                button={'CONTACT US'}
+            />
             <SubscriptionSection/>
             <Footer/>
         </>

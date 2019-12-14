@@ -10,16 +10,16 @@ const NavigationBar = ({className, logo}) => {
     return (
         <>
             <Navbar className={`px-lg-5 pt-lg-3 z-index-1 navigation ${className ? className : ''}`} expand="lg">
-                <Navbar.Brand href="#home">
+                <Link className={'nav-brand'} to={home}>
                     <img src={logo} alt="patek logo" title='patek logo'/>
-                </Navbar.Brand>
+                </Link>
                 <Navbar.Toggle aria-controls="basic-navbar-nav"/>
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="ml-auto mr-lg-2 navbar-nav">
-                        <NavLink activeClassName={'active'} className="nav-link" to={home}>Home</NavLink>
+                        <NavLink exact activeClassName={'active'} className="nav-link" to={home}>Home</NavLink>
                         <NavDropdown title="About" id="first-nav-dropdown">
-                            <DropdownItem title={'about us'} link={about}/>
-                            <DropdownItem title={'team'} link={team}/>
+                            <DropdownItem activeClassName={'active'} title={'about us'} link={about}/>
+                            <DropdownItem activeClassName={'active'} title={'team'} link={team}/>
                         </NavDropdown>
                         <NavDropdown title="Subscidiaries" id="basic-nav-dropdown">
                             <div className="d-flex">

@@ -5,10 +5,10 @@ const SectionText = ({icon, title, description, iconClass, textAlign, descType, 
     if (textAlign === 'left') {
         return (
             <div className='min-height-250'>
-                <div className="d-flex align-items-lg-center">
-                    <img src={icon} className={`${iconClass} w-15 mb-lg-2 mr-lg-2`} alt="section text icon"/>
+                <div className="d-flex align-items-start align-items-lg-center">
+                    <img src={icon} className={`${iconClass} w-lg-15 w-25 mb-lg-2 mr-2`} alt="section text icon"/>
                     <div>
-                        <h3 className='mb-lg-3'>{title}</h3>
+                        <h3 className='mb-lg-3 mb-0'>{title}</h3>
                         {descType === 'list' ? <div>{description}</div> : ''}
                     </div>
 
@@ -20,14 +20,14 @@ const SectionText = ({icon, title, description, iconClass, textAlign, descType, 
     if (type === 'imageTitle') {
         return (
             <div className="d-flex align-items-center mb-5">
-                <img src={icon} className={`mr-4 ${iconClass ? iconClass : ''}`} alt="image for section"/>
+                <img src={icon} className={`mr-4 w-20 w-25-sm ${iconClass ? iconClass : ''}`} alt="image for section"/>
                 <h3 className='patek-deep-green quenales-bold mb-0'>{title}</h3>
             </div>
         )
     }
 
     return (
-        <div className='text-center'>
+        <div className='text-lg-center'>
             <img src={icon} className='w-20 mb-lg-5' alt="section text icon"/>
             <h3 className='mb-lg-3'>{title}</h3>
             <p>{description}</p>

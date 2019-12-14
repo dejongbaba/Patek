@@ -18,6 +18,24 @@
 .secondary-nav__link:focus,.secondary-nav__link:active,.secondary-nav__link.active{
     color: var(--light-black);
     border-bottom: 5px solid var(--patek-green);
-    margin-left: 2rem;
     font-weight: bold;
+}
+
+
+@media all and (max-width: 480px){
+    .secondary-nav {
+        border-bottom: 1px solid rgba(0,0,0,0.03);
+        padding: 18rem 2rem 2rem ;
+    }
+    .secondary-nav li {
+        display: block;
+    }
+    .secondary-nav li {
+        height: 50px;
+    }
+    .secondary-nav__link{
+        display: block;
+        padding-left: 0;
+        margin-left: 0;
+    }
 }
