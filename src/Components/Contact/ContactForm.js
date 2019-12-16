@@ -28,9 +28,12 @@ class ContactForm extends Component {
         const {isLoading} = this.state;
 
         return (
-            <div className='position-absolute w-35 right-9 z-index-1'>
+            <div className='position-lg-absolute w-lg-35 mt-3 right-9 z-index-1'>
                 {bgLeaf && <img src={formLeaf} className={'position-absolute w-75 right--250 z-index--1'} alt="form background leaf"/>}
-                <Form className='contact-form bg-white px-lg-5 bs-2' onSubmit={this.handleSubmit}>
+                <Form
+                    className='contact-form bg-white px-5 bs-2'
+                    onSubmit={this.handleSubmit}
+                >
                     <div className="pt-5">
                         <Row>
                             <Col md={6}>
@@ -86,10 +89,12 @@ class ContactForm extends Component {
                         <Row>
                             <Col md={12}>
                                 <Form.Item>
-                                    <Button type="primary" className='mr-3 btn-block contact-input'
-                                            htmlType="button"
-                                            onClick={this.handleSubmit}
-                                            disabled={isLoading}
+                                    <Button
+                                        type="primary"
+                                        className='mr-3 btn-block contact-input'
+                                        htmlType="button"
+                                        onClick={this.handleSubmit}
+                                        disabled={isLoading}
                                     >
                                         Create Project
                                     </Button>

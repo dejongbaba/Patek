@@ -17,10 +17,11 @@ const SectionText = ({icon, title, description, iconClass, textAlign, descType, 
             </div>
         )
     }
+
     if (type === 'imageTitle') {
         return (
             <div className="d-flex align-items-center mb-5">
-                <img src={icon} className={`mr-4 w-20 w-25-sm ${iconClass ? iconClass : ''}`} alt="image for section"/>
+                <img src={icon} className={`mr-4 w-20 w-25-sm ${ iconClass ? iconClass : ''}`} alt="image for section"/>
                 <h3 className='patek-deep-green quenales-bold mb-0'>{title}</h3>
             </div>
         )

@@ -56,7 +56,7 @@ const ArticleLayout = ({img, className, category, topic, text, type, link, date}
                         {category}
                     </div>
                 </div>
-                <h3 className='quenales-bold mt-lg-3 text-capitalize patek-deep-green'>
+                <h3 className='quenales-bold mt-3 fs-1-5 text-capitalize patek-deep-green'>
                     {topic}
                 </h3>
                 <ParagraphText className='mb-3 patek-deep-green' text={text}/>

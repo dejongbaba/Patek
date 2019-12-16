@@ -35,6 +35,12 @@ button.contact-input:hover, button.contact-input:focus {
 .right-9{
     right: 9%;
 }
-.mt-15{
-    margin-top: 15rem;
+
+@media all and (min-width: 1200px) {
+    .mt-lg-15{
+        margin-top: 15rem;
+    }
+    .position-lg-absolute{
+        position: absolute;
+    }
 }

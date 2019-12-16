@@ -1,10 +1,13 @@
 .logo-placeholder{
-    bottom: 11rem;
+    bottom: 10rem;
     right: 3rem;
     width: 30%;
     z-index: 1000;
     height: 300px;
     box-shadow: 0px 10px 30px rgba(0,0,0,0.05);
+}
+.header-card.logo-placeholder {
+    bottom: 7rem;
 }
 .placeholder-label{
     bottom: 10px;
@@ -24,5 +27,16 @@
         z-index: 1000;
         height: 300px;
         box-shadow: 0px 10px 30px rgba(0,0,0,0.05);
+    }
+    .header-card.logo-placeholder {
+        bottom: -10rem;
+        /*right: 2rem;*/
+        /*width: 80%;*/
+        /*z-index: 1000;*/
+        /*height: 300px;*/
+        /*box-shadow: 0px 10px 30px rgba(0,0,0,0.05);*/
+    }
+    .header-card.logo-placeholder span {
+        font-size: 12px;
     }
 }

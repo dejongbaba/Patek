@@ -505,6 +505,9 @@ code {
 }
 @media all and (min-width: 1200px){
 
+    .w-lg-35{
+        width: 35%;
+    }
     .mh-lg-250{
         min-height: 250px;
     }

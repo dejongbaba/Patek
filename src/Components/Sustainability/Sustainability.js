@@ -18,6 +18,7 @@ import {home, sustainability} from "../../routes/routes";
 import leafBGImg from "../../assets/img/green-leaf-bg-right.svg";
 import SectionText from "../Commons/Section/SectionText";
 import leafInCircle from "../../assets/img/white-leaf-in-circle.svg";
+import beverageImage from "../../assets/img/golden-food-beverage-image@2x.png";
 import susImg2 from "../../assets/img/sustainability-art-img-2@2x.png";
 import susImg1 from "../../assets/img/sustainability-art-img-1@2x.png";
 import susImg3 from "../../assets/img/sustainability-img-3@2x.png";
@@ -29,9 +30,8 @@ import CareerSection from "../Commons/CareerSection/CareerSection";
 const Sustainability = () => {
     return (
         <>
-            <Header img={AboutBgImg} type='half'>
-                <Row>
-                    <Col lg={{span: 6, offset: 3}} className={'text-center pt-lg-5 '}>
+            <Header img={AboutBgImg} type='half' align={'center'}>
+
                         <Breadcrumb containerClass={'mb-5'}
                                     links={
                                         [
@@ -41,10 +41,10 @@ const Sustainability = () => {
                                     }/>
                         <TextLabel positionClass={'justify-content-center mb-3 mb-lg-0'} text={'SUSTAINABILTY'}/>
                         <HeaderText className={'text-white'} text={'Sustainability'}/>
-                    </Col>
-                </Row>
             </Header>
-            <Section className={'py-lg-5 '} colRightImg={leafBGImg}>
+            <Section className={'py-lg-5'}
+                     bgImg={leafBGImg}
+            >
                 <Row className={'py-lg-5'}>
                     <Col lg={{span: 6, offset: 3}}>
                         <HeaderText className={'text-center mb-5 my-lg-3 fs-1-5 fs-lg-2 patek-deep-green '}
@@ -54,13 +54,10 @@ const Sustainability = () => {
                     </Col>
                 </Row>
                 <Row className={'py-lg-5'}>
-                    <Col lg={{span: 4}}>
+                    <Col lg={{span: 6}}>
                         <img src={womanInOffice} className='mt-lg-5 mb-5 mb-lg-0 pt-lg-5 img-fluid' alt="woman in office"/>
                     </Col>
-                    <Col lg={{span: 4}}>
-                        <img src={manWorking} className='img-fluid mb-5 mb-lg-0' alt="man working"/>
-                    </Col>
-                    <Col lg={{span: 4}}>
+                    <Col lg={{span: 5}}>
                         <img src={manWorking} className='img-fluid mb-5 mb-lg-0' alt="man working"/>
                     </Col>
                 </Row>
@@ -76,11 +73,11 @@ const Sustainability = () => {
                         />
                     </Col>
                 </Row>
-                <Row className={'py-lg-5'}>
-                    <Col lg={{span: 7}}>
+                <Row>
+                    <Col lg={{span: 6}}>
                         <ArticleImage image={susImg1} type={'fluid'}/>
                     </Col>
-                    <Col lg={{span: 4}}>
+                    <Col lg={{span: 5}}>
                         <ArticleLayout
                             type={'line'}
                             category={'Our Commitment'}
@@ -117,8 +114,11 @@ const Sustainability = () => {
                         />
                     </Col>
                 </Row>
-                <Row className={'py-lg-5'}>
-                    <Col lg={{span: 4}}>
+                <Row className='pt-lg-5'>
+                    <Col lg={{span: 7,order:7}}>
+                        <ArticleImage image={susImg2} type={'fluid'}/>
+                    </Col>
+                    <Col lg={{span: 5,order:1}}>
                         <ArticleLayout
                             type={'line'}
                             category={'Our Commitment'}
@@ -142,10 +142,6 @@ const Sustainability = () => {
                             'mackerel and other species of fish and seafood'}
                         />
                     </Col>
-                    <Col lg={{span: 7}}>
-                        <ArticleImage image={susImg2} type={'fluid'}/>
-                    </Col>
-
                 </Row>
             </Section>
 
@@ -178,6 +174,54 @@ const Sustainability = () => {
                             'We want to move towards a more circular economy, \n' +
                             'enabling more packaging to either remain in loops or \n' +
                             'have the best possible opportunity to be recycled'}
+                        />
+                    </Col>
+                </Row>
+            </Section>
+
+            <Section className={'bg-gray-gradient-30 py-lg-5 '}>
+                <Row className='pt-lg-5'>
+                    <Col lg={{span: 6,order:6}}>
+                        <ArticleImage image={beverageImage} type={'fluid'}/>
+                    </Col>
+                    <Col lg={{span: 6,order:1}}>
+                        <SectionText
+                            iconClass={'w-25'}
+                            icon={leafInCircle}
+                            title={'Golden Food and Beverage'}
+                            type={'imageTitle'}
+                        />
+                        <ParagraphText
+                            text={'Our food and beverage sustainability is the balance between \n' +
+                        'economy, ecology and social issues. Sustainability is a priority \n' +
+                        'at all levels: In the context of sustainable development. \n' +
+                        'The raw material utilization takes place in a unique production \n' +
+                        'almost completely in the main and by-products. '}
+                        />
+                    </Col>
+
+                </Row>
+            </Section>
+
+            <Section className={'bg-patek-light-green py-lg-5 '}>
+                <Row className={'py-lg-5'}>
+                    <Col lg={{span: 7}}>
+                        <ArticleImage image={susImg3} type={'fluid'}/>
+                    </Col>
+                    <Col lg={{span: 5}}>
+                        <SectionText
+                            iconClass={'w-25'}
+                            icon={leafInCircle}
+                            title={'Trevali Food Distribution'}
+                            type={'imageTitle'}
+                        />
+                        <ParagraphText
+                            text={'The global transportation industry is facing an increasingly \n' +
+                            'challenging environment, with trade disruptions and regulatory \n' +
+                            'uncertainty weighing on freight markets. At Patec Group, \n' +
+                            'however, we see this as an opportunity and we are adapting \n' +
+                            'our food service distribution business to transition towards \n' +
+                            'a more sustainable future'}
                         />
                     </Col>
                 </Row>

@@ -11,7 +11,7 @@ const CareerSection = ({button,func,text,header}) => {
             <Row className={'py-lg-5 text-center'}>
                 <Col lg={{span: 6, offset: 3}}>
                     <div className="pt-lg-5 mt-lg-5">
-                        {header ? <HeaderText className='text-white  mt-lg-5 pt-lg-5 position-relative z-index-1'
+                        {header ? <HeaderText className='text-white fs-1-5 mt-lg-5 pt-lg-5 position-relative z-index-1'
                                               text={header}/> :''}
                         {text ?
                             <ParagraphText className={'text-white mb-lg-5 pb-lg-1 text-center position-relative z-index-1'}
