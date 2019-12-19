@@ -4,6 +4,7 @@ import PatekLogo from "../../../assets/img/patek-logo-white.svg";
 import NavigationBar from "../Navbar/NavigationBar";
 import './Header.css';
 import LogoPlaceholder from "./LogoPlaceholder";
+import GridLiner from "../GridLines/GridLiner";
 
 const Header = ({
                     children, img, className, absRightImg, absLeftImg, logo, align, form,
@@ -12,11 +13,18 @@ const Header = ({
                 }) => {
     return (
         <header
+            data-aos="fade-in"
+            data-aos-easing="ease-in-out"
+            data-aos-delay="500"
+            data-aos-once="true"
+            data-aos-duration={`1000`}
             className={`${type === 'full' ? 'h-lg-100vh' : 'mh-lg-70vh'} overflow-x-hidden overflow-y-hidden ${className ? className : ''}`}
             style={{
-                backgroundImage: 'linear-gradient(0deg,rgba(0,0,0,0.7),rgba(0,0,0,0.7)),' + `url(${img})`,
+                backgroundImage: 'linear-gradient(0deg, rgba(2, 68, 9, 0.7), rgb(8, 59, 11)),' + `url(${img})`,
+                backgroundBlendMode:'multiply',
                 backgroundSize: 'cover'
             }}>
+            <GridLiner/>
             <Container>
                 <NavigationBar logo={PatekLogo}/>
                 {type != 'full' ?

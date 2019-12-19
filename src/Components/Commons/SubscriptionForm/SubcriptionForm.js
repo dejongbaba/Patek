@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import {Form, FormControl, InputGroup} from "react-bootstrap";
 import Button from "../Button/Button";
-import {Icon} from "antd";
+import {Icon} from "antd/lib/index";
 import './subscriptionform.css';
 
 class SubcriptionForm extends Component {

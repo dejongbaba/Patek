@@ -1,5 +1,5 @@
 import React from 'react';
-import {Collapse, Icon} from "antd";
+import {Collapse, Icon} from "antd/lib/index";
 import './accordion.css';
 
 const {Panel} = Collapse;

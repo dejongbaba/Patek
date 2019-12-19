@@ -1,0 +1,13 @@
+.grid-line-body{
+    top:0;
+    width: 100%;
+    left: 0;
+    height: 100%;
+}
+.grid-line-item{
+    width: 150px;
+    height: 100%;
+    z-index: 1;
+    display: inline-block;
+    border-right: .5px solid rgba(60, 133, 82, 0.55);
+}

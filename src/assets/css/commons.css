@@ -540,7 +540,7 @@ code {
         font-size: 2rem !important;
     }
     .w-lg-15{
-        width: 15%;
+        width: 15%!important;
     }
 
     /* grid display */

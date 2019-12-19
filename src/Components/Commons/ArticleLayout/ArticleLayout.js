@@ -4,12 +4,14 @@ import ParagraphText from "../ParagraphText/ParagraphText";
 import './articleLayout.css';
 
 
+
 const ArticleLayout = ({img, className, category, topic, text, type, link, date}) => {
 
     if (type === 'line') {
         return (
             <>
-                <div className="mb-5 border-top-line pt-5">
+                <div
+                     className="mb-5 border-top-line pt-5">
                     <div className={`d-flex flex-column flex-lg-row align-items-lg-center 
                     ${topic?'justify-content-lg-between':'justify-content-lg-start' } 
                     mb-5`}>

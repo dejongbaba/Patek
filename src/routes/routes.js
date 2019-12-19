@@ -7,3 +7,6 @@ export const news = '/news';
 export const team = '/team';
 export const subscidiary = '/subscidiary';
 export const patecFood = '/patec-food';
+export const coloradoFarm = '/colorado-farms';
+export const goldenFood = '/golden-food';
+export const traveliFood = '/traveli-food';
