@@ -12,7 +12,7 @@ class SubcriptionForm extends Component {
 
     subscribe = (e) => {
         e.preventDefault();
-        // this.setState({loading: true});
+        this.setState({loading: true});
     };
 
     render() {

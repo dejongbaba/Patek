@@ -1,6 +1,6 @@
 import React from 'react';
 import {Col, Container, Row} from "react-bootstrap";
-import PatekLogo from "../../../assets/img/patek-logo-white.svg";
+import PatekLogo from "../../../assets/img/patek-logo-white@2x.png";
 import NavigationBar from "../Navbar/NavigationBar";
 import './Header.css';
 import LogoPlaceholder from "./LogoPlaceholder";
@@ -42,7 +42,7 @@ const Header = ({
                             </Col>
                         </Row>
                     : children}
-                {logo ? <LogoPlaceholder type={logoType} category={category} text={logoText} date={logoDate}/> : ''}
+                {logo ? <LogoPlaceholder image={logoImg} type={logoType} category={category} text={logoText} date={logoDate}/> : ''}
             </Container>
             {absLeftImg ?
                 <img className={'position-absolute bottom-left-5 d-none d-md-block w-45'} src={absLeftImg}/> : ''}

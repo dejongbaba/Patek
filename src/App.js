@@ -5,15 +5,18 @@ import Home from "./Containers/Home/Home";
 import About from "./Containers/About/About";
 import {
     about,
+    blog,
     career,
-    home,
-    team,
-    patecFood,
-    contact,
-    news,
-    sustainability,
     coloradoFarm,
-    goldenFood, traveliFood
+    contact,
+    event,
+    goldenFood,
+    home,
+    news,
+    patecFood,
+    sustainability,
+    team,
+    traveliFood, view
 } from "./routes/routes";
 import Team from "./Containers/Team/Team";
 import Career from "./Containers/Career/Career";
@@ -26,10 +29,11 @@ import GoldenFood from "./Containers/Food/GoldenFood";
 import TraveliFood from "./Containers/Food/TraveliFood";
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import ArticleViewer from "./Containers/ArticleViewer/ArticleViewer";
 
 class App extends Component {
 
-    constructor(props){
+    constructor(props) {
         super(props);
         AOS.init();
     }
@@ -48,6 +52,10 @@ class App extends Component {
                     <Route exact path={traveliFood} component={TraveliFood}/>
                     <Route exact path={coloradoFarm} component={Farm}/>
                     <Route exact path={news} component={News}/>
+                    <Route exact path={news} component={News}/>
+                    <Route exact path={view} component={ArticleViewer}/>
+                    <Route exact path={blog} component={News}/>
+                    <Route exact path={event} component={News}/>
                     <Route exact path={contact} component={Contact}/>
                     <Route exact path={sustainability} component={Sustainability}/>
                 </Switch>

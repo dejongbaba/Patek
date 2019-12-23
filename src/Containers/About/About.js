@@ -8,7 +8,6 @@ import Breadcrumb from "../../Components/Commons/Breadcrumb/Breadcrumb";
 import Section from "../../Components/Commons/Section/Section";
 import greenLeafBg from "../../assets/img/green-leaf-bg.svg";
 import triLeafImg from "../../assets/img/trileaf-img@2x.png";
-import meetMeBg from "../../assets/img/Meet-me-bg@2x.png";
 import aboutLeaf from "../../assets/img/about-leaf-bg.svg";
 import squareLeafIcon from "../../assets/img/square-leaf-img.svg";
 import squareServicesIcon from "../../assets/img/square-services-img.svg";
@@ -29,19 +28,24 @@ import SectionText from "../../Components/Commons/Section/SectionText";
 import "./about.css";
 import ArticleImage from "../../Components/Commons/ArticleImage/ArticleImage";
 import CareerSection from "../../Components/Commons/CareerSection/CareerSection";
+import {team} from "../../routes/routes";
+import {redirectTo} from "../../Facades/Facade";
 
-const About = () => {
+const About = (props) => {
+
+
+
     return (
         <>
             <Header img={AboutBgImg} type='half'>
-                        <Breadcrumb containerClass={'mb-5'}
-                                    links={[{name: 'home', path: '/'},
-                                        {name: 'about', path: '/about'}]}
-                        />
-                        <TextLabel positionClass={'justify-content-center'}
-                                   text={'we are patec'}
-                        />
-                        <HeaderText className={'text-white'} text={'About Us'}/>
+                <Breadcrumb containerClass={'mb-5'}
+                            links={[{name: 'home', path: '/'},
+                                {name: 'about', path: '/about'}]}
+                />
+                <TextLabel positionClass={'justify-content-center'}
+                           text={'we are patec'}
+                />
+                <HeaderText className={'text-white'} text={'About Us'}/>
             </Header>
 
             <Section bgImg={greenLeafBg} className={'py-lg-5 '}>
@@ -59,13 +63,13 @@ const About = () => {
                 </Row>
             </Section>
             <Section className={'bg-gray-gradient-30 py-lg-5 '}
-                     // colRightImg={greenLeafBg}
+                // colRightImg={greenLeafBg}
             >
                 <Row className={'py-lg-5'}>
-                    <Col lg={{span: 6 ,order:6}} >
-                        <ArticleImage type={'fluid'} image={articleImage} />
+                    <Col lg={{span: 6, order: 6}}>
+                        <ArticleImage type={'fluid'} image={articleImage}/>
                     </Col>
-                    <Col lg={{span: 5,order:1}}>
+                    <Col lg={{span: 5, order: 1}}>
                         <TextLabel positionClass={'my-lg-5'} text={'OUR BUSINESS'}/>
                         <HeaderText className={'my-lg-3 fs-2-5 patek-deep-green '}
                                     text={'Our Business Activities'}/>
@@ -78,11 +82,11 @@ const About = () => {
                 </Row>
             </Section>
             <Section className={'bg-patek-light-green py-lg-5 '}
-                     // colLeftImg={greenLeafBg}
+                // colLeftImg={greenLeafBg}
             >
                 <Row className={'py-lg-5'}>
                     <Col lg={{span: 6}}>
-                        <ArticleImage type={'fluid'} image={multiDimensionalImage} />
+                        <ArticleImage type={'fluid'} image={multiDimensionalImage}/>
                     </Col>
                     <Col lg={{span: 6}}>
                         <TextLabel positionClass={'my-lg-5'} text={'MULTI-DIMENSIONAL'}/>
@@ -107,7 +111,8 @@ const About = () => {
                 <Row className={'py-lg-5'}>
                     <Col lg={{span: 6, offset: 3}}>
                         <TextLabel positionClass={'my-lg-5 justify-content-lg-center'} text={'VALUE CHAIN'}/>
-                        <HeaderText className={'my-lg-3 fs-2-5 patek-deep-green text-lg-center'} text={'Our Value Chain'}/>
+                        <HeaderText className={'my-lg-3 fs-2-5 patek-deep-green text-lg-center'}
+                                    text={'Our Value Chain'}/>
                     </Col>
                 </Row>
                 <Row className='my-lg-5 py-lg-5'>
@@ -208,11 +213,10 @@ const About = () => {
                         <Button className={'position-relative z-index-1'} text={'See Products'}/>
                     </Col>
                 </Row>
-                <img src={aboutLeaf} className='position-absolute w-75 d-none d-lg-block left-left' alt="meet me background"/>
+                <img src={aboutLeaf} className='position-absolute w-75 d-none d-lg-block left-left'
+                     alt="meet me background"/>
             </Section>
-
-            <CareerSection header={'Meet the Team'} button={'Meet Us'} />
-
+            <CareerSection header={'Meet the Team'} button={'Meet Us'} func={() => redirectTo(team)}/>
             <SubscriptionSection/>
             <Footer/>
         </>

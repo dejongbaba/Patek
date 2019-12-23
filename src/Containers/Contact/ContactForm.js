@@ -1,11 +1,14 @@
 import React, {Component} from 'react';
-import {Button, Form, Icon, Input, Spin} from "antd";
+import {Button, Form, Icon, Input, message, Spin} from "antd";
 import {Col, Row} from "react-bootstrap";
 import './contactform.css';
 import formLeaf from '../../assets/img/form-leaf.svg';
+import emailjs from 'emailjs-com'
+
 const {TextArea} = Input;
 
-export const antIcon = <Icon type="loading" style={{fontSize: 24}} spin/>;
+export const antIcon = <Icon type="loading" style={{fontSize: 24,color:'green'}} spin/>;
+
 
 class ContactForm extends Component {
 
@@ -19,8 +22,37 @@ class ContactForm extends Component {
         this.props.form.validateFields((err, values) => {
             if (!err) {
                 console.log('Received values of form: ', values);
+                this.setState({isLoading: true});
+                this.sendmail(values);
             }
         });
+    };
+
+    sendmail = (params) => {
+        let template_params = {
+            "from_name": `${params.firstname} ${params.lastname}`,
+            "from_email": `${params.email}`,
+            "to_name": "Patek Firm",
+            "message_html": `${params.message}`
+        };
+
+        let service_id = "sendgrid";
+        let template_id = "template_bl8XEm9r";
+        let user_id = "user_uozLxKcauc2rN7DEnqxP9";
+
+
+        emailjs.send(service_id, template_id, template_params, user_id)
+            .then(result => {
+                message.success('Email Sent!');
+                this.setState({isLoading: false});
+
+                this.props.form.resetFields();
+            })
+            .catch(err => {
+                this.setState({isLoading: false});
+                message.error('Unable to send mail at the moment.');
+                console.log('err', err);
+            })
     };
 
     render() {
@@ -29,7 +61,8 @@ class ContactForm extends Component {
 
         return (
             <div className='position-lg-absolute w-lg-35 mt-3 right-9 z-index-1'>
-                {bgLeaf && <img src={formLeaf} className={'position-absolute w-75 right--250 z-index--1'} alt="form background leaf"/>}
+                {bgLeaf && <img src={formLeaf} className={'position-absolute w-75 right--250 z-index--1'}
+                                alt="form background leaf"/>}
                 <Form
                     className='contact-form bg-white px-5 bs-2'
                     onSubmit={this.handleSubmit}
@@ -75,7 +108,7 @@ class ContactForm extends Component {
                             </Col>
                             <Col md={12}>
                                 <Form.Item className={'contact-input'} label="Message">
-                                    {getFieldDecorator('Message', {
+                                    {getFieldDecorator('message', {
                                         rules: [
                                             {
                                                 required: true,

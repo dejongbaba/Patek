@@ -64,7 +64,7 @@ const ArticleLayout = ({img, className, category, topic, text, type, link, date}
                 <ParagraphText className='mb-3 patek-deep-green' text={text}/>
                 <div className="d-flex justify-content-between">
                     <p className='font-weight-bold fs-1 patek-deep-green'>{date}</p>
-                    {link ? <Link className={'patek-link'} to={link}>{link.replace('/', '')}</Link> : ''}
+                    {link ? <Link className={'patek-link'} to={link}>Read More</Link> : ''}
                 </div>
 
             </div>

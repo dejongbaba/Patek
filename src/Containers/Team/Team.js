@@ -20,8 +20,9 @@ import agriCommodity from "../../assets/img/agri-commodity.svg";
 import manWorking from "../../assets/img/man-working@2x.png";
 import womanInOffice from "../../assets/img/woman-in-office@2x.png";
 import "./team.css";
-import {about, home, team} from "../../routes/routes";
+import {about, career, home, team} from "../../routes/routes";
 import CareerSection from "../../Components/Commons/CareerSection/CareerSection";
+import {redirectTo} from "../../Facades/Facade";
 
 const Team = () => {
     return (
@@ -78,6 +79,7 @@ const Team = () => {
             <CareerSection header={'Interested in Working With Us?'}
                            text={'Join us In making a difference'}
                            button={'EXPLORE CAREERS'}
+                           func={() => redirectTo(career)}
             />
             <SubscriptionSection/>
             <Footer/>

@@ -14,7 +14,7 @@ import Button from "../../Components/Commons/Button/Button";
 import manWorking from "../../assets/img/man-working@2x.png";
 import womanInOffice from "../../assets/img/woman-in-office@2x.png";
 import "./sustainability.css";
-import {home, sustainability} from "../../routes/routes";
+import {contact, home, sustainability, team} from "../../routes/routes";
 import leafBGImg from "../../assets/img/green-leaf-bg-right.svg";
 import SectionText from "../../Components/Commons/Section/SectionText";
 import leafInCircle from "../../assets/img/white-leaf-in-circle.svg";
@@ -26,6 +26,7 @@ import ArticleLayout from "../../Components/Commons/ArticleLayout/ArticleLayout"
 import ArticleImage from "../../Components/Commons/ArticleImage/ArticleImage";
 import CircleIcon from "../../Components/Commons/ArticleImage/CircleIcon";
 import CareerSection from "../../Components/Commons/CareerSection/CareerSection";
+import {redirectTo} from "../../Facades/Facade";
 
 const Sustainability = () => {
     return (
@@ -231,6 +232,7 @@ const Sustainability = () => {
                 header={'" An Amazing Company at the frontiers of agro allied \n' +
                 'Development in West AFrica "'}
                 button={'CONTACT US'}
+                func={() => redirectTo(contact)}
             />
             <SubscriptionSection/>
             <Footer/>
