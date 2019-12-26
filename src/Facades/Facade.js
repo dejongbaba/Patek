@@ -25,3 +25,7 @@ export const isEmpty = (obj) => {
 export const redirectTo = (url) => {
     return window.location.href = url;
 };
+
+export const convertDate = (date) => {
+    // return moment() = url;
+};

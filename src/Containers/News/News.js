@@ -12,6 +12,7 @@ import {useGetArticles} from "../../Effects/Effects";
 import {blog, event, news} from "../../routes/routes";
 import ArticleSectionLayout from "../../Components/Commons/ArticleSectionLayout/ArticleSectionLayout";
 import {Route} from "react-router";
+import {Link} from "react-router-dom";
 import {IMAGE_URL} from "../../Api/api";
 import {isEmpty} from "../../Facades/Facade";
 
@@ -31,7 +32,8 @@ const News = ({location}) => {
                     type='half'
                     align={'left'}
                     logo={!isEmpty(firstArticle)}
-                    logoText={!isEmpty(firstArticle) ? firstArticle.title : ''}
+                    logoText={!isEmpty(firstArticle) ?
+                        <Link to={`/view/${firstArticle.id}`}>{firstArticle.title}</Link> : ''}
                     logoImg={!isEmpty(firstArticle) ? `${IMAGE_URL}${firstArticle.image[0].url}` : ''}
                     logoType={'blog'}
                     logoDate={!isEmpty(firstArticle) ? firstArticle.date : ''}

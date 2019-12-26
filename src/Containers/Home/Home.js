@@ -64,16 +64,17 @@ const carouselItems = [
 
     }];
 
-const CarouselItemStructure = (item) => <Row className='py-lg-5'>
-    <Col lg={{span: 6}}>
-        <img src={CarouselLeaf} className={'w-70'} alt="patek carousel image"/>
-    </Col>
-    <Col lg={5}>
-        <HeaderText className={'my-lg-5 fs-2-5 mh-lg-90'} text={item.title}/>
-        <ParagraphText text={item.desc} className={'light-black pr-lg-5 pb-lg-5 mb-lg-5'}/>
-        <Button className={'btn-patek-green text-uppercase'} text={'more details'}/>
-    </Col>
-</Row>;
+const CarouselItemStructure = (item) =>
+    <Row className='py-lg-5 my-lg-5'>
+        <Col lg={{span: 6}}>
+            <img src={CarouselLeaf} className={'w-70'} alt="patek carousel image"/>
+        </Col>
+        <Col lg={5}>
+            <HeaderText className={'my-lg-5 fs-2-5 mh-lg-90'} text={item.title}/>
+            <ParagraphText text={item.desc} className={'light-black pr-lg-5 pb-lg-5 mb-lg-5'}/>
+            <Button className={'btn-patek-green text-uppercase'} text={'more details'}/>
+        </Col>
+    </Row>;
 
 const Home = () => {
 
@@ -102,20 +103,20 @@ const Home = () => {
                                 animationDelay={'1000'}
                                 animationDuration={'1000'}
                                 className={'text-white mt-lg-5 fs-lg-4 with-square mb-5 mb-lg-0'}
-                                        text={["We Stay ahead ", <br/>, " of the Curve"]}/>
+                                text={["We Stay ahead ", <br/>, " of the Curve"]}/>
                             <ParagraphText
                                 animation={'fade-up'}
                                 animationDelay={'1000'}
                                 animationDuration={'2000'}
                                 text={'Embracing Innovation and Technology'}
-                                           className={'text-white mb-5 mb-lg-0'}/>
+                                className={'text-white mb-5 mb-lg-0'}/>
                         </div>
                     </Col>
                 </Row>
             </Header>
             <Section bgImg={greenLeafBg} data-aos-easing="ease-in-out"
                      data-aos-delay="500"
-                     data-aos-once="true" >
+                     data-aos-once="true">
                 <Row className='py-lg-5 px-lg-5 my-5 my-lg-0'>
                     <Col lg={{span: 6}}>
                         <ArticleImage type={'fluid'} image={homePageArtImage}/>
@@ -168,7 +169,8 @@ const Home = () => {
             <Section className={'bg-patek-light-green'} rightBgImg={leafBGImg}>
                 <Row className='pt-5 pb-3 pb-lg-0'>
                     <Col lg={{span: 4}}>
-                        <TextLabel className='patek-green' positionClass={'mb-3 mb-lg-0'} icon={threeCircleIcon} text='VALUES'/>
+                        <TextLabel className='patek-green' positionClass={'mb-3 mb-lg-0'} icon={threeCircleIcon}
+                                   text='VALUES'/>
                         <HeaderText className={'my-lg-3 fs-2-5 patek-deep-green '} text={'Our Core Values'}/>
                     </Col>
                 </Row>
@@ -231,7 +233,7 @@ const Home = () => {
                     </Col>
                 </Row>
             </Section>
-            <Section className={'bg-gray-gradient-30 pb-5 pb-lg-0'} bgImg={leafBGImg}>
+            <Section className={'bg-gray-gradient-30 pb-5 mh-lg-100vh pb-lg-0'} bgImg={leafBGImg}>
                 <Row className='py-5 pb-lg-0'>
                     <Col lg={{span: 4}}>
                         <TextLabel className='patek-green' icon={threeCircleIcon} text='SUBSIDIARIES'/>

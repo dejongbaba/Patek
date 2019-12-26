@@ -1,6 +1,16 @@
 import React from 'react';
 import {Nav, Navbar, NavDropdown} from 'react-bootstrap';
-import {about, career, contact, home, news, sustainability} from "../../../routes/routes";
+import {
+    about,
+    career,
+    coloradoFarm,
+    contact, goldenFood,
+    home,
+    news,
+    patecFood,
+    qualityPackaging,
+    sustainability, traveliFood
+} from "../../../routes/routes";
 import './NavigationBar.css';
 import './DropdownItem.css';
 import DropdownItem from "./DropdownItem";
@@ -28,16 +38,16 @@ const NavigationBar = ({className, logo, type}) => {
                         <NavDropdown title="Subscidiaries" id="basic-nav-dropdown">
                             <div className="d-flex">
                                 <div className="flex-item">
-                                    <DropdownItem title={'Patec Foods'} link={'patec-food'}/>
-                                    <DropdownItem title={'Quatlity Packaging'} link={'/quality-packaging'}/>
+                                    <DropdownItem title={'Patec Foods'} link={patecFood}/>
+                                    <DropdownItem title={'Quatlity Packaging'} link={qualityPackaging}/>
                                 </div>
                                 <div className="flex-item">
-                                    <DropdownItem title={'Colorado Farms'} link={'colorado-farms'}/>
-                                    <DropdownItem title={'Golden Foods'} link={'/golden-foods'}/>
+                                    <DropdownItem title={'Colorado Farms'} link={coloradoFarm}/>
+                                    <DropdownItem title={'Golden Foods'} link={goldenFood}/>
                                 </div>
                                 <div className="flex-item">
                                     <DropdownItem title={'Trevali Food Distribution'}
-                                                  link={'/traveli-food-distribution'}/>
+                                                  link={traveliFood}/>
                                 </div>
                             </div>
 

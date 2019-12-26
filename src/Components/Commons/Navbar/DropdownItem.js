@@ -5,7 +5,7 @@ import dropdownIcon from "../../../assets/img/dropdown-item-icon.svg";
 const DropdownItem = ({title, icon = dropdownIcon, linkClass, link = '#'}) => {
     return (
         <div>
-            <Link to={link} className={`${linkClass} dropdown-item align-items-center`}>
+            <Link to={link} className={`${linkClass? linkClass :''} dropdown-item align-items-center`}>
                 <img src={icon} className='mr-1' alt="dropdown icon"/><span>{title}</span>
             </Link>
         </div>

@@ -520,6 +520,9 @@ code {
     .mh-lg-70vh{
         min-height: 70vh;
     }
+    .mh-lg-100vh{
+        min-height: 100vh;
+    }
     .fs-lg-4{
         font-size: 4rem;
     }
