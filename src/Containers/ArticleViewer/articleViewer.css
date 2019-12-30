@@ -1,5 +1,6 @@
 .article-header-image{
     margin-bottom: -100px;
+    width: 80%;
 }
 
 .article-header-image:after{
