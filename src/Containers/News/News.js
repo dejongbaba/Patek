@@ -25,6 +25,7 @@ const News = ({location}) => {
         return a && a.length > 0 ? a[0] : {};
     };
     const firstArticle = getFirstArticle(allArticles);
+    console.log('first article',firstArticle);
 
     return (
         <>
@@ -33,11 +34,11 @@ const News = ({location}) => {
                     align={'left'}
                     logo={!isEmpty(firstArticle)}
                     logoText={!isEmpty(firstArticle) ?
-                        <Link to={`/view/${firstArticle.id}`}>{firstArticle.title}</Link> : ''}
+                        <Link className={'gray-link'} to={`/view/${firstArticle.id}`}>{firstArticle.title}</Link> : ''}
                     logoImg={!isEmpty(firstArticle) ? `${IMAGE_URL}${firstArticle.image[0].url}` : ''}
                     logoType={'blog'}
                     logoDate={!isEmpty(firstArticle) ? firstArticle.date : ''}
-                    category={!isEmpty(firstArticle) ? firstArticle.category.name : ''}
+                    category={!isEmpty(firstArticle) && firstArticle.category ? firstArticle.category.name : ''}
             >
                 <TextLabel className='text-white'
                            positionClass={'mt-5'}

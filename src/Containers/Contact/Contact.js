@@ -44,7 +44,7 @@ const Contact = () => {
                             />
                         </ContactInfo>
                     </Col>
-                    <Col lg={{span: 4}}>
+                    <Col lg={{span: 3,offset:1}}>
                         <ContactInfo title={'Email - '}
                                      icon={contactEmailIcon}
                         >
@@ -53,7 +53,7 @@ const Contact = () => {
                             <p>support@patecgroup.com</p>
                         </ContactInfo>
                     </Col>
-                    <Col lg={{span: 4}}>
+                    <Col lg={{span: 3,offset:1}}>
                         <ContactInfo title={'Locations - '}
                                      icon={contactPhoneIcon}
                         >

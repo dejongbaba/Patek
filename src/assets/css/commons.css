@@ -360,6 +360,13 @@ code {
 }
 
 /*links*/
+
+.gray-link{
+    color: #bfbfbf;
+}
+.gray-link:hover{
+    color: #bfbfbf05;
+}
 .footer-links {
     color: white;
     margin-bottom: 1rem;

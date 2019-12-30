@@ -1,6 +1,6 @@
-export const News = 'News';
-export const Event = 'Event';
-export const Blog = 'Blog';
+export const News = 'news';
+export const Event = 'events';
+export const Blog = 'blog';
 
 
 export const getNewsArticle = (data) => {
@@ -28,4 +28,13 @@ export const redirectTo = (url) => {
 
 export const convertDate = (date) => {
     // return moment() = url;
+};
+
+//Retrieves user inputs
+export const changeHandler = (event, context = this) => {
+    const name = event.target.name;
+    const value = event.target.value;
+    context.setState({
+        [name]: value
+    });
 };

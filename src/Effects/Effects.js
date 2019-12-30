@@ -63,6 +63,8 @@ export const useGetCareers = () => {
     return [careers, setCareers];
 };
 
+
+
 export const useGetJobs = () => {
 
     const [careers, setCareers] = useState([]);

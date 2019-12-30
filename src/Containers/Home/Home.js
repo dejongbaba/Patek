@@ -249,11 +249,12 @@ const Home = () => {
             <Section className={'bg-patek-light-green mh-vh-70'}>
                 <Row className='pt-5 pb-5 pb-lg-0 text-lg-center'>
                     <Col lg={{span: 8, offset: 2}}>
+                        <TextLabel className='patek-green' positionClass='justify-content-lg-center'
+                                   icon={threeCircleIcon} text='DYNAMIC'/>
                         <HeaderText className={'my-lg-3 fs-2 patek-deep-green'}
                                     text={'" An Amazing Company at the frontiers of agro allied Development in West AFrica "'}
                         />
-                        <TextLabel className='patek-green' positionClass='justify-content-lg-center'
-                                   icon={threeCircleIcon} text='DYNAMIC'/>
+
                     </Col>
                 </Row>
             </Section>
@@ -289,7 +290,6 @@ const Home = () => {
                                    topic={'Corn Harvest Only 30% Complete, USDA Says'}
                                    text={'More wet weather could continue to delay the U.S. harvest activity, this week'}
                     />
-
                 </div>
             </Section>
             <SubscriptionSection/>

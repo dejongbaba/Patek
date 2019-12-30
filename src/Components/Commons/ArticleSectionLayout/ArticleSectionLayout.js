@@ -21,17 +21,17 @@ const ArticleSectionLayout = ({pathname, articles}) => {
             subTitle = 'In the News';
             title = 'News';
             articles = getNewsArticle(a);
-            console.log('articles', articles);
+            console.log('News articles', articles);
         } else if (pname == event) {
             subTitle = 'In Event';
             title = 'Event';
             articles = getEventArticle(a);
-            console.log('event', articles);
+            console.log('event articles', articles,a);
         } else if (pname == blog) {
             subTitle = 'Our Blog';
             title = 'Blog';
             articles = getBlogArticle(a);
-            console.log('blog', articles);
+            console.log('blog articles', articles);
         }
 
         return [title, subTitle, articles]
@@ -56,9 +56,9 @@ const ArticleSectionLayout = ({pathname, articles}) => {
             <Row className={'mt-5'}>
                 {
                     content && content.length > 0 ?
-                        content.map((a) => {
+                        content.map((a,i) => {
                             return (
-                                <Col lg={{span: 4}}>
+                                <Col key={i} lg={{span: 4}}>
                                     <ArticleLayout
                                         type={'blog'}
                                         text={a.preview}

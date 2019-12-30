@@ -1,11 +1,14 @@
 import axios from 'axios';
 
-export const BASE_URL = 'http://localhost:1337/';
-export const IMAGE_URL = 'http://localhost:1337';
+export const BASE_URL = process.env.REACT_APP_BASE_URL;
+export const IMAGE_URL = process.env.REACT_APP_IMAGE_URL;
+export const MAIL_CHIMP_BASE_URL = process.env.REACT_APP_MAILCHIMP_BASE_URL;
+export const LIST_ID = '6fb14aa48c';
 
 
-const getAllArticles = `${BASE_URL}articles`;
+const subscribeUsertoListUrl = (listID) => `${MAIL_CHIMP_BASE_URL}lists/${listID}/members`;
 const getOneArticle = (id) => `${BASE_URL}articles/${id}`;
+const getAllArticles = `${BASE_URL}articles`;
 const getAllCategories = `${BASE_URL}categories`;
 const getAllJobs = `${BASE_URL}jobs`;
 const getAllCareers = `${BASE_URL}careers`;
@@ -17,13 +20,26 @@ export const getArticles = async () => {
     } catch (e) {
         return e.response;
     }
-};export const getArticle = async (id) => {
+};
+
+export const subscribeUser = async (params) => {
+    try {
+        return await axios.post(subscribeUsertoListUrl(LIST_ID), params);
+    } catch (e) {
+        console.log('error',e);
+        throw e;
+    }
+};
+
+
+export const getArticle = async (id) => {
     try {
         return await axios.get(getOneArticle(id));
     } catch (e) {
         return e.response;
     }
 };
+
 export const getCategories = async () => {
     try {
         return await axios.get(getAllCategories);
@@ -31,6 +47,7 @@ export const getCategories = async () => {
         return e.response;
     }
 };
+
 export const getJobs = async () => {
     try {
         return await axios.get(getAllJobs);

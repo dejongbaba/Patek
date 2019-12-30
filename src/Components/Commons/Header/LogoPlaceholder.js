@@ -21,6 +21,6 @@ const LogoPlaceholder = ({type,image=headerImage,category,text,date}) => {
             <img src={patekFoodLogo} className='w-50' alt="patek food logo "/>
         </div>
     );
-}
+};
 
 export default LogoPlaceholder;

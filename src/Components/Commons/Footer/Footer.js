@@ -4,7 +4,10 @@ import facebookIcon from "../../../assets/img/facebook.svg";
 import footerLogo from "../../../assets/img/patek-logo-white.svg";
 import footerBg from "../../../assets/img/footer-bg.svg";
 import {Col, Container, Row} from "react-bootstrap";
+import {Link} from "react-router-dom";
+
 import './footer.css';
+import {about, career, contact, home, news, sustainability} from "../../../routes/routes";
 
 const Footer = ({className, text, logo}) => {
     return (
@@ -23,16 +26,16 @@ const Footer = ({className, text, logo}) => {
                             </div>
                             <div className="flex-basis-60 d-flex flex-column flex-lg-row">
                                 <ul className='list-unstyled flex-basis-33'>
-                                    <li><a href="" className='footer-links'>Home</a></li>
-                                    <li><a href="" className='footer-links'>Careers</a></li>
+                                    <li><Link to={home} className='footer-links'>Home</Link></li>
+                                    <li><Link to={career} className='footer-links'>Career</Link></li>
                                 </ul>
                                 <ul className='list-unstyled flex-basis-33'>
-                                    <li><a href="" className='footer-links'>About Patec</a></li>
-                                    <li><a href="" className='footer-links'>News & Events</a></li>
+                                    <li><Link to={about} className='footer-links'>About</Link></li>
+                                    <li><Link to={news} className='footer-links'>News & Events</Link></li>
                                 </ul>
                                 <ul className='list-unstyled flex-basis-33'>
-                                    <li><a href="" className='footer-links'>Subsidiaries</a></li>
-                                    <li><a href="" className='footer-links'>Contact Us</a></li>
+                                    <li><Link to={sustainability} className='footer-links'>Sustainability</Link></li>
+                                    <li><Link to={contact} className='footer-links'>Contact</Link></li>
                                 </ul>
 
                             </div>
