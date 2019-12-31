@@ -6,7 +6,7 @@ import ArticleImage from "../../Components/Commons/ArticleImage/ArticleImage";
 import ArticlePlaceholder from "../../assets/img/colorado-article-image.png";
 import {Col, Row} from "react-bootstrap";
 import Header from "../../Components/Commons/Header/Header";
-import AboutBgImg from "../../assets/img/about-bg-image.svg";
+import AboutBgImg from "../../assets/img/subscidiaries-header@2x.png";
 import Breadcrumb from "../../Components/Commons/Breadcrumb/Breadcrumb";
 import {coloradoFarm, goldenFood, home} from "../../routes/routes";
 import TextLabel from "../../Components/Commons/TextLabel/TextLabel";

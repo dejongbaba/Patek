@@ -1,6 +1,6 @@
 import React from 'react';
 import Header from "../../Components/Commons/Header/Header";
-import AboutBgImg from '../../assets/img/about-bg-image.svg'
+import careerBanner from '../../assets/img/career-banner@2x.png'
 import {Col, Row} from "react-bootstrap";
 import TextLabel from "../../Components/Commons/TextLabel/TextLabel";
 import HeaderText from "../../Components/Commons/HeaderText/HeaderText";
@@ -63,7 +63,7 @@ const Career = () => {
 
     return (
         <>
-            <Header img={AboutBgImg} type='half'>
+            <Header img={careerBanner} type='half'>
                         <Breadcrumb containerClass={'mb-lg-5'}
                                     links={
                                         [

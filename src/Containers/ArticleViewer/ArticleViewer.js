@@ -3,22 +3,26 @@ import SubscriptionSection from "../../Components/Commons/SubscriptionSection/Su
 import Footer from "../../Components/Commons/Footer/Footer";
 import SecondaryNav from "../../Components/Commons/Navbar/SecondaryNav";
 import ContentViewer from "../../Components/Commons/ContentViewer/ContentViewer";
-import {useGetArticle} from "../../Effects/Effects";
+import {useGetArticle, useGetArticles} from "../../Effects/Effects";
 import Section from "../../Components/Commons/Section/Section";
 import TextLabel from "../../Components/Commons/TextLabel/TextLabel";
 import HeaderText from "../../Components/Commons/HeaderText/HeaderText";
 import ArticleLayout from "../../Components/Commons/ArticleLayout/ArticleLayout";
 import {Col, Row} from "react-bootstrap";
+import {Empty} from "antd";
 import image from '../../assets/img/headr-article-img@2x.png';
 import ArticleBio from "../../Components/Commons/ArticleBio/ArticleBio";
 import ArticleHeader from "../../Components/Commons/ArticleHeader/ArticleHeader";
 import './articleViewer.css';
 import GridLiner from "../../Components/Commons/GridLines/GridLiner";
 import {IMAGE_URL} from "../../Api/api";
+import {getFirstThreeArticles} from "../../Facades/Facade";
 
 
 const ArticleViewer = ({match: {params}}) => {
     const [article] = useGetArticle(params.id);
+    const [allArticles, loading] = useGetArticles();
+    const threeArticles = getFirstThreeArticles(allArticles);
     console.log('article', article);
     return (
         <div className={'bg-patek-light-green position-relative'}>
@@ -45,42 +49,31 @@ const ArticleViewer = ({match: {params}}) => {
                 <TextLabel text={'In the News'}/>
                 <HeaderText text={'Similar News'}/>
                 <Row>
-                    <Col lg={{span: 4}}>
-                        <ArticleLayout
-                            type={'blog'}
-                            text={'We are up to date with current technology trends \n' +
-                            'in food production, processing and packaging. '}
-                            category={'news'}
-                            topic={'Corn Harvest Only 30% Complete, USDA \n' +
-                            'Says and so does EFCC'}
-                            date={'8th Jun, 2019'}
-                            img={image}
-                        />
-                    </Col>
-                    <Col lg={{span: 4}}>
-                        <ArticleLayout
-                            type={'blog'}
-                            text={'We are up to date with current technology trends \n' +
-                            'in food production, processing and packaging. '}
-                            category={'news'}
-                            topic={'Corn Harvest Only 30% Complete, USDA \n' +
-                            'Says and so does EFCC'}
-                            date={'8th Jun, 2019'}
-                            img={image}
-                        />
-                    </Col>
-                    <Col lg={{span: 4}}>
-                        <ArticleLayout
-                            type={'blog'}
-                            text={'We are up to date with current technology trends \n' +
-                            'in food production, processing and packaging. '}
-                            category={'news'}
-                            topic={'Corn Harvest Only 30% Complete, USDA \n' +
-                            'Says and so does EFCC'}
-                            date={'8th Jun, 2019'}
-                            img={image}
-                        />
-                    </Col>
+                    {
+                        threeArticles ?
+
+                            threeArticles.map((a,i)=>{
+                                return (
+                                    <Col key={i} lg={{span: 4}}>
+                                        <ArticleLayout
+                                            type={'blog'}
+                                            text={a.preview}
+                                            category={a.category.name}
+                                            topic={a.title}
+                                            date={a.date}
+                                            link={'/view/' + a.id}
+                                            img={a.image && a.image.length > 0 ? `${IMAGE_URL}${a.image[0].url}` : ''}
+                                        />
+                                    </Col>
+                                )
+                            })
+                            :
+                            <div className="d-flex justify-content-between">
+                                <Empty description={'no article'}/>
+                                <Empty description={'no article'}/>
+                                <Empty description={'no article'}/>
+                            </div>
+                    }
                 </Row>
 
             </Section>

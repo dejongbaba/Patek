@@ -6,7 +6,7 @@ export const MAIL_CHIMP_BASE_URL = process.env.REACT_APP_MAILCHIMP_BASE_URL;
 export const LIST_ID = '6fb14aa48c';
 
 
-const subscribeUsertoListUrl = (listID) => `${MAIL_CHIMP_BASE_URL}lists/${listID}/members`;
+const subscribeUsertoListUrl =`${BASE_URL}subscribers`;
 const getOneArticle = (id) => `${BASE_URL}articles/${id}`;
 const getAllArticles = `${BASE_URL}articles`;
 const getAllCategories = `${BASE_URL}categories`;
@@ -24,9 +24,8 @@ export const getArticles = async () => {
 
 export const subscribeUser = async (params) => {
     try {
-        return await axios.post(subscribeUsertoListUrl(LIST_ID), params);
+        return await axios.post(subscribeUsertoListUrl, params);
     } catch (e) {
-        console.log('error',e);
         throw e;
     }
 };

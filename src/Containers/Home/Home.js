@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link, Redirect} from 'react-router-dom';
 import headerImgOne from "../../assets/img/header-bg-one@2x.png"
 import threeCircleIcon from "../../assets/img/three-circle-icon.svg"
 import patekOutline from "../../assets/img/patec-outline.svg"
@@ -10,9 +11,6 @@ import leafBGImg from "../../assets/img/green-leaf-bg-right.svg"
 import greenLeafBg from "../../assets/img/green-leaf-bg.svg"
 import avocadoCircle from "../../assets/img/avocado-circle-icon.svg"
 import whiteCircle from "../../assets/img/white-circle-icons.svg"
-import truckImage from "../../assets/img/truck-img@2x.png"
-import monkImage from "../../assets/img/monk-forest@2x.png"
-import monkImageCut from "../../assets/img/forest-img-cut@2x.png"
 import homePageArtImage from "../../assets/img/homepage-article-img@2x.png"
 import Header from "../../Components/Commons/Header/Header";
 import {Col, Row} from "react-bootstrap";
@@ -27,6 +25,10 @@ import Footer from "../../Components/Commons/Footer/Footer";
 import ArticleLayout from "../../Components/Commons/ArticleLayout/ArticleLayout";
 import SubscriptionSection from "../../Components/Commons/SubscriptionSection/SubscriptionSection";
 import ArticleImage from "../../Components/Commons/ArticleImage/ArticleImage";
+import {useGetArticles} from "../../Effects/Effects";
+import {Empty, Skeleton} from "antd";
+import {BASE_URL, IMAGE_URL} from "../../Api/api";
+import {getFirstFourArticles, redirectTo} from "../../Facades/Facade";
 
 
 const valueText = 'Patec Group, founded in 2010 and headquartered \n' +
@@ -78,6 +80,8 @@ const CarouselItemStructure = (item) =>
 
 const Home = () => {
 
+    const [allArticles, loading] = useGetArticles();
+    const firstFourArticles = getFirstFourArticles(allArticles);
     return (
         <div>
             <Header className='position-relative'
@@ -266,30 +270,55 @@ const Home = () => {
                                    icon={whiteCircle}/>
                         <HeaderText text={'In the News'} className='text-white fs-2-5'/>
                     </div>
-                    <ArticleLayout img={truckImage}
-                                   category={'News'}
-                                   text={'More wet weather could continue to delay the U.S. harvest activity,this week'}
-                                   topic={'Corn Harvest Only 30% Complete, USDA Says'}
-                                   className={'second-item grid-row-span-1-3 grid-column-span-2-4'}/>
 
-                    <ArticleLayout img={monkImage}
-                                   category={'Article'}
-                                   topic={'The Agro - Allied way'}
-                                   text={'Read more...'}
-                    />
 
-                    <ArticleLayout img={monkImage}
-                                   category={'Article'}
-                                   topic={'The Agro - Allied way'}
-                                   text={'Read more...'}
-                    />
+                    {loading ? <>
+                            <Skeleton loading={loading}/>
+                            <Skeleton loading={loading}/>
+                            <Skeleton loading={loading}/>
+                            <Skeleton loading={loading}/>
+                        </> :
 
-                    <ArticleLayout img={monkImageCut}
-                                   category={'News'}
-                                   className={"fifth-item grid-column-span-2-4"}
-                                   topic={'Corn Harvest Only 30% Complete, USDA Says'}
-                                   text={'More wet weather could continue to delay the U.S. harvest activity, this week'}
-                    />
+                        firstFourArticles.length > 0 ?
+                            firstFourArticles.map((a, i) => {
+                                return (
+                                    <ArticleLayout img={`${IMAGE_URL}${a.image[0].url}`}
+                                                   category={a.category.name}
+                                                   topic={a.title}
+                                                   text={<span className={'cursor-pointer'} onClick={()=>redirectTo('/view/' + a.id)}>Read more...</span>}
+                                                   className={
+                                                       i === 0 ?
+                                                           'second-item grid-row-span-1-3 grid-column-span-2-4' :
+                                                           i === 3 ? "fifth-item grid-column-span-2-4" : ''}
+                                    />
+                                )
+                            }) :
+                            <Empty description={'No article Available'}/>
+                    }
+                    {/*<ArticleLayout img={truckImage}*/}
+                    {/*               category={'News'}*/}
+                    {/*               text={'More wet weather could continue to delay the U.S. harvest activity,this week'}*/}
+                    {/*               topic={'Corn Harvest Only 30% Complete, USDA Says'}*/}
+                    {/*               className={'second-item grid-row-span-1-3 grid-column-span-2-4'}/>*/}
+
+                    {/*<ArticleLayout img={monkImage}*/}
+                    {/*               category={'Article'}*/}
+                    {/*               topic={'The Agro - Allied way'}*/}
+                    {/*               text={'Read more...'}*/}
+                    {/*/>*/}
+
+                    {/*<ArticleLayout img={monkImage}*/}
+                    {/*               category={'Article'}*/}
+                    {/*               topic={'The Agro - Allied way'}*/}
+                    {/*               text={'Read more...'}*/}
+                    {/*/>*/}
+
+                    {/*<ArticleLayout img={monkImageCut}*/}
+                    {/*               category={'News'}*/}
+                    {/*               className={"fifth-item grid-column-span-2-4"}*/}
+                    {/*               topic={'Corn Harvest Only 30% Complete, USDA Says'}*/}
+                    {/*               text={'More wet weather could continue to delay the U.S. harvest activity, this week'}*/}
+                    {/*/>*/}
                 </div>
             </Section>
             <SubscriptionSection/>

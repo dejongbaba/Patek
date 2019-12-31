@@ -6,16 +6,19 @@ import {getBlogArticle, getEventArticle, getNewsArticle} from "../Facades/Facade
 export const useGetArticles = () => {
 
     const [articles, setArticles] = useState([]);
+    const [loading, setLoading] = useState(true);
     useEffect(() => {
         getArticles().then(result => {
             if (result) {
                 setArticles(result.data);
+                setLoading(false);
             }
         }).catch(err => {
+            setLoading(false);
             message.error('unable to get articles!', 3);
         });
     }, []);
-    return [articles];
+    return [articles,loading];
 };
 
 export const useGetArticle = (id) => {

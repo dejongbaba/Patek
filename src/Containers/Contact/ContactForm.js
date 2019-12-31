@@ -40,12 +40,10 @@ class ContactForm extends Component {
         let template_id = "template_bl8XEm9r";
         let user_id = "user_uozLxKcauc2rN7DEnqxP9";
 
-
         emailjs.send(service_id, template_id, template_params, user_id)
             .then(result => {
                 message.success('Email Sent!');
                 this.setState({isLoading: false});
-
                 this.props.form.resetFields();
             })
             .catch(err => {
@@ -78,7 +76,7 @@ class ContactForm extends Component {
                                                 message: 'Please input your first name',
                                             },
                                         ],
-                                    })(<Input placeholder={'Adekunle'}/>)}
+                                    })(<Input />)}
                                 </Form.Item>
                             </Col>
                             <Col md={6}>
@@ -90,7 +88,7 @@ class ContactForm extends Component {
                                                 message: 'Please input your last name',
                                             },
                                         ],
-                                    })(<Input placeholder={'Ciroma'}/>)}
+                                    })(<Input />)}
                                 </Form.Item>
                             </Col>
                             <Col md={12}>
@@ -103,7 +101,7 @@ class ContactForm extends Component {
                                                 message: 'The input is not valid E-mail!',
                                             },
                                         ],
-                                    })(<Input placeholder={'adekunleciroma@gmail.com'}/>)}
+                                    })(<Input />)}
                                 </Form.Item>
                             </Col>
                             <Col md={12}>
@@ -115,7 +113,7 @@ class ContactForm extends Component {
                                                 message: 'Please input your project address',
                                             },
                                         ]
-                                    })(<TextArea rows={4} placeholder={'tell us about your project'}/>)}
+                                    })(<TextArea rows={4} placeholder={'Talk to us now'}/>)}
                                 </Form.Item>
                             </Col>
                         </Row>
@@ -128,10 +126,11 @@ class ContactForm extends Component {
                                         htmlType="button"
                                         onClick={this.handleSubmit}
                                         disabled={isLoading}
+                                        loading={isLoading}
                                     >
-                                        Create Project
+                                        SEND
                                     </Button>
-                                    {isLoading ? <Spin indicator={antIcon}/> : null}
+                                    {/*{isLoading ? <Spin indicator={antIcon}/> : null}*/}
                                 </Form.Item>
                             </Col>
                         </Row>

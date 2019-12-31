@@ -2,7 +2,8 @@ import React from 'react';
 import {Link} from 'react-router-dom';
 import ParagraphText from "../ParagraphText/ParagraphText";
 import './articleLayout.css';
-
+import moment from "moment";
+import {redirectTo} from "../../../Facades/Facade";
 
 
 const ArticleLayout = ({img, className, category, topic, text, type, link, date}) => {
@@ -11,9 +12,9 @@ const ArticleLayout = ({img, className, category, topic, text, type, link, date}
         return (
             <>
                 <div
-                     className="mb-5 border-top-line pt-5">
+                    className="mb-5 border-top-line pt-5">
                     <div className={`d-flex flex-column flex-lg-row align-items-lg-center 
-                    ${topic?'justify-content-lg-between':'justify-content-lg-start' } 
+                    ${topic ? 'justify-content-lg-between' : 'justify-content-lg-start'} 
                     mb-5`}>
                         <h3 className='quenales-bold text-capitalize patek-deep-green'>
                             {topic}
@@ -54,17 +55,20 @@ const ArticleLayout = ({img, className, category, topic, text, type, link, date}
                          }}
                     />
                     <div className="position-absolute ls-0-5 fs-0-7 text-uppercase text-white
-                     z-index-1 left-bottom-2-10 py-lg-2 px-lg-4 bg-black ">
+                     z-index-1 left-bottom-2-10 py-lg-2 py-2 px-2 px-lg-4 bg-black ">
                         {category}
                     </div>
                 </div>
-                <h3 className='quenales-bold mt-3 fs-1-5 text-capitalize patek-deep-green'>
+                <h3 className='quenales-bold ellipsis mt-3 fs-1-5 text-capitalize patek-deep-green'>
                     {topic}
                 </h3>
                 <ParagraphText className='mb-3 patek-deep-green' text={text}/>
                 <div className="d-flex justify-content-between">
-                    <p className='font-weight-bold fs-1 patek-deep-green'>{date}</p>
-                    {link ? <Link className={'patek-link'} to={link}>Read More</Link> : ''}
+                    <p className='font-weight-bold fs-1 patek-deep-green'>{moment(date).format('ll')}</p>
+                    {link ? <a className={'patek-link'} onClick={(e) => {
+                        e.preventDefault();
+                        redirectTo(link)
+                    }}>Read More</a> : ''}
                 </div>
 
             </div>

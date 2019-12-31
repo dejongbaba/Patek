@@ -76,7 +76,10 @@ code {
 .bg-gray-gradient-30 {
     background: var(--gray-gradient-30);
 }
-
+.green-skeleton .ant-skeleton-content .ant-skeleton-paragraph > li{
+    /*color:  var(--patek-green);*/
+    /*background-color:  var(--patek-green);*/
+}
 .patek-green {
     color: var(--patek-green);
 }
@@ -359,6 +362,7 @@ code {
     color: white;
 }
 
+
 /*links*/
 
 .gray-link{
@@ -419,6 +423,9 @@ code {
     border-top: .3rem solid var(--patek-green);
 }
 
+.cursor-pointer{
+    cursor: pointer;
+}
 
 /* foreground colors */
 .text-black {
@@ -615,5 +622,10 @@ code {
         width: 25% !important;
     }
 
+    .paginate-btn {
+        width: 120px;
+        font-size: 0.8rem;
+        padding: 4px 4px;
+    }
 
 }

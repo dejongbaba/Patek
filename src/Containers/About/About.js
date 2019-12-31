@@ -1,6 +1,6 @@
 import React from 'react';
 import Header from "../../Components/Commons/Header/Header";
-import AboutBgImg from '../../assets/img/about-bg-image.svg'
+import AboutBgImg from '../../assets/img/about-banner@2x.png'
 import {Col, Row} from "react-bootstrap";
 import TextLabel from "../../Components/Commons/TextLabel/TextLabel";
 import HeaderText from "../../Components/Commons/HeaderText/HeaderText";

@@ -9,7 +9,7 @@ import ArticlePlaceholder from "../../assets/img/patek-food-img@2x.png";
 // import image from "../../assets/img/intent-icon-customer.svg";
 import {Col, Row} from "react-bootstrap";
 import Header from "../../Components/Commons/Header/Header";
-import AboutBgImg from "../../assets/img/about-bg-image.svg";
+import foodBanner from "../../assets/img/patek-food-banner@2x.png";
 import purviewImage from "../../assets/img/purview-image@2x.png";
 import solutionImage from "../../assets/img/solution-image@2x.png";
 import Breadcrumb from "../../Components/Commons/Breadcrumb/Breadcrumb";
@@ -62,7 +62,7 @@ const accordionItemStructure = (item) => <ParagraphText text={item.desc} classNa
 const Food = () => {
     return (
         <>
-            <Header img={AboutBgImg} type='half'
+            <Header img={foodBanner} type='half'
                     align={'left'} logo={true}>
                 <Breadcrumb containerClass={'mb-5 text-left'}
                             links={

@@ -1,7 +1,7 @@
 import React from 'react';
 import twitterIcon from "../../../assets/img/twitter.svg";
 import facebookIcon from "../../../assets/img/facebook.svg";
-import footerLogo from "../../../assets/img/patek-logo-white.svg";
+import footerLogo from "../../../assets/img/patek-logo-white@2x.png";
 import footerBg from "../../../assets/img/footer-bg.svg";
 import {Col, Container, Row} from "react-bootstrap";
 import {Link} from "react-router-dom";
@@ -11,15 +11,15 @@ import {about, career, contact, home, news, sustainability} from "../../../route
 
 const Footer = ({className, text, logo}) => {
     return (
-        <div className='position-relative mh-vh-50 bg-cover bg-no-repeat footer'
+        <div className='position-relative bg-cover bg-no-repeat footer'
              style={{
                  backgroundImage: `url(${footerBg})`,
              }}
         >
             <Container>
-                <Row className={'pt-5'}>
+                <Row className={'py-5'}>
                     <Col>
-                        <div className="footer-content d-flex flex-column flex-lg-row pt-lg-5">
+                        <div className="footer-content d-flex mb-lg-5 flex-column flex-lg-row pt-lg-5">
                             <div className="footer-logo flex-basis-30 mb-5 mb-lg-0">
                                 {logo ? <img src={logo} alt="footer logo"/> :
                                     <img src={footerLogo} alt="footer logo"/>}
@@ -40,7 +40,7 @@ const Footer = ({className, text, logo}) => {
 
                             </div>
                             <div className="footer-social-media flex-basis-30 mb-5 mb-lg-0 pb-5 pb-lg-5">
-                                <h5 className='text-white font-weight-bold'>Connect with us</h5>
+                                <p className='text-white'>Connect with us</p>
                                 <div className="d-flex">
                                     <a href="http://www.facebook.com" target='_blank'>
                                         <img src={twitterIcon} className='mr-2' alt="twitter icon"/>

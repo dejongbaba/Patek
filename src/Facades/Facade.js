@@ -6,6 +6,13 @@ export const Blog = 'blog';
 export const getNewsArticle = (data) => {
     return data && data.length > 0 ? data.filter(d => d && d.category && d.category.name == News) : [];
 };
+
+export const getFirstFourArticles = (article) => {
+    return article && article.length > 4  ? article.slice(0,4):article;
+};
+export const getFirstThreeArticles = (article) => {
+    return article && article.length > 3  ? article.slice(0,3):article;
+};
 export const getEventArticle = (data) => {
     return data && data.length > 0 ? data.filter(d => d && d.category && d.category.name == Event) : [];
 };

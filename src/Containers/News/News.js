@@ -20,7 +20,7 @@ import {isEmpty} from "../../Facades/Facade";
 const News = ({location}) => {
 
     const {pathname} = location;
-    const [allArticles] = useGetArticles();
+    const [allArticles,loading] = useGetArticles();
     const getFirstArticle = (a) => {
         return a && a.length > 0 ? a[0] : {};
     };
@@ -54,11 +54,11 @@ const News = ({location}) => {
             </div>
 
             <Route path={news}
-                   render={(props) => <ArticleSectionLayout {...props} pathname={pathname} articles={allArticles}/>}/>
+                   render={(props) => <ArticleSectionLayout {...props} loading={loading} pathname={pathname} articles={allArticles}/>}/>
             <Route path={blog}
-                   render={(props) => <ArticleSectionLayout {...props} pathname={pathname} articles={allArticles}/>}/>
+                   render={(props) => <ArticleSectionLayout {...props} loading={loading} pathname={pathname} articles={allArticles}/>}/>
             <Route path={event}
-                   render={(props) => <ArticleSectionLayout {...props} pathname={pathname} articles={allArticles}/>}/>
+                   render={(props) => <ArticleSectionLayout {...props} loading={loading} pathname={pathname} articles={allArticles}/>}/>
 
             <CareerSection
                 header={'" An Amazing Company at the frontiers of agro allied \n' +

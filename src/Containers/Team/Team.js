@@ -1,6 +1,6 @@
 import React from 'react';
 import Header from "../../Components/Commons/Header/Header";
-import AboutBgImg from '../../assets/img/about-bg-image.svg'
+import TeamBannerImg from '../../assets/img/team-banner@2x.png'
 import {Col, Row} from "react-bootstrap";
 import TextLabel from "../../Components/Commons/TextLabel/TextLabel";
 import HeaderText from "../../Components/Commons/HeaderText/HeaderText";
@@ -27,7 +27,7 @@ import {redirectTo} from "../../Facades/Facade";
 const Team = () => {
     return (
         <>
-            <Header img={AboutBgImg} type='half'>
+            <Header img={TeamBannerImg} type='half'>
                         <Breadcrumb containerClass={'mb-5'}
                                     links={
                                         [

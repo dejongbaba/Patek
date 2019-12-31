@@ -35,8 +35,8 @@ const NavigationBar = ({className, logo, type}) => {
                     <Nav className="ml-auto mr-lg-2 navbar-nav">
                         <NavLink exact activeClassName={'active'} className="nav-link" to={home}>Home</NavLink>
                         <NavLink activeClassName={'active'} className="nav-link" to={about}>About</NavLink>
-                        <NavDropdown title="Subscidiaries" id="basic-nav-dropdown">
-                            <div className="d-flex">
+                        <NavDropdown title="Subsidiaries" id="basic-nav-dropdown">
+                            <div className="d-flex flex-column flex-md-row">
                                 <div className="flex-item">
                                     <DropdownItem title={'Patec Foods'} link={patecFood}/>
                                     <DropdownItem title={'Quatlity Packaging'} link={qualityPackaging}/>
