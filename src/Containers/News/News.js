@@ -14,7 +14,7 @@ import ArticleSectionLayout from "../../Components/Commons/ArticleSectionLayout/
 import {Route} from "react-router";
 import {Link} from "react-router-dom";
 import {IMAGE_URL} from "../../Api/api";
-import {isEmpty} from "../../Facades/Facade";
+import {getImageFromArticle, isEmpty} from "../../Facades/Facade";
 
 
 const News = ({location}) => {
@@ -35,7 +35,7 @@ const News = ({location}) => {
                     logo={!isEmpty(firstArticle)}
                     logoText={!isEmpty(firstArticle) ?
                         <Link className={'gray-link'} to={`/view/${firstArticle.id}`}>{firstArticle.title}</Link> : ''}
-                    logoImg={!isEmpty(firstArticle) ? `${IMAGE_URL}${firstArticle.image[0].url}` : ''}
+                    logoImg={getImageFromArticle(firstArticle)}
                     logoType={'blog'}
                     logoDate={!isEmpty(firstArticle) ? firstArticle.date : ''}
                     category={!isEmpty(firstArticle) && firstArticle.category ? firstArticle.category.name : ''}

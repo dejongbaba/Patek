@@ -23,6 +23,7 @@ import CarouselLeaf from "../../assets/img/carousel-leaf-img@2x.png";
 import Button from "../../Components/Commons/Button/Button";
 import CareerSection from "../../Components/Commons/CareerSection/CareerSection";
 import {useGetCareers, useGetJobs} from "../../Effects/Effects";
+import {getColoradoFarmsJobs, getPatekFoodJobs, getQualityPackageJobs, getGoldenFoodJobs} from "../../Facades/Facade";
 
 
 const accordionItems = [
@@ -60,6 +61,13 @@ const Career = () => {
 
 
     const [jobs, setJobs] = useGetJobs();
+
+    const pfJobs = getPatekFoodJobs(jobs);
+    const qpJobs = getQualityPackageJobs(jobs);
+    const cfJobs = getColoradoFarmsJobs(jobs);
+    const gfJobs = getGoldenFoodJobs(jobs);
+
+    console.log('all jobs',jobs,pfJobs,qpJobs,cfJobs,gfJobs);
 
     return (
         <>
@@ -147,7 +155,7 @@ const Career = () => {
                 </Row>
                 <Row className={'mt-5'}>
                     <Col lg={{span: 10,offset:1}}>
-                        <Accordion items={jobs} itemStructure={accordionItemStructure}/>
+                        <Accordion items={pfJobs} itemStructure={accordionItemStructure}/>
                     </Col>
                 </Row>
             </Section>
@@ -160,7 +168,7 @@ const Career = () => {
                 </Row>
                 <Row className={'mt-5'}>
                     <Col lg={{span: 10,offset:1}}>
-                        <Accordion items={jobs} itemStructure={accordionItemStructure}/>
+                        <Accordion items={cfJobs} itemStructure={accordionItemStructure}/>
                     </Col>
                 </Row>
             </Section>
@@ -173,7 +181,7 @@ const Career = () => {
                 </Row>
                 <Row className={'mt-5'}>
                     <Col lg={{span: 10,offset:1}}>
-                        <Accordion items={jobs} itemStructure={accordionItemStructure}/>
+                        <Accordion items={qpJobs} itemStructure={accordionItemStructure}/>
                     </Col>
                 </Row>
             </Section>
@@ -186,7 +194,7 @@ const Career = () => {
                 </Row>
                 <Row className={'mt-5'}>
                     <Col lg={{span: 10,offset:1}}>
-                        <Accordion items={jobs} itemStructure={accordionItemStructure}/>
+                        <Accordion items={gfJobs} itemStructure={accordionItemStructure}/>
                     </Col>
                 </Row>
             </Section>

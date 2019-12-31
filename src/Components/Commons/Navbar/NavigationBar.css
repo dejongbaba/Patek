@@ -72,10 +72,15 @@
         color: rgb(255, 255, 255);
         border-color: rgb(255, 255, 255);
     }
+    .navigation .navbar-nav .nav-link {
+        font-size: 0.9rem;
+        width: 1rem;
+    }
 }
 
 @media all and (min-width: 1200px) {
     .dropdown-menu {
         left: -160px;
     }
+
 }

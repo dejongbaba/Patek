@@ -1,3 +1,12 @@
 .nav-breadcrumb .active{
     color: #d8d8d8 !important;
 }
+
+
+
+@media all and (max-width: 480px) {
+    .nav-breadcrumb{
+        font-size: 0.8rem;
+    }
+
+}

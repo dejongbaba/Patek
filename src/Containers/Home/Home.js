@@ -1,5 +1,4 @@
 import React from 'react';
-import {Link, Redirect} from 'react-router-dom';
 import headerImgOne from "../../assets/img/header-bg-one@2x.png"
 import threeCircleIcon from "../../assets/img/three-circle-icon.svg"
 import patekOutline from "../../assets/img/patec-outline.svg"
@@ -27,8 +26,7 @@ import SubscriptionSection from "../../Components/Commons/SubscriptionSection/Su
 import ArticleImage from "../../Components/Commons/ArticleImage/ArticleImage";
 import {useGetArticles} from "../../Effects/Effects";
 import {Empty, Skeleton} from "antd";
-import {BASE_URL, IMAGE_URL} from "../../Api/api";
-import {getFirstFourArticles, redirectTo} from "../../Facades/Facade";
+import {getFirstFourArticles, getImageFromArticle, redirectTo} from "../../Facades/Facade";
 
 
 const valueText = 'Patec Group, founded in 2010 and headquartered \n' +
@@ -282,10 +280,11 @@ const Home = () => {
                         firstFourArticles.length > 0 ?
                             firstFourArticles.map((a, i) => {
                                 return (
-                                    <ArticleLayout img={`${IMAGE_URL}${a.image[0].url}`}
+                                    <ArticleLayout img={getImageFromArticle(a)}
                                                    category={a.category.name}
                                                    topic={a.title}
-                                                   text={<span className={'cursor-pointer'} onClick={()=>redirectTo('/view/' + a.id)}>Read more...</span>}
+                                                   text={<span className={'cursor-pointer'}
+                                                               onClick={() => redirectTo('/view/' + a.id)}>Read more...</span>}
                                                    className={
                                                        i === 0 ?
                                                            'second-item grid-row-span-1-3 grid-column-span-2-4' :

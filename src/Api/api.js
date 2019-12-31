@@ -8,7 +8,7 @@ export const LIST_ID = '6fb14aa48c';
 
 const subscribeUsertoListUrl =`${BASE_URL}subscribers`;
 const getOneArticle = (id) => `${BASE_URL}articles/${id}`;
-const getAllArticles = `${BASE_URL}articles`;
+const getAllArticles = `${BASE_URL}articles?_sort=created_at:desc`;
 const getAllCategories = `${BASE_URL}categories`;
 const getAllJobs = `${BASE_URL}jobs`;
 const getAllCareers = `${BASE_URL}careers`;

@@ -13,7 +13,7 @@ import qpBanner from "../../assets/img/qp-banner@2x.png";
 import purviewImage from "../../assets/img/purview-image@2x.png";
 import solutionImage from "../../assets/img/solution-image@2x.png";
 import Breadcrumb from "../../Components/Commons/Breadcrumb/Breadcrumb";
-import {home, patecFood} from "../../routes/routes";
+import {contact, home, patecFood, team} from "../../routes/routes";
 import TextLabel from "../../Components/Commons/TextLabel/TextLabel";
 import HeaderText from "../../Components/Commons/HeaderText/HeaderText";
 import threeCircleIcon from "../../assets/img/three-circle-icon.svg";
@@ -27,6 +27,9 @@ import meetMeBg from "../../assets/img/Meet-me-bg@2x.png";
 import aquaCultureIcon from "../../assets/img/acquaculture-icon.svg";
 import SecondaryNav from "../../Components/Commons/Navbar/SecondaryNav";
 import CareerSection from "../../Components/Commons/CareerSection/CareerSection";
+import {redirectTo} from "../../Facades/Facade";
+import SectionGrid from "../../Components/Commons/SectionGrid/SectionGrid";
+import SectionGridItem from "../../Components/Commons/SectionGridItem/SectionGridItem";
 
 const carouselItems = [
     {
@@ -72,7 +75,7 @@ const QualityPackaging = () => {
                                 ]
                             }
                 />
-                <HeaderText className={'text-left text-white'} text={'Patec TraveliFood'}/>
+                <HeaderText className={'text-left text-white'} text={'Quality Packaging'}/>
             </Header>
 
             <div className={'py-lg-5 bg-patek-light-green'}>
@@ -279,11 +282,32 @@ const QualityPackaging = () => {
                         'of fish on an industrial scale (12,700 MT of fish per annum) to \n' +
                         'meet mass demand.'}/>
                     </Col>
-
+                </Row>
+            </Section>
+            <Section className={'bg-gray-gradient-30 py-lg-5 '}>
+                <Row className={'py-lg-5'}>
+                    <Col lg={{span: 6, offset: 3}}>
+                        <TextLabel positionClass={'my-lg-5 justify-content-center'}
+                                   text={'MANAGEMENT TEAM'}/>
+                        <HeaderText className={'text-center my-lg-3 fs-2 fs-lg-2-5  patek-deep-green '}
+                                    text={'Management Team'}/>
+                    </Col>
+                </Row>
+                <Row className={'py-lg-5'}>
+                    <Col lg={{span: 12}}>
+                        <SectionGrid>
+                            <SectionGridItem text={'OPERATIONS'} title={'Ikenna Strange'}/>
+                            <SectionGridItem text={'OPERATIONS'} title={'Ikenna Strange'}/>
+                            <SectionGridItem text={'OPERATIONS'} title={'Ikenna Strange'}/>
+                            <SectionGridItem text={'OPERATIONS'} title={'Ikenna Strange'}/>
+                            <SectionGridItem text={'OPERATIONS'} title={'Ikenna Strange'}/>
+                            <SectionGridItem text={'OPERATIONS'} title={'Ikenna Strange'}/>
+                        </SectionGrid>
+                    </Col>
                 </Row>
             </Section>
             <CareerSection header={'" An Amazing Company at the frontiers of agro allied Development in West AFrica "'}
-                           button={'CONTACT US'}
+                           button={'CONTACT US'} func={() => redirectTo(contact)}
             />
             <SubscriptionSection/>
             <Footer/>

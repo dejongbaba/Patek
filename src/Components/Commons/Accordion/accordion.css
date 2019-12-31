@@ -24,6 +24,9 @@
     right: 5rem;
     left: auto;
 }
+.ant-collapse-content > .ant-collapse-content-box {
+    padding: 5rem;
+}
 
 @media all and (max-width:480px){
     .bg-white.ant-collapse-icon-position-right > .ant-collapse-item > .ant-collapse-header {

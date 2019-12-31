@@ -10,8 +10,8 @@ const TextLabel = ({text, icon=threeCircleIcon, className='patek-green',
             <div
                 data-aos={`${animation?animation:'fade-up'}`}
                 data-aos-easing={`ease`}
-                data-aos-duration={`${animationDuration?animationDuration:'100'}`}
-                data-aos-delay={`${animationDelay?animationDelay:'300'}`}
+                data-aos-duration={`${animationDuration?animationDuration:'500'}`}
+                data-aos-delay={`${animationDelay?animationDelay:'100'}`}
                 data-aos-once={`true`}
                 className={`d-flex align-items-center ${positionClass}`}>
                 <p className={`text-uppercase mb-0 hk-grotesk-bold text-label ls-0-3 ls-lg-1 mr-3 ${className ? className : ''}`}>

@@ -70,16 +70,17 @@ export const useGetCareers = () => {
 
 export const useGetJobs = () => {
 
-    const [careers, setCareers] = useState([]);
+    const [jobs, setJobs] = useState([]);
     useEffect(() => {
         getJobs().then(result => {
             if (result) {
-                setCareers(result.data);
+                console.log('results',result);
+                setJobs(result.data);
             }
         }).catch(err => {
             message.error('unable to get jobs!', 3);
         });
     }, []);
 
-    return [careers, setCareers];
+    return [jobs, setJobs];
 };
