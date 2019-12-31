@@ -543,6 +543,9 @@ code {
     .ls-lg-1{
         letter-spacing: 1rem;
     }
+    .ls-lg-0-5{
+        letter-spacing: .5rem;
+    }
 
     .fs-lg-2-5{
         font-size: 2.5rem;

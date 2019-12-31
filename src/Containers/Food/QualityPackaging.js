@@ -1,6 +1,7 @@
 import React from 'react';
 import BannerSection from "../../Components/Commons/BannerSection/BannerSection";
-import foodImage from "../../assets/img/food-image@2x.png";
+import foodImage from "../../assets/img/qp-header@2x.png";
+import qpLogo from "../../assets/img/qp-logo-img@2x.png";
 import ParagraphText from "../../Components/Commons/ParagraphText/ParagraphText";
 import ArticleLayout from "../../Components/Commons/ArticleLayout/ArticleLayout";
 import ArticleImage from "../../Components/Commons/ArticleImage/ArticleImage";
@@ -10,7 +11,8 @@ import ArticlePlaceholder from "../../assets/img/patek-food-img@2x.png";
 import {Col, Row} from "react-bootstrap";
 import Header from "../../Components/Commons/Header/Header";
 import qpBanner from "../../assets/img/qp-banner@2x.png";
-import purviewImage from "../../assets/img/purview-image@2x.png";
+import qpStrategyImg from "../../assets/img/qp-strategy-img@2x.png";
+import qpInnovativeImg from "../../assets/img/qp-innovative-img@2x.png";
 import solutionImage from "../../assets/img/solution-image@2x.png";
 import Breadcrumb from "../../Components/Commons/Breadcrumb/Breadcrumb";
 import {contact, home, patecFood, team} from "../../routes/routes";
@@ -30,6 +32,8 @@ import CareerSection from "../../Components/Commons/CareerSection/CareerSection"
 import {redirectTo} from "../../Facades/Facade";
 import SectionGrid from "../../Components/Commons/SectionGrid/SectionGrid";
 import SectionGridItem from "../../Components/Commons/SectionGridItem/SectionGridItem";
+import Button from "../../Components/Commons/Button/Button";
+import CircleIcon from "../../Components/Commons/ArticleImage/CircleIcon";
 
 const carouselItems = [
     {
@@ -65,8 +69,7 @@ const accordionItemStructure = (item) => <ParagraphText text={item.desc} classNa
 const QualityPackaging = () => {
     return (
         <>
-            <Header img={qpBanner} type='half'
-                    align={'left'} logo={true}>
+            <Header img={qpBanner} type='half' align={'left'} logo={true} logoImg={qpLogo}>
                 <Breadcrumb containerClass={'mb-5 text-left'}
                             links={
                                 [
@@ -85,7 +88,7 @@ const QualityPackaging = () => {
 
             <Section className={'bg-patek-light-green mh-vh-50'}>
                 <BannerSection bgImagePosition={'right'} image={foodImage}/>
-                <Row className='pt-lg-5'>
+                <Row className='my-lg-5'>
                     <Col lg={{span: 8, offset: 2}} className={'text-lg-center'}>
                         <TextLabel className='patek-green'
                                    positionClass='justify-content-lg-center mb-5 mb-lg-0'
@@ -97,193 +100,84 @@ const QualityPackaging = () => {
                                     'gap of packaging solutions within the region'}
                         />
                     </Col>
-                    <Col lg={{span: 6}} className={'pr-lg-5'}>
+
+                    <Col lg={{span: 8, offset: 2}} className={'text-lg-center'}>
                         <TextLabel className='patek-green'
-                                   positionClass={'mb-5 mb-lg-0'}
+                                   positionClass={'justify-content-lg-center mb-3 mb-lg-0'}
                                    icon={threeCircleIcon} text='ABOUT US'/>
-                        <HeaderText className={'my-lg-3 fs-2-5 patek-deep-green '}
+                        <HeaderText className={'my-lg-5 fs-2-5 patek-deep-green '}
                                     text={'About Us'}/>
-                        <ParagraphText
-                            text={'We are a part of Patec Group and a sister company\n' + 'of quality packaging, a recycling and packaging \n' +
-                            'solution company'}/>
+                    </Col>
 
-                        <ArticleImage
-                            image={ArticlePlaceholder}
-                            bgImagePosition={'right'}
-                            type={'fluid'}
-                        />
+                </Row>
+                <Row className='my-5'>
+                    <Col lg={{span: 6}} className={'pr-lg-5'}>
+                        <HeaderText className={'my-3 fs-2-5 patek-deep-green '}
+                                    text={'"We set the pace in the \n' +
+                                    'industry on the opportunies \n' +
+                                    'in recycling"'}/>
                     </Col>
                     <Col lg={{span: 6}}>
-                        <ArticleLayout type={'line'}
-                                       topic={'Aquaculture'}
-                                       text={'Our Shao Aquaculture farm is the single largest \n' +
-                                       'aquaculture farm in the region, with a vertically\n' +
-                                       'integrated system that utilizes eco-friendly, \n' +
-                                       'modern Recirculatory Aquaculture System (RAS) \n' +
-                                       'and Aquaponic technologies to grow a variety of \n' +
-                                       'premium fish for household and food service \n' +
-                                       'industry'}
-                                       category={'Shao Aquaculture TraveliFood'}
-                                       link={'/food'}
+                        <ParagraphText className={'mb-5'} text={'Focusing on environmental sustainability, our leading plastic \n' +
+                        'recycling plant with a capacity of approximately 1,500 tons \n' +
+                        'per annum has been able to set the pace in the industry  \n' +
+                        'on the opportunities in recycling, spurring up waste-to-wealth \n' +
+                        'recycling programs and collection stations across the state.'}
                         />
-                        <ArticleLayout type={'line'}
-                                       topic={'Fish Trading'}
-                                       text={'The Fish Trading arm deals in the importation \n' +
-                                       'of frozen fish like Hake, Mackerel, Korean Mackerel,\n' +
-                                       'Herring, Blue whiting etc. from Asia, Europe and \n' +
-                                       'other leading global fish markets.'}
-                                       category={'Fish Trading Arm'}
-                                       link={'/food'}
+
+                        <ParagraphText className={'mb-5'} text={'Through our ﬁlm blowing and bag making plant, the recycled \n' +
+                        'materials are utilized to produce top-of the-line products at \n' +
+                        'competitive pricing.'}
                         />
+
+                        <Button text={'Download Brochure'} />
                     </Col>
+
                 </Row>
             </Section>
 
-            <Section className={'bg-gray-gradient-30'} bgImg={leafBGImg}>
-                <Row className='pt-lg-5'>
-                    <Col lg={{span: 4}}>
-                        <TextLabel className='patek-green' icon={threeCircleIcon} text='WHAT WE DO'/>
-                        <HeaderText className={'my-lg-3 fs-2-5 patek-deep-green '} text={'What We do'}/>
-                    </Col>
-                </Row>
-
-                <Row className='pt-lg-5'>
-                    <Col lg={{span: 4}}>
-                        <SectionText iconClass={'w-35'} icon={aquaCultureIcon} title={'Aquaculture'}
-                                     type={'imageTitle'}/>
-                    </Col>
-                </Row>
-
-                <Row className={'mt-5'}>
-                    <Col lg={{span: 6}}>
-                        <ArticleImage type={'fluid'} image={purviewImage}/>
+            <Section className={'bg-patek-light-green'} bgImg={leafBGImg}>
+                <Row className='my-5'>
+                    <Col lg={{span: 6}} className={'mb-5 mb-lg-0'}>
+                        <ArticleImage type={'fluid'} image={qpStrategyImg}/>
                     </Col>
                     <Col lg={{span: 6}}>
-                        <HeaderText className={'my-lg-3 fs-2-5 patek-deep-green '} text={'Purview'}/>
-                        <ParagraphText text={'The rapid decline of food supply and wild-caught fish \n' +
-                        'has given rise to the need for Aquaculture. With an \n' +
-                        'estimated 3 billion people getting 20% of their protein \n' +
-                        'from fish, the production and supply of fish is a key \n' +
-                        'plan of the global food security agenda.\n'}/>
+                        <TextLabel className='patek-green' icon={threeCircleIcon} text='STRATEGIC OBJECTIVES'/>
+                        <HeaderText className={'my-3 fs-2-5 patek-deep-green '} text={'Strategic Objectives'}/>
+                        <ParagraphText className={'mb-3'} text={'To be one of the top 5 packaging manufacturers in Nigeria \n' +
+                        'that would promote a growing recycling culture in the \n' +
+                        'North-central region of Nigeria.'}/>
+                        <ParagraphText className={'mb-3'} text={'We would also tap into the agricultural revoluon by \n' +
+                        'providing agro ﬁlms for improved farming techniques \n' +
+                        'and also agro sacks to packaging needs for increasing output'}
+                        />
                     </Col>
                 </Row>
-                <Row className={'mt-5'}>
-                    <Col lg={{span: 6,order:6}}>
-                        <ArticleImage type={'fluid'} image={solutionImage}/>
+                <Row className={'my-5 py-lg-5'}>
+                    <Col lg={{span: 6,order:6}} className={'mb-5 mb-lg-0'}>
+                        <ArticleImage type={'fluid'} image={qpInnovativeImg}/>
                     </Col>
                     <Col lg={{span: 6,order:1}}>
-                        <HeaderText className={'my-lg-3 fs-2-5 patek-deep-green '} text={'Our Solution'}/>
-                        <ParagraphText text={'Aquaculture was established by Patec Foods to serve \n' +
-                        'as a medium for sustaining the supply of this vital food \n' +
-                        'source and close the gap of the annual demand of fish \n' +
-                        'estimated at 2.7million MT in Nigeria through our \n' +
-                        'vertically integrated fish farm built on 10 hectares of \n' +
-                        'land in Ilorin, Kwara State and has a capacity for production \n' +
-                        'of fish on an industrial scale (12,700 MT of fish per annum) to \n' +
-                        'meet mass demand.'}/>
-                    </Col>
-
-                </Row>
-                <Row className={'mt-5'}>
-                    <Col lg={{span: 6}}>
-                        <HeaderText className={'my-lg-3 fs-2-5 patek-deep-green '} text={'Our Operations'}/>
-                        <ParagraphText text={'Operations Include'}/>
-                    </Col>
-                </Row>
-
-                <Row className={'mt-5'}>
-                    <Col lg={{span: 4}}>
-                        <SectionText
-                            type={'imageTitle'}
-                            icon={avocadoCircle}
-                            title={'Curiousity'}
-                        />
-                        <SectionText
-                            type={'imageTitle'}
-                            icon={avocadoCircle}
-                            title={'Productivity'}
-                        />
-                        <SectionText
-                            type={'imageTitle'}
-                            icon={avocadoCircle}
-                            title={'Productivity'}
-                        />
-                    </Col>
-                    <Col lg={{span: 4}}>
-                        <SectionText
-                            type={'imageTitle'}
-                            icon={avocadoCircle}
-                            title={'Professionalism'}
-                        />
-                        <SectionText
-                            type={'imageTitle'}
-                            icon={avocadoCircle}
-                            title={'QualityPackaging'}
-                        />
-                        <SectionText
-                            type={'imageTitle'}
-                            icon={avocadoCircle}
-                            title={'Customer-focus'}
-                        />
-                    </Col>
-                    <Col lg={{span: 4}}>
-                        <SectionText
-                            type={'imageTitle'}
-                            icon={avocadoCircle}
-                            title={'Value-drive'}
-                        />
-                        <SectionText
-                            type={'imageTitle'}
-                            icon={avocadoCircle}
-                            title={'Innovation'}
+                        <TextLabel className='patek-green' icon={threeCircleIcon} text='INNOVATION'/>
+                        <HeaderText className={'my-3 fs-2-5 patek-deep-green '} text={'We are Innovative'}/>
+                        <ParagraphText className={'mb-3'} text={'Quality Packaging places major emphasis on integrating \n' +
+                        'advanced technology in product development, production \n' +
+                        'and management. Our recycling plant is the largest in \n' +
+                        'Kwara state, with a capacity of 6MT daily we have been able \n' +
+                        'to incorporate skill and modern technology in recycling to \n' +
+                        'enable us meet packaging needs that oﬀer outstanding \n' +
+                        'funconality while remaining price friendly. '}/>
+                        <CircleIcon/>
+                        <ParagraphText className={'my-3'} text={'We strive to serve our customers beer by researching in latest \n' +
+                        'producon techniques and equipment with the aim of adding \n' +
+                        'value to our products and keeping us miles ahead of competition. I\n' +
+                        'nnovaon Investments in advanced technology and innovaon are \n' +
+                        'the main driving force for the success of QPL\'s strategy'}
                         />
                     </Col>
                 </Row>
             </Section>
 
-            <Section className={'bg-patek-light-green mh-vh-50'}>
-                <Row className='pt-lg-5'>
-                    <Col lg={{span: 4}}>
-                        <TextLabel className='patek-green' positionClass={'mb-5 mb-lg-0'} icon={threeCircleIcon} text='WHAT WE DO'/>
-                        <HeaderText className={'my-lg-3 fs-2-5 patek-deep-green '} text={'What We do'}/>
-                    </Col>
-                </Row>
-                <Row className='pt-lg-5'>
-                    <Col lg={{span: 4}}>
-                        <SectionText iconClass={'w-35'} icon={aquaCultureIcon} title={'Fish Trading'}
-                                     type={'imageTitle'}/>
-                    </Col>
-                </Row>
-                <Row className={'mt-5'}>
-                    <Col lg={{span: 6}}>
-                        <ArticleImage type={'fluid'} image={purviewImage}/>
-                    </Col>
-                    <Col lg={{span: 6}}>
-                        <HeaderText className={'my-lg-3 fs-2-5 patek-deep-green '} text={'Purview'}/>
-                        <ParagraphText text={'The rapid decline of food supply and wild-caught fish \n' +
-                        'has given rise to the need for Aquaculture. With an \n' +
-                        'estimated 3 billion people getting 20% of their protein \n' +
-                        'from fish, the production and supply of fish is a key \n' +
-                        'plan of the global food security agenda.\n'}/>
-                    </Col>
-                </Row>
-                <Row className={'mt-5'}>
-                    <Col lg={{span: 6,order:6}}>
-                        <ArticleImage type={'fluid'} image={solutionImage}/>
-                    </Col>
-                    <Col lg={{span: 6,order:1}}>
-                        <HeaderText className={'my-lg-3 fs-2-5 patek-deep-green '} text={'Our Solution'}/>
-                        <ParagraphText text={'Aquaculture was established by Patec Foods to serve \n' +
-                        'as a medium for sustaining the supply of this vital food \n' +
-                        'source and close the gap of the annual demand of fish \n' +
-                        'estimated at 2.7million MT in Nigeria through our \n' +
-                        'vertically integrated fish farm built on 10 hectares of \n' +
-                        'land in Ilorin, Kwara State and has a capacity for production \n' +
-                        'of fish on an industrial scale (12,700 MT of fish per annum) to \n' +
-                        'meet mass demand.'}/>
-                    </Col>
-                </Row>
-            </Section>
             <Section className={'bg-gray-gradient-30 py-lg-5 '}>
                 <Row className={'py-lg-5'}>
                     <Col lg={{span: 6, offset: 3}}>

@@ -26,7 +26,6 @@
 @media all and (max-width: 480px){
     .secondary-nav {
         border-bottom: 1px solid rgba(0,0,0,0.03);
-        /*padding: 18rem 2rem 2rem ;*/
         padding: 1rem ;
     }
     .secondary-nav li {
@@ -36,8 +35,7 @@
         height: 50px;
     }
     .secondary-nav__link {
-        display: block;
-        width: 20px;
+        display: inline-block;
         padding-left: 0;
         padding-bottom: .5rem;
         margin-left: 0;
