@@ -52,7 +52,7 @@ export const isEmpty = (obj) => {
 
 export const getImageFromArticle = (article) => {
     if (article.image == null) return  noImgAvail;
-    return !isEmpty(article) && article.image.length > 0 ? `${IMAGE_URL}${article.image[0].url}` : noImgAvail
+    return !isEmpty(article) && article.image.length > 0 ? `${article.image[0].url}` : noImgAvail
 };
 
 export const redirectTo = (url) => {

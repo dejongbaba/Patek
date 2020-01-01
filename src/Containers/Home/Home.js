@@ -292,7 +292,9 @@ const Home = () => {
                                     />
                                 )
                             }) :
-                            <Empty description={'No article Available'}/>
+                            <div className="text-center my-lg-5 ">
+                                <Empty className={'text-white'} description={'No article Available'}/>
+                            </div>
                     }
                     {/*<ArticleLayout img={truckImage}*/}
                     {/*               category={'News'}*/}

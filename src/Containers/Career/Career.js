@@ -55,7 +55,7 @@ const accordionItems = [
 
     }];
 
-const accordionItemStructure = (j) => <ParagraphText text={j.Description} className={'text-green-1 pt-lg-5 mb-lg-5'}/>;
+const accordionItemStructure = (j) => <ParagraphText type={'pre'} text={j.Description} className={'text-green-1 pt-lg-5 mb-lg-5'}/>;
 
 const Career = () => {
 
