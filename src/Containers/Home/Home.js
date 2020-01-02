@@ -136,7 +136,7 @@ const Home = () => {
             >
                 <Row className='pt-lg-5 px-lg-5 py-5 pb-lg-0'>
                     <Col lg={{span: 4, offset: 4}}>
-                        <TextLabel className='patek-green' positionClass={'mb-3 mb-lg-0'}
+                        <TextLabel className='patek-green' positionClass={'justify-content-center mb-3 mb-lg-0'}
                                    icon={threeCircleIcon} text='DYNAMIC'/>
                         <HeaderText className={'my-lg-3 fs-2-5 patek-deep-green text-lg-center'}
                                     text={'Vision, Mission & Core Values'}/>

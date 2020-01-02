@@ -58,6 +58,10 @@
     background-color: transparent;
     border: 0;
 }
+.navbar-toggler:focus{
+    text-decoration: none;
+    outline: 1px solid var(--nav-green, #64B900);
+}
 
 @media all and (max-width: 480px) {
     .navbar {
