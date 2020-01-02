@@ -16,14 +16,13 @@ import ArticleHeader from "../../Components/Commons/ArticleHeader/ArticleHeader"
 import './articleViewer.css';
 import GridLiner from "../../Components/Commons/GridLines/GridLiner";
 import {IMAGE_URL} from "../../Api/api";
-import {getFirstThreeArticles} from "../../Facades/Facade";
+import {getFirstThreeArticles, getImageFromArticle} from "../../Facades/Facade";
 
 
 const ArticleViewer = ({match: {params}}) => {
     const [article] = useGetArticle(params.id);
     const [allArticles, loading] = useGetArticles();
     const threeArticles = getFirstThreeArticles(allArticles);
-    console.log('article', article);
     return (
         <div className={'bg-patek-light-green position-relative'}>
             <ArticleHeader>
@@ -35,8 +34,7 @@ const ArticleViewer = ({match: {params}}) => {
                                 {article && article.category ? article.category.name : 'no category'}
                             </div>
                             <HeaderText className='fs-lg-2 mb-lg-5' text={article ? article.title : 'no title'}/>
-                            <img src={`${article && article.image ? IMAGE_URL + article.image[0].url : image}`}
-                                 className='article-header-image' alt=""/>
+                            <img src={getImageFromArticle(article)} className='article-header-image' alt="article image"/>
                         </div>
                     </Col>
                 </Row>
@@ -51,7 +49,6 @@ const ArticleViewer = ({match: {params}}) => {
                 <Row>
                     {
                         threeArticles ?
-
                             threeArticles.map((a,i)=>{
                                 return (
                                     <Col key={i} lg={{span: 4}}>
@@ -62,7 +59,7 @@ const ArticleViewer = ({match: {params}}) => {
                                             topic={a.title}
                                             date={a.date}
                                             link={'/view/' + a.id}
-                                            img={a.image && a.image.length > 0 ? `${IMAGE_URL}${a.image[0].url}` : ''}
+                                            img={getImageFromArticle(a)}
                                         />
                                     </Col>
                                 )
@@ -75,7 +72,6 @@ const ArticleViewer = ({match: {params}}) => {
                             </div>
                     }
                 </Row>
-
             </Section>
             <SubscriptionSection/>
             <Footer/>
