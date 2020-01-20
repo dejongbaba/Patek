@@ -84,7 +84,7 @@ const Home = () => {
         <div>
             <Header className='position-relative'
                     img={headerImgOne}
-                    absLeftImg={patekOutline}
+                    // absLeftImg={patekOutline}
                     absRightImg={treeBranches}
                     primaryLeftImg={greenLeaf}
                     SecondaryLeftImg={fadedLeaf}
@@ -93,18 +93,18 @@ const Home = () => {
                     <Col lg={{span: 6, offset: 6}}>
                         <div className="pt-lg-5 pb-5 pb-lg-0">
                             <div className="mt-lg-5">
-                                <TextLabel className='patek-green'
-                                           animation={'fade-in'}
-                                           animationDelay={'500'}
-                                           animationDuration={'1000'}
-                                           positionClass={'my-5 mt-lg-0'}
-                                           icon={threeCircleIcon} text='patec'/>
+                                {/*<TextLabel className='patek-green'*/}
+                                {/*           animation={'fade-in'}*/}
+                                {/*           animationDelay={'500'}*/}
+                                {/*           animationDuration={'1000'}*/}
+                                {/*           positionClass={'my-5 mt-lg-0'}*/}
+                                {/*           icon={threeCircleIcon} text='patec'/>*/}
                             </div>
                             <HeaderText
                                 animation={'fade-up'}
                                 animationDelay={'1000'}
                                 animationDuration={'1000'}
-                                className={'text-white mt-lg-5 fs-lg-4 with-square mb-5 mb-lg-0'}
+                                className={'text-white mt-lg-5 fs-lg-4 pt-lg-5 with-square mb-5 mb-lg-0'}
                                 text={["We Stay ahead ", <br/>, " of the Curve"]}/>
                             <ParagraphText
                                 animation={'fade-up'}
@@ -131,9 +131,7 @@ const Home = () => {
                     </Col>
                 </Row>
             </Section>
-            <Section className={'bg-patek-light-green'}
-
-            >
+            <Section className={'bg-patek-light-green'}>
                 <Row className='pt-lg-5 px-lg-5 py-5 pb-lg-0'>
                     <Col lg={{span: 4, offset: 4}}>
                         <TextLabel className='patek-green' positionClass={'justify-content-center mb-3 mb-lg-0'}
@@ -145,13 +143,13 @@ const Home = () => {
                 <Row className={'mt-5'}>
                     <Col lg={{span: 4}}>
                         <SectionText
-                            icon={require('../../assets/img/deep-colorado-leaf.svg')}
+                            icon={require('../../assets/img/Group 297.svg')}
                             title={'VALUES'}
                             description={'To establish a world class business focused on quality and customer satisfaction.'}/>
                     </Col>
                     <Col lg={{span: 4}}>
                         <SectionText
-                            icon={require('../../assets/img/light-colorado-leaf.svg')}
+                            icon={require('../../assets/img/Group 298.svg')}
                             title={'Our Mission'}
                             description={'To be one of the most recognizable brands \n' +
                             'in the Nigerian agro-allied business space in \n' +
@@ -160,7 +158,7 @@ const Home = () => {
                     </Col>
                     <Col lg={{span: 4}}>
                         <SectionText
-                            icon={require('../../assets/img/deep-colorado-leaf.svg')}
+                            icon={require('../../assets/img/Group 299.svg')}
                             title={'Core Values'}
                             description={'To establish a world class business focused \n' +
                             'on quality and customer satisfaction.'}/>
@@ -280,11 +278,12 @@ const Home = () => {
                         firstFourArticles.length > 0 ?
                             firstFourArticles.map((a, i) => {
                                 return (
-                                    <ArticleLayout img={getImageFromArticle(a)}
+                                    <ArticleLayout key={i}
+                                                   img={getImageFromArticle(a)}
                                                    category={a.category.name}
                                                    topic={a.title}
-                                                   text={<span className={'cursor-pointer'}
-                                                               onClick={() => redirectTo('/view/' + a.id)}>Read more...</span>}
+                                                   text={<span className={'cursor-pointer'} onClick={() => redirectTo('/view/' + a.id)}
+                                                   >Read more...</span>}
                                                    className={
                                                        i === 0 ?
                                                            'second-item grid-row-span-1-3 grid-column-span-2-4' :

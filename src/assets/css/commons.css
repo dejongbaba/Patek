@@ -136,7 +136,7 @@ code {
 }
 
 .fs-1 {
-    font-size: 1rem;
+    font-size: .8rem;
 }
 
 .fs-1-2 {
@@ -385,11 +385,14 @@ code {
 .patek-link{
     color: var(--patek-green);
     font-weight: bold;
+    font-size: .8rem;
+    transition: all .3s ease-in-out;
     text-transform: capitalize;
     text-decoration: underline;
 }
 .patek-link:hover{
     color: var(--patek-green-light);
+    opacity: 0.7;
 }
 .footer-content li {
     margin-bottom: 1rem;
@@ -443,6 +446,11 @@ code {
 }
 .text-gray{
     color: #d8d8d8;
+    transition: all .3s ease-in-out;
+}
+.text-gray:hover{
+    color: #d8d8d8;
+    opacity: .7;
 }
 .text-gray-2{
     color: rgba(42,68,42,0.5);

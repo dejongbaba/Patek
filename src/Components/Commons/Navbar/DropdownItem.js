@@ -6,7 +6,8 @@ const DropdownItem = ({title, icon = dropdownIcon, linkClass, link = '#'}) => {
     return (
         <div>
             <Link to={link} className={`${linkClass? linkClass :''} dropdown-item align-items-center`}>
-                <img src={icon} className='mr-lg-1 mr-3' alt="dropdown icon"/><span>{title}</span>
+                {/*<img src={icon} className='mr-lg-1 mr-3' alt="dropdown icon"/>*/}
+                <span>{title}</span>
             </Link>
         </div>
     );

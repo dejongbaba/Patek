@@ -18,14 +18,14 @@ const Header = ({
             data-aos-delay="500"
             data-aos-once="true"
             data-aos-duration={`1000`}
-            className={`${type === 'full' ? 'h-lg-100vh' : 'mh-lg-70vh'} overflow-x-hidden overflow-y-hidden ${className ? className : ''}`}
+            className={`${type === 'full' ? 'h-lg-100vh' : 'mh-lg-70vh'}  ${className ? className : ''}`}
             style={{
-                backgroundImage: 'linear-gradient(0deg, rgba(2, 68, 9, 0.7), rgb(8, 59, 11)),' + `url(${img})`,
+                backgroundImage: 'linear-gradient(0deg, rgba(2, 68, 9, 0.8), rgba(8, 59, 11,0.8)),' + `url(${img})`,
                 backgroundBlendMode:'multiply',
                 backgroundSize: 'cover'
             }}>
             <GridLiner/>
-            <Container>
+            <Container className='position-relative'>
                 <NavigationBar logo={PatekLogo}/>
                 {type != 'full' ?
                     align === 'left' ?

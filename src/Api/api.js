@@ -18,7 +18,7 @@ export const getArticles = async () => {
     try {
         return await axios.get(getAllArticles);
     } catch (e) {
-        return e.response;
+        throw e.response;
     }
 };
 

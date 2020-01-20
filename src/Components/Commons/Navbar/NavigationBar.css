@@ -1,12 +1,49 @@
 :root {
     --nav-green: #64B900;
+    --deep-footer-green: #16312C;
+}
+@-webkit-keyframes slideInDown {
+    from {
+        -webkit-transform: translate3d(0, -100%, 0);
+        transform: translate3d(0, -100%, 0);
+        visibility: visible;
+    }
+
+    to {
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
 }
 
+@keyframes slideInDown {
+    from {
+        -webkit-transform: translate3d(0, -100%, 0);
+        transform: translate3d(0, -100%, 0);
+        visibility: visible;
+    }
+
+    to {
+        -webkit-transform: translate3d(0, 0, 0);
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+.slideInDown {
+    -webkit-animation-name: slideInDown;
+    animation-name: slideInDown;
+}
 
 .dropdown-menu {
     background-color: rgba(4, 35, 43, 0.95);
     color: white;
 }
+
+.navbar {
+    /*transition: all .5s ease-in-out; */
+    box-sizing: border-box;
+}
+
+
 
 .navbar-light .navbar-nav .active > .nav-link,
 .navbar-light .navbar-nav .nav-link.active,
@@ -58,7 +95,8 @@
     background-color: transparent;
     border: 0;
 }
-.navbar-toggler:focus{
+
+.navbar-toggler:focus {
     text-decoration: none;
     outline: 1px solid var(--nav-green, #64B900);
 }
@@ -76,6 +114,7 @@
         color: rgb(255, 255, 255);
         border-color: rgb(255, 255, 255);
     }
+
     .navigation .navbar-nav .nav-link {
         font-size: 0.9rem;
         width: 1rem;
@@ -85,6 +124,37 @@
 @media all and (min-width: 1200px) {
     .dropdown-menu {
         left: -160px;
+        /*top: 50px;*/
+        /*display: block;*/
+        opacity: 0;
+        visibility: hidden;
+        transition: all .3s ease-in-out;
+    }
+    .navbar-light .navbar-nav .nav-link{
+        padding: .4rem 0rem;
+        margin:  0rem 1rem;
+    }
+    .navbar-nav .dropdown:hover .dropdown-menu{
+        /*display: block;*/
+        visibility: visible;
+        opacity: 1;
+    }
+    .navbar.sticky-bg {
+        background-color: var(--deep-footer-green,#16312C);
+        animation: slideInDown 420ms cubic-bezier(0.165, 0.84, 0.44, 1);
+        position: fixed;
+        top:0;
+        width: 100%;
+        z-index: 10000;
+        padding: 0rem 8rem !important;
+        left: 0;
+        right: 0;
+        height: 80px;
+        /*margin-left: -7%;*/
+    }
+
+    .navbar.sticky-bg .nav-brand img {
+        margin-top: -15px;
     }
 
 }

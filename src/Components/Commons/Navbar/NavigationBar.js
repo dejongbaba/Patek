@@ -1,15 +1,17 @@
-import React from 'react';
+import React, {useEffect, useRef, useState} from 'react';
 import {Nav, Navbar, NavDropdown} from 'react-bootstrap';
 import {
     about,
     career,
     coloradoFarm,
-    contact, goldenFood,
+    contact,
+    goldenFood,
     home,
     news,
     patecFood,
     qualityPackaging,
-    sustainability, traveliFood
+    sustainability,
+    traveliFood
 } from "../../../routes/routes";
 import './NavigationBar.css';
 import './DropdownItem.css';
@@ -18,24 +20,70 @@ import {Link, NavLink} from "react-router-dom";
 import inverseLogo from '../../../assets/img/patek-logo-inverse@2x.png';
 
 const NavigationBar = ({className, logo, type}) => {
+
+
+    const navEl = useRef(null);
+    const [isOpen, setIsOpen] = useState(false);
+
+    useEffect(() => {
+        let subscribe = true;
+        if (subscribe) {
+            window.onscroll = function () {
+                changeNavBg(navEl)
+            };
+        }
+        return () => {
+            subscribe = false;
+        }
+    }, []);
+
+    const changeNavBg = (el) => {
+        const offset = 30;
+        if (el && el.current) {
+            let sticky = el.current.offsetTop;
+            if (el && el.current.classList) {
+                if (window.pageYOffset >= sticky + offset) {
+                    el.current.classList.add("sticky-bg");
+                } else {
+                    el.current.classList.remove("sticky-bg");
+                }
+            }
+        }
+    };
+
+    changeNavBg(navEl);
+
+    const handleOpen = () => {
+        setIsOpen(true);
+    };
+    const handleClose = () => {
+        setIsOpen(false);
+    };
+
+
     return (
         <>
             <Navbar
+                ref={navEl}
                 className={`px-lg-5 pt-lg-3 z-index-1 ${type === 'inverse' ? 'inverse' : ''} navigation ${className ? className : ''}`}
                 expand="lg">
                 <Link className={'nav-brand'} to={home}>
-                    {type==='inverse'?
-                    <img src={inverseLogo} alt="patek logo" title='patek logo'/>
-                    :
-                    <img src={logo} alt="patek logo" title='patek logo'/>
+                    {type === 'inverse' ?
+                        <img src={inverseLogo} alt="patek logo" title='patek logo'/>
+                        :
+                        <img src={logo} alt="patek logo" title='patek logo'/>
                     }
                 </Link>
                 <Navbar.Toggle aria-controls="basic-navbar-nav"/>
                 <Navbar.Collapse id="basic-navbar-nav">
                     <Nav className="ml-auto mr-lg-2 navbar-nav">
                         <NavLink exact activeClassName={'active'} className="nav-link" to={home}>Home</NavLink>
-                        <NavLink activeClassName={'active'} className="nav-link" to={about}>About</NavLink>
-                        <NavDropdown title="Subsidiaries" id="basic-nav-dropdown">
+                        <NavLink activeClassName={'active'} className="nav-link" to={about}>About Us</NavLink>
+                        <NavDropdown title="Subsidiaries" id="basic-nav-dropdown"
+                                     onMouseEnter={handleOpen}
+                                     onMouseLeave={handleClose}
+                                     show={isOpen}
+                        >
                             <div className="d-flex flex-column flex-md-row">
                                 <div className="flex-item">
                                     <DropdownItem title={'Patec Foods'} link={patecFood}/>
@@ -50,7 +98,6 @@ const NavigationBar = ({className, logo, type}) => {
                                                   link={traveliFood}/>
                                 </div>
                             </div>
-
                         </NavDropdown>
                         <NavLink activeClassName={'active'} className="nav-link" to={career}>Careers</NavLink>
                         <NavLink activeClassName={'active'} className="nav-link"
