@@ -34,7 +34,7 @@ const Contact = () => {
                     align={'left'}
                     form={<ContactForm/>}
             >
-                <TextLabel className='text-white' icon={threeWhiteDots} text='CONTACT US'/>
+                {/*<TextLabel className='text-white' icon={threeWhiteDots} text='CONTACT US'/>*/}
                 <HeaderText
                     className={'text-left text-white with-square'}
                     text={'Reach us anytime anyday'}

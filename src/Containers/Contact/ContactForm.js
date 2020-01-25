@@ -58,7 +58,7 @@ class ContactForm extends Component {
         const {isLoading} = this.state;
 
         return (
-            <div className='position-lg-absolute w-lg-35 mt-3 right-9 z-index-1'>
+            <div className='position-lg-absolute  w-lg-40 mt-5 right-5 z-index-1'>
                 {bgLeaf && <img src={formLeaf} className={'position-absolute w-75 right--250 z-index--1'}
                                 alt="form background leaf"/>}
                 <Form
@@ -110,10 +110,10 @@ class ContactForm extends Component {
                                         rules: [
                                             {
                                                 required: true,
-                                                message: 'Please input your project address',
+                                                message: 'Leave your message here',
                                             },
                                         ]
-                                    })(<TextArea rows={4} placeholder={'Talk to us now'}/>)}
+                                    })(<TextArea rows={4} />)}
                                 </Form.Item>
                             </Col>
                         </Row>

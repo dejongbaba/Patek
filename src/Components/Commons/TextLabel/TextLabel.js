@@ -8,7 +8,7 @@ const TextLabel = ({text, icon=threeCircleIcon, className='patek-green',
     return (
         <>
             <div
-                data-aos={`${animation?animation:'fade-up'}`}
+                data-aos={`${animation?animation:'fade-in'}`}
                 data-aos-easing={`ease`}
                 data-aos-duration={`${animationDuration?animationDuration:'500'}`}
                 data-aos-delay={`${animationDelay?animationDelay:'100'}`}

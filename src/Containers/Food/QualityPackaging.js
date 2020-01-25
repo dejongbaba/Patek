@@ -70,7 +70,7 @@ const QualityPackaging = () => {
     return (
         <>
             <Header img={qpBanner} type='half' align={'left'} logo={true} logoImg={qpLogo}>
-                <Breadcrumb containerClass={'mb-5 text-left'}
+                <Breadcrumb containerClass={'mb-5 mt-0 mt-lg-5 text-left'}
                             links={
                                 [
                                     {name: 'home', path: home},

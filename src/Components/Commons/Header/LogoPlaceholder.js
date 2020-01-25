@@ -19,7 +19,7 @@ const LogoPlaceholder = ({type,image=headerImage,category,text,date}) => {
     }
     return (
         <div className='bg-white position-absolute d-none d-lg-flex logo-placeholder align-items-center justify-content-center'>
-            <img src={image||patekFoodLogo} className='w-50' alt="patek food logo "/>
+            <img src={image||patekFoodLogo} className='w-80' alt="patek food logo "/>
         </div>
     );
 };

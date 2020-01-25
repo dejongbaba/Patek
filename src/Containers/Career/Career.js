@@ -61,14 +61,13 @@ const Career = () => {
 
 
     const [jobs, setJobs] = useGetJobs();
-
     const pfJobs = getPatekFoodJobs(jobs);
     const qpJobs = getQualityPackageJobs(jobs);
     const cfJobs = getColoradoFarmsJobs(jobs);
     const gfJobs = getGoldenFoodJobs(jobs);
+    console.log('jobs',jobs);
 
-    console.log('all jobs',jobs,pfJobs,qpJobs,cfJobs,gfJobs);
-
+    const hrRole = <><strong>HEAD</strong><br/><span>HUMAN RESOURCES</span></>;
     return (
         <>
             <Header img={careerBanner} type='half'>
@@ -90,7 +89,7 @@ const Career = () => {
                              alt="woman in office"
                         />
                     </Col>
-                    <Col lg={{span: 6}}>
+                    <Col lg={{span: 5}}>
                         <TextLabel positionClass={'my-5 '}
                                    text={'WORKING AT PATEC'}
                         />
@@ -102,8 +101,7 @@ const Career = () => {
                         />
                         <ParagraphText text={'Aminu Chigozie'}/>
                         <ParagraphText className={'patek-green'}
-                                       text={[<strong>HEAD</strong>,
-                                           <span>HUMAN RESOURCES</span>]}
+                                       text={hrRole}
                         />
                     </Col>
                 </Row>
@@ -115,27 +113,69 @@ const Career = () => {
                     <Col lg={{span: 6}}>
                         <img src={careerWoman} className='img-fluid' alt="career woman "/>
                     </Col>
-                    <Col lg={{span: 6}}>
+                    <Col lg={{span: 5}}>
                         <img src={threeCircleIcon} className='mb-3' alt="three icon cirlce"/>
-                        <HeaderText className={'text-left fs-1-5 fs-lg-2-5'} text={
-                            ['Why you should work\n', <br/>, 'with Us']}/>
+                        <HeaderText className={'text-left fs-1-5 fs-lg-2-5'} text={'PATEC GROUP LIFE'}/>
                         <ParagraphText className={'mb-lg-5'}
-                                       text={'We are up to date with current technology trends in \n' +
-                                       'food production, processing and packaging. '}/>
-                        <div className="d-flex flex-column ">
-                            <div className="list-item mb-4 d-flex align-items-center">
-                                <img src={glowingCircle} className={'px-3'} alt="career images"/>
-                                <p className='mb-0'>Great Benefits</p>
-                            </div>
-                            <div className="list-item mb-4 d-flex align-items-center">
-                                <img src={glowingCircle} className={'px-3'} alt="career images"/>
-                                <p className='mb-0'>Great Benefits</p>
-                            </div>
-                            <div className="list-item mb-4 d-flex align-items-center">
-                                <img src={glowingCircle} className={'px-3'} alt="career images"/>
-                                <p className='mb-0'>Great Benefits</p>
-                            </div>
-                        </div>
+                                       text={'When you join Patec Group you will have the opportunity' +
+                                       ' to improve your professional skills; develop industry knowledge;' +
+                                       ' gain career growth and contribute to different industries across ' +
+                                       'the Agriculture and Food processing sector. We offer training ' +
+                                       'and development services as well as team bonding exercises to' +
+                                       ' improve productivity and collaboration. You’ll join a team of' +
+                                       ' dynamic young experts from a variety of backgrounds, whose attitude, ' +
+                                       'knowledge and imagination sets them apart.' +
+                                       'At Patec group performance and hard work are paramount. '}/>
+                        {/*<div className="d-flex flex-column ">*/}
+                        {/*    <div className="list-item mb-4 d-flex align-items-center">*/}
+                        {/*        <img src={glowingCircle} className={'px-3'} alt="career images"/>*/}
+                        {/*        <p className='mb-0'>Great Benefits</p>*/}
+                        {/*    </div>*/}
+                        {/*    <div className="list-item mb-4 d-flex align-items-center">*/}
+                        {/*        <img src={glowingCircle} className={'px-3'} alt="career images"/>*/}
+                        {/*        <p className='mb-0'>Great Benefits</p>*/}
+                        {/*    </div>*/}
+                        {/*    <div className="list-item mb-4 d-flex align-items-center">*/}
+                        {/*        <img src={glowingCircle} className={'px-3'} alt="career images"/>*/}
+                        {/*        <p className='mb-0'>Great Benefits</p>*/}
+                        {/*    </div>*/}
+                        {/*</div>*/}
+                    </Col>
+                </Row>
+            </Section>
+            <Section className={'bg-patek-light-green py-lg-5 '}>
+                <Row className={'py-lg-5'}>
+                    <Col lg={{span: 6 ,order:6}}>
+                        <img src={careerWoman} className='img-fluid' alt="career woman "/>
+                    </Col>
+                    <Col lg={{span: 6,order:1}}>
+                        <img src={threeCircleIcon} className='mb-3' alt="three icon cirlce"/>
+                        <HeaderText className={'text-left fs-1-5 fs-lg-2-5'} text={'WHAT WE LOOK FOR'}/>
+                        <ParagraphText className={'mb-lg-5'}
+                                       text={'We hire exceptional people that seek after innovation ' +
+                                       'and are passionate about the development and sustainability of' +
+                                       ' Nigeria’s food production; processing and packaging industry.' +
+                                       ' We welcome experienced professionals with bachelors’ degrees' +
+                                       ' and excellent academic records.'+
+                                       'We are developing an amazing workforce of Business analysts: Financial analysts;' +
+                                       ' Project managers; Plant managers; Construction workers and people who thrive ' +
+                                       'in entrepreneurial environments that are enthusiastic about providing home-grown ' +
+                                       'solutions for the needs of Nigerians. '}
+                        />
+                        {/*<div className="d-flex flex-column ">*/}
+                        {/*    <div className="list-item mb-4 d-flex align-items-center">*/}
+                        {/*        <img src={glowingCircle} className={'px-3'} alt="career images"/>*/}
+                        {/*        <p className='mb-0'>Great Benefits</p>*/}
+                        {/*    </div>*/}
+                        {/*    <div className="list-item mb-4 d-flex align-items-center">*/}
+                        {/*        <img src={glowingCircle} className={'px-3'} alt="career images"/>*/}
+                        {/*        <p className='mb-0'>Great Benefits</p>*/}
+                        {/*    </div>*/}
+                        {/*    <div className="list-item mb-4 d-flex align-items-center">*/}
+                        {/*        <img src={glowingCircle} className={'px-3'} alt="career images"/>*/}
+                        {/*        <p className='mb-0'>Great Benefits</p>*/}
+                        {/*    </div>*/}
+                        {/*</div>*/}
                     </Col>
                 </Row>
             </Section>

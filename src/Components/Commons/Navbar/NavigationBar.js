@@ -93,10 +93,10 @@ const NavigationBar = ({className, logo, type}) => {
                                     <DropdownItem title={'Colorado Farms'} link={coloradoFarm}/>
                                     <DropdownItem title={'Golden Foods'} link={goldenFood}/>
                                 </div>
-                                <div className="flex-item">
-                                    <DropdownItem title={'Trevali Food Distribution'}
-                                                  link={traveliFood}/>
-                                </div>
+                                {/*<div className="flex-item">*/}
+                                {/*    <DropdownItem title={'Trevali Food Distribution'}*/}
+                                {/*                  link={traveliFood}/>*/}
+                                {/*</div>*/}
                             </div>
                         </NavDropdown>
                         <NavLink activeClassName={'active'} className="nav-link" to={career}>Careers</NavLink>

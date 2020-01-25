@@ -21,11 +21,8 @@ const News = ({location}) => {
 
     const {pathname} = location;
     const [allArticles,loading] = useGetArticles();
-    const getFirstArticle = (a) => {
-        return a && a.length > 0 ? a[0] : {};
-    };
+    const getFirstArticle = (a) => a && a.length > 0 ? a[0] : {};
     const firstArticle = getFirstArticle(allArticles);
-    console.log('first article',firstArticle);
 
     return (
         <>
@@ -34,11 +31,14 @@ const News = ({location}) => {
                     align={'left'}
                     logo={!isEmpty(firstArticle)}
                     logoText={!isEmpty(firstArticle) ?
-                        <Link className={'gray-link'} to={`/view/${firstArticle.id}`}>{firstArticle.title}</Link> : ''}
+                        <Link className={'gray-link'} to={`/view/${firstArticle.id}`}>
+                        {firstArticle.title}
+                    </Link> : ''}
                     logoImg={getImageFromArticle(firstArticle)}
                     logoType={'blog'}
                     logoDate={!isEmpty(firstArticle) ? firstArticle.date : ''}
-                    category={!isEmpty(firstArticle) && firstArticle.category ? firstArticle.category.name : ''}
+                    category={!isEmpty(firstArticle) &&
+                    firstArticle.category ? firstArticle.category.name : ''}
             >
                 <TextLabel className='text-white'
                            positionClass={'mt-5'}
@@ -54,11 +54,20 @@ const News = ({location}) => {
             </div>
 
             <Route path={news}
-                   render={(props) => <ArticleSectionLayout {...props} loading={loading} pathname={pathname} articles={allArticles}/>}/>
+                   render={(props) =>
+                       <ArticleSectionLayout {...props} loading={loading}
+                                             pathname={pathname} articles={allArticles}
+                   />}/>
             <Route path={blog}
-                   render={(props) => <ArticleSectionLayout {...props} loading={loading} pathname={pathname} articles={allArticles}/>}/>
+                   render={(props) =>
+                       <ArticleSectionLayout {...props} loading={loading}
+                                             pathname={pathname} articles={allArticles}
+                       />}/>
             <Route path={event}
-                   render={(props) => <ArticleSectionLayout {...props} loading={loading} pathname={pathname} articles={allArticles}/>}/>
+                   render={(props) =>
+                       <ArticleSectionLayout {...props} loading={loading}
+                                             pathname={pathname} articles={allArticles}
+                       />}/>
 
             <CareerSection
                 header={'" An Amazing Company at the frontiers of agro allied \n' +

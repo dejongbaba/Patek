@@ -1,10 +1,9 @@
 import {useEffect, useState} from "react";
-import {getArticle, getArticles, getCategories, getJobs} from "../Api/api";
+import {getArticle, getArticles, getCategories, getJobs, getPrinciples} from "../Api/api";
 import {message} from "antd";
 import {getBlogArticle, getEventArticle, getNewsArticle} from "../Facades/Facade";
 
 export const useGetArticles = () => {
-
     const [articles, setArticles] = useState([]);
     const [loading, setLoading] = useState(true);
     useEffect(() => {
@@ -19,6 +18,23 @@ export const useGetArticles = () => {
         });
     }, []);
     return [articles,loading];
+};
+
+export const useGetPrinciples = () => {
+    const [principles, setPrinciples] = useState([]);
+    const [loading, setLoading] = useState(true);
+    useEffect(() => {
+        getPrinciples().then(result => {
+            if (result) {
+                setPrinciples(result.data);
+                setLoading(false);
+            }
+        }).catch(err => {
+            setLoading(false);
+            message.error('unable to get articles!', 3);
+        });
+    }, []);
+    return [principles,loading];
 };
 
 export const useGetArticle = (id) => {

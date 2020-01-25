@@ -41,7 +41,7 @@ const SecondaryNav = ({type, className}) => {
         )
     }
     return (
-        <ul className={`${className ? className : ''} list-unstyled position-relative secondary-nav text-uppercase d-flex flex-column flex-lg-row mb-0 pt-lg-5`}>
+        <ul className={`${className ? className : ''} list-unstyled position-relative secondary-nav text-uppercase d-flex justify-content-lg-center flex-column flex-lg-row mb-0 pt-lg-5`}>
             <li>
                 <NavLink activeClassName={'active'} to={patecFood} className={'secondary-nav__link '}>Patec Foods</NavLink>
             </li>
@@ -54,8 +54,9 @@ const SecondaryNav = ({type, className}) => {
             <li>
                 <NavLink activeClassName={'active'} to={goldenFood} className={'secondary-nav__link'}>Golden Foods</NavLink>
             </li>
-            <li><NavLink activeClassName={'active'} to={traveliFood} className={'secondary-nav__link'}>TREVALI FOOD DISTRIBUTION</NavLink>
-            </li>
+            {/*<li>*/}
+            {/*    <NavLink activeClassName={'active'} to={traveliFood} className={'secondary-nav__link'}>TREVALI FOOD DISTRIBUTION</NavLink>*/}
+            {/*</li>*/}
         </ul>
     );
 };

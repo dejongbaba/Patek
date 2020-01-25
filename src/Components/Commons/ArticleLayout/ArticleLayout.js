@@ -12,7 +12,7 @@ const ArticleLayout = ({img, className, category, topic, text, type, link, date}
         return (
             <>
                 <div
-                    className="mb-5 border-top-line pt-5">
+                    className={`${className} mb-5 border-top-line pt-5`}>
                     <div className={`d-flex flex-column flex-lg-row align-items-lg-center 
                     ${topic ? 'justify-content-lg-between' : 'justify-content-lg-start'} 
                     mb-5`}>
@@ -33,7 +33,7 @@ const ArticleLayout = ({img, className, category, topic, text, type, link, date}
     if (type === 'intent') {
         return (
             <>
-                <div className='d-flex align-items-center'>
+                <div className={`${className} d-flex align-items-center`}>
                     {img && <img src={img} className='w-150px mr-2' alt="intent icon"/>}
                     <h3 className='flex-basis-250px mb-0 position-relative mr-5'>{topic}</h3>
                     <ParagraphText className='mb-0 px-5 border-left-green' text={text}/>
@@ -44,7 +44,7 @@ const ArticleLayout = ({img, className, category, topic, text, type, link, date}
 
     if (type === 'blog') {
         return (
-            <div className="mb-5 border-top-line-only pt-5">
+            <div className={`${className} mb-5 border-top-line-only pt-5`}>
                 <div className="position-relative">
                     <div className="h-250 overflow-hidden"
                          style={{

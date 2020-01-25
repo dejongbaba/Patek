@@ -10,6 +10,7 @@ const subscribeUsertoListUrl =`${BASE_URL}subscribers`;
 const getOneArticle = (id) => `${BASE_URL}articles/${id}`;
 const getAllArticles = `${BASE_URL}articles?_sort=created_at:desc`;
 const getAllCategories = `${BASE_URL}categories`;
+const getAllPrinciples = `${BASE_URL}principles`;
 const getAllJobs = `${BASE_URL}jobs`;
 const getAllCareers = `${BASE_URL}careers`;
 
@@ -17,6 +18,14 @@ const getAllCareers = `${BASE_URL}careers`;
 export const getArticles = async () => {
     try {
         return await axios.get(getAllArticles);
+    } catch (e) {
+        throw e.response;
+    }
+};
+
+export const getPrinciples = async () => {
+    try {
+        return await axios.get(getAllPrinciples);
     } catch (e) {
         throw e.response;
     }

@@ -24,7 +24,7 @@ import Footer from "../../Components/Commons/Footer/Footer";
 import ArticleLayout from "../../Components/Commons/ArticleLayout/ArticleLayout";
 import SubscriptionSection from "../../Components/Commons/SubscriptionSection/SubscriptionSection";
 import ArticleImage from "../../Components/Commons/ArticleImage/ArticleImage";
-import {useGetArticles} from "../../Effects/Effects";
+import {useGetArticles, useGetPrinciples} from "../../Effects/Effects";
 import {Empty, Skeleton} from "antd";
 import {getFirstFourArticles, getImageFromArticle, redirectTo} from "../../Facades/Facade";
 
@@ -79,10 +79,12 @@ const CarouselItemStructure = (item) =>
 const Home = () => {
 
     const [allArticles, loading] = useGetArticles();
+    const [principles, isPrinciplesLoading] = useGetPrinciples();
+    console.log('principles',principles,isPrinciplesLoading);
     const firstFourArticles = getFirstFourArticles(allArticles);
     return (
         <div>
-            <Header className='position-relative'
+            <Header className='position-relative overflow-y-hidden overflow-x-hidden'
                     img={headerImgOne}
                     // absLeftImg={patekOutline}
                     absRightImg={treeBranches}
@@ -91,7 +93,7 @@ const Home = () => {
             >
                 <Row>
                     <Col lg={{span: 6, offset: 6}}>
-                        <div className="pt-lg-5 pb-5 pb-lg-0">
+                        <div className="pt-lg-5 mt-lg-5 pb-5 pb-lg-0">
                             <div className="mt-lg-5">
                                 {/*<TextLabel className='patek-green'*/}
                                 {/*           animation={'fade-in'}*/}
@@ -127,7 +129,7 @@ const Home = () => {
                         <TextLabel className='patek-green' icon={threeCircleIcon} text='who we are'/>
                         <HeaderText className={'my-lg-3 fs-2-5 '} text={'Patec - '}/>
                         <ParagraphText text={valueText} className={'light-black pr-lg-5 mb-lg-5'}/>
-                        <Button className={'btn-patek-green text-uppercase'} text={'read more'}/>
+                        <Button className={'btn-patek-green text-uppercase'} onClick={()=>redirectTo('/about')} text={'read more'}/>
                     </Col>
                 </Row>
             </Section>
@@ -141,32 +143,49 @@ const Home = () => {
                     </Col>
                 </Row>
                 <Row className={'mt-5'}>
-                    <Col lg={{span: 4}}>
-                        <SectionText
-                            icon={require('../../assets/img/Group 297.svg')}
-                            title={'VALUES'}
-                            description={'To establish a world class business focused on quality and customer satisfaction.'}/>
-                    </Col>
-                    <Col lg={{span: 4}}>
-                        <SectionText
-                            icon={require('../../assets/img/Group 298.svg')}
-                            title={'Our Mission'}
-                            description={'To be one of the most recognizable brands \n' +
-                            'in the Nigerian agro-allied business space in \n' +
-                            '5 years and employing over 3000 Nigerians.\n' +
-                            '\n'}/>
-                    </Col>
-                    <Col lg={{span: 4}}>
-                        <SectionText
-                            icon={require('../../assets/img/Group 299.svg')}
-                            title={'Core Values'}
-                            description={'To establish a world class business focused \n' +
-                            'on quality and customer satisfaction.'}/>
-                    </Col>
+                    {
+                        principles.length ?
+                            principles.map((p,i)=>
+                                <Col lg={{span: 4}}>
+                                    <SectionText
+                                        icon={i===0?require('../../assets/img/Group 297.svg'):
+                                            i===1?require('../../assets/img/Group 298.svg'):
+                                                i===2?require('../../assets/img/Group 299.svg'):''}
+                                        title={p.name}
+                                        description={p.description}
+                                    />
+                                </Col>
+                            )
+                            :null
+                    }
+                    {/*<Col lg={{span: 4}}>*/}
+                    {/*    <SectionText*/}
+                    {/*        icon={require('../../assets/img/Group 297.svg')}*/}
+                    {/*        title={'VALUES'}*/}
+                    {/*        description={'To establish a world class business focused on quality and customer satisfaction.'}/>*/}
+                    {/*</Col>*/}
+                    {/*<Col lg={{span: 4}}>*/}
+                    {/*    <SectionText*/}
+                    {/*        icon={require('../../assets/img/Group 298.svg')}*/}
+                    {/*        title={'Our Mission'}*/}
+                    {/*        description={'To be one of the most recognizable brands \n' +*/}
+                    {/*        'in the Nigerian agro-allied business space in \n' +*/}
+                    {/*        '5 years and employing over 3000 Nigerians.\n' +*/}
+                    {/*        '\n'}/>*/}
+                    {/*</Col>*/}
+                    {/*<Col lg={{span: 4}}>*/}
+                    {/*    <SectionText*/}
+                    {/*        icon={require('../../assets/img/Group 299.svg')}*/}
+                    {/*        title={'Core Values'}*/}
+                    {/*        description={'To establish a world class business focused \n' +*/}
+                    {/*        'on quality and customer satisfaction.'}/>*/}
+                    {/*</Col>*/}
                 </Row>
             </Section>
 
-            <Section className={'bg-patek-light-green'} rightBgImg={leafBGImg}>
+            <Section className={'bg-patek-light-green'}
+                     // rightBgImg={leafBGImg}
+            >
                 <Row className='pt-5 pb-3 pb-lg-0'>
                     <Col lg={{span: 4}}>
                         <TextLabel className='patek-green' positionClass={'mb-3 mb-lg-0'} icon={threeCircleIcon}
@@ -179,21 +198,7 @@ const Home = () => {
                         <SectionText
                             textAlign={'left'}
                             icon={avocadoCircle}
-                            title={'Curiousity'}
-                            description={'We ask Questions and learn rapidly.'}
-                        />
-                        <SectionText
-                            textAlign={'left'}
-                            icon={avocadoCircle}
-                            title={'Productivity'}
-                            description={'We are adequately equipped and \n' +
-                            'demonstrate consistency to\n' +
-                            'achieve great results\n'}
-                        />
-                        <SectionText
-                            textAlign={'left'}
-                            icon={avocadoCircle}
-                            title={'Productivity'}
+                            title={'Expertise'}
                             description={'We become subject matter expert in the industry we operate'}
                         />
                     </Col>
@@ -201,34 +206,18 @@ const Home = () => {
                         <SectionText
                             textAlign={'left'}
                             icon={avocadoCircle}
-                            title={'Professionalism'}
-                            description={'We put work before personal considerations and maintain calm and poise in stressful situations'}
-                        />
-                        <SectionText
-                            textAlign={'left'}
-                            icon={avocadoCircle}
-                            title={'TraveliFood'}
-                            description={'Our work models and operation policies are sustainable and replicable considering long term situations'}
-                        />
-                        <SectionText
-                            textAlign={'left'}
-                            icon={avocadoCircle}
-                            title={'Customer-focus'}
-                            description={'We embed customer thinking at every level'}
+                            title={'Innovation'}
+                            description={'We are adequately equipped and \n' +
+                            'demonstrate consistency to\n' +
+                            'achieve great results\n'}
                         />
                     </Col>
                     <Col lg={{span: 4}}>
                         <SectionText
                             textAlign={'left'}
                             icon={avocadoCircle}
-                            title={'Value-drive'}
-                            description={'We are relentless with a constant drive  to improve'}
-                        />
-                        <SectionText
-                            textAlign={'left'}
-                            icon={avocadoCircle}
-                            title={'Innovation'}
-                            description={'We are open-minded in search of the best ideas'}
+                            title={'Sustainability'}
+                            description={'Our work models and operation policies are sustainable and replicable considering long term situations'}
                         />
                     </Col>
                 </Row>

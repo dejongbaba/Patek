@@ -64,7 +64,7 @@ const Food = () => {
         <>
             <Header img={foodBanner} type='half'
                     align={'left'} logo={true}>
-                <Breadcrumb containerClass={'mb-5 text-left'}
+                <Breadcrumb containerClass={'mb-5 mt-0 mt-lg-5 text-left'}
                             links={
                                 [
                                     {name: 'home', path: home},
@@ -102,7 +102,9 @@ const Food = () => {
                                     text={'Patec foods at a Glance'}/>
                         <ParagraphText
                             text={'We are a part of Patec Group and a sister company\n' + 'of quality packaging, a recycling and packaging \n' +
-                            'solution company'}/>
+                            'solution company'}
+                            className={'mb-5'}
+                        />
 
                         <ArticleImage
                             image={ArticlePlaceholder}
@@ -113,6 +115,7 @@ const Food = () => {
                     <Col lg={{span: 6}}>
                         <ArticleLayout type={'line'}
                                        topic={'Aquaculture'}
+                                       className={'pb-5 mb-5'}
                                        text={'Our Shao Aquaculture farm is the single largest \n' +
                                        'aquaculture farm in the region, with a vertically\n' +
                                        'integrated system that utilizes eco-friendly, \n' +
@@ -121,7 +124,7 @@ const Food = () => {
                                        'premium fish for household and food service \n' +
                                        'industry'}
                                        category={'Shao Aquaculture TraveliFood'}
-                                       link={'/food'}
+                                       // link={'/food'}
                         />
                         <ArticleLayout type={'line'}
                                        topic={'Fish Trading'}
@@ -130,7 +133,7 @@ const Food = () => {
                                        'Herring, Blue whiting etc. from Asia, Europe and \n' +
                                        'other leading global fish markets.'}
                                        category={'Fish Trading Arm'}
-                                       link={'/food'}
+                                       // link={'/food'}
                         />
                     </Col>
                 </Row>

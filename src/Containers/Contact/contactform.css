@@ -35,6 +35,9 @@ button.contact-input:hover, button.contact-input:focus {
 .right-9{
     right: 9%;
 }
+.right-5{
+    right: 3rem;
+}
 
 @media all and (min-width: 1200px) {
     .mt-lg-15{
