@@ -201,7 +201,7 @@ const About = ({data, loading, directors, isDirectorsLoading}) => {
                         <SectionGrid>
 
                             {directors && directors.length ?
-                                directors.map((dir) => <SectionGridItem logo={getImageFromArticle(dir)} text={dir.role} title={dir.name}/>)
+                                directors.map((dir,i) => <SectionGridItem key={i} logo={getImageFromArticle(dir)} text={dir.role} title={dir.name}/>)
                                 : <EmptyPlaceholder/>}
 
                         </SectionGrid>
