@@ -11,7 +11,7 @@ export const getNewsArticle = (data) => {
 };
 
 export const getFirstFourArticles = (article) => {
-    return article && article.length > 4 ? article.slice(0, 4) : article;
+    return article && article.length > 4 ? article.slice(0, 5) : article;
 };
 export const getFirstThreeArticles = (article) => {
     return article && article.length > 3 ? article.slice(0, 3) : article;

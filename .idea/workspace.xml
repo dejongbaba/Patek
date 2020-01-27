@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ca32b7da-1c42-4fd2-8b2a-9c094f46556e" name="Default Changelist" comment="c">
-      <change beforePath="$PROJECT_DIR$/src/Containers/About/About.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Containers/About/About.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Containers/Home/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Containers/Home/Home.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Components/Commons/Header/LogoPlaceholder.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Commons/Header/LogoPlaceholder.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Facades/Facade.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Facades/Facade.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -38,11 +38,11 @@
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="true">
+          <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/Containers/Home/Home.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="211">
-                  <caret line="36" column="55" selection-start-line="36" selection-start-column="55" selection-end-line="36" selection-end-column="55" />
+                <state relative-caret-position="165">
+                  <caret line="337" column="34" selection-start-line="337" selection-start-column="34" selection-end-line="337" selection-end-column="34" />
                   <folding>
                     <element signature="e#0#26#0" expanded="true" />
                   </folding>
@@ -50,11 +50,11 @@
               </provider>
             </entry>
           </file>
-          <file pinned="false" current-in-tab="false">
+          <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/Facades/Facade.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="300">
-                  <caret line="53" column="36" selection-start-line="53" selection-start-column="36" selection-end-line="53" selection-end-column="36" />
+                <state relative-caret-position="134">
+                  <caret line="14" column="2" lean-forward="true" selection-start-line="14" selection-start-column="2" selection-end-line="14" selection-end-column="2" />
                   <folding>
                     <element signature="e#0#37#0" expanded="true" />
                   </folding>
@@ -77,8 +77,8 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/Hoc/homeHoc/withArticlesAndPrinciples.js">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="225">
-                  <caret line="15" column="26" lean-forward="true" selection-start-line="15" selection-start-column="26" selection-end-line="15" selection-end-column="26" />
+                <state relative-caret-position="120">
+                  <caret line="8" column="43" selection-start-line="8" selection-start-column="43" selection-end-line="8" selection-end-column="43" />
                   <folding>
                     <element signature="e#0#26#0" expanded="true" />
                   </folding>
@@ -163,7 +163,6 @@
         <option value="$PROJECT_DIR$/src/Components/Commons/ArticleSectionLayout/ArticleSectionLayout.js" />
         <option value="$PROJECT_DIR$/src/Components/Commons/Navbar/SecondaryNav.css" />
         <option value="$PROJECT_DIR$/src/Components/Commons/TextLabel/textlabel.css" />
-        <option value="$PROJECT_DIR$/src/Facades/Facade.js" />
         <option value="$PROJECT_DIR$/src/Components/Commons/ParagraphText/ParagraphText.js" />
         <option value="$PROJECT_DIR$/public/_redirects" />
         <option value="$PROJECT_DIR$/src/Containers/ArticleViewer/articleViewer.css" />
@@ -176,7 +175,6 @@
         <option value="$PROJECT_DIR$/src/Components/Commons/TextLabel/TextLabel.js" />
         <option value="$PROJECT_DIR$/src/Components/Commons/HeaderText/HeaderText.js" />
         <option value="$PROJECT_DIR$/src/Components/Commons/Header/LogoPlaceholder.js" />
-        <option value="$PROJECT_DIR$/src/Components/Commons/Header/LogoPlaceholder.css" />
         <option value="$PROJECT_DIR$/src/Containers/Farm/Farm.js" />
         <option value="$PROJECT_DIR$/src/Containers/Food/TraveliFood.js" />
         <option value="$PROJECT_DIR$/src/Containers/Food/GoldenFood.js" />
@@ -210,6 +208,8 @@
         <option value="$PROJECT_DIR$/src/Hoc/homeHoc/withCoreValuesAndSubsidiaries.js" />
         <option value="$PROJECT_DIR$/src/Containers/About/About.js" />
         <option value="$PROJECT_DIR$/src/Containers/Home/Home.js" />
+        <option value="$PROJECT_DIR$/src/Facades/Facade.js" />
+        <option value="$PROJECT_DIR$/src/Components/Commons/Header/LogoPlaceholder.css" />
       </list>
     </option>
   </component>
@@ -369,12 +369,12 @@
       <workItem from="1579372674767" duration="5981000" />
       <workItem from="1579530201058" duration="2589000" />
       <workItem from="1579552571969" duration="117000" />
-      <workItem from="1579884170875" duration="25261000" />
+      <workItem from="1579884170875" duration="25632000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="303312000" />
+    <option name="totallyTimeSpent" value="303683000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -387,9 +387,8 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="0" width="1280" height="800" extended-state="6" />
-    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.2180937" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.2180937" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="npm" order="2" side_tool="true" />
       <window_info id="Favorites" order="3" side_tool="true" />
@@ -404,7 +403,7 @@
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.569863" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
       <window_info anchor="bottom" id="Event Log" order="10" sideWeight="0.503231" side_tool="true" weight="0.56164384" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="11" sideWeight="0.49676898" visible="true" weight="0.04109589" />
+      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.49676898" visible="true" weight="0.4479452" />
       <window_info anchor="bottom" id="TypeScript" order="12" weight="0.32876712" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -780,16 +779,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Hoc/homeHoc/withArticlesAndPrinciples.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="225">
-          <caret line="15" column="26" lean-forward="true" selection-start-line="15" selection-start-column="26" selection-end-line="15" selection-end-column="26" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Effects/Effects.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-93">
@@ -837,22 +826,32 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Facades/Facade.js">
+    <entry file="file://$PROJECT_DIR$/src/Containers/Home/Home.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="53" column="36" selection-start-line="53" selection-start-column="36" selection-end-line="53" selection-end-column="36" />
+        <state relative-caret-position="165">
+          <caret line="337" column="34" selection-start-line="337" selection-start-column="34" selection-end-line="337" selection-end-column="34" />
           <folding>
-            <element signature="e#0#37#0" expanded="true" />
+            <element signature="e#0#26#0" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Containers/Home/Home.js">
+    <entry file="file://$PROJECT_DIR$/src/Hoc/homeHoc/withArticlesAndPrinciples.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="211">
-          <caret line="36" column="55" selection-start-line="36" selection-start-column="55" selection-end-line="36" selection-end-column="55" />
+        <state relative-caret-position="120">
+          <caret line="8" column="43" selection-start-line="8" selection-start-column="43" selection-end-line="8" selection-end-column="43" />
           <folding>
             <element signature="e#0#26#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Facades/Facade.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="134">
+          <caret line="14" column="2" lean-forward="true" selection-start-line="14" selection-start-column="2" selection-end-line="14" selection-end-column="2" />
+          <folding>
+            <element signature="e#0#37#0" expanded="true" />
           </folding>
         </state>
       </provider>
