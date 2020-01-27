@@ -13,6 +13,10 @@ const getAllCategories = `${BASE_URL}categories`;
 const getAllPrinciples = `${BASE_URL}principles`;
 const getAllJobs = `${BASE_URL}jobs`;
 const getAllCareers = `${BASE_URL}careers`;
+export const getAllHomeContent = `${BASE_URL}homes`;
+export const getAllDirectors = `${BASE_URL}directors`;
+export const getAllAbouts = `${BASE_URL}abouts`;
+export const getAllSustainabilities = `${BASE_URL}sustainabilities`;
 
 
 export const getArticles = async () => {
@@ -26,6 +30,21 @@ export const getArticles = async () => {
 export const getPrinciples = async () => {
     try {
         return await axios.get(getAllPrinciples);
+    } catch (e) {
+        throw e.response;
+    }
+};
+export const getDirectors = async () => {
+    try {
+        return await axios.get(getAllDirectors);
+    } catch (e) {
+        throw e.response;
+    }
+};
+
+export const getHomes = async () => {
+    try {
+        return await axios.get(getAllHomeContent);
     } catch (e) {
         throw e.response;
     }

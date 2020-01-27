@@ -54,7 +54,7 @@ const Footer = ({className, text, logo}) => {
                     </Col>
                 </Row>
             </Container>
-            <div className="position-absolute w-100 b-10 text-center text-white">
+            <div className="position-absolute w-100 b-10 text-center text-white py-3 px-2 py-lg-0 ">
                 &copy; 2019 Patec Group . All rights reserved.
             </div>
         </div>

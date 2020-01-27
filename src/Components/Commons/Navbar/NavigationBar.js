@@ -65,13 +65,13 @@ const NavigationBar = ({className, logo, type}) => {
         <>
             <Navbar
                 ref={navEl}
-                className={`px-lg-5 pt-lg-3 z-index-1 ${type === 'inverse' ? 'inverse' : ''} navigation ${className ? className : ''}`}
+                className={`px-lg-5 pt-3 z-index-1 ${type === 'inverse' ? 'inverse' : ''} navigation ${className ? className : ''}`}
                 expand="lg">
                 <Link className={'nav-brand'} to={home}>
                     {type === 'inverse' ?
-                        <img src={inverseLogo} alt="patek logo" title='patek logo'/>
+                        <img src={inverseLogo} className={'w-70'} alt="patek logo" title='patek logo'/>
                         :
-                        <img src={logo} alt="patek logo" title='patek logo'/>
+                        <img src={logo} className={'w-70'} alt="patek logo" title='patek logo'/>
                     }
                 </Link>
                 <Navbar.Toggle aria-controls="basic-navbar-nav"/>

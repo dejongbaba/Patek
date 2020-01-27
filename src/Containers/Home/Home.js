@@ -1,7 +1,6 @@
 import React from 'react';
 import headerImgOne from "../../assets/img/header-bg-one@2x.png"
 import threeCircleIcon from "../../assets/img/three-circle-icon.svg"
-import patekOutline from "../../assets/img/patec-outline.svg"
 import fadedLeaf from "../../assets/img/faded-leave.svg"
 import greenLeaf from "../../assets/img/green-leaf.svg"
 import CarouselLeaf from "../../assets/img/carousel-leaf-img@2x.png"
@@ -24,69 +23,71 @@ import Footer from "../../Components/Commons/Footer/Footer";
 import ArticleLayout from "../../Components/Commons/ArticleLayout/ArticleLayout";
 import SubscriptionSection from "../../Components/Commons/SubscriptionSection/SubscriptionSection";
 import ArticleImage from "../../Components/Commons/ArticleImage/ArticleImage";
-import {useGetArticles, useGetPrinciples} from "../../Effects/Effects";
-import {Empty, Skeleton} from "antd";
-import {getFirstFourArticles, getImageFromArticle, redirectTo} from "../../Facades/Facade";
+import {Skeleton} from "antd";
+import {getImageFromArticle, redirectTo} from "../../Facades/Facade";
+import withData from "../../Hoc/withData";
+import {getAllHomeContent} from "../../Api/api";
+import withArticlesAndPrinciples from "../../Hoc/homeHoc/withArticlesAndPrinciples";
+import withCoreValuesAndSubsidiaries from "../../Hoc/homeHoc/withCoreValuesAndSubsidiaries";
+import EmptyPlaceholder from "../../Components/Commons/EmptyPlaceHolder/EmptyPlaceholder";
 
 
-const valueText = 'Patec Group, founded in 2010 and headquartered \n' +
-    'in Lagos is Africa\'s leading agro-allied conglomerate\n' +
-    'in the areas of production, processing, packaging and\n' +
-    'distribution of food products and agro commodities\n' +
-    'poised to contribute the food security in Africa. ';
+const Home = ({data, articleLoading, principles, firstFourArticles}) => {
 
-const carouselItems = [
-    {
-        title: 'Quality Packaging -',
-        desc: 'Quality Packaging aims to be an industry leader in recycling \n' +
-            'of waste materials, manufacturing of packaging solutions.\n' +
-            'The company will provide solutions that will be utilized by\n' +
-            'a wide range of industries such as retail, food & beverages,\n' +
-            'pharmaceutical, agriculture, construction.',
-        link: '',
-    }, {
-        title: 'Colorado Farms -',
-        desc: 'Quality Packaging aims to be an industry leader in recycling \n' +
-            'of waste materials, manufacturing of packaging solutions.\n' +
-            'The company will provide solutions that will be utilized by\n' +
-            'a wide range of industries such as retail, food & beverages,\n' +
-            'pharmaceutical, agriculture, construction.',
-        link: '',
+    const valueText = 'Patec Group, founded in 2010 and headquartered \n' +
+        'in Lagos is Africa\'s leading agro-allied conglomerate\n' +
+        'in the areas of production, processing, packaging and\n' +
+        'distribution of food products and agro commodities\n' +
+        'poised to contribute the food security in Africa. ';
 
-    }, {
-        title: 'Golden TraveliFood and Beverage -',
-        desc: 'Quality Packaging aims to be an industry leader in recycling \n' +
-            'of waste materials, manufacturing of packaging solutions.\n' +
-            'The company will provide solutions that will be utilized by\n' +
-            'a wide range of industries such as retail, food & beverages,\n' +
-            'pharmaceutical, agriculture, construction.',
-        link: '',
+    // const carouselItems = [
+    //     {
+    //         title: 'Quality Packaging -',
+    //         desc: 'Quality Packaging aims to be an industry leader in recycling \n' +
+    //             'of waste materials, manufacturing of packaging solutions.\n' +
+    //             'The company will provide solutions that will be utilized by\n' +
+    //             'a wide range of industries such as retail, food & beverages,\n' +
+    //             'pharmaceutical, agriculture, construction.',
+    //         link: qualityPackaging,
+    //     }, {
+    //         title: 'Colorado Farms -',
+    //         desc: 'Quality Packaging aims to be an industry leader in recycling \n' +
+    //             'of waste materials, manufacturing of packaging solutions.\n' +
+    //             'The company will provide solutions that will be utilized by\n' +
+    //             'a wide range of industries such as retail, food & beverages,\n' +
+    //             'pharmaceutical, agriculture, construction.',
+    //         link: coloradoFarm,
+    //
+    //     }, {
+    //         title: 'Golden Food ',
+    //         desc: 'Quality Packaging aims to be an industry leader in recycling \n' +
+    //             'of waste materials, manufacturing of packaging solutions.\n' +
+    //             'The company will provide solutions that will be utilized by\n' +
+    //             'a wide range of industries such as retail, food & beverages,\n' +
+    //             'pharmaceutical, agriculture, construction.',
+    //         link: goldenFood,
+    //
+    //     }];
 
-    }];
+    const CarouselItemStructure = (item) =>
+        <Row className='py-lg-5 my-lg-5'>
+            <Col lg={{span: 6}}>
+                <img src={CarouselLeaf} className={'w-70'} alt="patek carousel image"/>
+            </Col>
+            <Col lg={5}>
+                <HeaderText className={'my-lg-5 fs-2-5 mh-lg-90'} text={item.title}/>
+                <ParagraphText text={item.description} className={'light-black pr-lg-5 pb-lg-5 mb-lg-5'}/>
+                {/*<Button onClick={() => redirectTo(item.link)} className={'btn-patek-green text-uppercase'}*/}
+                {/*        text={'more details'}/>*/}
+            </Col>
+        </Row>;
 
-const CarouselItemStructure = (item) =>
-    <Row className='py-lg-5 my-lg-5'>
-        <Col lg={{span: 6}}>
-            <img src={CarouselLeaf} className={'w-70'} alt="patek carousel image"/>
-        </Col>
-        <Col lg={5}>
-            <HeaderText className={'my-lg-5 fs-2-5 mh-lg-90'} text={item.title}/>
-            <ParagraphText text={item.desc} className={'light-black pr-lg-5 pb-lg-5 mb-lg-5'}/>
-            <Button className={'btn-patek-green text-uppercase'} text={'more details'}/>
-        </Col>
-    </Row>;
 
-const Home = () => {
-
-    const [allArticles, loading] = useGetArticles();
-    const [principles, isPrinciplesLoading] = useGetPrinciples();
-    console.log('principles',principles,isPrinciplesLoading);
-    const firstFourArticles = getFirstFourArticles(allArticles);
     return (
         <div>
             <Header className='position-relative overflow-y-hidden overflow-x-hidden'
                     img={headerImgOne}
-                    // absLeftImg={patekOutline}
+                // absLeftImg={patekOutline}
                     absRightImg={treeBranches}
                     primaryLeftImg={greenLeaf}
                     SecondaryLeftImg={fadedLeaf}
@@ -106,8 +107,8 @@ const Home = () => {
                                 animation={'fade-up'}
                                 animationDelay={'1000'}
                                 animationDuration={'1000'}
-                                className={'text-white mt-lg-5 fs-lg-4 pt-lg-5 with-square mb-5 mb-lg-0'}
-                                text={["We Stay ahead ", <br/>, " of the Curve"]}/>
+                                className={'text-white mt-5 fs-lg-4 pt-lg-5 with-square mb-5 mb-lg-0'}
+                                text={<>We Stay ahead <br/> of the Curve</>}/>
                             <ParagraphText
                                 animation={'fade-up'}
                                 animationDelay={'1000'}
@@ -129,7 +130,8 @@ const Home = () => {
                         <TextLabel className='patek-green' icon={threeCircleIcon} text='who we are'/>
                         <HeaderText className={'my-lg-3 fs-2-5 '} text={'Patec - '}/>
                         <ParagraphText text={valueText} className={'light-black pr-lg-5 mb-lg-5'}/>
-                        <Button className={'btn-patek-green text-uppercase'} onClick={()=>redirectTo('/about')} text={'read more'}/>
+                        <Button className={'btn-patek-green text-uppercase'} onClick={() => redirectTo('/about')}
+                                text={'read more'}/>
                     </Col>
                 </Row>
             </Section>
@@ -144,19 +146,19 @@ const Home = () => {
                 </Row>
                 <Row className={'mt-5'}>
                     {
-                        principles.length ?
-                            principles.map((p,i)=>
-                                <Col lg={{span: 4}}>
+                        principles && principles.length ?
+                            principles.map((p, i) =>
+                                <Col key={i} lg={{span: 4}}>
                                     <SectionText
-                                        icon={i===0?require('../../assets/img/Group 297.svg'):
-                                            i===1?require('../../assets/img/Group 298.svg'):
-                                                i===2?require('../../assets/img/Group 299.svg'):''}
+                                        icon={i === 0 ? require('../../assets/img/Group 297.svg') :
+                                            i === 1 ? require('../../assets/img/Group 298.svg') :
+                                                i === 2 ? require('../../assets/img/Group 299.svg') : ''}
                                         title={p.name}
                                         description={p.description}
                                     />
                                 </Col>
                             )
-                            :null
+                            : <EmptyPlaceholder/>
                     }
                     {/*<Col lg={{span: 4}}>*/}
                     {/*    <SectionText*/}
@@ -184,7 +186,7 @@ const Home = () => {
             </Section>
 
             <Section className={'bg-patek-light-green'}
-                     // rightBgImg={leafBGImg}
+                // rightBgImg={leafBGImg}
             >
                 <Row className='pt-5 pb-3 pb-lg-0'>
                     <Col lg={{span: 4}}>
@@ -194,32 +196,47 @@ const Home = () => {
                     </Col>
                 </Row>
                 <Row className={'mt-5'}>
-                    <Col lg={{span: 4}}>
-                        <SectionText
-                            textAlign={'left'}
-                            icon={avocadoCircle}
-                            title={'Expertise'}
-                            description={'We become subject matter expert in the industry we operate'}
-                        />
-                    </Col>
-                    <Col lg={{span: 4}}>
-                        <SectionText
-                            textAlign={'left'}
-                            icon={avocadoCircle}
-                            title={'Innovation'}
-                            description={'We are adequately equipped and \n' +
-                            'demonstrate consistency to\n' +
-                            'achieve great results\n'}
-                        />
-                    </Col>
-                    <Col lg={{span: 4}}>
-                        <SectionText
-                            textAlign={'left'}
-                            icon={avocadoCircle}
-                            title={'Sustainability'}
-                            description={'Our work models and operation policies are sustainable and replicable considering long term situations'}
-                        />
-                    </Col>
+
+                    {data && data.length ?
+                        data.slice(1,4).map(
+                            (cv, i) => (
+                                <Col key={i} lg={{span: 4}}>
+                                    <SectionText
+                                        textAlign={'left'}
+                                        icon={avocadoCircle}
+                                        title={cv.title}
+                                        description={cv.description}
+                                    />
+                                </Col>
+                            )
+                        )
+                        : <EmptyPlaceholder/>}
+                    {/*<Col lg={{span: 4}}>*/}
+                    {/*    <SectionText*/}
+                    {/*        textAlign={'left'}*/}
+                    {/*        icon={avocadoCircle}*/}
+                    {/*        title={'Expertise'}*/}
+                    {/*        description={'We become subject matter expert in the industry we operate'}*/}
+                    {/*    />*/}
+                    {/*</Col>*/}
+                    {/*<Col lg={{span: 4}}>*/}
+                    {/*    <SectionText*/}
+                    {/*        textAlign={'left'}*/}
+                    {/*        icon={avocadoCircle}*/}
+                    {/*        title={'Innovation'}*/}
+                    {/*        description={'We are adequately equipped and \n' +*/}
+                    {/*        'demonstrate consistency to\n' +*/}
+                    {/*        'achieve great results\n'}*/}
+                    {/*    />*/}
+                    {/*</Col>*/}
+                    {/*<Col lg={{span: 4}}>*/}
+                    {/*    <SectionText*/}
+                    {/*        textAlign={'left'}*/}
+                    {/*        icon={avocadoCircle}*/}
+                    {/*        title={'Sustainability'}*/}
+                    {/*        description={'Our work models and operation policies are sustainable and replicable considering long term situations'}*/}
+                    {/*    />*/}
+                    {/*</Col>*/}
                 </Row>
             </Section>
             <Section className={'bg-gray-gradient-30 pb-5 mh-lg-100vh pb-lg-0'} bgImg={leafBGImg}>
@@ -231,7 +248,9 @@ const Home = () => {
                 </Row>
                 <Row className={'mt-lg-5 mb-5 pb-5 mb-lg-0 pb-lg-0'}>
                     <Col lg={{span: 12}}>
-                        <SlideCarousel items={carouselItems} itemStructure={CarouselItemStructure}/>
+                        {data && data.length ?
+                            <SlideCarousel items={data.slice(4,data.length)} itemStructure={CarouselItemStructure}/> :
+                            <EmptyPlaceholder/>}
                     </Col>
                 </Row>
             </Section>
@@ -257,21 +276,22 @@ const Home = () => {
                     </div>
 
 
-                    {loading ? <>
-                            <Skeleton loading={loading}/>
-                            <Skeleton loading={loading}/>
-                            <Skeleton loading={loading}/>
-                            <Skeleton loading={loading}/>
+                    {articleLoading ? <>
+                            <Skeleton active loading={articleLoading}/>
+                            <Skeleton active loading={articleLoading}/>
+                            <Skeleton active loading={articleLoading}/>
+                            <Skeleton active loading={articleLoading}/>
                         </> :
 
-                        firstFourArticles.length > 0 ?
+                        firstFourArticles.length ?
                             firstFourArticles.map((a, i) => {
                                 return (
                                     <ArticleLayout key={i}
                                                    img={getImageFromArticle(a)}
                                                    category={a.category.name}
                                                    topic={a.title}
-                                                   text={<span className={'cursor-pointer'} onClick={() => redirectTo('/view/' + a.id)}
+                                                   text={<span className={'cursor-pointer'}
+                                                               onClick={() => redirectTo('/view/' + a.id)}
                                                    >Read more...</span>}
                                                    className={
                                                        i === 0 ?
@@ -280,9 +300,7 @@ const Home = () => {
                                     />
                                 )
                             }) :
-                            <div className="text-center my-lg-5 ">
-                                <Empty className={'text-white'} description={'No article Available'}/>
-                            </div>
+                            <EmptyPlaceholder/>
                     }
                     {/*<ArticleLayout img={truckImage}*/}
                     {/*               category={'News'}*/}
@@ -316,4 +334,6 @@ const Home = () => {
     );
 };
 
-export default Home;
+const HomeWithArticles = withArticlesAndPrinciples(Home);
+const HomeWithData = withData(HomeWithArticles, getAllHomeContent);
+export default HomeWithData;

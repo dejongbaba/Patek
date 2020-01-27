@@ -28,13 +28,15 @@ import SectionText from "../../Components/Commons/Section/SectionText";
 import "./about.css";
 import ArticleImage from "../../Components/Commons/ArticleImage/ArticleImage";
 import CareerSection from "../../Components/Commons/CareerSection/CareerSection";
-import {team} from "../../routes/routes";
-import {redirectTo} from "../../Facades/Facade";
+import {patecFood, team} from "../../routes/routes";
+import {getImageFromArticle, redirectTo} from "../../Facades/Facade";
+import withData from "../../Hoc/withData";
+import {getAllAbouts} from "../../Api/api";
+import EmptyPlaceholder from "../../Components/Commons/EmptyPlaceHolder/EmptyPlaceholder";
+import withDirectors from "../../Hoc/aboutHoc/withDirectors";
 
-const About = (props) => {
-
-
-
+const About = ({data, loading, directors, isDirectorsLoading}) => {
+    console.log('data', data, directors, isDirectorsLoading, loading);
     return (
         <>
             <Header img={AboutBgImg} type='half'>
@@ -51,53 +53,57 @@ const About = (props) => {
             <Section bgImg={greenLeafBg} className={'py-lg-5 '}>
                 <Row className={'py-lg-5'}>
                     <Col lg={{span: 6, offset: 3}} className={'text-lg-center'}>
-                        <TextLabel positionClass={'justify-content-lg-center mb-5'} text={'WHO WE ARE'}/>
-                        <HeaderText className={'my-lg-3 fs-1-5 fs-lg-2 patek-deep-green '}
-                                    text={'We are a dynamic organization \n' +
-                                    'focusing on building local manufacturing \n' +
-                                    'capacity to generate employment and \n' +
-                                    'provide sustainable productivity in the \n' +
-                                    'economy.\n'}
-                        />
+                        {data && data.length ? (
+                            <>
+                                <TextLabel positionClass={'justify-content-lg-center mb-5'} text={data[3].title}/>
+                                <HeaderText className={'my-lg-3 fs-1-5 fs-lg-2 patek-deep-green '}
+                                            text={data[3].subtitle}
+                                />
+                            </>
+                        ) : <EmptyPlaceholder/>}
+
+
                     </Col>
                 </Row>
             </Section>
-            <Section className={'bg-gray-gradient-30 py-lg-5 '}
-                // colRightImg={greenLeafBg}
-            >
+            <Section className={'bg-gray-gradient-30 py-lg-5 '}>
                 <Row className={'py-lg-5'}>
                     <Col lg={{span: 6, order: 6}}>
                         <ArticleImage type={'fluid'} image={articleImage}/>
                     </Col>
                     <Col lg={{span: 5, order: 1}}>
-                        <TextLabel positionClass={'my-lg-5'} text={'OUR BUSINESS'}/>
-                        <HeaderText className={'my-lg-3 fs-2-5 patek-deep-green '}
-                                    text={'Our Business Activities'}/>
-                        <ParagraphText text={'Patec Group business activities include aqua farming,fish trading, ' +
-                        'fish processing, livestock farming,manufacturing of packaging bags ' +
-                        'for food products,food distribution and production of woven sack bags ' +
-                        'for agricultural commodities. '}/>
+                        {data && data.length ? (
+                            <>
+                                <TextLabel positionClass={'my-lg-5'} text={data[1].title}/>
+                                <HeaderText className={'my-lg-3 fs-2-5 patek-deep-green '}
+                                            text={data[1].subtitle}/>
+                                <ParagraphText
+                                    text={data[1].description}
+                                />
+                            </>
+                        ) : <EmptyPlaceholder/>}
+
                     </Col>
 
                 </Row>
             </Section>
-            <Section className={'bg-patek-light-green py-lg-5 '}
-                // colLeftImg={greenLeafBg}
-            >
+            <Section className={'bg-patek-light-green py-lg-5 '}>
                 <Row className={'py-lg-5'}>
                     <Col lg={{span: 6}}>
                         <ArticleImage type={'fluid'} image={multiDimensionalImage}/>
                     </Col>
                     <Col lg={{span: 6}}>
-                        <TextLabel positionClass={'my-lg-5'} text={'MULTI-DIMENSIONAL'}/>
-                        <HeaderText className={'my-lg-3 fs-2-5 patek-deep-green '}
-                                    text={'A Multi-Dimensional Company'}/>
-                        <ParagraphText text={'Our world class integrated processing units and cold ' +
-                        'storages along with state-of-the art machinery have ' +
-                        'helped us evolve into a multidimensional and multiproduct ' +
-                        'conglomerate. We ensure all our processes are duly ' +
-                        'accredited by leading international organizations. ' +
-                        'The Group has a workforce of about 300 people'}/>
+                        {data && data.length ? (
+                            <>
+                                <TextLabel positionClass={'my-lg-5'} text={data[0].title}/>
+                                <HeaderText className={'my-lg-3 fs-2-5 patek-deep-green '}
+                                            text={data[0].subtitle}/>
+                                <ParagraphText
+                                    text={data[0].description}
+                                />
+                            </>
+                        ) : <EmptyPlaceholder/>}
+
                     </Col>
                 </Row>
             </Section>
@@ -116,7 +122,7 @@ const About = (props) => {
                     </Col>
                 </Row>
                 <Row className='my-lg-5 py-lg-5'>
-                    <Col lg={{span: 6}}>
+                    <Col lg={{span: 5, offset: 1}}>
                         <div className='mb-lg-5'>
                             <SectionText icon={squareLeafIcon}
                                          descType={'list'}
@@ -143,7 +149,7 @@ const About = (props) => {
                             />
                         </div>
                     </Col>
-                    <Col lg={{span: 6}}>
+                    <Col lg={{span: 5, offset: 1}}>
                         <div className="mt-lg-5 pt-lg-5">
                             <SectionText icon={squareNetworkIcon} descType={'list'}
                                          textAlign={'left'} title={'Supply Network'}
@@ -163,27 +169,27 @@ const About = (props) => {
             </Section>
             <Section className={'bg-gray-gradient-30 py-lg-5 '}>
                 <Row className={'py-lg-5'}>
-                    <Col lg={{span: 6}}>
-                        <TextLabel positionClass={'my-lg-5 justify-content-center'} text={'STRATEGY'}/>
-                        <HeaderText className={'my-lg-3 fs-2-5 patek-deep-green text-center'} text={'How we work'}/>
-                        <img src={triLeafImg} className='img-fluid' alt="green leaf image"/>
-                    </Col>
-                    <Col lg={{span: 6}}>
-                        <img src={agriCommodity} className='img-fluid' alt="agri commodity"/>
-                        <ParagraphText className={'fs-1-2'} text={['Patec Group is an ',
-                            <strong>integrated agribusiness</strong>, ' model that \n' +
-                            'encompasses the entire value chain of the agricultural \n' +
-                            'commodity business, from cultivation, processing,\n' +
-                            'merchandising to manufacturing of a wide range of \n' +
-                            'agricultural products. Through scale, integration and the \n' +
-                            'logistical advantages of its business model, it is an advocate\n' +
-                            'of sustainable growth and is committed to its role as a \n',
-                            <strong>responsible corporate citizen. </strong>, <br/>,
-                            <img src={threeCircleIcon} className={'my-3'} alt="three circles"/>, <br/>,
-                            'Patec Group is able to extract margins at every step of the \n' +
-                            'value chain, thereby reaping  operational synergies and \n' +
-                            'cost efficiencies.  \n']}/>
-                    </Col>
+
+                    {data && data.length ? (
+                        <>
+                            <Col lg={{span: 6}}>
+                                <TextLabel positionClass={'my-lg-5 justify-content-center'} text={data[2].title}/>
+                                <HeaderText className={'my-lg-3 fs-2-5 patek-deep-green text-center'}
+                                            text={data[2].subtitle}/>
+                                <img src={triLeafImg} className='img-fluid' alt="green leaf image"/>
+                            </Col>
+                            <Col lg={{span: 6}}>
+                                <img src={agriCommodity} className='img-fluid' alt="agri commodity"/>
+                                <ParagraphText className={'fs-1-2'} text={
+                                    <> {data[2].description} <br/>
+                                        <img src={threeCircleIcon} className={'my-3'} alt="three circles"/> <br/>
+                                    </>}
+                                />
+                            </Col>
+                        </>
+                    ) : <EmptyPlaceholder/>}
+
+
                 </Row>
             </Section>
             <Section className={'bg-patek-light-green py-lg-5 '}>
@@ -193,12 +199,11 @@ const About = (props) => {
                         <HeaderText className={'mt-lg-3 mb-lg-5 fs-2-5 patek-deep-green text-lg-center'}
                                     text={'Our Board of Directors'}/>
                         <SectionGrid>
-                            <SectionGridItem text={'OPERATIONS'} title={'Ikenna Strange'}/>
-                            <SectionGridItem text={'OPERATIONS'} title={'Ikenna Strange'}/>
-                            <SectionGridItem text={'OPERATIONS'} title={'Ikenna Strange'}/>
-                            <SectionGridItem text={'OPERATIONS'} title={'Ikenna Strange'}/>
-                            <SectionGridItem text={'OPERATIONS'} title={'Ikenna Strange'}/>
-                            <SectionGridItem text={'OPERATIONS'} title={'Ikenna Strange'}/>
+
+                            {directors && directors.length ?
+                                directors.map((dir) => <SectionGridItem logo={getImageFromArticle(dir)} text={dir.role} title={dir.name}/>)
+                                : <EmptyPlaceholder/>}
+
                         </SectionGrid>
                     </Col>
                 </Row>
@@ -210,7 +215,8 @@ const About = (props) => {
                         <HeaderText className={'my-3 mb-5 mb-lg-3 fs-2-5 position-relative z-index-1 patek-deep-green '}
                                     text={['Patec\'s products &', <br/>, '\nServices']}
                         />
-                        <Button className={'position-relative z-index-1'} text={'See Products'}/>
+                        <Button className={'position-relative z-index-1'} onClick={() => redirectTo(patecFood)}
+                                text={'See Products'}/>
                     </Col>
                 </Row>
                 <img src={aboutLeaf} className='position-absolute w-75 d-none d-lg-block left-left'
@@ -222,5 +228,7 @@ const About = (props) => {
         </>
     );
 };
+const AboutWithData = withData(About, getAllAbouts);
+const AboutWithDirectors = withDirectors(AboutWithData);
 
-export default About;
+export default AboutWithDirectors;
