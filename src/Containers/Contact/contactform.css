@@ -1,9 +1,15 @@
 .contact-input .ant-input {
     border-color: transparent;
     border-bottom: 1px solid var(--patek-green);
-    padding: 2rem 1rem;
+    padding: 1rem;
     border-radius: 0px;
     font-size: 1.1rem;
+    transition: all .3s ease-in-out;
+}
+.contact-input .ant-input:focus{
+    outline: none;
+    box-shadow: none;
+    border-bottom: 2px solid var(--patek-green);
 }
 
 .contact-input .ant-form-item-label > label {

@@ -22,7 +22,7 @@ const Footer = ({className, text, logo}) => {
                         <div className="footer-content d-flex mb-lg-5 flex-column flex-lg-row pt-lg-5">
                             <div className="footer-logo flex-basis-30 mb-5 mb-lg-0">
                                 {logo ? <img src={logo} alt="footer logo"/> :
-                                    <img src={footerLogo} alt="footer logo"/>}
+                                    <img src={footerLogo} className={'w-30'} alt="footer logo"/>}
                             </div>
                             <div className="flex-basis-60 d-flex flex-column flex-lg-row">
                                 <ul className='list-unstyled flex-basis-33'>

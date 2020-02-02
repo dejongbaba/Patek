@@ -6,11 +6,13 @@ import './Header.css';
 import LogoPlaceholder from "./LogoPlaceholder";
 import GridLiner from "../GridLines/GridLiner";
 
-const Header = ({
-                    children, img, className, absRightImg, absLeftImg, logo, align, form,
-                    extraImg, primaryLeftImg, logoType, logoDate, logoText, category, logoImg,
-                    SecondaryLeftImg, type = 'full'
-                }) => {
+const Header = (props) => {
+
+    const {
+        children, img, className, absRightImg, absLeftImg, logo, align, form,
+        extraImg, primaryLeftImg, logoType, logoDate, logoText, category, logoImg,
+        SecondaryLeftImg, type = 'full'
+    } = props;
     return (
         <header
             data-aos="fade-in"
@@ -18,10 +20,12 @@ const Header = ({
             data-aos-delay="500"
             data-aos-once="true"
             data-aos-duration={`1000`}
-            className={`${type === 'full' ? 'h-lg-100vh' : 'mh-lg-70vh'}  ${className ? className : ''}`}
+            className={`${type === 'full' ? 'h-lg-100vh ' : 'mh-lg-70vh'} 
+             ${className ? className : ''}`}
             style={{
-                backgroundImage: 'linear-gradient(0deg, rgba(2, 68, 9, 0.8), rgba(8, 59, 11,0.8)),' + `url(${img})`,
-                backgroundBlendMode:'multiply',
+                backgroundImage: 'linear-gradient(0deg, rgba(2, 68, 9, 0.8),' +
+                    ' rgba(8, 59, 11,0.8)),' + `url(${img})`,
+                backgroundBlendMode: 'multiply',
                 backgroundSize: 'cover'
             }}>
             <GridLiner/>
@@ -30,30 +34,40 @@ const Header = ({
                 {type != 'full' ?
                     align === 'left' ?
                         <Row className={'my-5 my-lg-0 ml-lg-5 pt-5'}>
-                            <Col lg={{span: 6}} className={'text-center pt-lg-5 px-lg-0 '}>
+                            <Col lg={{span: 6}}
+                                 className={'text-center pt-lg-5 px-lg-0 '}>
                                 {children}
                             </Col>
                             {form ? form : ''}
                         </Row>
                         :
                         <Row className={'my-5 my-lg-0 pt-5'}>
-                            <Col lg={{span: 6, offset: 3}} className={'text-center pt-lg-5 '}>
+                            <Col lg={{span: 6, offset: 3}}
+                                 className={'text-center pt-lg-5 '}>
                                 {children}
                             </Col>
                         </Row>
                     : children}
-                {logo ? <LogoPlaceholder image={logoImg} type={logoType} category={category} text={logoText} date={logoDate}/> : ''}
+                {logo ? <LogoPlaceholder image={logoImg}
+                                         type={logoType} category={category}
+                                         text={logoText}
+                                         date={logoDate}/> : ''}
             </Container>
             {absLeftImg ?
-                <img className={'position-absolute bottom-left-5 d-none d-md-block w-45'} src={absLeftImg}/> : ''}
-            {absRightImg ? <img className={'position-absolute bottom-right d-none d-md-block  -right-30  w-75'}
+                <img className={'position-absolute bottom-left-5' +
+                ' d-none d-md-block w-45'} src={absLeftImg}/> : ''}
+            {absRightImg ? <img className={'position-absolute bottom-right' +
+            ' d-none d-md-block  -right-30  w-75'}
                                 src={absRightImg}/> : ''}
             {SecondaryLeftImg ?
-                <img className={'position-absolute bottom-left-0 -bottom-10 d-none d-md-block -right-30  w-50'}
+                <img className={'position-absolute bottom-left-0' +
+                ' -bottom-10 d-none d-md-block -right-30  w-50'}
                      src={SecondaryLeftImg}/> : ''}
             {primaryLeftImg ?
                 <img
-                    className={'position-absolute bottom-left-0 filter-brightness-0-5 left-up d-none d-md-block -bottom-10 -right-30  w-50'}
+                    className={'position-absolute bottom-left-0' +
+                    ' filter-brightness-0-5 left-up d-none d-md-block' +
+                    ' -bottom-10 -right-30  w-50'}
                     src={primaryLeftImg}/> : ''}
             {extraImg ? <img src={extraImg}/> : ''}
         </header>

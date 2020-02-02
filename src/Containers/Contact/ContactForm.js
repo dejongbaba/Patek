@@ -30,7 +30,7 @@ class ContactForm extends Component {
 
     sendmail = (params) => {
         let template_params = {
-            "from_name": `${params.firstname} ${params.lastname}`,
+            "from_name": `${params.name}`,
             "from_email": `${params.email}`,
             "to_name": "Patek Firm",
             "message_html": `${params.message}`
@@ -67,30 +67,30 @@ class ContactForm extends Component {
                 >
                     <div className="pt-5">
                         <Row>
-                            <Col md={6}>
-                                <Form.Item className={'contact-input'} label="First Name">
-                                    {getFieldDecorator('firstname', {
+                            <Col md={12}>
+                                <Form.Item className={'contact-input'} label="Name">
+                                    {getFieldDecorator('name', {
                                         rules: [
                                             {
                                                 required: true,
-                                                message: 'Please input your first name',
+                                                message: 'Please input your name',
                                             },
                                         ],
                                     })(<Input />)}
                                 </Form.Item>
                             </Col>
-                            <Col md={6}>
-                                <Form.Item className={'contact-input'} label="Last Name">
-                                    {getFieldDecorator('lastname', {
-                                        rules: [
-                                            {
-                                                required: true,
-                                                message: 'Please input your last name',
-                                            },
-                                        ],
-                                    })(<Input />)}
-                                </Form.Item>
-                            </Col>
+                            {/*<Col md={6}>*/}
+                            {/*    <Form.Item className={'contact-input'} label="Last Name">*/}
+                            {/*        {getFieldDecorator('lastname', {*/}
+                            {/*            rules: [*/}
+                            {/*                {*/}
+                            {/*                    required: true,*/}
+                            {/*                    message: 'Please input your last name',*/}
+                            {/*                },*/}
+                            {/*            ],*/}
+                            {/*        })(<Input />)}*/}
+                            {/*    </Form.Item>*/}
+                            {/*</Col>*/}
                             <Col md={12}>
                                 <Form.Item className={'contact-input'} label="E-mail">
                                     {getFieldDecorator('email', {
