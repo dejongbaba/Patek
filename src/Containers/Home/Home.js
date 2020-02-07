@@ -33,19 +33,21 @@ import Loader from "../../Components/Commons/Loader/Loader";
 
 
 const Home = ({data, articleLoading, principles, firstFourArticles}) => {
+
+    console.log('first four articles', firstFourArticles);
     const valueText = 'Patec Group, founded in 2010 and headquartered \n' +
         'in Lagos is Africa\'s leading agro-allied conglomerate\n' +
         'in the areas of production, processing, packaging and\n' +
         'distribution of food products and agro commodities\n' +
         'poised to contribute the food security in Africa. ';
     const CarouselItemStructure = (item) =>
-        <Row className='py-lg-5 my-lg-5'>
+        <Row className='mb-lg-5 pb-lg-5'>
             <Col lg={{span: 6}}>
                 <img src={CarouselLeaf}
                      className={'w-70'} alt="patek carousel image"/>
             </Col>
             <Col lg={5}>
-                <HeaderText className={'my-lg-5 fs-2-5 mh-lg-90'} text={item.title}/>
+                <HeaderText className={'mt-lg-5 pt-lg-5 fs-2-5 mh-lg-90'} text={item.title}/>
                 <ParagraphText text={item.description}
                                className={'light-black pr-lg-5 pb-lg-5 mb-lg-5'}/>
             </Col>
@@ -160,7 +162,7 @@ const Home = ({data, articleLoading, principles, firstFourArticles}) => {
                         <Col lg={{span: 4}}>
                             <TextLabel className='patek-green'
                                        icon={threeCircleIcon} text='SUBSIDIARIES'/>
-                            <HeaderText className={'my-lg-3 fs-2-5 patek-deep-green '}
+                            <HeaderText className={'my-lg-0 fs-2-5 patek-deep-green '}
                                         text={'Our Subsidiaries'}/>
                         </Col>
                     </Row>

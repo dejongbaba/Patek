@@ -68,7 +68,7 @@ const About = ({data, loading, directors, isDirectorsLoading}) => {
                     </Row>
                 </Section>
                 <Section className={'bg-gray-gradient-30 py-lg-2 '}>
-                    <Row className={'py-lg-5'}>
+                    <Row className={'py-lg-3'}>
                         <Col lg={{span: 6, order: 6}}>
                             <ArticleImage type={'fluid'} image={articleImage}/>
                         </Col>
@@ -89,7 +89,7 @@ const About = ({data, loading, directors, isDirectorsLoading}) => {
                     </Row>
                 </Section>
                 <Section className={'bg-patek-light-green py-lg-2'}>
-                    <Row className={'py-lg-5'}>
+                    <Row className={'py-lg-3'}>
                         <Col lg={{span: 6}}>
                             <ArticleImage type={'fluid'} image={multiDimensionalImage}/>
                         </Col>
@@ -138,7 +138,7 @@ const About = ({data, loading, directors, isDirectorsLoading}) => {
                                                  </ul>}
                                 />
                             </div>
-                            <div className="px-lg-5 ml-lg-5 pt-lg-5">
+                            <div className="px-lg-5 ml-lg-5 pt-lg-3">
                                 <SectionText icon={squareServicesIcon} descType={'list'}
                                              textAlign={'left'}
                                              title={'Services'}
@@ -151,7 +151,7 @@ const About = ({data, loading, directors, isDirectorsLoading}) => {
                             </div>
                         </Col>
                         <Col lg={{span: 5, offset: 1}}>
-                            <div className="mt-lg-5 pt-lg-5">
+                            <div className="mt-lg-5 pt-lg-3">
                                 <SectionText icon={squareNetworkIcon} descType={'list'}
                                              textAlign={'left'} title={'Supply Network'}
                                              description={
@@ -169,7 +169,7 @@ const About = ({data, loading, directors, isDirectorsLoading}) => {
                     </Row>
                 </Section>
                 <Section className={'bg-gray-gradient-30 py-lg-3 '}>
-                    <Row className={'py-lg-5'}>
+                    <Row className={'py-lg-3'}>
 
                         {data && data.length ? (
                             <>
@@ -194,7 +194,7 @@ const About = ({data, loading, directors, isDirectorsLoading}) => {
                     </Row>
                 </Section>
                 <Section className={'bg-patek-light-green py-lg-3'}>
-                    <Row className={'py-lg-5'}>
+                    <Row className={'py-lg-3'}>
                         <Col lg={{span: 12}}>
                             <TextLabel positionClass={'my-lg-5 justify-content-lg-center'} text={'DIRECTORS'}/>
                             <HeaderText className={'mt-lg-3 mb-lg-5 fs-2-5 patek-deep-green text-lg-center'}
@@ -210,8 +210,8 @@ const About = ({data, loading, directors, isDirectorsLoading}) => {
                         </Col>
                     </Row>
                 </Section>
-                <Section className={'bg-patek-light-green  py-lg-5 '}>
-                    <Row className={'py-lg-5'}>
+                <Section className={'bg-patek-light-green  py-lg-3'}>
+                    <Row className={'py-lg-3'}>
                         <Col lg={{span: 6}}>
                             <TextLabel positionClass={'my-5'} text={'Products'}/>
                             <HeaderText
