@@ -43,7 +43,7 @@ const Header = (props) => {
                         :
                         <Row className={'my-5 my-lg-0 pt-5'}>
                             <Col lg={{span: 6, offset: 3}}
-                                 className={'text-center pt-lg-5 '}>
+                                 className={'text-center pt-lg-5 mt-lg-3'}>
                                 {children}
                             </Col>
                         </Row>

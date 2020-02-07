@@ -17,6 +17,7 @@ export const getAllHomeContent = `${BASE_URL}homes`;
 export const getAllDirectors = `${BASE_URL}directors`;
 export const getAllAbouts = `${BASE_URL}abouts`;
 export const getAllSustainabilities = `${BASE_URL}sustainabilities`;
+export const postApplication = `${BASE_URL}applications`;
 
 
 export const getArticles = async () => {
@@ -45,6 +46,14 @@ export const getDirectors = async () => {
 export const getHomes = async () => {
     try {
         return await axios.get(getAllHomeContent);
+    } catch (e) {
+        throw e.response;
+    }
+};
+
+export const postUserApplication = async (param) => {
+    try {
+        return await axios.post(postApplication,param);
     } catch (e) {
         throw e.response;
     }

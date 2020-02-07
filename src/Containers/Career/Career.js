@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import Header from "../../Components/Commons/Header/Header";
 import careerBanner from '../../assets/img/career-banner@2x.png'
 import {Col, Row} from "react-bootstrap";
@@ -7,23 +7,19 @@ import HeaderText from "../../Components/Commons/HeaderText/HeaderText";
 import Breadcrumb from "../../Components/Commons/Breadcrumb/Breadcrumb";
 import Section from "../../Components/Commons/Section/Section";
 import greenLeafBg from "../../assets/img/green-leaf-bg.svg";
-import meetMeBg from "../../assets/img/Meet-me-bg@2x.png";
 import ParagraphText from "../../Components/Commons/ParagraphText/ParagraphText";
 import Footer from "../../Components/Commons/Footer/Footer";
 import SubscriptionSection from "../../Components/Commons/SubscriptionSection/SubscriptionSection";
 import rolePlaceholderimg from "../../assets/img/role-placeholder-img@2x.png";
-import glowingCircle from "../../assets/img/glowingCircle@2x.png";
 import careerWoman from "../../assets/img/career-woman@2x.png";
 import threeCircleIcon from "../../assets/img/three-circle-icon.svg"
 import "./career.css";
 import {career, home} from "../../routes/routes";
-import leafBGImg from "../../assets/img/green-leaf-bg-right.svg";
-import Accordion from "../../Components/Commons/Accordion/Accordion";
-import CarouselLeaf from "../../assets/img/carousel-leaf-img@2x.png";
-import Button from "../../Components/Commons/Button/Button";
 import CareerSection from "../../Components/Commons/CareerSection/CareerSection";
-import {useGetCareers, useGetJobs} from "../../Effects/Effects";
-import {getColoradoFarmsJobs, getPatekFoodJobs, getQualityPackageJobs, getGoldenFoodJobs} from "../../Facades/Facade";
+import {useGetJobs} from "../../Effects/Effects";
+import {getColoradoFarmsJobs, getGoldenFoodJobs, getPatekFoodJobs, getQualityPackageJobs} from "../../Facades/Facade";
+import PatecModal from "../../Components/Commons/Modal/PatecModal";
+import CareerForm from "./CareerForm";
 
 
 const accordionItems = [
@@ -55,7 +51,8 @@ const accordionItems = [
 
     }];
 
-const accordionItemStructure = (j) => <ParagraphText type={'pre'} text={j.Description} className={'text-green-1 pt-lg-5 mb-lg-5'}/>;
+const accordionItemStructure = (j) => <ParagraphText type={'pre'} text={j.Description}
+                                                     className={'text-green-1 pt-lg-5 mb-lg-5'}/>;
 
 const Career = () => {
 
@@ -65,49 +62,27 @@ const Career = () => {
     const qpJobs = getQualityPackageJobs(jobs);
     const cfJobs = getColoradoFarmsJobs(jobs);
     const gfJobs = getGoldenFoodJobs(jobs);
-    console.log('jobs',jobs);
+    const [show, setShow] = useState(false);
+    const handleShow = () => setShow(true);
+    const handleClose = () => setShow(false);
 
     const hrRole = <><strong>HEAD</strong><br/><span>HUMAN RESOURCES</span></>;
     return (
         <>
+            <PatecModal className={'career--modal'} header={false} modalHeading={'Apply'} show={show} closeModal={handleClose}>
+                <CareerForm/>
+            </PatecModal>
             <Header img={careerBanner} type='half'>
-                        <Breadcrumb containerClass={'mb-lg-5'}
-                                    links={
-                                        [
-                                            {name: 'home', path: home},
-                                            {name: 'career', path: career}
-                                        ]
-                                    }/>
-                        <TextLabel positionClass={'justify-content-center'} text={'JOIN THE TEAM'}/>
-                        <HeaderText className={'text-white with-square'} text={'Careers at Patec'}/>
+                <Breadcrumb containerClass={'mb-lg-5'}
+                            links={
+                                [
+                                    {name: 'home', path: home},
+                                    {name: 'career', path: career}
+                                ]
+                            }/>
+                <TextLabel positionClass={'justify-content-center'} text={'JOIN THE TEAM'}/>
+                <HeaderText className={'text-white with-square'} text={'Careers at Patec'}/>
             </Header>
-            <Section className={'py-lg-5 '} bgImg={greenLeafBg}>
-                <Row className={'py-5'}>
-                    <Col lg={{span: 6}}>
-                        <img src={rolePlaceholderimg}
-                             className='mt-lg-5 mb-5 mb-lg-0 pt-lg-5 img-fluid'
-                             alt="woman in office"
-                        />
-                    </Col>
-                    <Col lg={{span: 5}}>
-                        <TextLabel positionClass={'my-5 '}
-                                   text={'WORKING AT PATEC'}
-                        />
-                        <HeaderText className={'mb-lg-5 fs-1-5 fs-lg-2-5'}
-                                    text={'" At Patec group, we are \n' +
-                                    'continually motivated to \n' +
-                                    'provide Quality and sublime \n' +
-                                    'customer Service"'}
-                        />
-                        <ParagraphText text={'Aminu Chigozie'}/>
-                        <ParagraphText className={'patek-green'}
-                                       text={hrRole}
-                        />
-                    </Col>
-                </Row>
-            </Section>
-
-
             <Section className={'bg-patek-light-green py-lg-5 '}>
                 <Row className={'py-lg-5'}>
                     <Col lg={{span: 6}}>
@@ -145,10 +120,10 @@ const Career = () => {
             </Section>
             <Section className={'bg-patek-light-green py-lg-5 '}>
                 <Row className={'py-lg-5'}>
-                    <Col lg={{span: 6 ,order:6}}>
+                    <Col lg={{span: 6, order: 6}}>
                         <img src={careerWoman} className='img-fluid' alt="career woman "/>
                     </Col>
-                    <Col lg={{span: 6,order:1}}>
+                    <Col lg={{span: 6, order: 1}}>
                         <img src={threeCircleIcon} className='mb-3' alt="three icon cirlce"/>
                         <HeaderText className={'text-left fs-1-5 fs-lg-2-5'} text={'WHAT WE LOOK FOR'}/>
                         <ParagraphText className={'mb-lg-5'}
@@ -156,7 +131,7 @@ const Career = () => {
                                        'and are passionate about the development and sustainability of' +
                                        ' Nigeria’s food production; processing and packaging industry.' +
                                        ' We welcome experienced professionals with bachelors’ degrees' +
-                                       ' and excellent academic records.'+
+                                       ' and excellent academic records.' +
                                        'We are developing an amazing workforce of Business analysts: Financial analysts;' +
                                        ' Project managers; Plant managers; Construction workers and people who thrive ' +
                                        'in entrepreneurial environments that are enthusiastic about providing home-grown ' +
@@ -179,69 +154,107 @@ const Career = () => {
                     </Col>
                 </Row>
             </Section>
-
-
+            <Section className={'py-lg-5 '} bgImg={greenLeafBg}>
+                <Row className={'py-5'}>
+                    <Col lg={{span: 6}}>
+                        <img src={rolePlaceholderimg}
+                             className='mt-lg-5 mb-5 mb-lg-0 pt-lg-5 img-fluid'
+                             alt="woman in office"
+                        />
+                    </Col>
+                    <Col lg={{span: 5}}>
+                        <TextLabel positionClass={'my-5 '}
+                                   text={'WORKING AT PATEC'}
+                        />
+                        <HeaderText className={'mb-lg-5 fs-1-5 fs-lg-2-5'}
+                                    text={'" At Patec group, we are \n' +
+                                    'continually motivated to \n' +
+                                    'provide Quality and sublime \n' +
+                                    'customer Service"'}
+                        />
+                        <ParagraphText text={'Aminu Chigozie'}/>
+                        <ParagraphText className={'patek-green'}
+                                       text={hrRole}
+                        />
+                    </Col>
+                </Row>
+            </Section>
             <Section className={'bg-gray-gradient-30'}>
                 <Row className='pt-lg-5 text-center'>
-                    <Col lg={{span: 4, offset:4}}>
+                    <Col lg={{span: 4, offset: 4}}>
                         <TextLabel className='patek-green'
                                    positionClass={'justify-content-center mb-4 mb-lg-0'}
                                    icon={threeCircleIcon}
                                    text='VACANCIES'/>
-                        <HeaderText className={'my-lg-3 fs-2-5 patek-deep-green  text-center'} text={'Open Vacancies'}/>
-                        <HeaderText className={'border-top-green-1 d-inline-block ' +
-                        'hk-grotesk-regular mt-lg-5 pt-5 fs-1-5 fs-lg-2-5 text-black text-center'} text={'Patec TraveliFood'}/>
+                        <HeaderText
+                            className={'my-lg-3 fs-2-5 patek-deep-green  text-center'}
+                            text={'Open Vacancies'}/>
+                        {/*<HeaderText className={'border-top-green-1 d-inline-block ' +*/}
+                        {/*'hk-grotesk-regular mt-lg-5 pt-5 fs-1-5 fs-lg-2-5 text-black text-center'} text={'Patec TraveliFood'}/>*/}
                     </Col>
                 </Row>
                 <Row className={'mt-5'}>
-                    <Col lg={{span: 10,offset:1}}>
-                        <Accordion items={pfJobs} itemStructure={accordionItemStructure}/>
+                    <Col lg={{span: 10, offset: 1}}>
+                        <div className="job--card">
+                            <h1 className={'job--card-title'}>Associate Director</h1>
+                            <p className={'job--card-description'}>
+                                Our expanding company is seeking to hire an Operations
+                                Manager to join our leadership team. You will be in charge of providing inspired
+                                leadership for the operation for one of our organization's lines of business,
+                                which involves making important policy and strategic decisions,
+                                as well as the development and implementation of operational
+                                policies and procedures.
+                            </p>
+                            <a onClick={handleShow} className='job--link'>Apply Now</a>
+
+                        </div>
+                        {/*<Accordion items={pfJobs} itemStructure={accordionItemStructure}/>*/}
                     </Col>
                 </Row>
             </Section>
-            <Section className={'bg-gray-gradient-30'}>
-                <Row className='pt-lg-5 text-center'>
-                    <Col lg={{span: 4, offset:4}}>
-                        <HeaderText className={'border-top-green-1 d-inline-block hk-grotesk-regular' +
-                        ' mt-lg-5 pt-5 fs-1-5 fs-lg-2-5 text-black text-center'} text={'Colorado Farms'}/>
-                    </Col>
-                </Row>
-                <Row className={'mt-5'}>
-                    <Col lg={{span: 10,offset:1}}>
-                        <Accordion items={cfJobs} itemStructure={accordionItemStructure}/>
-                    </Col>
-                </Row>
-            </Section>
-            <Section className={'bg-gray-gradient-30'}>
-                <Row className='pt-lg-5 text-center'>
-                    <Col lg={{span: 4, offset:4}}>
-                        <HeaderText className={'border-top-green-1 d-inline-block hk-grotesk-regular' +
-                        ' mt-lg-5 pt-5 fs-1-5 fs-lg-2-5 text-black text-center'} text={'Quality Packaging'}/>
-                    </Col>
-                </Row>
-                <Row className={'mt-5'}>
-                    <Col lg={{span: 10,offset:1}}>
-                        <Accordion items={qpJobs} itemStructure={accordionItemStructure}/>
-                    </Col>
-                </Row>
-            </Section>
-            <Section className={'bg-gray-gradient-30'}>
-                <Row className='pt-lg-5 text-center'>
-                    <Col lg={{span: 4, offset:4}}>
-                        <HeaderText className={'border-top-green-1 fs-1-5 fs-lg-2-5 d-inline-block hk-grotesk-regular' +
-                        ' mt-lg-5 pt-5 fs-1-5 text-black text-center'} text={'Golden Foods'}/>
-                    </Col>
-                </Row>
-                <Row className={'mt-5'}>
-                    <Col lg={{span: 10,offset:1}}>
-                        <Accordion items={gfJobs} itemStructure={accordionItemStructure}/>
-                    </Col>
-                </Row>
-            </Section>
+            {/*<Section className={'bg-gray-gradient-30'}>*/}
+            {/*    <Row className='pt-lg-5 text-center'>*/}
+            {/*        <Col lg={{span: 4, offset:4}}>*/}
+            {/*            <HeaderText className={'border-top-green-1 d-inline-block hk-grotesk-regular' +*/}
+            {/*            ' mt-lg-5 pt-5 fs-1-5 fs-lg-2-5 text-black text-center'} text={'Colorado Farms'}/>*/}
+            {/*        </Col>*/}
+            {/*    </Row>*/}
+            {/*    <Row className={'mt-5'}>*/}
+            {/*        <Col lg={{span: 10,offset:1}}>*/}
+            {/*            <Accordion items={cfJobs} itemStructure={accordionItemStructure}/>*/}
+            {/*        </Col>*/}
+            {/*    </Row>*/}
+            {/*</Section>*/}
+            {/*<Section className={'bg-gray-gradient-30'}>*/}
+            {/*    <Row className='pt-lg-5 text-center'>*/}
+            {/*        <Col lg={{span: 4, offset:4}}>*/}
+            {/*            <HeaderText className={'border-top-green-1 d-inline-block hk-grotesk-regular' +*/}
+            {/*            ' mt-lg-5 pt-5 fs-1-5 fs-lg-2-5 text-black text-center'} text={'Quality Packaging'}/>*/}
+            {/*        </Col>*/}
+            {/*    </Row>*/}
+            {/*    <Row className={'mt-5'}>*/}
+            {/*        <Col lg={{span: 10,offset:1}}>*/}
+            {/*            <Accordion items={qpJobs} itemStructure={accordionItemStructure}/>*/}
+            {/*        </Col>*/}
+            {/*    </Row>*/}
+            {/*</Section>*/}
+            {/*<Section className={'bg-gray-gradient-30'}>*/}
+            {/*    <Row className='pt-lg-5 text-center'>*/}
+            {/*        <Col lg={{span: 4, offset:4}}>*/}
+            {/*            <HeaderText className={'border-top-green-1 fs-1-5 fs-lg-2-5 d-inline-block hk-grotesk-regular' +*/}
+            {/*            ' mt-lg-5 pt-5 fs-1-5 text-black text-center'} text={'Golden Foods'}/>*/}
+            {/*        </Col>*/}
+            {/*    </Row>*/}
+            {/*    <Row className={'mt-5'}>*/}
+            {/*        <Col lg={{span: 10,offset:1}}>*/}
+            {/*            <Accordion items={gfJobs} itemStructure={accordionItemStructure}/>*/}
+            {/*        </Col>*/}
+            {/*    </Row>*/}
+            {/*</Section>*/}
 
 
             <CareerSection header={'" An Amazing Company at the frontiers of agro allied \n' +
-            'Development in West AFrica "'} />
+            'Development in West AFrica "'}/>
             <SubscriptionSection/>
             <Footer/>
         </>

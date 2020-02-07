@@ -8,9 +8,9 @@ import HeaderText from "../HeaderText/HeaderText";
 import ArticleLayout from "../ArticleLayout/ArticleLayout";
 import {blog, event, news} from "../../../routes/routes";
 import {getBlogArticle, getEventArticle, getImageFromArticle, getNewsArticle} from "../../../Facades/Facade";
-import {IMAGE_URL} from "../../../Api/api";
 import {Empty, Skeleton} from "antd";
 import Pagination from "../../Pagination/Pagination";
+import Loader from "../Loader/Loader";
 
 
 const ArticleSectionLayout = ({pathname, articles}) => {
@@ -75,66 +75,68 @@ const ArticleSectionLayout = ({pathname, articles}) => {
 
 
     return (
-        <Section className={'bg-patek-light-green'}
-                 rightBgImg={leafBGImg}>
-            <Row className='pt-lg-5 mt-5'>
-                <Col lg={{span: 4}}>
-                    <TextLabel className='patek-green' icon={threeCircleIcon}
-                               text={subTitle ? subTitle : 'In the News'}
-                    />
-                    <HeaderText className={'my-lg-3 fs-2-5 patek-deep-green '}
-                                text={title ? title : 'News'}
-                    />
-                </Col>
-            </Row>
-            <Row className={'mt-5'}>
-                {loading ? <>
-                        <Skeleton className={'green-skeleton'} loading={loading}/>
-                        <Skeleton className={'green-skeleton'} loading={loading}/>
-                        <Skeleton className={'green-skeleton'} loading={loading}/>
-                        <Skeleton className={'green-skeleton'} loading={loading}/>
-                    </> :
-                    currentPosts && currentPosts.length > 0 ?
-                        <>
-                            { currentPosts.map((a, i) => {
-                                return (
-                                    <Col key={i} lg={{span: 4}}>
-                                        <ArticleLayout
-                                            type={'blog'}
-                                            text={a.preview}
-                                            category={a.category.name}
-                                            topic={a.title}
-                                            date={a.date}
-                                            link={'/view/' + a.id}
-                                            img={getImageFromArticle(a)}
-                                        />
-                                    </Col>
-                                )
-                            })}
-                        </>
-                        :
-                        <div className="d-flex justify-content-center mb-5 flex-grow-1">
-                            <Empty description={'No article Available'} className={'justify-content-center'}/>
-                        </div>
-                }
-            </Row>
-            <Row>
-                <Col lg={{span: 12}}>
-                    {
+        <Loader loading={loading}>
+            <Section className={'bg-patek-light-green'}
+                     rightBgImg={leafBGImg}>
+                <Row className='pt-lg-5 mt-5'>
+                    <Col lg={{span: 4}}>
+                        <TextLabel className='patek-green' icon={threeCircleIcon}
+                                   text={subTitle ? subTitle : 'In the News'}
+                        />
+                        <HeaderText className={'my-lg-3 fs-2-5 patek-deep-green '}
+                                    text={title ? title : 'News'}
+                        />
+                    </Col>
+                </Row>
+                <Row className={'mt-5'}>
+                    {loading ? <>
+                            <Skeleton className={'green-skeleton'} loading={loading}/>
+                            <Skeleton className={'green-skeleton'} loading={loading}/>
+                            <Skeleton className={'green-skeleton'} loading={loading}/>
+                            <Skeleton className={'green-skeleton'} loading={loading}/>
+                        </> :
                         currentPosts && currentPosts.length > 0 ?
-                            <Pagination
-                                postsPerPage={postsPerPage}
-                                totalPosts={posts.length}
-                                paginate={paginate}
-                                next={next}
-                                prev={prev}
-                            />
+                            <>
+                                {currentPosts.map((a, i) => {
+                                    return (
+                                        <Col key={i} lg={{span: 4}}>
+                                            <ArticleLayout
+                                                type={'blog'}
+                                                text={a.preview}
+                                                category={a.category.name}
+                                                topic={a.title}
+                                                date={a.date}
+                                                link={'/view/' + a.id}
+                                                img={getImageFromArticle(a)}
+                                            />
+                                        </Col>
+                                    )
+                                })}
+                            </>
                             :
-                            null
+                            <div className="d-flex justify-content-center mb-5 flex-grow-1">
+                                <Empty description={'No article Available'} className={'justify-content-center'}/>
+                            </div>
                     }
-                </Col>
-            </Row>
-        </Section>
+                </Row>
+                <Row className={'mb-5'}>
+                    <Col lg={{span: 12}}>
+                        {
+                            currentPosts && currentPosts.length > 0 ?
+                                <Pagination
+                                    postsPerPage={postsPerPage}
+                                    totalPosts={posts.length}
+                                    paginate={paginate}
+                                    next={next}
+                                    prev={prev}
+                                />
+                                :
+                                null
+                        }
+                    </Col>
+                </Row>
+            </Section>
+        </Loader>
     );
 };
 

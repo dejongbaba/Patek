@@ -140,11 +140,13 @@ export const useApi = (url, config = {method: 'get'}) => {
     const [err, setErr] = useState(true);
     useEffect(() => {
         axios(url, config).then(result => {
+            setLoading(false);
             if (result) {
                 console.log('results', result);
                 setData(result.data);
             }
         }).catch(err => {
+            setLoading(false);
             setErr(err);
             message.error('unable to get data at the moment!', 3);
         });

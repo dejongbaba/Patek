@@ -5,7 +5,7 @@ import GridLiner from "../GridLines/GridLiner";
 
 const Section = ({children, className, leftImg, bgImg, colRightImg, colLeftImg, rightBgImg}) => {
     return (
-        <section className={`position-relative overflow-hidden mh-lg-70vh py-5 ${className ? className : ''}`}>
+        <section className={`position-relative overflow-hidden mh-lg-70vh py-1 ${className ? className : ''}`}>
             <GridLiner/>
             <Container>
                 {children}
@@ -23,7 +23,7 @@ const Section = ({children, className, leftImg, bgImg, colRightImg, colLeftImg, 
                      className={'position-absolute d-none d-md-block left-center w-30'}
                      alt="section left img"/> : ''}
             {bgImg ? <img src={bgImg}
-                          className={'position-absolute d-none d-md-block center-right w-35 '}
+                          className={'position-absolute d-none d-md-block center-right w-25 '}
                           alt="section bg img"/> : ''}
             {rightBgImg ?
                 <img src={rightBgImg}

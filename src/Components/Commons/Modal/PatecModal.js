@@ -1,13 +1,16 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {Modal} from "react-bootstrap";
 
-const PatecModal = ({children,show,closeModal,modalHeading}) => {
+const PatecModal = ({children, show, className, closeModal, header, modalHeading}) => {
     return (
         <>
-            <Modal show={show} size={'md'} onHide={closeModal}>
-                <Modal.Header closeButton>
-                    <Modal.Title>{modalHeading}</Modal.Title>
-                </Modal.Header>
+            <Modal show={show} className={className ? className : ''}
+                   size={'md'} onHide={closeModal}>
+                {header ?
+                    <Modal.Header closeButton>
+                        <Modal.Title>{modalHeading}</Modal.Title>
+                    </Modal.Header> : null
+                }
                 <Modal.Body className={'position-relative'}>
                     {children}
                 </Modal.Body>

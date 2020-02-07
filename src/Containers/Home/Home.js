@@ -29,11 +29,10 @@ import withData from "../../Hoc/withData";
 import {getAllHomeContent} from "../../Api/api";
 import withArticlesAndPrinciples from "../../Hoc/homeHoc/withArticlesAndPrinciples";
 import EmptyPlaceholder from "../../Components/Commons/EmptyPlaceHolder/EmptyPlaceholder";
+import Loader from "../../Components/Commons/Loader/Loader";
 
 
 const Home = ({data, articleLoading, principles, firstFourArticles}) => {
-
-    console.log('first four articles', firstFourArticles);
     const valueText = 'Patec Group, founded in 2010 and headquartered \n' +
         'in Lagos is Africa\'s leading agro-allied conglomerate\n' +
         'in the areas of production, processing, packaging and\n' +
@@ -53,182 +52,184 @@ const Home = ({data, articleLoading, principles, firstFourArticles}) => {
         </Row>;
 
     return (
-        <div>
-            <Header className='position-relative overflow-y-hidden overflow-x-hidden'
-                    img={headerImgOne}
-                    absRightImg={treeBranches}
-                    primaryLeftImg={greenLeaf}
-                    SecondaryLeftImg={fadedLeaf}
-            >
-                <Row>
-                    <Col lg={{span: 6, offset: 6}} className={'my-lg-5'}>
-                        <div className="pt-lg-5 mt-lg-5 pb-5 pb-lg-0">
-                            <HeaderText
-                                animation={'fade-up'}
-                                animationDelay={'1000'}
-                                animationDuration={'1000'}
-                                className={'text-white mt-5 fs-lg-4 pt-lg-5 with-square mb-5 mb-lg-0'}
-                                text={<>We Stay ahead <br/> of the Curve</>}/>
-                            <ParagraphText
-                                animation={'fade-up'}
-                                animationDelay={'1000'}
-                                animationDuration={'2000'}
-                                text={'Embracing Innovation and Technology'}
-                                className={'text-white mb-5 mb-lg-0'}/>
-                        </div>
-                    </Col>
-                </Row>
-            </Header>
-            <Section bgImg={greenLeafBg} data-aos-easing="ease-in-out"
-                     data-aos-delay="500"
-                     data-aos-once="true">
-                <Row className='py-lg-5 px-lg-5 my-5 my-lg-0'>
-                    <Col lg={{span: 6}}>
-                        <ArticleImage type={'fluid'} image={homePageArtImage}/>
-                    </Col>
-                    <Col lg={{span: 6}}>
-                        <TextLabel className='patek-green' icon={threeCircleIcon} text='who we are'/>
-                        <HeaderText className={'my-lg-3 fs-2-5 '} text={'Patec - '}/>
-                        <ParagraphText text={valueText} className={'light-black pr-lg-5 mb-lg-5'}/>
-                        <Button className={'btn-patek-green text-uppercase'}
-                                onClick={() => redirectTo('/about')}
-                                text={'read more'}/>
-                    </Col>
-                </Row>
-            </Section>
-            <Section className={'bg-patek-light-green'}>
-                <Row className='pt-lg-5 px-lg-5 py-5 pb-lg-0'>
-                    <Col lg={{span: 4, offset: 4}}>
-                        <TextLabel className='patek-green'
-                                   positionClass={'justify-content-center mb-3 mb-lg-0'}
-                                   icon={threeCircleIcon} text='DYNAMIC'/>
-                        <HeaderText className={'my-lg-3 fs-2-5 patek-deep-green text-lg-center'}
-                                    text={'Vision, Mission & Core Values'}/>
-                    </Col>
-                </Row>
-                <Row className={'mt-5'}>
-                    {
-                        principles && principles.length ?
-                            principles.map((p, i) =>
-                                <Col key={i} lg={{span: 4}}>
-                                    <SectionText
-                                        icon={i === 0 ? require('../../assets/img/Group 297.svg') :
-                                            i === 1 ? require('../../assets/img/Group 298.svg') :
-                                                i === 2 ? require('../../assets/img/Group 299.svg') : ''}
-                                        title={p.name}
-                                        description={p.description}
-                                    />
-                                </Col>
-                            )
-                            : <EmptyPlaceholder/>
-                    }
-                </Row>
-            </Section>
-
-            <Section className={'bg-patek-light-green'}>
-                <Row className='pt-5 pb-3 pb-lg-0'>
-                    <Col lg={{span: 4}}>
-                        <TextLabel className='patek-green'
-                                   positionClass={'mb-3 mb-lg-0'}
-                                   icon={threeCircleIcon}
-                                   text='VALUES'/>
-                        <HeaderText className={'my-lg-3 fs-2-5 patek-deep-green '}
-                                    text={'Our Core Values'}/>
-                    </Col>
-                </Row>
-                <Row className={'mt-5'}>
-
-                    {data && data.length ?
-                        data.slice(1, 4).map(
-                            (cv, i) => (
-                                <Col key={i} lg={{span: 4}}>
-                                    <SectionText
-                                        textAlign={'left'}
-                                        icon={avocadoCircle}
-                                        title={cv.title}
-                                        description={cv.description}
-                                    />
-                                </Col>
-                            )
-                        )
-                        : <EmptyPlaceholder/>}
-                </Row>
-            </Section>
-            <Section className={'bg-gray-gradient-30 pb-5 mh-lg-100vh pb-lg-0'}
-                     bgImg={leafBGImg}>
-                <Row className='py-5 pb-lg-0'>
-                    <Col lg={{span: 4}}>
-                        <TextLabel className='patek-green'
-                                   icon={threeCircleIcon} text='SUBSIDIARIES'/>
-                        <HeaderText className={'my-lg-3 fs-2-5 patek-deep-green '}
-                                    text={'Our Subsidiaries'}/>
-                    </Col>
-                </Row>
-                <Row className={'mt-lg-5 mb-5 pb-5 mb-lg-0 pb-lg-0'}>
-                    <Col lg={{span: 12}}>
-                        {data && data.length ?
-                            <SlideCarousel items={data.slice(4, data.length)}
-                                           itemStructure={CarouselItemStructure}/> :
-                            <EmptyPlaceholder/>}
-                    </Col>
-                </Row>
-            </Section>
-            <Section className={'bg-patek-light-green mh-vh-70'}>
-                <Row className='pt-5 pb-5 pb-lg-0 text-lg-center'>
-                    <Col lg={{span: 8, offset: 2}}>
-                        <TextLabel className='patek-green'
-                                   positionClass='justify-content-lg-center'
-                                   icon={threeCircleIcon} text='DYNAMIC'/>
-                        <HeaderText className={'my-lg-3 fs-2 patek-deep-green'}
-                                    text={'" An Amazing Company at the frontiers ' +
-                                    'of agro allied Development in West AFrica "'}
-                        />
-
-                    </Col>
-                </Row>
-            </Section>
-            <Section className={'px-lg-5 py-5 bg-black mh-vh-130'}>
-                <div
-                    className="d-grid my-lg-5 w-100 calc-height-100-10
-                    grid-template-3-3 grid-row-gap-1 grid-column-gap-1">
-                    <div className="first-item">
-                        <TextLabel positionClass={'my-lg-4'}
-                                   className={'text-white'} text={'updates'}
-                                   icon={whiteCircle}/>
-                        <HeaderText text={'In the News'}
-                                    className='text-white fs-2-5'/>
-                    </div>
-
-                    {articleLoading ? <>
-                            <Skeleton active loading={articleLoading}/>
-                            <Skeleton active loading={articleLoading}/>
-                            <Skeleton active loading={articleLoading}/>
-                            <Skeleton active loading={articleLoading}/>
-                        </> :
-                        firstFourArticles.length ?
-                            firstFourArticles.map((a, i) => {
-                                return (
-                                    <ArticleLayout key={i}
-                                                   img={getImageFromArticle(a)}
-                                                   category={a.category.name}
-                                                   topic={a.title}
-                                                   text={<span className={'cursor-pointer'}
-                                                               onClick={() => redirectTo('/view/' + a.id)}
-                                                   >Read more...</span>}
-                                                   className={
-                                                       i === 0 ?
-                                                           'second-item grid-row-span-1-3 grid-column-span-2-4' :
-                                                           i === 3 ? "fifth-item grid-column-span-2-4" : ''}
-                                    />
+        <Loader loading={articleLoading}>
+            <div>
+                <Header className='position-relative overflow-y-hidden overflow-x-hidden'
+                        img={headerImgOne}
+                        absRightImg={treeBranches}
+                        primaryLeftImg={greenLeaf}
+                        SecondaryLeftImg={fadedLeaf}
+                >
+                    <Row>
+                        <Col lg={{span: 6, offset: 6}} className={'my-lg-5'}>
+                            <div className="pt-lg-5 mt-lg-5 pb-5 pb-lg-0">
+                                <HeaderText
+                                    animation={'fade-up'}
+                                    animationDelay={'1000'}
+                                    animationDuration={'1000'}
+                                    className={'text-white mt-5 fs-lg-4-5 header__text--bold pt-lg-5 with-square mb-5 mb-lg-0'}
+                                    text={<>We Stay ahead <br/> of the Curve</>}/>
+                                <ParagraphText
+                                    animation={'fade-up'}
+                                    animationDelay={'1000'}
+                                    animationDuration={'2000'}
+                                    text={'Embracing Innovation and Technology'}
+                                    className={'text-white mb-5 mb-lg-0'}/>
+                            </div>
+                        </Col>
+                    </Row>
+                </Header>
+                <Section bgImg={greenLeafBg} data-aos-easing="ease-in-out"
+                         data-aos-delay="500"
+                         data-aos-once="true">
+                    <Row className='py-lg-5 px-lg-5 my-5 my-lg-0'>
+                        <Col lg={{span: 6}}>
+                            <ArticleImage type={'fluid'} image={homePageArtImage}/>
+                        </Col>
+                        <Col lg={{span: 6}}>
+                            <TextLabel className='patek-green' icon={threeCircleIcon} text='who we are'/>
+                            <HeaderText className={'my-lg-3 fs-2-5 '} text={'Patec - '}/>
+                            <ParagraphText text={valueText} className={'light-black pr-lg-5 mb-lg-5'}/>
+                            <Button className={'btn-patek-green text-uppercase'}
+                                    onClick={() => redirectTo('/about')}
+                                    text={'read more'}/>
+                        </Col>
+                    </Row>
+                </Section>
+                <Section className={'bg-patek-light-green'}>
+                    <Row className='pt-lg-5 px-lg-5 py-5 pb-lg-0'>
+                        <Col lg={{span: 4, offset: 4}}>
+                            <TextLabel className='patek-green'
+                                       positionClass={'justify-content-center mb-3 mb-lg-0'}
+                                       icon={threeCircleIcon} text='DYNAMIC'/>
+                            <HeaderText className={'my-lg-3 fs-2-5 patek-deep-green text-lg-center'}
+                                        text={'Vision, Mission & Core Values'}/>
+                        </Col>
+                    </Row>
+                    <Row className={'mt-5'}>
+                        {
+                            principles && principles.length ?
+                                principles.map((p, i) =>
+                                    <Col key={i} lg={{span: 4}}>
+                                        <SectionText
+                                            icon={i === 0 ? require('../../assets/img/Group 297.svg') :
+                                                i === 1 ? require('../../assets/img/Group 298.svg') :
+                                                    i === 2 ? require('../../assets/img/Group 299.svg') : ''}
+                                            title={p.name}
+                                            description={p.description}
+                                        />
+                                    </Col>
                                 )
-                            }) :
-                            <EmptyPlaceholder/>
-                    }
-                </div>
-            </Section>
-            <SubscriptionSection/>
-            <Footer/>
-        </div>
+                                : <EmptyPlaceholder/>
+                        }
+                    </Row>
+                </Section>
+
+                <Section className={'bg-patek-light-green'}>
+                    <Row className='pt-5 pb-3 pb-lg-0'>
+                        <Col lg={{span: 4}}>
+                            <TextLabel className='patek-green'
+                                       positionClass={'mb-3 mb-lg-0'}
+                                       icon={threeCircleIcon}
+                                       text='VALUES'/>
+                            <HeaderText className={'my-lg-3 fs-2-5 patek-deep-green '}
+                                        text={'Our Core Values'}/>
+                        </Col>
+                    </Row>
+                    <Row className={'mt-5'}>
+
+                        {data && data.length ?
+                            data.slice(1, 4).map(
+                                (cv, i) => (
+                                    <Col key={i} lg={{span: 4}}>
+                                        <SectionText
+                                            textAlign={'left'}
+                                            icon={avocadoCircle}
+                                            title={cv.title}
+                                            description={cv.description}
+                                        />
+                                    </Col>
+                                )
+                            )
+                            : <EmptyPlaceholder/>}
+                    </Row>
+                </Section>
+                <Section className={'bg-gray-gradient-30 pb-5 mh-lg-100vh pb-lg-0'}
+                         bgImg={leafBGImg}>
+                    <Row className='py-5 pb-lg-0'>
+                        <Col lg={{span: 4}}>
+                            <TextLabel className='patek-green'
+                                       icon={threeCircleIcon} text='SUBSIDIARIES'/>
+                            <HeaderText className={'my-lg-3 fs-2-5 patek-deep-green '}
+                                        text={'Our Subsidiaries'}/>
+                        </Col>
+                    </Row>
+                    <Row className={'mt-lg-5 mb-5 pb-5 mb-lg-0 pb-lg-0'}>
+                        <Col lg={{span: 12}}>
+                            {data && data.length ?
+                                <SlideCarousel items={data.slice(4, data.length)}
+                                               itemStructure={CarouselItemStructure}/> :
+                                <EmptyPlaceholder/>}
+                        </Col>
+                    </Row>
+                </Section>
+                <Section className={'bg-patek-light-green mh-vh-70'}>
+                    <Row className='pt-5 pb-5 pb-lg-0 text-lg-center'>
+                        <Col lg={{span: 8, offset: 2}}>
+                            <TextLabel className='patek-green'
+                                       positionClass='justify-content-lg-center'
+                                       icon={threeCircleIcon} text='DYNAMIC'/>
+                            <HeaderText className={'my-lg-3 fs-2 patek-deep-green'}
+                                        text={'" An Amazing Company at the frontiers ' +
+                                        'of agro allied Development in West AFrica "'}
+                            />
+
+                        </Col>
+                    </Row>
+                </Section>
+                <Section className={'px-lg-5 py-5 bg-black mh-vh-130'}>
+                    <div
+                        className="d-grid my-lg-5 w-100 calc-height-100-10
+                    grid-template-3-3 grid-row-gap-1 grid-column-gap-1">
+                        <div className="first-item">
+                            <TextLabel positionClass={'my-lg-4'}
+                                       className={'text-white'} text={'updates'}
+                                       icon={whiteCircle}/>
+                            <HeaderText text={'In the News'}
+                                        className='text-white fs-2-5'/>
+                        </div>
+
+                        {articleLoading ? <>
+                                <Skeleton active loading={articleLoading}/>
+                                <Skeleton active loading={articleLoading}/>
+                                <Skeleton active loading={articleLoading}/>
+                                <Skeleton active loading={articleLoading}/>
+                            </> :
+                            firstFourArticles.length ?
+                                firstFourArticles.map((a, i) => {
+                                    return (
+                                        <ArticleLayout key={i}
+                                                       img={getImageFromArticle(a)}
+                                                       category={a.category.name}
+                                                       topic={a.title}
+                                                       text={<span className={'cursor-pointer'}
+                                                                   onClick={() => redirectTo('/view/' + a.id)}
+                                                       >Read more...</span>}
+                                                       className={
+                                                           i === 0 ?
+                                                               'second-item grid-row-span-1-3 grid-column-span-2-4' :
+                                                               i === 3 ? "fifth-item grid-column-span-2-4" : ''}
+                                        />
+                                    )
+                                }) :
+                                <EmptyPlaceholder/>
+                        }
+                    </div>
+                </Section>
+                <SubscriptionSection/>
+                <Footer/>
+            </div>
+        </Loader>
     );
 };
 const HomeWithArticles = withArticlesAndPrinciples(Home);

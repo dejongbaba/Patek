@@ -19,3 +19,11 @@
     animation-iteration-count: infinite;
     animation-timing-function: ease-in-out;
 }
+
+@media all and (min-width:1200px){
+
+
+    .header__text--bold{
+        font-size: 4.72rem;
+    }
+}

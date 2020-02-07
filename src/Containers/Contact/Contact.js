@@ -27,7 +27,7 @@ const Contact = () => {
 
     return (
         <div>
-            <PatecModal modalHeading={'Map Address'} show={show} closeModal={handleClose}>
+            <PatecModal header={true} modalHeading={'Map Address'} show={show} closeModal={handleClose}>
                     <MapContainer/>
             </PatecModal>
             <Header img={AboutBgImg} type='half'
