@@ -30,6 +30,7 @@
 
 .job--link{
     color: #24B900;
+    cursor: pointer;
     font-weight: bold;
     transition: all .3s ease-in-out ;
 }

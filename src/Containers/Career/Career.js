@@ -125,7 +125,10 @@ const Career = () => {
                     </Col>
                     <Col lg={{span: 6, order: 1}}>
                         <img src={threeCircleIcon} className='mb-3' alt="three icon cirlce"/>
-                        <HeaderText className={'text-left fs-1-5 fs-lg-2-5'} text={'WHAT WE LOOK FOR'}/>
+                        <HeaderText
+                            className={'text-left fs-1-5 fs-lg-2-5'}
+                            text={'WHAT WE LOOK FOR'}
+                        />
                         <ParagraphText className={'mb-lg-5'}
                                        text={'We hire exceptional people that seek after innovation ' +
                                        'and are passionate about the development and sustainability of' +
@@ -188,7 +191,8 @@ const Career = () => {
                                    text='VACANCIES'/>
                         <HeaderText
                             className={'my-lg-3 fs-2-5 patek-deep-green  text-center'}
-                            text={'Open Vacancies'}/>
+                            text={'Open Vacancies'}
+                        />
                         {/*<HeaderText className={'border-top-green-1 d-inline-block ' +*/}
                         {/*'hk-grotesk-regular mt-lg-5 pt-5 fs-1-5 fs-lg-2-5 text-black text-center'} text={'Patec TraveliFood'}/>*/}
                     </Col>
@@ -205,7 +209,7 @@ const Career = () => {
                                 as well as the development and implementation of operational
                                 policies and procedures.
                             </p>
-                            <a onClick={handleShow} className='job--link'>Apply Now</a>
+                            <span onClick={handleShow} className='job--link'>Apply Now</span>
 
                         </div>
                         {/*<Accordion items={pfJobs} itemStructure={accordionItemStructure}/>*/}
