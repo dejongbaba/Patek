@@ -139,7 +139,7 @@ const Food = () => {
                 </Row>
             </Section>
 
-            <Section className={'bg-gray-gradient-30'} bgImg={leafBGImg}>
+            <Section className={'bg-gray-gradient-30'}>
                 <Row className='pt-lg-5'>
                     <Col lg={{span: 4}}>
                         <TextLabel className='patek-green' icon={threeCircleIcon} text='WHAT WE DO'/>
