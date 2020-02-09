@@ -42,8 +42,8 @@ class CareerForm extends Component {
             name: 'file',
             action: 'https://patek-be.herokuapp.com/upload',
             headers: {
-                authorization: 'authorization-text',
-                'Content-Type': 'multipart/form-data',
+                Authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaXNBZG1pbiI6dHJ1ZSwiaWF0IjoxNTgxMDI5MzkyLCJleHAiOjE1ODM2MjEzOTJ9.3VJCHthFrHssbmMcrEhMBOszMBE5vEMdzXkNSkWNzqc',
+                'Content-Type': 'application/x-www-form-urlencoded',
                 'Access-Control-Allow-Origin':'*',
             },
             onChange(info) {
