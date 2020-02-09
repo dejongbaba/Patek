@@ -51,7 +51,7 @@ const About = ({data, loading, directors, isDirectorsLoading}) => {
                     <HeaderText className={'text-white'} text={'About Us'}/>
                 </Header>
 
-                <Section bgImg={greenLeafBg} className={'py-lg-2 '}>
+                <Section bgImg={greenLeafBg} className={'py-lg-2'}>
                     <Row className={'py-lg-5'}>
                         <Col lg={{span: 6, offset: 3}} className={'text-lg-center'}>
                             {data && data.length ? (
@@ -76,7 +76,7 @@ const About = ({data, loading, directors, isDirectorsLoading}) => {
                             {data && data.length ? (
                                 <>
                                     <TextLabel positionClass={'my-lg-5'} text={data[1].title}/>
-                                    <HeaderText className={'my-lg-3 fs-2-5 patek-deep-green '}
+                                    <HeaderText className={'my-3 fs-2-5 patek-deep-green '}
                                                 text={data[1].subtitle}/>
                                     <ParagraphText
                                         text={data[1].description}
@@ -97,7 +97,7 @@ const About = ({data, loading, directors, isDirectorsLoading}) => {
                             {data && data.length ? (
                                 <>
                                     <TextLabel positionClass={'my-lg-5'} text={data[0].title}/>
-                                    <HeaderText className={'my-lg-3 fs-2-5 patek-deep-green '}
+                                    <HeaderText className={'my-3 fs-2-5 patek-deep-green '}
                                                 text={data[0].subtitle}/>
                                     <ParagraphText
                                         text={data[0].description}
@@ -108,7 +108,7 @@ const About = ({data, loading, directors, isDirectorsLoading}) => {
                         </Col>
                     </Row>
                 </Section>
-                <Section className={'bg-patek-light-green py-lg-2'}>
+                <Section className={'bg-patek-light-green py-5 py-lg-2'}>
                     <img src={dottedTopAch}
                          className='position-absolute dotted-arch-position-1 d-none d-lg-block'
                          alt="first floated arch"/>
@@ -118,7 +118,7 @@ const About = ({data, loading, directors, isDirectorsLoading}) => {
                     <Row className={'py-lg-5'}>
                         <Col lg={{span: 6, offset: 3}}>
                             <TextLabel positionClass={'my-lg-5 justify-content-lg-center'} text={'VALUE CHAIN'}/>
-                            <HeaderText className={'my-lg-3 fs-2-5 patek-deep-green text-lg-center'}
+                            <HeaderText className={'my-3 fs-2-5 patek-deep-green text-lg-center'}
                                         text={'Our Value Chain'}/>
                         </Col>
                     </Row>
@@ -168,14 +168,14 @@ const About = ({data, loading, directors, isDirectorsLoading}) => {
                         </Col>
                     </Row>
                 </Section>
-                <Section className={'bg-gray-gradient-30 py-lg-3 '}>
+                <Section className={'bg-gray-gradient-30 py-5 py-lg-3 '}>
                     <Row className={'py-lg-3'}>
 
                         {data && data.length ? (
                             <>
                                 <Col lg={{span: 6}}>
                                     <TextLabel positionClass={'my-lg-5 justify-content-center'} text={data[2].title}/>
-                                    <HeaderText className={'my-lg-3 fs-2-5 patek-deep-green text-center'}
+                                    <HeaderText className={'my-3 fs-2-5 patek-deep-green text-center'}
                                                 text={data[2].subtitle}/>
                                     <img src={triLeafImg} className='img-fluid' alt="green leaf image"/>
                                 </Col>
@@ -193,11 +193,11 @@ const About = ({data, loading, directors, isDirectorsLoading}) => {
 
                     </Row>
                 </Section>
-                <Section className={'bg-patek-light-green py-lg-3'}>
+                <Section className={'bg-patek-light-green py-5 py-lg-3'}>
                     <Row className={'py-lg-3'}>
                         <Col lg={{span: 12}}>
                             <TextLabel positionClass={'my-lg-5 justify-content-lg-center'} text={'DIRECTORS'}/>
-                            <HeaderText className={'mt-lg-3 mb-lg-5 fs-2-5 patek-deep-green text-lg-center'}
+                            <HeaderText className={'mt-3 mb-lg-5 fs-2-5 patek-deep-green text-lg-center'}
                                         text={'Our Board of Directors'}/>
                             <SectionGrid>
 
@@ -210,7 +210,7 @@ const About = ({data, loading, directors, isDirectorsLoading}) => {
                         </Col>
                     </Row>
                 </Section>
-                <Section className={'bg-patek-light-green  py-lg-3'}>
+                <Section className={'bg-patek-light-green py-5  py-lg-3'}>
                     <Row className={'py-lg-3'}>
                         <Col lg={{span: 6}}>
                             <TextLabel positionClass={'my-5'} text={'Products'}/>

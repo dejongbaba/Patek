@@ -66,10 +66,18 @@ const Career = () => {
     const handleShow = () => setShow(true);
     const handleClose = () => setShow(false);
 
-    const hrRole = <><strong>HEAD</strong><br/><span>HUMAN RESOURCES</span></>;
+    const hrRole = <>
+        <strong>HEAD</strong>
+        <br/>
+        <span>HUMAN RESOURCES</span>
+    </>;
     return (
         <>
-            <PatecModal className={'career--modal'} header={false} modalHeading={'Apply'} show={show} closeModal={handleClose}>
+            <PatecModal className={'career--modal'}
+                        header={false}
+                        modalHeading={'Apply'}
+                        show={show}
+                        closeModal={handleClose}>
                 <CareerForm/>
             </PatecModal>
             <Header img={careerBanner} type='half'>
@@ -90,7 +98,9 @@ const Career = () => {
                     </Col>
                     <Col lg={{span: 5}}>
                         <img src={threeCircleIcon} alt="three icon cirlce"/>
-                        <HeaderText className={'text-left career--article-header mt-lg-2 fs-1-5 fs-lg-2-5'} text={'PATEC GROUP LIFE'}/>
+                        <HeaderText
+                            className={'text-left career--article-header mt-lg-2 fs-1-5 fs-lg-2-5'}
+                            text={'PATEC GROUP LIFE'}/>
                         <ParagraphText text={'When you join Patec Group you will have the opportunity' +
                                        ' to improve your professional skills; develop industry knowledge;' +
                                        ' gain career growth and contribute to different industries across ' +
@@ -151,7 +161,7 @@ const Career = () => {
                 </Row>
             </Section>
             <Section className={'bg-gray-gradient-30'}>
-                <Row className='pt-lg-5 text-center'>
+                <Row className='pt-5 text-center'>
                     <Col lg={{span: 4, offset: 4}}>
                         <TextLabel className='patek-green'
                                    positionClass={'justify-content-center mb-4 mb-lg-0'}
@@ -161,8 +171,6 @@ const Career = () => {
                             className={'my-lg-3 fs-2-5 patek-deep-green  text-center'}
                             text={'Open Vacancies'}
                         />
-                        {/*<HeaderText className={'border-top-green-1 d-inline-block ' +*/}
-                        {/*'hk-grotesk-regular mt-lg-5 pt-5 fs-1-5 fs-lg-2-5 text-black text-center'} text={'Patec TraveliFood'}/>*/}
                     </Col>
                 </Row>
                 <Row className={'mt-5'}>
@@ -180,7 +188,6 @@ const Career = () => {
                             <span onClick={handleShow} className='job--link'>Apply Now</span>
 
                         </div>
-                        {/*<Accordion items={pfJobs} itemStructure={accordionItemStructure}/>*/}
                     </Col>
                 </Row>
             </Section>

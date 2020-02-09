@@ -33,7 +33,7 @@ const Header = (props) => {
                 <NavigationBar logo={PatekLogo}/>
                 {type != 'full' ?
                     align === 'left' ?
-                        <Row className={'my-5 my-lg-0 ml-lg-5 pt-5'}>
+                        <Row className={'mt-5 my-lg-0 ml-lg-5 pt-5'}>
                             <Col lg={{span: 6}}
                                  className={'text-center pt-lg-5 px-lg-0 '}>
                                 {children}
@@ -41,7 +41,7 @@ const Header = (props) => {
                             {form ? form : ''}
                         </Row>
                         :
-                        <Row className={'my-5 my-lg-0 pt-5'}>
+                        <Row className={'my-lg-0 pt-5'}>
                             <Col lg={{span: 6, offset: 3}}
                                  className={'text-center pt-lg-5 mt-lg-3'}>
                                 {children}
