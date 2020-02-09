@@ -4,7 +4,6 @@ import {useApi} from "../Effects/Effects";
 const withData = (component, url, selectData) => (props) => {
     const RenderComponent = component;
     const [response, loading] = useApi(url);
-    console.log('about with data',response,loading);
     return <RenderComponent
         loading={loading}
         data={selectData ? selectData(response) : response}

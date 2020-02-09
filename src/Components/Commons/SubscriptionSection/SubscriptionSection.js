@@ -10,7 +10,7 @@ import './subscription.css';
 class SubscriptionSection extends Component {
     render() {
         return (
-            <Section className={'subscription bg-patek-light-green py-lg-5 mh-vh-50'}>
+            <Section className={'subscription bg-patek-light-green py-lg-3 mh-vh-50'}>
                 <Row className='py-5 text-center'>
                     <Col lg={{span: 8, offset: 2}}>
                         <TextLabel className='patek-green subscription--text-label' positionClass='justify-content-center mb-5 mb-lg-0'

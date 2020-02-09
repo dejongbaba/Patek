@@ -34,7 +34,6 @@ import Loader from "../../Components/Commons/Loader/Loader";
 
 const Home = ({data, articleLoading, principles, firstFourArticles}) => {
 
-    console.log('first four articles', firstFourArticles);
     const valueText = 'Patec Group, founded in 2010 and headquartered \n' +
         'in Lagos is Africa\'s leading agro-allied conglomerate\n' +
         'in the areas of production, processing, packaging and\n' +

@@ -83,16 +83,15 @@ const Career = () => {
                 <TextLabel positionClass={'justify-content-center'} text={'JOIN THE TEAM'}/>
                 <HeaderText className={'text-white with-square'} text={'Careers at Patec'}/>
             </Header>
-            <Section className={'bg-patek-light-green py-lg-5 '}>
-                <Row className={'py-lg-5'}>
+            <Section className={'bg-patek-light-green career--section py-lg-5'}>
+                <Row className={'pt-lg-3'}>
                     <Col lg={{span: 6}}>
                         <img src={careerWoman} className='img-fluid' alt="career woman "/>
                     </Col>
                     <Col lg={{span: 5}}>
-                        <img src={threeCircleIcon} className='mb-3' alt="three icon cirlce"/>
-                        <HeaderText className={'text-left fs-1-5 fs-lg-2-5'} text={'PATEC GROUP LIFE'}/>
-                        <ParagraphText className={'mb-lg-5'}
-                                       text={'When you join Patec Group you will have the opportunity' +
+                        <img src={threeCircleIcon} alt="three icon cirlce"/>
+                        <HeaderText className={'text-left career--article-header mt-lg-2 fs-1-5 fs-lg-2-5'} text={'PATEC GROUP LIFE'}/>
+                        <ParagraphText text={'When you join Patec Group you will have the opportunity' +
                                        ' to improve your professional skills; develop industry knowledge;' +
                                        ' gain career growth and contribute to different industries across ' +
                                        'the Agriculture and Food processing sector. We offer training ' +
@@ -101,63 +100,32 @@ const Career = () => {
                                        ' dynamic young experts from a variety of backgrounds, whose attitude, ' +
                                        'knowledge and imagination sets them apart.' +
                                        'At Patec group performance and hard work are paramount. '}/>
-                        {/*<div className="d-flex flex-column ">*/}
-                        {/*    <div className="list-item mb-4 d-flex align-items-center">*/}
-                        {/*        <img src={glowingCircle} className={'px-3'} alt="career images"/>*/}
-                        {/*        <p className='mb-0'>Great Benefits</p>*/}
-                        {/*    </div>*/}
-                        {/*    <div className="list-item mb-4 d-flex align-items-center">*/}
-                        {/*        <img src={glowingCircle} className={'px-3'} alt="career images"/>*/}
-                        {/*        <p className='mb-0'>Great Benefits</p>*/}
-                        {/*    </div>*/}
-                        {/*    <div className="list-item mb-4 d-flex align-items-center">*/}
-                        {/*        <img src={glowingCircle} className={'px-3'} alt="career images"/>*/}
-                        {/*        <p className='mb-0'>Great Benefits</p>*/}
-                        {/*    </div>*/}
-                        {/*</div>*/}
                     </Col>
                 </Row>
-            </Section>
-            <Section className={'bg-patek-light-green py-lg-5 '}>
-                <Row className={'py-lg-5'}>
+                <Row>
                     <Col lg={{span: 6, order: 6}}>
                         <img src={careerWoman} className='img-fluid' alt="career woman "/>
                     </Col>
                     <Col lg={{span: 6, order: 1}}>
-                        <img src={threeCircleIcon} className='mb-3' alt="three icon cirlce"/>
+                        <img src={threeCircleIcon} alt="three icon cirlce"/>
                         <HeaderText
-                            className={'text-left fs-1-5 fs-lg-2-5'}
+                            className={'text-left career--article-header fs-1-5 fs-lg-2-5'}
                             text={'WHAT WE LOOK FOR'}
                         />
-                        <ParagraphText className={'mb-lg-5'}
-                                       text={'We hire exceptional people that seek after innovation ' +
-                                       'and are passionate about the development and sustainability of' +
-                                       ' Nigeria’s food production; processing and packaging industry.' +
-                                       ' We welcome experienced professionals with bachelors’ degrees' +
-                                       ' and excellent academic records.' +
-                                       'We are developing an amazing workforce of Business analysts: Financial analysts;' +
-                                       ' Project managers; Plant managers; Construction workers and people who thrive ' +
-                                       'in entrepreneurial environments that are enthusiastic about providing home-grown ' +
-                                       'solutions for the needs of Nigerians. '}
+                        <ParagraphText text={'We hire exceptional people that seek after innovation ' +
+                        'and are passionate about the development and sustainability of' +
+                        ' Nigeria’s food production; processing and packaging industry.' +
+                        ' We welcome experienced professionals with bachelors’ degrees' +
+                        ' and excellent academic records.' +
+                        'We are developing an amazing workforce of Business analysts: Financial analysts;' +
+                        ' Project managers; Plant managers; Construction workers and people who thrive ' +
+                        'in entrepreneurial environments that are enthusiastic about providing home-grown ' +
+                        'solutions for the needs of Nigerians. '}
                         />
-                        {/*<div className="d-flex flex-column ">*/}
-                        {/*    <div className="list-item mb-4 d-flex align-items-center">*/}
-                        {/*        <img src={glowingCircle} className={'px-3'} alt="career images"/>*/}
-                        {/*        <p className='mb-0'>Great Benefits</p>*/}
-                        {/*    </div>*/}
-                        {/*    <div className="list-item mb-4 d-flex align-items-center">*/}
-                        {/*        <img src={glowingCircle} className={'px-3'} alt="career images"/>*/}
-                        {/*        <p className='mb-0'>Great Benefits</p>*/}
-                        {/*    </div>*/}
-                        {/*    <div className="list-item mb-4 d-flex align-items-center">*/}
-                        {/*        <img src={glowingCircle} className={'px-3'} alt="career images"/>*/}
-                        {/*        <p className='mb-0'>Great Benefits</p>*/}
-                        {/*    </div>*/}
-                        {/*</div>*/}
                     </Col>
                 </Row>
             </Section>
-            <Section className={'py-lg-5 '} bgImg={greenLeafBg}>
+            <Section className={'py-lg-5'} bgImg={greenLeafBg}>
                 <Row className={'py-5'}>
                     <Col lg={{span: 6}}>
                         <img src={rolePlaceholderimg}
@@ -216,48 +184,7 @@ const Career = () => {
                     </Col>
                 </Row>
             </Section>
-            {/*<Section className={'bg-gray-gradient-30'}>*/}
-            {/*    <Row className='pt-lg-5 text-center'>*/}
-            {/*        <Col lg={{span: 4, offset:4}}>*/}
-            {/*            <HeaderText className={'border-top-green-1 d-inline-block hk-grotesk-regular' +*/}
-            {/*            ' mt-lg-5 pt-5 fs-1-5 fs-lg-2-5 text-black text-center'} text={'Colorado Farms'}/>*/}
-            {/*        </Col>*/}
-            {/*    </Row>*/}
-            {/*    <Row className={'mt-5'}>*/}
-            {/*        <Col lg={{span: 10,offset:1}}>*/}
-            {/*            <Accordion items={cfJobs} itemStructure={accordionItemStructure}/>*/}
-            {/*        </Col>*/}
-            {/*    </Row>*/}
-            {/*</Section>*/}
-            {/*<Section className={'bg-gray-gradient-30'}>*/}
-            {/*    <Row className='pt-lg-5 text-center'>*/}
-            {/*        <Col lg={{span: 4, offset:4}}>*/}
-            {/*            <HeaderText className={'border-top-green-1 d-inline-block hk-grotesk-regular' +*/}
-            {/*            ' mt-lg-5 pt-5 fs-1-5 fs-lg-2-5 text-black text-center'} text={'Quality Packaging'}/>*/}
-            {/*        </Col>*/}
-            {/*    </Row>*/}
-            {/*    <Row className={'mt-5'}>*/}
-            {/*        <Col lg={{span: 10,offset:1}}>*/}
-            {/*            <Accordion items={qpJobs} itemStructure={accordionItemStructure}/>*/}
-            {/*        </Col>*/}
-            {/*    </Row>*/}
-            {/*</Section>*/}
-            {/*<Section className={'bg-gray-gradient-30'}>*/}
-            {/*    <Row className='pt-lg-5 text-center'>*/}
-            {/*        <Col lg={{span: 4, offset:4}}>*/}
-            {/*            <HeaderText className={'border-top-green-1 fs-1-5 fs-lg-2-5 d-inline-block hk-grotesk-regular' +*/}
-            {/*            ' mt-lg-5 pt-5 fs-1-5 text-black text-center'} text={'Golden Foods'}/>*/}
-            {/*        </Col>*/}
-            {/*    </Row>*/}
-            {/*    <Row className={'mt-5'}>*/}
-            {/*        <Col lg={{span: 10,offset:1}}>*/}
-            {/*            <Accordion items={gfJobs} itemStructure={accordionItemStructure}/>*/}
-            {/*        </Col>*/}
-            {/*    </Row>*/}
-            {/*</Section>*/}
-
-
-            <CareerSection header={'" An Amazing Company at the frontiers of agro allied \n' +
+            <CareerSection header={'"An Amazing Company at the frontiers of agro allied \n' +
             'Development in West AFrica "'}/>
             <SubscriptionSection/>
             <Footer/>

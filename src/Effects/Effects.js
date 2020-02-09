@@ -123,7 +123,6 @@ export const useGetJobs = () => {
     useEffect(() => {
         getJobs().then(result => {
             if (result) {
-                console.log('results', result);
                 setJobs(result.data);
             }
         }).catch(err => {
@@ -142,7 +141,6 @@ export const useApi = (url, config = {method: 'get'}) => {
         axios(url, config).then(result => {
             setLoading(false);
             if (result) {
-                console.log('results', result);
                 setData(result.data);
             }
         }).catch(err => {

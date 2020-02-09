@@ -5,7 +5,7 @@ import GridLiner from "../GridLines/GridLiner";
 
 const Section = ({children, className, leftImg, bgImg, colRightImg, colLeftImg, rightBgImg}) => {
     return (
-        <section className={`position-relative overflow-hidden mh-lg-70vh py-1 ${className ? className : ''}`}>
+        <section className={`position-relative overflow-hidden mh-lg-60vh py-1 ${className ? className : ''}`}>
             <GridLiner/>
             <Container>
                 {children}

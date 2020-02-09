@@ -10,3 +10,10 @@
     width: 26%;
     transform: rotate(-9deg);
 }
+@media all and (min-width:1200px){
+
+    .sustainability--section{
+        height: 650px;
+    }
+
+}

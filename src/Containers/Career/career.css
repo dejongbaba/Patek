@@ -42,3 +42,12 @@
 .career--modal .modal-content{
     margin-top: 5rem;
 }
+
+@media all and (min-width:1200px){
+    .career--article-header{
+        margin-top: 1.5rem !important;
+    }
+    .career--section{
+        height: 1100px;
+    }
+}

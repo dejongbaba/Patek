@@ -44,7 +44,7 @@ class CareerForm extends Component {
             headers: {
                 authorization: 'authorization-text',
                 'Content-Type': 'multipart/form-data',
-                'Access-Control-Allow-Origin':'*'
+                'Access-Control-Allow-Origin':'*',
             },
             onChange(info) {
                 if (info.file.status !== 'uploading') {

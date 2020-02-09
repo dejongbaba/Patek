@@ -44,9 +44,7 @@ const Sustainability = ({data}) => {
                 <TextLabel positionClass={'justify-content-center mb-3 mb-lg-0'} text={'SUSTAINABILTY'}/>
                 <HeaderText className={'text-white with-square'} text={'Sustainability'}/>
             </Header>
-            <Section className={'py-lg-5'}
-                     bgImg={leafBGImg}
-            >
+            <Section bgImg={leafBGImg}>
                 <Row className={'py-lg-5'}>
                     <Col lg={{span: 6, offset: 3}}>
                         <HeaderText className={'text-center mb-5 my-lg-3 fs-1-5 fs-lg-2 patek-deep-green '}
@@ -55,7 +53,7 @@ const Sustainability = ({data}) => {
                                     'sustainable practices in our work'}/>
                     </Col>
                 </Row>
-                <Row className={'py-lg-5'}>
+                <Row className={'pb-lg-5'}>
                     <Col lg={{span: 6}}>
                         <img src={womanInOffice} className='mt-lg-5 mb-5 mb-lg-0 pt-lg-5 img-fluid'
                              alt="woman in office"/>
@@ -65,15 +63,14 @@ const Sustainability = ({data}) => {
                     </Col>
                 </Row>
             </Section>
-            <Section className={'bg-patek-light-green py-lg-5 '}>
+            <Section className={'bg-patek-light-green '}>
                 {data && data.length ?
                     (
                         <>
-                            <Row className='pt-lg-5'>
-
+                            <Row className='py-lg-5'>
                                 <Col lg={{span: 4}}>
                                     <SectionText
-                                        iconClass={'w-25'}
+                                        iconClass={'w-15'}
                                         icon={leafInCircle}
                                         title={data[0].title}
                                         type={'imageTitle'}
@@ -100,11 +97,9 @@ const Sustainability = ({data}) => {
                         </>
                     ) :
                     <EmptyPlaceholder/>
-
                 }
-
             </Section>
-            <Section className={'bg-gray-gradient-30 py-lg-5 '}>
+            <Section className={'bg-gray-gradient-30 '}>
                 {
                     data && data.length ?
                         (
@@ -112,7 +107,7 @@ const Sustainability = ({data}) => {
                                 <Row className='pt-lg-5'>
                                     <Col lg={{span: 4}}>
                                         <SectionText
-                                            iconClass={'w-25'}
+                                            iconClass={'w-15'}
                                             icon={leafInCircle}
                                             title={data[1].title}
                                             type={'imageTitle'}
@@ -143,7 +138,7 @@ const Sustainability = ({data}) => {
                 }
             </Section>
 
-            <Section className={'bg-patek-light-green py-lg-5 '}>
+            <Section className={'bg-patek-light-green sustainability--section'}>
                 {
                     data && data.length ?
                         (
@@ -153,7 +148,7 @@ const Sustainability = ({data}) => {
                                 </Col>
                                 <Col lg={{span: 4}}>
                                     <SectionText
-                                        iconClass={'w-25'}
+                                        iconClass={'w-15'}
                                         icon={leafInCircle}
                                         title={data[2].title}
                                         type={'imageTitle'}
@@ -174,7 +169,7 @@ const Sustainability = ({data}) => {
 
             </Section>
 
-            <Section className={'bg-gray-gradient-30 py-lg-5 '}>
+            <Section className={'bg-gray-gradient-30'}>
                 {
                     data && data.length ?
                         (
@@ -185,7 +180,7 @@ const Sustainability = ({data}) => {
 
                                 <Col lg={{span: 6, order: 1}}>
                                     <SectionText
-                                        iconClass={'w-25'}
+                                        iconClass={'w-15'}
                                         icon={leafInCircle}
                                         title={data[3].title}
                                         type={'imageTitle'}
@@ -199,11 +194,9 @@ const Sustainability = ({data}) => {
                         ) :
                         <EmptyPlaceholder/>
                 }
-
-
             </Section>
 
-            <Section className={'bg-patek-light-green py-lg-5 '}>
+            <Section className={'bg-patek-light-green sustainability--section'}>
                 {
                     data && data.length ?
                         (
@@ -213,7 +206,7 @@ const Sustainability = ({data}) => {
                                 </Col>
                                 <Col lg={{span: 5}}>
                                     <SectionText
-                                        iconClass={'w-25'}
+                                        iconClass={'w-15'}
                                         icon={leafInCircle}
                                         title={data[4].title}
                                         type={'imageTitle'}
@@ -226,8 +219,6 @@ const Sustainability = ({data}) => {
                         ) :
                         <EmptyPlaceholder/>
                 }
-
-
             </Section>
 
             <CareerSection

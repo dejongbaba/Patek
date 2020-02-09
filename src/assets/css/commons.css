@@ -358,6 +358,7 @@ code {
     color: white;
     padding: 1rem 2rem;
     border-radius: .3rem;
+    transition: all .3s ease-in-out;
     box-shadow: 0px 5px 10px rgba(22, 254, 13, 0.05);
 }
 
@@ -548,6 +549,9 @@ code {
     }
     .mh-lg-70vh{
         min-height: 70vh;
+    }
+    .mh-lg-60vh{
+        min-height: 60vh;
     }
     .mh-lg-100vh{
         min-height: 100vh;

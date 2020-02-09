@@ -7,7 +7,7 @@ import Button from "../Button/Button";
 import meetMeBg from "../../../assets/img/Meet-me-bg@2x.png";
 const CareerSection = ({button,func,text,header}) => {
     return (
-        <Section className={'bg-patek-light-green py-lg-3 meet-me-bg '}>
+        <Section className={'bg-patek-light-green py-lg-5 meet-me-bg '}>
             <Row className={'py-lg-5 text-center'}>
                 <Col lg={{span: 6, offset: 3}}>
                     <div className="mt-lg-5">
