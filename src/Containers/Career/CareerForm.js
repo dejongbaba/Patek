@@ -18,7 +18,7 @@ class CareerForm extends Component {
 
     handleSubmit = e => {
         e.preventDefault();
-        this.props.form.validateFields((err, values) => {
+        this.props.form.validateFields(['name','email'],(err, values) => {
             if (!err) {
                 if (!this.state.file) {
                     message.error("Upload your Resume!");
@@ -30,6 +30,7 @@ class CareerForm extends Component {
                     postUserApplication(param).then(res => {
                         message.success('application sent!');
                         this.setState({isLoading: false});
+                        this.props.form.resetFields();
                     }).catch(err => {
                         console.log('err', err);
                         message.error('unable to send application at the moment!');
