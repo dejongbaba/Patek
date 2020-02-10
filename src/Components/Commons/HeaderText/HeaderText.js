@@ -9,7 +9,7 @@ const HeaderText = ({text, className, animation, animationDelay, animationDurati
             data-aos-delay={`${animationDelay ? animationDelay : '100'}`}
             data-aos-duration={`${animationDuration ? animationDuration : '500'}`}
             data-aos-once={`true`}
-            className={`quenales-bold patek-deep-green mt-lg-5 fs-lg-4 ${className ? className : ''}`}>
+            className={`quenales-bold patek-deep-green fs-lg-4 ${className ? className : ''}`}>
             {Array.isArray(text) ? text.map((t,i)=><span key={i}>{t}</span>) : text}
         </h1>
     );

@@ -4,7 +4,7 @@ const SectionText = ({icon, title, description, iconClass, textAlign, descType, 
 
     if (textAlign === 'left') {
         return (
-            <div className='min-height-250'>
+            <div className='min-height-200'>
                 <div className="d-flex align-items-start align-items-lg-center">
                     <img src={icon} className={`${iconClass} w-lg-15 w-25 mb-lg-2 mr-2`} alt="section text icon"/>
                     <div>

@@ -34,14 +34,13 @@ const Contact = () => {
                     align={'left'}
                     form={<ContactForm/>}
             >
-                {/*<TextLabel className='text-white' icon={threeWhiteDots} text='CONTACT US'/>*/}
                 <HeaderText
                     className={'text-left text-white with-square'}
                     text={'Reach us anytime anyday'}
                 />
             </Header>
             <Section className={'bg-patek-light-green py-lg-5 '}>
-                <Row className={'py-lg-5 mt-lg-15'}>
+                <Row className={'mt-lg-15'}>
                     <Col lg={{span: 4}}>
                         <ContactInfo title={'Locations - '}
                                      icon={contactLocationIcon}>

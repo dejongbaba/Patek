@@ -78,7 +78,7 @@ const ArticleSectionLayout = ({pathname, articles}) => {
         <Loader loading={loading}>
             <Section className={'bg-patek-light-green'}
                      rightBgImg={leafBGImg}>
-                <Row className='pt-lg-5 mt-5'>
+                <Row>
                     <Col lg={{span: 4}}>
                         <TextLabel className='patek-green' icon={threeCircleIcon}
                                    text={subTitle ? subTitle : 'In the News'}

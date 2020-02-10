@@ -9,7 +9,7 @@ import leafBGImg from "../../assets/img/green-leaf-bg-right.svg"
 import greenLeafBg from "../../assets/img/green-leaf-bg.svg"
 import avocadoCircle from "../../assets/img/avocado-circle-icon.svg"
 import whiteCircle from "../../assets/img/white-circle-icons.svg"
-import homePageArtImage from "../../assets/img/homepage-article-img@2x.png"
+import homePageArtImage from "../../assets/img/homepage-article-img2x.png"
 import Header from "../../Components/Commons/Header/Header";
 import {Col, Row} from "react-bootstrap";
 import TextLabel from "../../Components/Commons/TextLabel/TextLabel";
@@ -40,7 +40,7 @@ const Home = ({data, articleLoading, principles, firstFourArticles}) => {
         'distribution of food products and agro commodities\n' +
         'poised to contribute the food security in Africa. ';
     const CarouselItemStructure = (item) =>
-        <Row className='mb-lg-5 pb-lg-5'>
+        <Row className='pb-lg-5'>
             <Col lg={{span: 6}}>
                 <img src={CarouselLeaf}
                      className={'w-70'} alt="patek carousel image"/>
@@ -68,7 +68,8 @@ const Home = ({data, articleLoading, principles, firstFourArticles}) => {
                                     animation={'fade-up'}
                                     animationDelay={'1000'}
                                     animationDuration={'1000'}
-                                    className={'text-white mt-5 fs-lg-4-5 header__text--bold pt-lg-5 with-square mb-5 mb-lg-0'}
+                                    className={'text-white mt-5 fs-lg-4-5 header__text--bold' +
+                                    ' pt-lg-5 with-square mb-5 mb-lg-0'}
                                     text={<>We Stay ahead <br/> of the Curve</>}/>
                                 <ParagraphText
                                     animation={'fade-up'}
@@ -83,7 +84,7 @@ const Home = ({data, articleLoading, principles, firstFourArticles}) => {
                 <Section bgImg={greenLeafBg} data-aos-easing="ease-in-out"
                          data-aos-delay="500"
                          data-aos-once="true">
-                    <Row className='py-lg-5 px-lg-5 my-5 my-lg-0'>
+                    <Row className='py-lg-5 pb-lg-3 px-lg-5 my-5 my-lg-0'>
                         <Col lg={{span: 6}}>
                             <ArticleImage type={'fluid'} image={homePageArtImage}/>
                         </Col>
@@ -174,13 +175,13 @@ const Home = ({data, articleLoading, principles, firstFourArticles}) => {
                         </Col>
                     </Row>
                 </Section>
-                <Section className={'bg-patek-light-green mh-vh-70'}>
-                    <Row className='pt-5 pb-5 pb-lg-0 text-lg-center'>
+                <Section className={'bg-patek-light-green min-height-auto'}>
+                    <Row className='py-5 pb-lg-5 text-lg-center'>
                         <Col lg={{span: 8, offset: 2}}>
                             <TextLabel className='patek-green'
                                        positionClass='justify-content-lg-center'
                                        icon={threeCircleIcon} text='DYNAMIC'/>
-                            <HeaderText className={'my-lg-3 fs-2 patek-deep-green'}
+                            <HeaderText className={'my-lg-2 fs-2 patek-deep-green'}
                                         text={'" An Amazing Company at the frontiers ' +
                                         'of agro allied Development in West AFrica "'}
                             />
