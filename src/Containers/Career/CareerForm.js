@@ -13,52 +13,61 @@ class CareerForm extends Component {
 
     state = {
         isLoading: false,
+        file: null
     };
 
     handleSubmit = e => {
         e.preventDefault();
         this.props.form.validateFields((err, values) => {
             if (!err) {
-                console.log('Received values of form: ', values);
-                this.setState({isLoading: true});
-                postUserApplication(values).then(res => {
-                    console.log('res', res);
-                    this.setState({loading:false});
-                    message.success('application sent!');
-                }).catch(err => {
-                    console.log('err', err);
-                    this.setState({loading:false});
-                    message.error('unable to send application at the moment!');
-                });
+                if (!this.state.file) {
+                    message.error("Upload your Resume!");
+                } else {
+                    console.log('Received values of form:', values);
+                    this.setState({isLoading: true});
+                    let param = values;
+                    param.resume = this.state.file;
+                    postUserApplication(param).then(res => {
+                        message.success('application sent!');
+                        this.setState({loading: false});
+
+                    }).catch(err => {
+                        console.log('err', err);
+                        message.error('unable to send application at the moment!');
+                        this.setState({loading: false});
+                    });
+                }
+
             }
         });
     };
 
+    onChange = (info) => {
+        if (info.file.status !== 'uploading') {
+            console.log(info.file, info.fileList);
+        }
+        if (info.file.status === 'done') {
+            console.log('done', info);
+            message.success(`${info.file.name} file uploaded successfully`);
+            this.setState({file: info.file.response[0]});
+        } else if (info.file.status === 'error') {
+            console.log('err', info);
+            message.error(`${info.file.name} file upload failed.`);
+        }
+    };
 
     render() {
         const {form: {getFieldDecorator}} = this.props;
         const {isLoading} = this.state;
         const props = {
-            name: 'file',
+            name: 'files',
             action: 'https://patek-be.herokuapp.com/upload',
             headers: {
-                Authorization: 'Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaXNBZG1pbiI6dHJ1ZSwiaWF0IjoxNTgxMDI5MzkyLCJleHAiOjE1ODM2MjEzOTJ9.3VJCHthFrHssbmMcrEhMBOszMBE5vEMdzXkNSkWNzqc',
-                'Content-Type': 'application/x-www-form-urlencoded',
-                'Access-Control-Allow-Origin':'*',
+                Authorization: `Bearer ${process.env.REACT_APP_TOKEN}`
             },
-            onChange(info) {
-                if (info.file.status !== 'uploading') {
-                    console.log(info.file, info.fileList);
-                }
-                if (info.file.status === 'done') {
-                    console.log('done',info);
-                    message.success(`${info.file.name} file uploaded successfully`);
-                } else if (info.file.status === 'error') {
-                    console.log('err',info);
-                    message.error(`${info.file.name} file upload failed.`);
-                }
-            },
+            onChange: this.onChange
         };
+
         return (
             <Form
                 className='contact-form bg-white px-5 bs-2'
