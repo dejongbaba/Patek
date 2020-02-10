@@ -29,12 +29,11 @@ class CareerForm extends Component {
                     param.resume = this.state.file;
                     postUserApplication(param).then(res => {
                         message.success('application sent!');
-                        this.setState({loading: false});
-
+                        this.setState({isLoading: false});
                     }).catch(err => {
                         console.log('err', err);
                         message.error('unable to send application at the moment!');
-                        this.setState({loading: false});
+                        this.setState({isLoading: false});
                     });
                 }
 
