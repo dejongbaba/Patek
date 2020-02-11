@@ -87,7 +87,7 @@ const Food = () => {
                         <TextLabel className='patek-green'
                                    positionClass='justify-content-lg-center mb-5 mb-lg-0'
                                    icon={threeCircleIcon} text='PATEC FOODS'/>
-                        <HeaderText className={'my-5 pb-lg-5 fs-2 fs-lg-2 patek-deep-green '}
+                        <HeaderText className={'my-3 pb-lg-5 fs-2 fs-lg-2 patek-deep-green '}
                                     text={'Patec foods limited is a food manufacturing and trading \n' +
                                     'company established to supply processed food products \n' +
                                     'and agricultural commodities to serve both the domestic\n' +
@@ -159,7 +159,7 @@ const Food = () => {
                         <ArticleImage type={'fluid'} image={purviewImage}/>
                     </Col>
                     <Col lg={{span: 6}}>
-                        <HeaderText className={'my-lg-3 fs-2-5 patek-deep-green '} text={'Purview'}/>
+                        <HeaderText className={'mt-lg-5 mb-lg-3 pt-lg-5 fs-2-5 patek-deep-green '} text={'Purview'}/>
                         <ParagraphText text={'The rapid decline of food supply and wild-caught fish \n' +
                         'has given rise to the need for Aquaculture. With an \n' +
                         'estimated 3 billion people getting 20% of their protein \n' +
@@ -172,7 +172,7 @@ const Food = () => {
                         <ArticleImage type={'fluid'} image={solutionImage}/>
                     </Col>
                     <Col lg={{span: 6,order:1}}>
-                        <HeaderText className={'my-lg-3 fs-2-5 patek-deep-green '} text={'Our Solution'}/>
+                        <HeaderText className={'mt-lg-5 mb-lg-3 pt-lg-5 fs-2-5 patek-deep-green '} text={'Our Solution'}/>
                         <ParagraphText text={'Aquaculture was established by Patec Foods to serve \n' +
                         'as a medium for sustaining the supply of this vital food \n' +
                         'source and close the gap of the annual demand of fish \n' +
@@ -259,7 +259,7 @@ const Food = () => {
                         <ArticleImage type={'fluid'} image={purviewImage}/>
                     </Col>
                     <Col lg={{span: 6}}>
-                        <HeaderText className={'my-lg-3 fs-2-5 patek-deep-green '} text={'Purview'}/>
+                        <HeaderText className={'mt-lg-5 mb-lg-3 pt-lg-5 fs-2-5 patek-deep-green '} text={'Purview'}/>
                         <ParagraphText text={'The rapid decline of food supply and wild-caught fish \n' +
                         'has given rise to the need for Aquaculture. With an \n' +
                         'estimated 3 billion people getting 20% of their protein \n' +
@@ -272,7 +272,7 @@ const Food = () => {
                         <ArticleImage type={'fluid'} image={solutionImage}/>
                     </Col>
                     <Col lg={{span: 6,order:1}}>
-                        <HeaderText className={'my-lg-3 fs-2-5 patek-deep-green '} text={'Our Solution'}/>
+                        <HeaderText className={'mt-lg-5 mb-lg-3 pt-lg-5 fs-2-5 patek-deep-green '} text={'Our Solution'}/>
                         <ParagraphText text={'Aquaculture was established by Patec Foods to serve \n' +
                         'as a medium for sustaining the supply of this vital food \n' +
                         'source and close the gap of the annual demand of fish \n' +

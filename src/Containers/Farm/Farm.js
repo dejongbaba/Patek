@@ -64,7 +64,7 @@ const Farm = () => {
                     </Col>
                     <Col lg={{span: 6}}>
                         <ParagraphText
-                            className={'patek-deep-green mt-5 mt-lg-0 mb-5'}
+                            className={'patek-deep-green mt-5 pt-lg-5 mt-lg-0 mb-5'}
                             text={'- Some of our Packaging Solutions'}
                         />
                         <TextLabel className='patek-green'
@@ -92,7 +92,7 @@ const Farm = () => {
                     </Col>
                     <Col lg={{span: 6, order: 1}} className={'pr-lg-5'}>
                         <TextLabel className='patek-green'
-                                   positionClass={'mb-5 mt-5 mt-lg-0 mb-lg-0'}
+                                   positionClass={'mb-5 mt-5 pt-lg-5 mb-lg-0'}
                                    icon={threeCircleIcon} text='WHO WE ARE'/>
                         <HeaderText className={'my-lg-3 fs-2-5 patek-deep-green '}
                                     text={'Pharmaceutical'}/>
@@ -115,7 +115,7 @@ const Farm = () => {
                     </Col>
                     <Col lg={{span: 6}} className={'pr-lg-5'}>
                         <TextLabel className='patek-green'
-                                   positionClass={'mb-5 mt-5 mt-lg-0 mb-lg-0'}
+                                   positionClass={'mb-5 mt-5 pt-lg-5 mb-lg-0'}
                                    icon={threeCircleIcon} text='WHO WE ARE'/>
                         <HeaderText className={'my-lg-3 fs-2-5 patek-deep-green '}
                                     text={'Agriculture'}/>
