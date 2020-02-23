@@ -1,5 +1,5 @@
 import React from 'react';
-
+import "./paragraphText.css";
 const ParagraphText = ({text, className, animation, animationDelay, animationDuration, type}) => {
     if (type === 'pre') {
         return (
@@ -15,7 +15,7 @@ const ParagraphText = ({text, className, animation, animationDelay, animationDur
             data-aos-duration={`${animationDuration ? animationDuration : '300'}`}
             data-aos-delay={`${animationDelay ? animationDelay : '0'}`}
             data-aos-once={`true`}
-            className={`${className ? className : ''}`}>{text}</p>
+            className={`paragraph-text ${className ? className : ''}`}>{text}</p>
     );
 };
 

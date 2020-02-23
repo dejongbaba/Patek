@@ -63,6 +63,8 @@ const Sustainability = ({data}) => {
                     </Col>
                 </Row>
             </Section>
+
+
             <Section className={'bg-patek-light-green'}>
                 {data && data.length ?
                     (
@@ -79,7 +81,7 @@ const Sustainability = ({data}) => {
                             </Row>
                             <Row>
                                 <Col lg={{span: 6}}>
-                                    <ArticleImage image={susImg1} type={'fluid'}/>
+                                    <ArticleImage imageClass={'w-100'} image={susImg1} type={'fluid'}/>
                                 </Col>
                                 <Col lg={{span: 5}}>
                                     <ArticleLayout
@@ -116,7 +118,8 @@ const Sustainability = ({data}) => {
                                 </Row>
                                 <Row className='pt-lg-5'>
                                     <Col lg={{span: 7, order: 7}}>
-                                        <ArticleImage image={susImg2} type={'fluid'}/>
+                                        <ArticleImage image={susImg2}
+                                                      imageClass={'w-100'} type={'fluid'}/>
                                     </Col>
                                     <Col lg={{span: 5, order: 1}}>
                                         <ArticleLayout
@@ -143,8 +146,9 @@ const Sustainability = ({data}) => {
                     data && data.length ?
                         (
                             <Row className={'py-5'}>
-                                <Col lg={{span: 7}}>
-                                    <ArticleImage image={susImg3} type={'fluid'}/>
+                                <Col lg={{span: 6}}>
+                                    <ArticleImage image={susImg3}
+                                                  imageClass={'w-100'} type={'fluid'}/>
                                 </Col>
                                 <Col lg={{span: 4}}>
                                     <SectionText
@@ -175,7 +179,9 @@ const Sustainability = ({data}) => {
                         (
                             <Row className='pt-5'>
                                 <Col lg={{span: 6, order: 6}}>
-                                    <ArticleImage image={beverageImage} type={'fluid'}/>
+                                    <ArticleImage image={beverageImage}
+                                                  imageClass={'w-100'}
+                                                  type={'fluid'}/>
                                 </Col>
 
                                 <Col lg={{span: 6, order: 1}}>
@@ -202,7 +208,7 @@ const Sustainability = ({data}) => {
                         (
                             <Row className={'py-5'}>
                                 <Col lg={{span: 7}}>
-                                    <ArticleImage image={susImg3} type={'fluid'}/>
+                                    <ArticleImage image={susImg3} imageClass={'w-100'} type={'fluid'}/>
                                 </Col>
                                 <Col lg={{span: 5}}>
                                     <SectionText

@@ -2,6 +2,7 @@ import React from 'react';
 import {Col, Container, Row} from "react-bootstrap";
 import PatekLogo from "../../../assets/img/patek-logo-white@2x.png";
 import NavigationBar from "../Navbar/NavigationBar";
+import NavigationWithData from "../../../Hoc/navHoc/NavigationWithData";
 import './Header.css';
 import LogoPlaceholder from "./LogoPlaceholder";
 import GridLiner from "../GridLines/GridLiner";
@@ -30,7 +31,8 @@ const Header = (props) => {
             }}>
             <GridLiner/>
             <Container className='position-relative'>
-                <NavigationBar logo={PatekLogo}/>
+                {/*<NavigationBar logo={PatekLogo}/>*/}
+                <NavigationWithData logo={PatekLogo}/>
                 {type != 'full' ?
                     align === 'left' ?
                         <Row className={'mt-5 my-lg-0 ml-lg-5 pt-5'}>
@@ -43,7 +45,7 @@ const Header = (props) => {
                         :
                         <Row className={'my-lg-0 pt-5'}>
                             <Col lg={{span: 6, offset: 3}}
-                                 className={'text-center pt-lg-5 mt-lg-3'}>
+                                 className={'text-center pt-lg-5 mt-lg-5'}>
                                 {children}
                             </Col>
                         </Row>

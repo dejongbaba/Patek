@@ -1,5 +1,6 @@
 import React from 'react';
 import {Modal} from "react-bootstrap";
+import "./modal.css";
 
 const PatecModal = ({children, show, className, closeModal, header, modalHeading}) => {
     return (

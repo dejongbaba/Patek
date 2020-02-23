@@ -1,14 +1,14 @@
 import React from 'react';
 
-const SectionText = ({icon, title, description, iconClass, textAlign, descType, type}) => {
+const SectionText = ({icon, title, description, iconClass, textAlign,bigIcon, descType, type}) => {
 
     if (textAlign === 'left') {
         return (
             <div className='min-height-200'>
-                <div className="d-flex align-items-start align-items-lg-center">
-                    <img src={icon} className={`${iconClass} w-lg-15 w-25 mb-lg-2 mr-2`} alt="section text icon"/>
+                <div className="d-flex align-items-start">
+                    <img src={icon} className={`${iconClass?iconClass:""} ${bigIcon ? "w-lg-25":'w-lg-15'}  w-25 mb-lg-2 mr-2`} alt="section text icon"/>
                     <div>
-                        <h3 className='mb-lg-3 mb-0'>{title}</h3>
+                        <h3 className='mb-0'>{title}</h3>
                         {descType === 'list' ? <div>{description}</div> : ''}
                     </div>
 

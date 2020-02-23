@@ -10,18 +10,18 @@ const CareerSection = ({button,func,text,header}) => {
         <Section className={'bg-patek-light-green py-5 meet-me-bg '}>
             <Row className={'py-lg-5 text-center'}>
                 <Col lg={{span: 6, offset: 3}}>
-                    <div className="mt-lg-5">
-                        {header ? <HeaderText className='text-white fs-1-5 mt-lg-5 pt-lg-5 position-relative z-index-1'
+                    <div>
+                        {header ? <HeaderText className='text-white fs-1-5 mt-lg-2 position-relative z-index-1'
                                               text={header}/> :''}
                         {text ?
-                            <ParagraphText className={'text-white mb-lg-5 pb-lg-1 text-center position-relative z-index-1'}
+                            <ParagraphText className={'text-white mb-lg-3 pb-lg-1 text-center position-relative z-index-1'}
                                            text={text}/>:''
                         }
                         {button ?<Button text={button} onClick={func} className={'position-relative z-index-1'}/>:''}
                     </div>
                 </Col>
             </Row>
-            <img src={meetMeBg} className='position-absolute w-lg-75 filter-brightness-0-3 d-none d-md-block center-center'
+            <img src={meetMeBg} className='position-absolute filter-brightness-0-3 d-none d-md-block center-center'
                  alt="meet me background"
             />
         </Section>

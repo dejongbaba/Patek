@@ -14,7 +14,7 @@ export const useGetArticles = () => {
             }
         }).catch(err => {
             setLoading(false);
-            message.error('unable to get articles!', 3);
+            // message.error('unable to get articles!', 3);
         });
     }, []);
     return [articles, loading];
@@ -31,7 +31,7 @@ export const useGetPrinciples = () => {
             }
         }).catch(err => {
             setLoading(false);
-            message.error('unable to get articles!', 3);
+            // message.error('unable to get articles!', 3);
         });
     }, []);
     return [principles, loading];
@@ -48,7 +48,7 @@ export const useGetDirectors = () => {
             }
         }).catch(err => {
             setLoading(false);
-            message.error('unable to get directors!', 3);
+            // message.error('unable to get directors!', 3);
         });
     }, []);
     return [directors, loading];
@@ -65,7 +65,7 @@ export const useGetHomes = () => {
             }
         }).catch(err => {
             setLoading(false);
-            message.error('unable to get homes!', 3);
+            // message.error('unable to get homes!', 3);
         });
     }, []);
     return [homes, loading];
@@ -80,7 +80,7 @@ export const useGetArticle = (id) => {
                 setArticle(result.data);
             }
         }).catch(err => {
-            message.error('unable to get article!', 3);
+            // message.error('unable to get article!', 3);
         });
     }, []);
 
@@ -95,7 +95,7 @@ export const useGetCategories = () => {
                 setCategories(result.data);
             }
         }).catch(err => {
-            message.error('unable to get categories!', 3);
+            // message.error('unable to get categories!', 3);
         });
     }, []);
 
@@ -111,7 +111,7 @@ export const useGetCareers = () => {
                 setCareers(result.data);
             }
         }).catch(err => {
-            message.error('unable to get careers!', 3);
+            // message.error('unable to get careers!', 3);
         });
     }, []);
     return [careers, setCareers];
@@ -126,7 +126,7 @@ export const useGetJobs = () => {
                 setJobs(result.data);
             }
         }).catch(err => {
-            message.error('unable to get jobs!', 3);
+            // message.error('unable to get jobs!', 3);
         });
     }, []);
 
@@ -146,7 +146,7 @@ export const useApi = (url, config = {method: 'get'}) => {
         }).catch(err => {
             setLoading(false);
             setErr(err);
-            message.error('unable to get data at the moment!', 3);
+            // message.error('unable to get data at the moment!', 3);
         });
     }, []);
 

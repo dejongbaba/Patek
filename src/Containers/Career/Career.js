@@ -11,7 +11,7 @@ import ParagraphText from "../../Components/Commons/ParagraphText/ParagraphText"
 import Footer from "../../Components/Commons/Footer/Footer";
 import SubscriptionSection from "../../Components/Commons/SubscriptionSection/SubscriptionSection";
 import rolePlaceholderimg from "../../assets/img/role-placeholder-img@2x.png";
-import careerWoman from "../../assets/img/career-woman@2x.png";
+import careerWoman from "../../assets/img/career-woman2x.png";
 import threeCircleIcon from "../../assets/img/three-circle-icon.svg"
 import "./career.css";
 import {career, home} from "../../routes/routes";
@@ -92,9 +92,9 @@ const Career = () => {
                 <HeaderText className={'text-white with-square'} text={'Careers at Patec'}/>
             </Header>
             <Section className={'bg-patek-light-green career--section py-lg-5'}>
-                <Row className={'pt-lg-3'}>
+                <Row className={'py-lg-3 pb-lg-5'}>
                     <Col lg={{span: 6}}>
-                        <img src={careerWoman} className='img-fluid' alt="career woman "/>
+                        <img src={careerWoman} className='img-fluid w-70' alt="career woman "/>
                     </Col>
                     <Col lg={{span: 5}}>
                         <img src={threeCircleIcon} alt="three icon cirlce"/>
@@ -113,7 +113,7 @@ const Career = () => {
                     </Col>
                 </Row>
                 <Row>
-                    <Col lg={{span: 6, order: 6}}>
+                    <Col lg={{span: 5,offset:1, order: 6}}>
                         <img src={careerWoman} className='img-fluid' alt="career woman "/>
                     </Col>
                     <Col lg={{span: 6, order: 1}}>
@@ -126,28 +126,30 @@ const Career = () => {
                         'and are passionate about the development and sustainability of' +
                         ' Nigeria’s food production; processing and packaging industry.' +
                         ' We welcome experienced professionals with bachelors’ degrees' +
-                        ' and excellent academic records.' +
+                        ' and excellent academic records.\n' +
                         'We are developing an amazing workforce of Business analysts: Financial analysts;' +
-                        ' Project managers; Plant managers; Construction workers and people who thrive ' +
+                        ' Project managers; Plant managers; \nConstruction workers and people who thrive ' +
                         'in entrepreneurial environments that are enthusiastic about providing home-grown ' +
                         'solutions for the needs of Nigerians. '}
                         />
                     </Col>
                 </Row>
             </Section>
+
+
             <Section className={'py-lg-5'} bgImg={greenLeafBg}>
-                <Row className={'py-5'}>
-                    <Col lg={{span: 6}}>
+                <Row>
+                    <Col lg={{span: 5}}>
                         <img src={rolePlaceholderimg}
-                             className='mt-lg-5 mb-5 mb-lg-0 pt-lg-5 img-fluid'
+                             className='mt-lg-0 mb-5 mb-lg-0 pt-lg-3 img-fluid'
                              alt="woman in office"
                         />
                     </Col>
                     <Col lg={{span: 5}}>
-                        <TextLabel positionClass={'my-5 '}
+                        <TextLabel positionClass={'my-3'}
                                    text={'WORKING AT PATEC'}
                         />
-                        <HeaderText className={'mb-lg-5 fs-1-5 fs-lg-2-5'}
+                        <HeaderText className={'mb-lg-3 fs-1-5 fs-lg-2-5'}
                                     text={'" At Patec group, we are \n' +
                                     'continually motivated to \n' +
                                     'provide Quality and sublime \n' +
