@@ -5,7 +5,7 @@ import bannerImageLeft from '../../../assets/img/bannerBgLeft.svg';
 
 const BannerSection = ({image, bgImagePosition = 'left'}) => {
     return (
-        <div className='text-center py-lg-0 px-lg-5 ' style={{
+        <div className='text-center py-lg-0 px-lg-5 pt-5' style={{
             backgroundImage: `url(${bgImagePosition === 'left' ? bannerImageLeft : bannerImage})`,
             backgroundSize: '50%',
             backgroundRepeat: 'no-repeat',

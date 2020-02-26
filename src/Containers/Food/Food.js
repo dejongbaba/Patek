@@ -79,7 +79,6 @@ const Food = () => {
                 <SecondaryNav/>
             </div>
 
-
             <Section className={'bg-patek-light-green mh-vh-50'}>
                 <BannerSection bgImagePosition={'right'} image={foodImage}/>
                 <Row className='pt-lg-5'>
@@ -140,21 +139,19 @@ const Food = () => {
             </Section>
 
             <Section className={'bg-gray-gradient-30'}>
-                <Row className='pt-lg-5'>
+                <Row className='pt-lg-5 pb-lg-3'>
                     <Col lg={{span: 4}}>
                         <TextLabel className='patek-green' icon={threeCircleIcon} text='WHAT WE DO'/>
-                        <HeaderText className={'my-lg-3 fs-2-5 patek-deep-green '} text={'What We do'}/>
                     </Col>
                 </Row>
-
-                <Row className='pt-lg-5'>
+                <Row>
                     <Col lg={{span: 4}}>
                         <SectionText iconClass={'w-35'} icon={aquaCultureIcon} title={'Aquaculture'}
                                      type={'imageTitle'}/>
                     </Col>
                 </Row>
 
-                <Row className={'mt-5'}>
+                <Row className={'mt-3'}>
                     <Col lg={{span: 6}}>
                         <ArticleImage type={'fluid'} image={purviewImage}/>
                     </Col>
@@ -167,7 +164,7 @@ const Food = () => {
                         'plan of the global food security agenda.\n'}/>
                     </Col>
                 </Row>
-                <Row className={'mt-5'}>
+                <Row className={'mt-3'}>
                     <Col lg={{span: 6,order:6}}>
                         <ArticleImage type={'fluid'} image={solutionImage}/>
                     </Col>
@@ -184,14 +181,14 @@ const Food = () => {
                     </Col>
 
                 </Row>
-                <Row className={'mt-5'}>
+                <Row>
                     <Col lg={{span: 6}}>
                         <HeaderText className={'my-lg-3 fs-2-5 patek-deep-green '} text={'Our Operations'}/>
                         <ParagraphText text={'Operations Include'}/>
                     </Col>
                 </Row>
 
-                <Row className={'mt-5'}>
+                <Row className={'mt-5 mb-lg-4'}>
                     <Col lg={{span: 4}}>
                         <SectionText
                             type={'imageTitle'}
@@ -242,19 +239,18 @@ const Food = () => {
             </Section>
 
             <Section className={'bg-patek-light-green mh-vh-50'}>
-                <Row className='pt-lg-5'>
+                <Row className='pt-lg-5 pb-lg-3'>
                     <Col lg={{span: 4}}>
                         <TextLabel className='patek-green' positionClass={'mb-5 mb-lg-0'} icon={threeCircleIcon} text='WHAT WE DO'/>
-                        <HeaderText className={'my-lg-3 fs-2-5 patek-deep-green '} text={'What We do'}/>
                     </Col>
                 </Row>
-                <Row className='pt-lg-5'>
+                <Row>
                     <Col lg={{span: 4}}>
                         <SectionText iconClass={'w-35'} icon={aquaCultureIcon} title={'Fish Trading'}
                                      type={'imageTitle'}/>
                     </Col>
                 </Row>
-                <Row className={'mt-5'}>
+                <Row className={'mt-3'}>
                     <Col lg={{span: 6}}>
                         <ArticleImage type={'fluid'} image={purviewImage}/>
                     </Col>
@@ -267,7 +263,7 @@ const Food = () => {
                         'plan of the global food security agenda.\n'}/>
                     </Col>
                 </Row>
-                <Row className={'mt-5'}>
+                <Row className={'mt-3'}>
                     <Col lg={{span: 6,order:6}}>
                         <ArticleImage type={'fluid'} image={solutionImage}/>
                     </Col>

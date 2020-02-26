@@ -1,6 +1,6 @@
 import React, {useEffect, useRef, useState} from 'react';
 import {Nav, Navbar, NavDropdown} from 'react-bootstrap';
-import {coloradoFarm, goldenFood, home, patecFood, qualityPackaging} from "../../../routes/routes";
+import {coloradoFarm, goldenFood, home, patecFood, qualityPackaging, subsidiary} from "../../../routes/routes";
 import './NavigationBar.css';
 import './DropdownItem.css';
 import DropdownItem from "./DropdownItem";
@@ -9,8 +9,6 @@ import inverseLogo from '../../../assets/img/patek-logo-inverse@2x.png';
 
 const NavigationBar = ({className, logo, type, data}) => {
 
-
-    console.log('data', data);
     const navEl = useRef(null);
     const [isOpen, setIsOpen] = useState(false);
 
@@ -75,6 +73,7 @@ const NavigationBar = ({className, logo, type, data}) => {
                                             <NavDropdown title="Subsidiaries" id="basic-nav-dropdown"
                                                          onMouseEnter={handleOpen}
                                                          onMouseLeave={handleClose}
+                                                         onClick={() => window.location.href = subsidiary}
                                                          show={isOpen}
                                             >
                                                 <div className="d-flex flex-column flex-md-row">
@@ -87,10 +86,6 @@ const NavigationBar = ({className, logo, type, data}) => {
                                                         <DropdownItem title={'Colorado Farms'} link={coloradoFarm}/>
                                                         <DropdownItem title={'Golden Foods'} link={goldenFood}/>
                                                     </div>
-                                                    {/*<div className="flex-item">*/}
-                                                    {/*    <DropdownItem title={'Trevali Food Distribution'}*/}
-                                                    {/*                  link={traveliFood}/>*/}
-                                                    {/*</div>*/}
                                                 </div>
                                             </NavDropdown>
                                         )
@@ -103,14 +98,6 @@ const NavigationBar = ({className, logo, type, data}) => {
                                 :
                                 ""
                         }
-                        {/*<NavLink exact activeClassName={'active'} className="nav-link" to={home}>Home</NavLink>*/}
-                        {/*<NavLink activeClassName={'active'} className="nav-link" to={about}>About Us</NavLink>*/}
-
-                        {/*<NavLink activeClassName={'active'} className="nav-link" to={career}>Careers</NavLink>*/}
-                        {/*<NavLink activeClassName={'active'} className="nav-link"*/}
-                        {/*         to={sustainability}>Sustainability</NavLink>*/}
-                        {/*<NavLink activeClassName={'active'} className="nav-link" to={news}>News/Events</NavLink>*/}
-                        {/*<NavLink activeClassName={'active'} className="nav-link" to={contact}>Contact</NavLink>*/}
                     </Nav>
                 </Navbar.Collapse>
             </Navbar>

@@ -105,8 +105,6 @@ const QualityPackaging = () => {
                         <TextLabel className='patek-green'
                                    positionClass={'justify-content-lg-center mb-3 mb-lg-0'}
                                    icon={threeCircleIcon} text='ABOUT US'/>
-                        <HeaderText className={'my-lg-5 fs-2-5 patek-deep-green '}
-                                    text={'About Us'}/>
                     </Col>
 
                 </Row>
@@ -137,12 +135,12 @@ const QualityPackaging = () => {
             </Section>
 
             <Section className={'bg-patek-light-green'} bgImg={leafBGImg}>
-                <Row className='my-5'>
-                    <Col lg={{span: 6}} className={'mb-5 mb-lg-0'}>
+                <Row className='my-3'>
+                    <Col lg={{span: 5}} className={'mb-5 mb-lg-0'}>
                         <ArticleImage type={'fluid'} image={qpStrategyImg}/>
                     </Col>
-                    <Col lg={{span: 6}}>
-                        <TextLabel className='patek-green' icon={threeCircleIcon} text='STRATEGIC OBJECTIVES'/>
+                    <Col lg={{span: 6,offset:1}}>
+                        <TextLabel className='patek-green' positionClass={'mt-lg-5 pl-lg-3'} icon={threeCircleIcon} text='STRATEGIC OBJECTIVES'/>
                         <HeaderText className={'my-3 fs-2-5 patek-deep-green '} text={'Strategic Objectives'}/>
                         <ParagraphText className={'mb-3'} text={'To be one of the top 5 packaging manufacturers in Nigeria \n' +
                         'that would promote a growing recycling culture in the \n' +
@@ -153,7 +151,7 @@ const QualityPackaging = () => {
                         />
                     </Col>
                 </Row>
-                <Row className={'my-5 py-lg-5'}>
+                <Row className={'my-3 py-lg-5'}>
                     <Col lg={{span: 6,order:6}} className={'mb-5 mb-lg-0'}>
                         <ArticleImage type={'fluid'} image={qpInnovativeImg}/>
                     </Col>
@@ -178,28 +176,28 @@ const QualityPackaging = () => {
                 </Row>
             </Section>
 
-            <Section className={'bg-gray-gradient-30 py-lg-5 '}>
-                <Row className={'py-lg-5'}>
-                    <Col lg={{span: 6, offset: 3}}>
-                        <TextLabel positionClass={'my-lg-5 justify-content-center'}
-                                   text={'MANAGEMENT TEAM'}/>
-                        <HeaderText className={'text-center my-lg-3 fs-2 fs-lg-2-5  patek-deep-green '}
-                                    text={'Management Team'}/>
-                    </Col>
-                </Row>
-                <Row className={'py-lg-5'}>
-                    <Col lg={{span: 12}}>
-                        <SectionGrid>
-                            <SectionGridItem text={'OPERATIONS'} title={'Ikenna Strange'}/>
-                            <SectionGridItem text={'OPERATIONS'} title={'Ikenna Strange'}/>
-                            <SectionGridItem text={'OPERATIONS'} title={'Ikenna Strange'}/>
-                            <SectionGridItem text={'OPERATIONS'} title={'Ikenna Strange'}/>
-                            <SectionGridItem text={'OPERATIONS'} title={'Ikenna Strange'}/>
-                            <SectionGridItem text={'OPERATIONS'} title={'Ikenna Strange'}/>
-                        </SectionGrid>
-                    </Col>
-                </Row>
-            </Section>
+            {/*<Section className={'bg-gray-gradient-30 py-lg-5 '}>*/}
+            {/*    <Row className={'py-lg-5'}>*/}
+            {/*        <Col lg={{span: 6, offset: 3}}>*/}
+            {/*            <TextLabel positionClass={'my-lg-5 justify-content-center'}*/}
+            {/*                       text={'MANAGEMENT TEAM'}/>*/}
+            {/*            <HeaderText className={'text-center my-lg-3 fs-2 fs-lg-2-5  patek-deep-green '}*/}
+            {/*                        text={'Management Team'}/>*/}
+            {/*        </Col>*/}
+            {/*    </Row>*/}
+            {/*    <Row className={'py-lg-5'}>*/}
+            {/*        <Col lg={{span: 12}}>*/}
+            {/*            <SectionGrid>*/}
+            {/*                <SectionGridItem text={'OPERATIONS'} title={'Ikenna Strange'}/>*/}
+            {/*                <SectionGridItem text={'OPERATIONS'} title={'Ikenna Strange'}/>*/}
+            {/*                <SectionGridItem text={'OPERATIONS'} title={'Ikenna Strange'}/>*/}
+            {/*                <SectionGridItem text={'OPERATIONS'} title={'Ikenna Strange'}/>*/}
+            {/*                <SectionGridItem text={'OPERATIONS'} title={'Ikenna Strange'}/>*/}
+            {/*                <SectionGridItem text={'OPERATIONS'} title={'Ikenna Strange'}/>*/}
+            {/*            </SectionGrid>*/}
+            {/*        </Col>*/}
+            {/*    </Row>*/}
+            {/*</Section>*/}
             <CareerSection header={'" An Amazing Company at the frontiers of agro allied Development in West AFrica "'}
                            button={'CONTACT US'} func={() => redirectTo(contact)}
             />

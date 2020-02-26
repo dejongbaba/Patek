@@ -8,7 +8,6 @@ import treeBranches from "../../assets/img/tree-branches.svg"
 import leafBGImg from "../../assets/img/green-leaf-bg-right.svg"
 import greenLeafBg from "../../assets/img/green-leaf-bg.svg"
 import avocadoCircle from "../../assets/img/avocado-circle-icon.svg"
-import whiteCircle from "../../assets/img/white-circle-icons.svg"
 import homePageArtImage from "../../assets/img/homepage-article-img2x.png"
 import Header from "../../Components/Commons/Header/Header";
 import {Col, Row} from "react-bootstrap";
@@ -20,11 +19,8 @@ import Button from "../../Components/Commons/Button/Button";
 import SectionText from "../../Components/Commons/Section/SectionText";
 import SlideCarousel from "../../Components/Commons/Carousel/SlideCarousel";
 import Footer from "../../Components/Commons/Footer/Footer";
-import ArticleLayout from "../../Components/Commons/ArticleLayout/ArticleLayout";
-import SubscriptionSection from "../../Components/Commons/SubscriptionSection/SubscriptionSection";
 import ArticleImage from "../../Components/Commons/ArticleImage/ArticleImage";
-import {Skeleton} from "antd";
-import {getImageFromArticle, redirectTo} from "../../Facades/Facade";
+import {redirectTo} from "../../Facades/Facade";
 import withData from "../../Hoc/withData";
 import {getAllHomeContent} from "../../Api/api";
 import withArticlesAndPrinciples from "../../Hoc/homeHoc/withArticlesAndPrinciples";
@@ -40,18 +36,6 @@ const Home = ({data, articleLoading, firstFourArticles}) => {
         'distribution of food products and agro commodities\n' +
         'poised to contribute the food security in Africa. ';
 
-    const CarouselItemStructure = (item) =>
-        <Row className='pb-lg-5'>
-            <Col lg={{span: 6}}>
-                <img src={CarouselLeaf}
-                     className={'w-70'} alt="patek carousel image"/>
-            </Col>
-            <Col lg={5}>
-                <HeaderText className={'mt-lg-5 pt-lg-5 fs-2-5 mh-lg-90'} text={item.title}/>
-                <ParagraphText text={item.description}
-                               className={'light-black pr-lg-5 pb-lg-5 mb-lg-5'}/>
-            </Col>
-        </Row>;
 
     return (
         <Loader loading={articleLoading}>
@@ -147,7 +131,20 @@ const Home = ({data, articleLoading, firstFourArticles}) => {
                         <Col lg={{span: 12}}>
                             {data && data.length ?
                                 <SlideCarousel items={data.slice(4, data.length)}
-                                               itemStructure={CarouselItemStructure}/> :
+                                               itemStructure={(item) =>
+                                                   <Row className='pb-lg-5'>
+                                                       <Col lg={{span: 6}}>
+                                                           <img src={CarouselLeaf}
+                                                                className={'w-70'} alt="patek carousel image"/>
+                                                       </Col>
+                                                       <Col lg={5}>
+                                                           <HeaderText className={'mt-lg-5 pt-lg-5 fs-2-5 mh-lg-90'}
+                                                                       text={item.title} link={item.link}/>
+                                                           <ParagraphText text={item.description}
+                                                                          className={'light-black pr-lg-5 pb-lg-5 mb-lg-5'}/>
+                                                       </Col>
+                                                   </Row>
+                                               }/> :
                                 <EmptyPlaceholder/>}
                         </Col>
                     </Row>

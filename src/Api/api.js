@@ -11,6 +11,7 @@ const getOneArticle = (id) => `${BASE_URL}articles/${id}`;
 const getAllArticles = `${BASE_URL}articles?_sort=created_at:desc`;
 const getAllCategories = `${BASE_URL}categories`;
 const getAllPrinciples = `${BASE_URL}principles`;
+export  const getAllTeam = `${BASE_URL}teams`;
 const getAllJobs = `${BASE_URL}jobs`;
 const getAllCareers = `${BASE_URL}careers`;
 export const getAllHomeContent = `${BASE_URL}homes`;

@@ -9,7 +9,7 @@ const ArticleImage = ({
     if (type === 'line') {
         return (
             <div>
-                <img src={image} className={imageClass ? imageClass : ''} alt="article image"/>
+                <img src={image} className={`w-50 ${imageClass ? imageClass : ''}`} alt="article image"/>
             </div>
         )
 
@@ -17,7 +17,7 @@ const ArticleImage = ({
     if (type === 'fluid') {
 
         return (
-            <img src={image} className={'img-fluid '+imageClass ? imageClass : ''} alt="fluid article image"/>
+            <img src={image} className={`w-100 img-fluid ${imageClass ? imageClass : ''}`} alt="fluid article image"/>
         )
 
     }
@@ -35,7 +35,7 @@ const ArticleImage = ({
                 backgroundPosition: bgImagePosition === "left" ? '-10% 100%' : '23% 30%',
                 backgroundRepeat: 'no-repeat',
             }}>
-            <img src={image} className={imageClass ? imageClass : ''} alt="article image"/>
+            <img src={image} className={`w-50 ${imageClass ? imageClass : ''}`} alt="article image"/>
         </div>
     );
 };

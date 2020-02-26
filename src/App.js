@@ -13,10 +13,13 @@ import {
     goldenFood,
     home,
     news,
-    patecFood, qualityPackaging,
+    patecFood,
+    qualityPackaging,
+    subsidiary,
     sustainability,
     team,
-    traveliFood, view
+    traveliFood,
+    view
 } from "./routes/routes";
 import Team from "./Containers/Team/Team";
 import Career from "./Containers/Career/Career";
@@ -31,6 +34,7 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import ArticleViewer from "./Containers/ArticleViewer/ArticleViewer";
 import QualityPackaging from "./Containers/Food/QualityPackaging";
+import Subsidiary from "./Containers/Subsidiary/Subsidiary";
 
 class App extends Component {
 
@@ -53,6 +57,7 @@ class App extends Component {
                     <Route exact path={traveliFood} component={TraveliFood}/>
                     <Route exact path={coloradoFarm} component={Farm}/>
                     <Route exact path={qualityPackaging} component={QualityPackaging}/>
+                    <Route exact path={subsidiary} component={Subsidiary}/>
                     <Route exact path={news} component={News}/>
                     <Route exact path={news} component={News}/>
                     <Route exact path={view} component={ArticleViewer}/>

@@ -15,7 +15,7 @@ import Footer from "../../Components/Commons/Footer/Footer";
 import SubscriptionSection from "../../Components/Commons/SubscriptionSection/SubscriptionSection";
 import threeCircleIcon from "../../assets/img/three-circle-icon.svg";
 import dottedBottomAch from "../../assets/img/dotted-bottom-arch.svg";
-import dottedTopAch from "../../assets/img/dotted-top-arch.svg";
+import dottedTopAch from "../../assets/img/arrow.png";
 import articleImage from "../../assets/img/about-art-img@2x.png";
 import multiDimensionalImage from "../../assets/img/multidimensional-img2x.png";
 import SectionText from "../../Components/Commons/Section/SectionText";
@@ -172,7 +172,7 @@ const About = ({data, loading, directors, principles, isDirectorsLoading}) => {
                         </Col>
 
                         <Col lg={{span: 4}}>
-                            <div className="ml-lg-5">
+                            <div>
                                 <SectionText icon={squareNetworkIcon} descType={'list'}
                                              textAlign={'left'} title={'Supply Network'}
                                              bigIcon={true}
@@ -189,7 +189,7 @@ const About = ({data, loading, directors, principles, isDirectorsLoading}) => {
 
                         </Col>
                         <Col lg={{span: 4}}>
-                            <div className="ml-lg-5">
+                            <div>
                                 <SectionText icon={squareServicesIcon} descType={'list'}
                                              textAlign={'left'}
                                              bigIcon={true}

@@ -48,7 +48,7 @@ const GoldenFood = () => {
                         <TextLabel className='patek-green'
                                    positionClass='justify-content-lg-center mb-5 mb-lg-0'
                                    icon={threeCircleIcon} text='GOLDEN FOODS & CONFECTIONARIES'/>
-                        <HeaderText className={'my-5 pb-lg-5 fs-2 fs-lg-2 patek-deep-green '}
+                        <HeaderText className={'my-3 mb-lg-1 pb-lg-5 fs-2 fs-lg-2 patek-deep-green '}
                                     text={'Golden food & Confectionaries is manufacturer of the \n' +
                                     'HEVE brand of flavoured soft drinks and bottled water based in\n' +
                                     'Ilorin, Kwara State'}
@@ -63,14 +63,7 @@ const GoldenFood = () => {
                         />
                     </Col>
                     <Col lg={{span: 6}}>
-                        <ParagraphText
-                            className={'patek-deep-green mt-5 mt-lg-0 mb-5'}
-                            text={'- Our Goals & Projections'}
-                        />
-                        <TextLabel className='patek-green'
-                                   positionClass={'mb-5 mb-lg-0'}
-                                   icon={threeCircleIcon} text='WHO WE ARE'/>
-                        <HeaderText className={'my-lg-3 fs-2-5 patek-deep-green '}
+                        <HeaderText className={'mb-lg-3 mt-lg-5 pt-lg-5 fs-2-5 patek-deep-green '}
                                     text={'Bridge the supply in non-\n' +
                                     'Alcoholic Drinks & Juices\n' +
                                     'in North Central Nigeria'}/>
@@ -93,10 +86,7 @@ const GoldenFood = () => {
                         />
                     </Col>
                     <Col lg={{span: 6, order: 1}} className={'pr-lg-5'}>
-                        <TextLabel className='patek-green'
-                                   positionClass={'mb-5 mt-5 mt-lg-0 mb-lg-0'}
-                                   icon={threeCircleIcon} text='WHO WE ARE'/>
-                        <HeaderText className={'my-lg-3 fs-2-5 patek-deep-green '}
+                        <HeaderText className={'mb-lg-3 mt-lg-5 pt-lg-5 fs-2-5 patek-deep-green '}
                                     text={'Carbonated Soft Drinks\n' +
                                     '& Fruit based drinks and\n' +
                                     'concentrates'}/>
@@ -110,18 +100,15 @@ const GoldenFood = () => {
             </Section>
 
             <Section className={'bg-patek-light-green mh-vh-50'}>
-                <Row className='pt-lg-5'>
+                <Row>
                     <Col lg={{span: 6}} className={'pr-lg-5'}>
                         <ArticleImage
                             image={ArticlePlaceholder}
                             type={'fluid'}
                         />
                     </Col>
-                    <Col lg={{span: 6}} className={'pr-lg-5'}>
-                        <TextLabel className='patek-green'
-                                   positionClass={'mb-5 mt-5 mt-lg-0 mb-lg-0'}
-                                   icon={threeCircleIcon} text='WHO WE ARE'/>
-                        <HeaderText className={'my-lg-3 fs-2-5 patek-deep-green '}
+                    <Col lg={{span: 6}} className={'pr-lg-5 pt-lg-5'}>
+                        <HeaderText className={'mb-lg-3 mt-lg-5 pt-lg-5 fs-2-5 patek-deep-green '}
                                     text={'Farming of Tropical fruits'}/>
                         <ParagraphText
                             text={'Patec Group is a dynamic organization that focuses \n' +
@@ -133,18 +120,15 @@ const GoldenFood = () => {
             </Section>
 
             <Section className={'bg-gray-gradient-30 mh-vh-50'}>
-                <Row className='pt-lg-5'>
+                <Row>
                     <Col lg={{span: 6,order:6}} className={'pr-lg-5'}>
                         <ArticleImage
                             image={ArticlePlaceholder}
                             type={'fluid'}
                         />
                     </Col>
-                    <Col lg={{span: 6,order:1}} className={'pr-lg-5'}>
-                        <TextLabel className='patek-green'
-                                   positionClass={'mb-5 mt-5 mt-lg-0 mb-lg-0'}
-                                   icon={threeCircleIcon} text='WHO WE ARE'/>
-                        <HeaderText className={'my-lg-3 fs-2-5 patek-deep-green '}
+                    <Col lg={{span: 6,order:1}} className={'pr-lg-5 pt-lg-5'}>
+                        <HeaderText className={'mb-lg-3 mt-lg-5 pt-lg-5 fs-2-5 patek-deep-green '}
                                     text={'Production of\n' +
                                     'Healthy Drinks\n'}/>
                         <ParagraphText

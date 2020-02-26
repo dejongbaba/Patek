@@ -89,6 +89,10 @@ code {
     color: var(--patek-deep-green);
 }
 
+.patek-deep-green:hover {
+    color: var(--patek-green);
+}
+
 .light-black {
     color: #313131;
 }
@@ -668,5 +672,10 @@ code {
         font-size: 0.8rem;
         padding: 4px 4px;
     }
+
+    .fs-2 {
+        font-size: 1.7rem !Important;
+    }
+
 
 }
