@@ -4,13 +4,14 @@ import {coloradoFarm, goldenFood, home, patecFood, qualityPackaging, subsidiary}
 import './NavigationBar.css';
 import './DropdownItem.css';
 import DropdownItem from "./DropdownItem";
-import {Link, NavLink} from "react-router-dom";
+import {Link, NavLink, Redirect} from "react-router-dom";
 import inverseLogo from '../../../assets/img/patek-logo-inverse@2x.png';
 
 const NavigationBar = ({className, logo, type, data}) => {
 
     const navEl = useRef(null);
     const [isOpen, setIsOpen] = useState(false);
+    const [redirect, setRedirect] = useState(false);
 
     useEffect(() => {
         let subscribe = true;
@@ -48,6 +49,10 @@ const NavigationBar = ({className, logo, type, data}) => {
     };
 
 
+    if (redirect) {
+        return <Redirect push to={subsidiary}/>
+    }
+
     return (
         <>
             <Navbar
@@ -66,14 +71,13 @@ const NavigationBar = ({className, logo, type, data}) => {
                     <Nav className="ml-auto mr-lg-2 navbar-nav text-capitalize">
                         {
                             data && data.length ?
-
                                 data.filter(menu => menu.show).map((menu) => {
                                     if (menu.title == "subsidiaries") {
                                         return (
                                             <NavDropdown title="Subsidiaries" id="basic-nav-dropdown"
                                                          onMouseEnter={handleOpen}
                                                          onMouseLeave={handleClose}
-                                                         onClick={() => window.location.href = subsidiary}
+                                                         onClick={() => setRedirect(true)}
                                                          show={isOpen}
                                             >
                                                 <div className="d-flex flex-column flex-md-row">
