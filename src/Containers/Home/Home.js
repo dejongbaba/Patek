@@ -54,7 +54,7 @@ const Home = ({data, articleLoading, firstFourArticles}) => {
                                     animationDelay={'1000'}
                                     animationDuration={'1000'}
                                     className={'text-white mt-5 fs-lg-4-5 header__text--bold' +
-                                    ' pt-lg-5 with-square mb-5 mb-lg-0'}
+                                    ' pt-lg-5 with-square mb-3 mb-lg-0'}
                                     text={<>We Stay ahead <br/> of the Curve</>}/>
                                 <ParagraphText
                                     animation={'fade-up'}
@@ -76,7 +76,7 @@ const Home = ({data, articleLoading, firstFourArticles}) => {
                         </Col>
                         <Col lg={{span: 6}}>
                             <TextLabel className='patek-green'
-                                       positionClass={'mt-lg-5 mb-lg-2'}
+                                       positionClass={'mt-4 mt-lg-2 mb-3 mb-lg-2'}
                                        icon={threeCircleIcon} text='who we are'
                             />
                             {/*<HeaderText className={'my-lg-3 fs-2-5 '} text={'Patec - '}/>*/}
@@ -92,14 +92,14 @@ const Home = ({data, articleLoading, firstFourArticles}) => {
                     <Row className='pt-5 pb-3 pb-lg-0'>
                         <Col lg={{span: 4}}>
                             <TextLabel className='patek-green'
-                                       positionClass={'mb-3 mb-lg-0'}
+                                       positionClass={'mb-1 mb-lg-0'}
                                        icon={threeCircleIcon}
                                        text='VALUES'/>
                             {/*<HeaderText className={'my-lg-3 fs-2-5 patek-deep-green '}*/}
                             {/*            text={'Our Core Values'}/>*/}
                         </Col>
                     </Row>
-                    <Row className={'mt-5'}>
+                    <Row className={'mt-2 mt-lg-5'}>
 
                         {data && data.length ?
                             data.slice(1, 4).map(
@@ -117,9 +117,9 @@ const Home = ({data, articleLoading, firstFourArticles}) => {
                             : <EmptyPlaceholder/>}
                     </Row>
                 </Section>
-                <Section className={'bg-gray-gradient-30 pb-5 pb-lg-0'}
+                <Section className={'bg-gray-gradient-30 pb-3 pb-lg-0'}
                          bgImg={leafBGImg}>
-                    <Row className='py-5 pb-lg-0'>
+                    <Row className='pt-5 pb-3  pb-lg-0'>
                         <Col lg={{span: 4}}>
                             <TextLabel className='patek-green'
                                        icon={threeCircleIcon} text='SUBSIDIARIES'/>

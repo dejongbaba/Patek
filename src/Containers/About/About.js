@@ -45,9 +45,15 @@ const About = ({data, loading, directors, principles, isDirectorsLoading}) => {
                     <HeaderText className={'text-white'} text={'About Us'}/>
                 </Header>
 
-                <Section bgImg={greenLeafBg} className={'pt-lg-5 pb-lg-3'}>
+                <Section bgImg={greenLeafBg} className={'py-5 pt-lg-5 pb-lg-3'}>
                     <Row>
-                        <Col lg={{span: 5,offset:1}}>
+                        <Col lg={{span: 6,order:6}}>
+                            {data && data.length ? (
+                                <ArticleImage imageClass={'w-100'} type={'fluid'} image={articleImage}/>
+                            ) : <EmptyPlaceholder/>}
+                        </Col>
+
+                        <Col lg={{span: 5,offset:1,order:1}}>
                             {data && data.length ? (
                                 <>
                                     <TextLabel positionClass={'mb-3'} text={data[3].title}/>
@@ -59,25 +65,21 @@ const About = ({data, loading, directors, principles, isDirectorsLoading}) => {
                             ) : <EmptyPlaceholder/>}
                         </Col>
 
-                        <Col lg={{span: 6}}>
-                            {data && data.length ? (
-                                    <ArticleImage imageClass={'w-100'} type={'fluid'} image={articleImage}/>
-                                ) : <EmptyPlaceholder/>}
-                        </Col>
+
                     </Row>
                 </Section>
 
-                <Section className={'bg-patek-light-green'}>
-                    <Row className='pt-lg-5 px-lg-5 py-5 pb-lg-0'>
+                <Section className={'bg-patek-light-green py-3 py-lg-0'}>
+                    <Row className='pt-5 px-lg-5 pb-0'>
                         <Col lg={{span: 4, offset: 4}}>
                             <TextLabel className='patek-green'
-                                       positionClass={'justify-content-center mb-3 mb-lg-0'}
+                                       positionClass={'justify-content-lg-center mb-3 mb-lg-0'}
                                        icon={threeCircleIcon} text='DYNAMIC'/>
                             <HeaderText className={'my-lg-3 fs-2-5 patek-deep-green text-lg-center'}
                                         text={'Vision, Mission & Core Values'}/>
                         </Col>
                     </Row>
-                    <Row className={'mt-5 mb-lg-5'}>
+                    <Row className={'my-3 mt-lg-5 mb-lg-5'}>
                         {
                             principles && principles.length ?
                                 principles.map((p, i) =>
@@ -95,7 +97,7 @@ const About = ({data, loading, directors, principles, isDirectorsLoading}) => {
                         }
                     </Row>
                 </Section>
-                <Section className={'bg-gray-gradient-30 '}>
+                <Section className={'bg-gray-gradient-30 py-3 py-lg-0'}>
                     <Row>
                         <Col lg={{span: 5, offset: 1, order: 6}}>
                             <ArticleImage imageClass={'w-50'} type={'fluid'} image={articleImage}/>
@@ -103,7 +105,7 @@ const About = ({data, loading, directors, principles, isDirectorsLoading}) => {
                         <Col lg={{span: 5, offset: 1, order: 1}}>
                             {data && data.length ? (
                                 <>
-                                    <TextLabel positionClass={'mt-lg-5 mb-lg-3'} text={data[1].title}/>
+                                    <TextLabel positionClass={'mt-3 mt-lg-5 mb-3'} text={data[1].title}/>
                                     {/*<HeaderText className={' fs-2-5 patek-deep-green '}*/}
                                     {/*            text={data[1].subtitle}/>*/}
                                     <ParagraphText
@@ -116,7 +118,7 @@ const About = ({data, loading, directors, principles, isDirectorsLoading}) => {
 
                     </Row>
                 </Section>
-                <Section className={'bg-patek-light-green pt-lg-5 pb-lg-2'}>
+                <Section className={'bg-patek-light-green py-5 pt-lg-5 pb-lg-2'}>
                     <Row>
                         <Col lg={{span: 4, offset: 2}}>
                             <ArticleImage type={'fluid'} imageClass={'w-70'} image={multiDimensionalImage}/>
@@ -124,7 +126,7 @@ const About = ({data, loading, directors, principles, isDirectorsLoading}) => {
                         <Col lg={{span: 5}}>
                             {data && data.length ? (
                                 <>
-                                    <TextLabel positionClass={'mt-lg-5 mb-lg-3'} text={data[0].title}/>
+                                    <TextLabel positionClass={'mt-3 mt-lg-5 mb-3'} text={data[0].title}/>
                                     {/*<HeaderText className={'fs-2-5 patek-deep-green '}*/}
                                     {/*            text={data[0].subtitle}/>*/}
                                     <ParagraphText
@@ -136,7 +138,7 @@ const About = ({data, loading, directors, principles, isDirectorsLoading}) => {
                         </Col>
                     </Row>
                 </Section>
-                <Section className={'bg-patek-light-green py-5 py-lg-0'}>
+                <Section className={'bg-patek-light-green py-lg-0'}>
                     <img src={dottedTopAch}
                          className='position-absolute dotted-arch-position-1 d-none d-lg-block'
                          alt="first floated arch"/>
@@ -145,10 +147,8 @@ const About = ({data, loading, directors, principles, isDirectorsLoading}) => {
                          alt="first floated arch"/>
                     <Row className={'pb-lg-3'}>
                         <Col lg={{span: 6, offset: 3}}>
-                            <TextLabel positionClass={'mt-lg-5 mb-lg-3 justify-content-lg-center'}
+                            <TextLabel positionClass={'mt-lg-5 mb-3 justify-content-lg-center'}
                                        text={'VALUE CHAIN'}/>
-                            {/*<HeaderText className={'fs-2-5 patek-deep-green text-lg-center'}*/}
-                            {/*            text={'Our Value Chain'}/>*/}
                         </Col>
                     </Row>
                     <Row className='py-lg-5'>

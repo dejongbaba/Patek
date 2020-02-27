@@ -41,4 +41,15 @@
     .subscribe-control{
         margin-right: 0;
     }
+    .input-group>.form-control {
+        flex: 1 1 100%;
+        text-align: center;
+    }
+    .subscribe-form .input-group{
+        justify-content: center;
+    }
+    .input-group-append, .input-group-prepend {
+        display: flex;
+        align-items: center;
+    }
 }

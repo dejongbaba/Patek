@@ -11,6 +11,7 @@ import withData from "../../../Hoc/withData";
 import {getAllMenusContent} from "../../../Api/api";
 import withSocialLinks from "../../../Hoc/homeHoc/withSocialLinks";
 
+
 const Footer = ({className, text, logo, data, socialLinks}) => {
     const date = new Date();
     const visibleMenu = data && data.filter((menu) => menu.show);
@@ -50,7 +51,7 @@ const Footer = ({className, text, logo, data, socialLinks}) => {
                                 </ul>
 
                             </div>
-                            <div className="footer-social-media flex-basis-30 mb-5 mb-lg-0 pb-5 pb-lg-5">
+                            <div className="footer-social-media flex-basis-30 mb-5 mb-lg-0 pb-3 pb-lg-5">
                                 <p className='text-white'>Connect with us</p>
                                 <div className="d-flex">
                                     {socialLinks && socialLinks.length ?

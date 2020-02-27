@@ -105,6 +105,9 @@
 }
 
 @media all and (max-width: 480px) {
+    .w-25{
+        width: 17%!important;
+    }
     .navbar {
         padding: 0rem;
     }

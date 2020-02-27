@@ -41,7 +41,7 @@ class SubcriptionForm extends Component {
         const {loading} = this.state;
         return (
             <>
-                <Form className={'py-5 px-5'} onSubmit={(e) => this.subscribe(e)}>
+                <Form className={'subscribe-form py-3 px-1 py-lg-5 px-lg-5'} onSubmit={(e) => this.subscribe(e)}>
                     <InputGroup className="mb-3">
                         <FormControl
                             className={'subscribe-control mb-5 mb-lg-0'}
