@@ -71,10 +71,10 @@ const NavigationBar = ({className, logo, type, data}) => {
                     <Nav className="ml-auto mr-lg-2 navbar-nav text-capitalize">
                         {
                             data && data.length ?
-                                data.filter(menu => menu.show).map((menu) => {
+                                data.filter(menu => menu.show).map((menu,i) => {
                                     if (menu.title == "subsidiaries") {
                                         return (
-                                            <NavDropdown title="Subsidiaries" id="basic-nav-dropdown"
+                                            <NavDropdown key={i} title="Subsidiaries" id="basic-nav-dropdown"
                                                          onMouseEnter={handleOpen}
                                                          onMouseLeave={handleClose}
                                                          onClick={() => setRedirect(true)}
@@ -95,7 +95,7 @@ const NavigationBar = ({className, logo, type, data}) => {
                                         )
                                     }
                                     return (
-                                        <NavLink exact activeClassName={'active'} className="nav-link"
+                                        <NavLink key={i} exact activeClassName={'active'} className="nav-link"
                                                  to={menu.link}>{menu.title}</NavLink>
                                     )
                                 })

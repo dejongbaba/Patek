@@ -30,7 +30,7 @@ const Subsidiary = ({data, loading}) => {
                 <Header img={AboutBgImg} type='half'>
                     <Breadcrumb containerClass={'mb-5'}
                                 links={[{name: 'home', path: '/'},
-                                    {name: 'subsidiary', path: '/subsidiary'}]}
+                                    {name: 'Subsidiaries', path: '/subsidiaries'}]}
                     />
                     <TextLabel positionClass={'justify-content-center'}
                                text={'we are patec'}
@@ -75,28 +75,6 @@ const Subsidiary = ({data, loading}) => {
                             )
                         }) : <EmptyPlaceholder/>}
                 </Section>
-
-                {/*<Section className={'bg-gray-gradient-30 '}>*/}
-                {/*    <Row>*/}
-                {/*        <Col lg={{span: 5, offset: 1, order: 6}}>*/}
-                {/*            <ArticleImage imageClass={'w-50'} type={'fluid'} image={articleImage}/>*/}
-                {/*        </Col>*/}
-                {/*        <Col lg={{span: 5, offset: 1, order: 1}}>*/}
-                {/*            {data && data.length ? (*/}
-                {/*                <>*/}
-                {/*                    <TextLabel positionClass={'mt-lg-5 mb-lg-3'} text={data[1].title}/>*/}
-                {/*                    /!*<HeaderText className={' fs-2-5 patek-deep-green '}*!/*/}
-                {/*                    /!*            text={data[1].subtitle}/>*!/*/}
-                {/*                    <ParagraphText*/}
-                {/*                        text={data[1].description}*/}
-                {/*                    />*/}
-                {/*                </>*/}
-                {/*            ) : <EmptyPlaceholder/>}*/}
-
-                {/*        </Col>*/}
-
-                {/*    </Row>*/}
-                {/*</Section>*/}
 
                 <CareerSection header={'Meet the Team'} button={'Meet Us'} func={() => redirectTo(team)}/>
                 <SubscriptionSection/>

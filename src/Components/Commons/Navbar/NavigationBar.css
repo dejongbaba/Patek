@@ -140,7 +140,7 @@
     }
 
     .navbar-light .navbar-toggler-icon {
-        filter: invert(1) brightness(1);
+        filter: invert(1) brightness(1)!important;
     }
 
     .navbar-light .navbar-toggler {

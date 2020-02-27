@@ -1,5 +1,14 @@
 import {useEffect, useState} from "react";
-import {getArticle, getArticles, getCategories, getDirectors, getHomes, getJobs, getPrinciples} from "../Api/api";
+import {
+    getArticle,
+    getArticles,
+    getCategories,
+    getDirectors,
+    getHomes,
+    getJobs,
+    getPrinciples,
+    getSocialLinks
+} from "../Api/api";
 import {message} from "antd";
 import axios from "axios";
 
@@ -115,6 +124,20 @@ export const useGetCareers = () => {
         });
     }, []);
     return [careers, setCareers];
+};
+export const useSocialLinks = () => {
+
+    const [socialLinks, setSocialLinks] = useState([]);
+    useEffect(() => {
+        getSocialLinks().then(result => {
+            if (result) {
+                setSocialLinks(result.data);
+            }
+        }).catch(err => {
+            // message.error('unable to get careers!', 3);
+        });
+    }, []);
+    return [socialLinks, setSocialLinks];
 };
 
 
