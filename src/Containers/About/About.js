@@ -140,10 +140,10 @@ const About = ({data, loading, directors, principles, isDirectorsLoading}) => {
                 </Section>
                 <Section className={'bg-patek-light-green py-lg-0'}>
                     <img src={dottedTopAch}
-                         className='position-absolute dotted-arch-position-1 d-none d-lg-block'
+                         className='position-absolute dotted-arch-position-1'
                          alt="first floated arch"/>
                     <img src={dottedTopAch}
-                         className='position-absolute dotted-arch-position-2 d-none d-lg-block'
+                         className='position-absolute dotted-arch-position-2'
                          alt="first floated arch"/>
                     <Row className={'pb-lg-3'}>
                         <Col lg={{span: 6, offset: 3}}>
@@ -204,62 +204,6 @@ const About = ({data, loading, directors, principles, isDirectorsLoading}) => {
                         </Col>
                     </Row>
                 </Section>
-                {/*<Section className={'bg-gray-gradient-30 py-5 py-lg-3 '}>*/}
-                {/*    <Row>*/}
-                {/*        {data && data.length ? (*/}
-                {/*            <>*/}
-                {/*                <Col lg={{span: 6}}>*/}
-                {/*                    <TextLabel positionClass={'my-lg-3 justify-content-center'} text={data[2].title}/>*/}
-                {/*                    <HeaderText className={'my-3 fs-2-5 patek-deep-green text-center'}*/}
-                {/*                                text={data[2].subtitle}/>*/}
-                {/*                    <img src={triLeafImg} className='img-fluid' alt="green leaf image"/>*/}
-                {/*                </Col>*/}
-                {/*                <Col lg={{span: 6}}>*/}
-                {/*                    <img src={agriCommodity} className='img-fluid' alt="agri commodity"/>*/}
-                {/*                    <ParagraphText className={'fs-1-2'} text={*/}
-                {/*                        <> {data[2].description} <br/>*/}
-                {/*                            <img src={threeCircleIcon} className={'my-3'} alt="three circles"/> <br/>*/}
-                {/*                        </>}*/}
-                {/*                    />*/}
-                {/*                </Col>*/}
-                {/*            </>*/}
-                {/*        ) : <EmptyPlaceholder/>}*/}
-
-
-                {/*    </Row>*/}
-                {/*</Section>*/}
-                {/*<Section className={'bg-patek-light-green py-5 py-lg-3'}>*/}
-                {/*    <Row>*/}
-                {/*        <Col lg={{span: 12}}>*/}
-                {/*            <TextLabel positionClass={'my-lg-3 justify-content-lg-center'} text={'DIRECTORS'}/>*/}
-                {/*            <HeaderText className={'mt-3 mb-lg-5 fs-2-5 patek-deep-green text-lg-center'}*/}
-                {/*                        text={'Our Board of Directors'}/>*/}
-                {/*            <SectionGrid>*/}
-
-                {/*                {directors && directors.length ?*/}
-                {/*                    directors.map((dir, i) => <SectionGridItem key={i} logo={getImageFromArticle(dir)}*/}
-                {/*                                                               text={dir.role} title={dir.name}/>)*/}
-                {/*                    : <EmptyPlaceholder/>}*/}
-
-                {/*            </SectionGrid>*/}
-                {/*        </Col>*/}
-                {/*    </Row>*/}
-                {/*</Section>*/}
-                {/*<Section className={'bg-patek-light-green py-5  py-lg-3'}>*/}
-                {/*    <Row className={'py-lg-3'}>*/}
-                {/*        <Col lg={{span: 6}}>*/}
-                {/*            <TextLabel positionClass={'my-5'} text={'Products'}/>*/}
-                {/*            <HeaderText*/}
-                {/*                className={'my-3 mb-5 mb-lg-3 fs-2-5 position-relative z-index-1 patek-deep-green '}*/}
-                {/*                text={['Patec\'s products &', <br/>, '\nServices']}*/}
-                {/*            />*/}
-                {/*            <Button className={'position-relative z-index-1'} onClick={() => redirectTo(patecFood)}*/}
-                {/*                    text={'See Products'}/>*/}
-                {/*        </Col>*/}
-                {/*    </Row>*/}
-                {/*    <img src={aboutLeaf} className='position-absolute w-75 d-none d-lg-block left-left'*/}
-                {/*         alt="meet me background"/>*/}
-                {/*</Section>*/}
                 <CareerSection header={'Meet the Team'} button={'Meet Us'} func={() => redirectTo(team)}/>
                 <SubscriptionSection/>
                 <Footer/>
@@ -268,7 +212,6 @@ const About = ({data, loading, directors, principles, isDirectorsLoading}) => {
     );
 };
 const AboutWithData = withData(About, getAllAbouts);
-// const AboutWithDirectors = withDirectors(AboutWithData);
 const AboutWithPrinciples = withArticlesAndPrinciples(AboutWithData);
 
 export default AboutWithPrinciples;

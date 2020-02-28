@@ -24,7 +24,7 @@ const GoldenFood = () => {
         <>
             <Header img={AboutBgImg} type='half'
                     align={'left'} logo={true}>
-                <Breadcrumb containerClass={'mb-5  mt-0 mt-lg-5 text-left'}
+                <Breadcrumb containerClass={'mb-3 mt-0 mt-lg-5 text-left'}
                             links={
                                 [
                                     {name: 'home', path: home},
@@ -32,7 +32,7 @@ const GoldenFood = () => {
                                 ]
                             }
                 />
-                <HeaderText className={'text-left fs-1-5 with-square text-white'}
+                <HeaderText className={'text-left pb-5 pb-lg-0 fs-1-5 with-square text-white'}
                             text={'Golden Foods'}/>
             </Header>
 
@@ -46,7 +46,7 @@ const GoldenFood = () => {
                 <Row className='pt-lg-5'>
                     <Col lg={{span: 8, offset: 2}} className={'text-lg-center'}>
                         <TextLabel className='patek-green'
-                                   positionClass='justify-content-lg-center mb-5 mb-lg-0'
+                                   positionClass='justify-content-lg-center mb-3 mb-lg-0'
                                    icon={threeCircleIcon} text='GOLDEN FOODS & CONFECTIONARIES'/>
                         <HeaderText className={'my-3 mb-lg-1 pb-lg-5 fs-2 fs-lg-2 patek-deep-green '}
                                     text={'Golden food & Confectionaries is manufacturer of the \n' +
@@ -59,6 +59,7 @@ const GoldenFood = () => {
                     <Col lg={{span: 6}} className={'pr-lg-5'}>
                         <ArticleImage
                             image={ArticlePlaceholder}
+                            imageClass={'mb-3 mb-lg-0'}
                             type={'fluid'}
                         />
                     </Col>
@@ -68,6 +69,7 @@ const GoldenFood = () => {
                                     'Alcoholic Drinks & Juices\n' +
                                     'in North Central Nigeria'}/>
                         <ParagraphText
+                            className={'mb-5 mb-lg-0'}
                             text={'Patec Group is a dynamic organization that focuses \n' +
                             'on providing home grown solutions to some of Nigeria’s \n' +
                             'needs within the food production, processing and \n' +
@@ -82,6 +84,7 @@ const GoldenFood = () => {
                     <Col lg={{span: 6, order: 6}} className={'pr-lg-5'}>
                         <ArticleImage
                             image={ArticlePlaceholder}
+                            imageClass={'mb-3 mb-lg-0'}
                             type={'fluid'}
                         />
                     </Col>
@@ -91,6 +94,7 @@ const GoldenFood = () => {
                                     '& Fruit based drinks and\n' +
                                     'concentrates'}/>
                         <ParagraphText
+                            className={'mb-5 mb-lg-0'}
                             text={'Patec Group is a dynamic organization that focuses \n' +
                             'on providing home grown solutions to some of Nigeria’s \n' +
                             'needs within the food production, processing and \n' +
@@ -104,6 +108,7 @@ const GoldenFood = () => {
                     <Col lg={{span: 6}} className={'pr-lg-5'}>
                         <ArticleImage
                             image={ArticlePlaceholder}
+                            imageClass={'mb-3 mb-lg-0'}
                             type={'fluid'}
                         />
                     </Col>
@@ -111,6 +116,7 @@ const GoldenFood = () => {
                         <HeaderText className={'mb-lg-3 mt-lg-5 pt-lg-5 fs-2-5 patek-deep-green '}
                                     text={'Farming of Tropical fruits'}/>
                         <ParagraphText
+                            className={'mb-5 mb-lg-0'}
                             text={'Patec Group is a dynamic organization that focuses \n' +
                             'on providing home grown solutions to some of Nigeria’s \n' +
                             'needs within the food production, processing and \n' +
@@ -124,6 +130,7 @@ const GoldenFood = () => {
                     <Col lg={{span: 6,order:6}} className={'pr-lg-5'}>
                         <ArticleImage
                             image={ArticlePlaceholder}
+                            imageClass={'mb-3 mb-lg-0'}
                             type={'fluid'}
                         />
                     </Col>
@@ -132,6 +139,7 @@ const GoldenFood = () => {
                                     text={'Production of\n' +
                                     'Healthy Drinks\n'}/>
                         <ParagraphText
+                            className={'mb-5 mb-lg-0'}
                             text={'Patec Group is a dynamic organization that focuses \n' +
                             'on providing home grown solutions to some of Nigeria’s \n' +
                             'needs within the food production, processing and \n' +

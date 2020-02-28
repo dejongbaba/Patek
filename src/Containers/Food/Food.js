@@ -18,12 +18,10 @@ import TextLabel from "../../Components/Commons/TextLabel/TextLabel";
 import HeaderText from "../../Components/Commons/HeaderText/HeaderText";
 import threeCircleIcon from "../../assets/img/three-circle-icon.svg";
 import Section from "../../Components/Commons/Section/Section";
-import leafBGImg from "../../assets/img/green-leaf-bg-right.svg";
 import SectionText from "../../Components/Commons/Section/SectionText";
 import avocadoCircle from "../../assets/img/avocado-circle-icon.svg";
 import SubscriptionSection from "../../Components/Commons/SubscriptionSection/SubscriptionSection";
 import Footer from "../../Components/Commons/Footer/Footer";
-import meetMeBg from "../../assets/img/Meet-me-bg@2x.png";
 import aquaCultureIcon from "../../assets/img/acquaculture-icon.svg";
 import SecondaryNav from "../../Components/Commons/Navbar/SecondaryNav";
 import CareerSection from "../../Components/Commons/CareerSection/CareerSection";
@@ -84,9 +82,9 @@ const Food = () => {
                 <Row className='pt-lg-5'>
                     <Col lg={{span: 8, offset: 2}} className={'text-lg-center'}>
                         <TextLabel className='patek-green'
-                                   positionClass='justify-content-lg-center mb-5 mb-lg-0'
+                                   positionClass='justify-content-lg-center mb-3 mb-lg-0'
                                    icon={threeCircleIcon} text='PATEC FOODS'/>
-                        <HeaderText className={'my-3 pb-lg-5 fs-2 fs-lg-2 patek-deep-green '}
+                        <HeaderText className={'mt-3 mb-5 mb-lg-0 pb-lg-5 fs-2 fs-lg-2 patek-deep-green '}
                                     text={'Patec foods limited is a food manufacturing and trading \n' +
                                     'company established to supply processed food products \n' +
                                     'and agricultural commodities to serve both the domestic\n' +
@@ -95,9 +93,9 @@ const Food = () => {
                     </Col>
                     <Col lg={{span: 6}} className={'pr-lg-5'}>
                         <TextLabel className='patek-green'
-                                   positionClass={'mb-5 mb-lg-0'}
+                                   positionClass={'mb-3 mb-lg-0'}
                                    icon={threeCircleIcon} text='PATEC FOODS'/>
-                        <HeaderText className={'my-lg-3 fs-2-5 patek-deep-green '}
+                        <HeaderText className={'my-3 mb-lg-0 fs-2-5 patek-deep-green '}
                                     text={'Patec foods at a Glance'}/>
                         <ParagraphText
                             text={'We are a part of Patec Group and a sister company\n' + 'of quality packaging, a recycling and packaging \n' +
@@ -123,7 +121,7 @@ const Food = () => {
                                        'premium fish for household and food service \n' +
                                        'industry'}
                                        category={'Shao Aquaculture TraveliFood'}
-                                       // link={'/food'}
+                            // link={'/food'}
                         />
                         <ArticleLayout type={'line'}
                                        topic={'Fish Trading'}
@@ -132,13 +130,13 @@ const Food = () => {
                                        'Herring, Blue whiting etc. from Asia, Europe and \n' +
                                        'other leading global fish markets.'}
                                        category={'Fish Trading Arm'}
-                                       // link={'/food'}
+                            // link={'/food'}
                         />
                     </Col>
                 </Row>
             </Section>
 
-            <Section className={'bg-gray-gradient-30'}>
+            <Section className={'bg-gray-gradient-30 py-5 py-lg-0'}>
                 <Row className='pt-lg-5 pb-lg-3'>
                     <Col lg={{span: 4}}>
                         <TextLabel className='patek-green' icon={threeCircleIcon} text='WHAT WE DO'/>
@@ -153,7 +151,7 @@ const Food = () => {
 
                 <Row className={'mt-3'}>
                     <Col lg={{span: 6}}>
-                        <ArticleImage type={'fluid'} image={purviewImage}/>
+                        <ArticleImage type={'fluid'} imageClass={'mb-3 mb-lg-0'} image={purviewImage}/>
                     </Col>
                     <Col lg={{span: 6}}>
                         <HeaderText className={'mt-lg-5 mb-lg-3 pt-lg-5 fs-2-5 patek-deep-green '} text={'Purview'}/>
@@ -165,12 +163,13 @@ const Food = () => {
                     </Col>
                 </Row>
                 <Row className={'mt-3'}>
-                    <Col lg={{span: 6,order:6}}>
+                    <Col lg={{span: 6, order: 6}}>
                         <ArticleImage type={'fluid'} image={solutionImage}/>
                     </Col>
-                    <Col lg={{span: 6,order:1}}>
-                        <HeaderText className={'mt-lg-5 mb-lg-3 pt-lg-5 fs-2-5 patek-deep-green '} text={'Our Solution'}/>
-                        <ParagraphText text={'Aquaculture was established by Patec Foods to serve \n' +
+                    <Col lg={{span: 6, order: 1}}>
+                        <HeaderText className={'mt-lg-5 mb-lg-3 pt-lg-5 fs-2-5 patek-deep-green '}
+                                    text={'Our Solution'}/>
+                        <ParagraphText className={'mb-5 mb-lg-0'} text={'Aquaculture was established by Patec Foods to serve \n' +
                         'as a medium for sustaining the supply of this vital food \n' +
                         'source and close the gap of the annual demand of fish \n' +
                         'estimated at 2.7million MT in Nigeria through our \n' +
@@ -192,11 +191,13 @@ const Food = () => {
                     <Col lg={{span: 4}}>
                         <SectionText
                             type={'imageTitle'}
+                            iconClass={'mb-3 mb-lg-0'}
                             icon={avocadoCircle}
                             title={'Curiousity'}
                         />
                         <SectionText
                             type={'imageTitle'}
+                            iconClass={'mb-3 mb-lg-0'}
                             icon={avocadoCircle}
                             title={'Productivity'}
                         />
@@ -204,22 +205,26 @@ const Food = () => {
                             type={'imageTitle'}
                             icon={avocadoCircle}
                             title={'Productivity'}
+                            iconClass={'mb-3 mb-lg-0'}
                         />
                     </Col>
                     <Col lg={{span: 4}}>
                         <SectionText
                             type={'imageTitle'}
                             icon={avocadoCircle}
+                            iconClass={'mb-3 mb-lg-0'}
                             title={'Professionalism'}
                         />
                         <SectionText
                             type={'imageTitle'}
                             icon={avocadoCircle}
+                            iconClass={'mb-3 mb-lg-0'}
                             title={'Food'}
                         />
                         <SectionText
                             type={'imageTitle'}
                             icon={avocadoCircle}
+                            iconClass={'mb-3 mb-lg-0'}
                             title={'Customer-focus'}
                         />
                     </Col>
@@ -227,6 +232,7 @@ const Food = () => {
                         <SectionText
                             type={'imageTitle'}
                             icon={avocadoCircle}
+                            iconClass={'mb-3 mb-lg-0'}
                             title={'Value-drive'}
                         />
                         <SectionText
@@ -238,10 +244,11 @@ const Food = () => {
                 </Row>
             </Section>
 
-            <Section className={'bg-patek-light-green mh-vh-50'}>
+            <Section className={'bg-patek-light-green mh-vh-50 py-5 py-lg-0'}>
                 <Row className='pt-lg-5 pb-lg-3'>
                     <Col lg={{span: 4}}>
-                        <TextLabel className='patek-green' positionClass={'mb-5 mb-lg-0'} icon={threeCircleIcon} text='WHAT WE DO'/>
+                        <TextLabel className='patek-green' positionClass={'mb-5 mb-lg-0'} icon={threeCircleIcon}
+                                   text='WHAT WE DO'/>
                     </Col>
                 </Row>
                 <Row>
@@ -256,7 +263,7 @@ const Food = () => {
                     </Col>
                     <Col lg={{span: 6}}>
                         <HeaderText className={'mt-lg-5 mb-lg-3 pt-lg-5 fs-2-5 patek-deep-green '} text={'Purview'}/>
-                        <ParagraphText text={'The rapid decline of food supply and wild-caught fish \n' +
+                        <ParagraphText className={'mb-5 mb-lg-0'} text={'The rapid decline of food supply and wild-caught fish \n' +
                         'has given rise to the need for Aquaculture. With an \n' +
                         'estimated 3 billion people getting 20% of their protein \n' +
                         'from fish, the production and supply of fish is a key \n' +
@@ -264,12 +271,13 @@ const Food = () => {
                     </Col>
                 </Row>
                 <Row className={'mt-3'}>
-                    <Col lg={{span: 6,order:6}}>
+                    <Col lg={{span: 6, order: 6}}>
                         <ArticleImage type={'fluid'} image={solutionImage}/>
                     </Col>
-                    <Col lg={{span: 6,order:1}}>
-                        <HeaderText className={'mt-lg-5 mb-lg-3 pt-lg-5 fs-2-5 patek-deep-green '} text={'Our Solution'}/>
-                        <ParagraphText text={'Aquaculture was established by Patec Foods to serve \n' +
+                    <Col lg={{span: 6, order: 1}}>
+                        <HeaderText className={'mt-lg-5 mb-lg-3 pt-lg-5 fs-2-5 patek-deep-green '}
+                                    text={'Our Solution'}/>
+                        <ParagraphText className={'mb-5 mb-lg-0'} text={'Aquaculture was established by Patec Foods to serve \n' +
                         'as a medium for sustaining the supply of this vital food \n' +
                         'source and close the gap of the annual demand of fish \n' +
                         'estimated at 2.7million MT in Nigeria through our \n' +

@@ -1,11 +1,27 @@
 .dotted-arch-position-1,.dotted-arch-position-2{
-    top: 34% !important;
-    left: 29%!important;
-    width: 4%!important;
-    transform: rotate(0deg)!important;
+    top: 34% ;
+    left: 29%;
+    width: 4%;
+    transform: rotate(0deg);
     opacity: .7;
     filter: hue-rotate(-25deg);
 }
 .dotted-arch-position-2{
-    left: 61%!important;
+    left: 61%;
+}
+
+
+@media all and (max-width:480px){
+    .dotted-arch-position-1,.dotted-arch-position-2{
+        top: 30% ;
+        left:75%;
+        width: 10%;
+        transform: rotate(90deg);
+        opacity: .7;
+        filter: hue-rotate(-25deg);
+    }
+    .dotted-arch-position-2{
+        top: 60% ;
+    }
+
 }

@@ -20,7 +20,7 @@ import SectionText from "../../Components/Commons/Section/SectionText";
 import SlideCarousel from "../../Components/Commons/Carousel/SlideCarousel";
 import Footer from "../../Components/Commons/Footer/Footer";
 import ArticleImage from "../../Components/Commons/ArticleImage/ArticleImage";
-import {redirectTo} from "../../Facades/Facade";
+import {getImageFromArticle, redirectTo} from "../../Facades/Facade";
 import withData from "../../Hoc/withData";
 import {getAllHomeContent} from "../../Api/api";
 import withArticlesAndPrinciples from "../../Hoc/homeHoc/withArticlesAndPrinciples";
@@ -117,9 +117,9 @@ const Home = ({data, articleLoading, firstFourArticles}) => {
                             : <EmptyPlaceholder/>}
                     </Row>
                 </Section>
-                <Section className={'bg-gray-gradient-30 pb-3 pb-lg-0'}
+                <Section className={'bg-gray-gradient-30 pb-3  pb-lg-0'}
                          bgImg={leafBGImg}>
-                    <Row className='pt-5 pb-3  pb-lg-0'>
+                    <Row className='pt-5 pb-3'>
                         <Col lg={{span: 4}}>
                             <TextLabel className='patek-green'
                                        icon={threeCircleIcon} text='SUBSIDIARIES'/>
@@ -134,11 +134,11 @@ const Home = ({data, articleLoading, firstFourArticles}) => {
                                                itemStructure={(item) =>
                                                    <Row className='pb-lg-5'>
                                                        <Col lg={{span: 6}}>
-                                                           <img src={CarouselLeaf}
+                                                           <img src={getImageFromArticle(item)}
                                                                 className={'w-70'} alt="patek carousel image"/>
                                                        </Col>
                                                        <Col lg={5}>
-                                                           <HeaderText className={'mt-lg-5 pt-lg-5 fs-2-5 mh-lg-90'}
+                                                           <HeaderText className={'mt-lg-3 pt-lg-5 fs-2-5 mh-lg-90'}
                                                                        text={item.title} link={item.link}/>
                                                            <ParagraphText text={item.description}
                                                                           className={'light-black pr-lg-5 pb-lg-5 mb-lg-5'}/>

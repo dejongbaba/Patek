@@ -24,7 +24,7 @@ const Farm = () => {
         <>
             <Header img={AboutBgImg} type='half'
                     align={'left'} logo={true}>
-                <Breadcrumb containerClass={'mb-5 mt-0 mt-lg-5 text-left'}
+                <Breadcrumb containerClass={'mb-3 mt-0 mt-lg-5 text-left'}
                             links={
                                 [
                                     {name: 'home', path: home},
@@ -32,7 +32,7 @@ const Farm = () => {
                                 ]
                             }
                 />
-                <HeaderText className={'text-left fs-1-5 with-square text-white'}
+                <HeaderText className={'pb-5 pb-lg-0 text-left fs-1-5 with-square text-white'}
                             text={'Colorado Farms'}/>
             </Header>
 
@@ -46,7 +46,7 @@ const Farm = () => {
                 <Row className='pt-lg-5'>
                     <Col lg={{span: 8, offset: 2}} className={'text-lg-center'}>
                         <TextLabel className='patek-green'
-                                   positionClass='justify-content-lg-center mb-5 mb-lg-0'
+                                   positionClass='justify-content-lg-center mb-3 mb-lg-0'
                                    icon={threeCircleIcon} text='COLORADO FARMS'/>
                         <HeaderText className={'my-5 pb-lg-5 fs-2 fs-lg-2 patek-deep-green '}
                                     text={'Colorado farms is a livestock production and \n' +
@@ -64,11 +64,11 @@ const Farm = () => {
                     </Col>
                     <Col lg={{span: 6}}>
                         <ParagraphText
-                            className={'patek-deep-green mt-5 pt-lg-5 mt-lg-0 mb-5'}
+                            className={'patek-deep-green mt-5 pt-lg-5 mt-lg-0 mb-3'}
                             text={'- Some of our Packaging Solutions'}
                         />
                         <TextLabel className='patek-green'
-                                   positionClass={'mb-5 mb-lg-0'}
+                                   positionClass={'mb-3 mb-lg-0'}
                                    icon={threeCircleIcon} text='WHO WE ARE'/>
                         <HeaderText className={'my-lg-3 fs-2-5 patek-deep-green '}
                                     text={'Retail (food & Beverages)'}/>
@@ -83,7 +83,7 @@ const Farm = () => {
             </Section>
 
             <Section className={'bg-gray-gradient-30'}>
-                <Row className='pt-lg-5'>
+                <Row className='pt-lg-5 mb-5 mb-lg-0'>
                     <Col lg={{span: 6, order: 6}} className={'pr-lg-5'}>
                         <ArticleImage
                             image={ArticlePlaceholder}
@@ -92,7 +92,7 @@ const Farm = () => {
                     </Col>
                     <Col lg={{span: 6, order: 1}} className={'pr-lg-5'}>
                         <TextLabel className='patek-green'
-                                   positionClass={'mb-5 mt-5 pt-lg-5 mb-lg-0'}
+                                   positionClass={'mb-3 mt-5 pt-lg-5 mb-lg-0'}
                                    icon={threeCircleIcon} text='WHO WE ARE'/>
                         <HeaderText className={'my-lg-3 fs-2-5 patek-deep-green '}
                                     text={'Pharmaceutical'}/>
@@ -106,7 +106,7 @@ const Farm = () => {
             </Section>
 
             <Section className={'bg-patek-light-green mh-vh-50'}>
-                <Row className='pt-lg-5'>
+                <Row className='pt-lg-5 mb-5 mb-lg-0'>
                     <Col lg={{span: 6}} className={'pr-lg-5'}>
                         <ArticleImage
                             image={ArticlePlaceholder}
@@ -115,7 +115,7 @@ const Farm = () => {
                     </Col>
                     <Col lg={{span: 6}} className={'pr-lg-5'}>
                         <TextLabel className='patek-green'
-                                   positionClass={'mb-5 mt-5 pt-lg-5 mb-lg-0'}
+                                   positionClass={'mb-3 mt-5 pt-lg-5 mb-lg-0'}
                                    icon={threeCircleIcon} text='WHO WE ARE'/>
                         <HeaderText className={'my-lg-3 fs-2-5 patek-deep-green '}
                                     text={'Agriculture'}/>

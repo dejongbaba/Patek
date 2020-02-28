@@ -81,7 +81,7 @@ const Career = () => {
                 <CareerForm/>
             </PatecModal>
             <Header img={careerBanner} type='half'>
-                <Breadcrumb containerClass={'mb-lg-5'}
+                <Breadcrumb containerClass={'mb-5'}
                             links={
                                 [
                                     {name: 'home', path: home},
@@ -91,17 +91,17 @@ const Career = () => {
                 <TextLabel positionClass={'justify-content-center'} text={'JOIN THE TEAM'}/>
                 <HeaderText className={'text-white with-square'} text={'Careers at Patec'}/>
             </Header>
-            <Section className={'bg-patek-light-green career--section py-lg-5'}>
+            <Section className={'bg-patek-light-green career--section py-5'}>
                 <Row className={'py-lg-3 pb-lg-5'}>
                     <Col lg={{span: 6}}>
-                        <img src={careerWoman} className='img-fluid w-70' alt="career woman "/>
+                        <img src={careerWoman} className='img-fluid w-70 mb-3 mb-lg-0' alt="career woman "/>
                     </Col>
                     <Col lg={{span: 5}}>
                         <img src={threeCircleIcon} alt="three icon cirlce"/>
                         <HeaderText
                             className={'text-left career--article-header mt-lg-2 fs-1-5 fs-lg-2-5'}
                             text={'PATEC GROUP LIFE'}/>
-                        <ParagraphText text={'When you join Patec Group you will have the opportunity' +
+                        <ParagraphText className={'mb-5 mb-lg-0'} text={'When you join Patec Group you will have the opportunity' +
                                        ' to improve your professional skills; develop industry knowledge;' +
                                        ' gain career growth and contribute to different industries across ' +
                                        'the Agriculture and Food processing sector. We offer training ' +
@@ -114,7 +114,7 @@ const Career = () => {
                 </Row>
                 <Row>
                     <Col lg={{span: 5,offset:1, order: 6}}>
-                        <img src={careerWoman} className='img-fluid' alt="career woman "/>
+                        <img src={careerWoman} className='img-fluid mb-3 mb-lg-0' alt="career woman "/>
                     </Col>
                     <Col lg={{span: 6, order: 1}}>
                         <img src={threeCircleIcon} alt="three icon cirlce"/>
@@ -122,7 +122,7 @@ const Career = () => {
                             className={'text-left career--article-header fs-1-5 fs-lg-2-5'}
                             text={'WHAT WE LOOK FOR'}
                         />
-                        <ParagraphText text={'We hire exceptional people that seek after innovation ' +
+                        <ParagraphText className={'mb-5 mb-lg-0'} text={'We hire exceptional people that seek after innovation ' +
                         'and are passionate about the development and sustainability of' +
                         ' Nigeria’s food production; processing and packaging industry.' +
                         ' We welcome experienced professionals with bachelors’ degrees' +
@@ -137,7 +137,7 @@ const Career = () => {
             </Section>
 
 
-            <Section className={'py-lg-5'} bgImg={greenLeafBg}>
+            <Section className={'py-5'} bgImg={greenLeafBg}>
                 <Row>
                     <Col lg={{span: 5}}>
                         <img src={rolePlaceholderimg}

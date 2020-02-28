@@ -672,6 +672,10 @@ code {
         width: 25% !important;
     }
 
+    p.bg-patek-green {
+        font-size: .85rem;
+    }
+
     .paginate-btn {
         width: 120px;
         font-size: 0.8rem;

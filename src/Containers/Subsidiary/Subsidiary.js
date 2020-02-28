@@ -12,7 +12,7 @@ import articleImage from "../../assets/img/about-art-img@2x.png";
 import "./subsidiary.css";
 import CareerSection from "../../Components/Commons/CareerSection/CareerSection";
 import {team} from "../../routes/routes";
-import {redirectTo} from "../../Facades/Facade";
+import {getImageFromArticle, redirectTo} from "../../Facades/Facade";
 import withData from "../../Hoc/withData";
 import {getAllHomeContent} from "../../Api/api";
 import Loader from "../../Components/Commons/Loader/Loader";
@@ -38,17 +38,17 @@ const Subsidiary = ({data, loading}) => {
                     <HeaderText className={'text-white'} text={'Subsidiary'}/>
                 </Header>
 
-                <Section bgImg={greenLeafBg} className={'pt-lg-5 pb-lg-3'}>
+                <Section bgImg={greenLeafBg} className={'py-5 pt-lg-5 pb-lg-3'}>
                     {subsidiaries && subsidiaries.length ?
                         subsidiaries.map((s, i) => {
                             if (i % 2 == 0) {
                                 return (
-                                    <Row>
+                                    <Row key={i} className={'mb-3 mb-lg-5'}>
                                         <Col lg={{span: 4,offset:1}}>
-                                            <ArticleImage type={'fluid'} image={articleImage}/>
+                                            <ArticleImage type={'fluid'} image={getImageFromArticle(s)}/>
                                         </Col>
                                         <Col lg={{span: 5, offset: 1}}>
-                                            <HeaderText className={'mt-lg-5 pt-lg-5 fs-2-5 mh-lg-90'}
+                                            <HeaderText className={'mt-lg-3 pt-lg-5 fs-2-5 mh-lg-90'}
                                                         text={s.title} link={s.link}/>
                                             <ParagraphText
                                                 text={s.description}
@@ -58,13 +58,13 @@ const Subsidiary = ({data, loading}) => {
                                 )
                             }
                             return (
-                                <Row>
+                                <Row key={i} className={'mb-3 mb-lg-5'}>
                                     <Col lg={{span: 6,order:6}}>
-                                        <ArticleImage imageClass={'w-70'} type={'fluid'} image={articleImage}/>
+                                        <ArticleImage imageClass={'w-70'} type={'fluid'} image={getImageFromArticle(s)}/>
                                     </Col>
 
                                     <Col lg={{span: 5, offset: 1,order:1}}>
-                                        <HeaderText className={'mt-lg-5 pt-lg-5 fs-2-5 mh-lg-90'}
+                                        <HeaderText className={'mt-lg-3 pt-lg-5 fs-2-5 mh-lg-90'}
                                                     text={s.title} link={s.link}/>
                                         <ParagraphText
                                             text={s.description}

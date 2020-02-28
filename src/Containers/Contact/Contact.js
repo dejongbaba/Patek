@@ -39,7 +39,7 @@ const Contact = () => {
                     text={'Reach us anytime anyday'}
                 />
             </Header>
-            <Section className={'bg-patek-light-green py-lg-5 '}>
+            <Section className={'bg-patek-light-green py-5 '}>
                 <Row className={'mt-lg-15'}>
                     <Col lg={{span: 4}}>
                         <ContactInfo title={'Locations - '}

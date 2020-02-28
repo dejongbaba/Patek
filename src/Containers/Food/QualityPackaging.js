@@ -91,9 +91,9 @@ const QualityPackaging = () => {
                 <Row className='my-lg-5'>
                     <Col lg={{span: 8, offset: 2}} className={'text-lg-center'}>
                         <TextLabel className='patek-green'
-                                   positionClass='justify-content-lg-center mb-5 mb-lg-0'
+                                   positionClass='justify-content-lg-center mb-3 mb-lg-0'
                                    icon={threeCircleIcon} text='QUALITY PACKAGING'/>
-                        <HeaderText className={'my-5 pb-lg-5 fs-2 fs-lg-2 patek-deep-green '}
+                        <HeaderText className={'mt-3 mb-5 my-lg-5 pb-lg-5 fs-2 fs-lg-2 patek-deep-green '}
                                     text={'Quality Packaging is a leader in plastic recycling and manufacturing \n' +
                                     'of packaging solutions for industrial and retail purposes. Our 10,000 sqm \n' +
                                     'facility is strategically located in Kwara state, to bridge the supply\n' +
@@ -103,14 +103,14 @@ const QualityPackaging = () => {
 
                     <Col lg={{span: 8, offset: 2}} className={'text-lg-center'}>
                         <TextLabel className='patek-green'
-                                   positionClass={'justify-content-lg-center mb-3 mb-lg-0'}
+                                   positionClass={'justify-content-lg-center  mb-lg-0'}
                                    icon={threeCircleIcon} text='ABOUT US'/>
                     </Col>
 
                 </Row>
                 <Row className='my-5'>
                     <Col lg={{span: 6}} className={'pr-lg-5'}>
-                        <HeaderText className={'my-3 fs-2-5 patek-deep-green '}
+                        <HeaderText className={' my-lg-3 fs-2-5 patek-deep-green '}
                                     text={'"We set the pace in the \n' +
                                     'industry on the opportunies \n' +
                                     'in recycling"'}/>
@@ -151,7 +151,7 @@ const QualityPackaging = () => {
                         />
                     </Col>
                 </Row>
-                <Row className={'my-3 py-lg-5'}>
+                <Row className={'my-5 my-lg-3 py-lg-5'}>
                     <Col lg={{span: 6,order:6}} className={'mb-5 mb-lg-0'}>
                         <ArticleImage type={'fluid'} image={qpInnovativeImg}/>
                     </Col>
