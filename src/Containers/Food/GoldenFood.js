@@ -1,14 +1,14 @@
 import React from 'react';
 import BannerSection from "../../Components/Commons/BannerSection/BannerSection";
-import foodImage from "../../assets/img/food-image@2x.png";
 import ParagraphText from "../../Components/Commons/ParagraphText/ParagraphText";
 import ArticleImage from "../../Components/Commons/ArticleImage/ArticleImage";
 import ArticlePlaceholder from "../../assets/img/colorado-article-image.png";
+import foodImage from "../../assets/img/food-image@2x.png";
 import {Col, Row} from "react-bootstrap";
 import Header from "../../Components/Commons/Header/Header";
 import AboutBgImg from "../../assets/img/subscidiaries-header@2x.png";
 import Breadcrumb from "../../Components/Commons/Breadcrumb/Breadcrumb";
-import {coloradoFarm, goldenFood, home} from "../../routes/routes";
+import {goldenFood, home} from "../../routes/routes";
 import TextLabel from "../../Components/Commons/TextLabel/TextLabel";
 import HeaderText from "../../Components/Commons/HeaderText/HeaderText";
 import threeCircleIcon from "../../assets/img/three-circle-icon.svg";
@@ -17,6 +17,7 @@ import SubscriptionSection from "../../Components/Commons/SubscriptionSection/Su
 import Footer from "../../Components/Commons/Footer/Footer";
 import SecondaryNav from "../../Components/Commons/Navbar/SecondaryNav";
 import CareerSection from "../../Components/Commons/CareerSection/CareerSection";
+import BannerContainer from "../BannerContainer/BannerContainer";
 
 
 const GoldenFood = () => {
@@ -37,12 +38,15 @@ const GoldenFood = () => {
             </Header>
 
             <div className={'py-lg-5 bg-patek-light-green'}>
-                <SecondaryNav className={'pt-5'} />
+                <SecondaryNav className={'pt-5'}/>
             </div>
 
 
             <Section className={'bg-patek-light-green mh-vh-50'}>
-                <BannerSection bgImagePosition={'right'} image={foodImage}/>
+                <BannerContainer>
+                    {(bannerImage) => <BannerSection bgImagePosition={'right'} image={bannerImage||foodImage}/>}
+                </BannerContainer>
+                {/*<BannerSection bgImagePosition={'right'} image={foodImage}/>*/}
                 <Row className='pt-lg-5'>
                     <Col lg={{span: 8, offset: 2}} className={'text-lg-center'}>
                         <TextLabel className='patek-green'
@@ -127,14 +131,14 @@ const GoldenFood = () => {
 
             <Section className={'bg-gray-gradient-30 mh-vh-50'}>
                 <Row>
-                    <Col lg={{span: 6,order:6}} className={'pr-lg-5'}>
+                    <Col lg={{span: 6, order: 6}} className={'pr-lg-5'}>
                         <ArticleImage
                             image={ArticlePlaceholder}
                             imageClass={'mb-3 mb-lg-0'}
                             type={'fluid'}
                         />
                     </Col>
-                    <Col lg={{span: 6,order:1}} className={'pr-lg-5 pt-lg-5'}>
+                    <Col lg={{span: 6, order: 1}} className={'pr-lg-5 pt-lg-5'}>
                         <HeaderText className={'mb-lg-3 mt-lg-5 pt-lg-5 fs-2-5 patek-deep-green '}
                                     text={'Production of\n' +
                                     'Healthy Drinks\n'}/>

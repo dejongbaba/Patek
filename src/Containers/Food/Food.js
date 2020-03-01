@@ -25,6 +25,7 @@ import Footer from "../../Components/Commons/Footer/Footer";
 import aquaCultureIcon from "../../assets/img/acquaculture-icon.svg";
 import SecondaryNav from "../../Components/Commons/Navbar/SecondaryNav";
 import CareerSection from "../../Components/Commons/CareerSection/CareerSection";
+import BannerContainer from "../BannerContainer/BannerContainer";
 
 const carouselItems = [
     {
@@ -78,7 +79,10 @@ const Food = () => {
             </div>
 
             <Section className={'bg-patek-light-green mh-vh-50'}>
-                <BannerSection bgImagePosition={'right'} image={foodImage}/>
+                <BannerContainer>
+                    {(bannerImage) => <BannerSection bgImagePosition={'right'} image={bannerImage||foodImage}/>}
+                </BannerContainer>
+                {/*<BannerSection bgImagePosition={'right'} image={foodImage}/>*/}
                 <Row className='pt-lg-5'>
                     <Col lg={{span: 8, offset: 2}} className={'text-lg-center'}>
                         <TextLabel className='patek-green'

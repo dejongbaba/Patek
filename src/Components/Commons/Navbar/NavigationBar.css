@@ -68,7 +68,7 @@
 }
 
 .navigation .navbar-nav .nav-link {
-    font-size: 14.5px;
+    font-size: 13px;
     display: flex;
 }
 
@@ -91,6 +91,7 @@
     width: 100%;
     padding: .6rem 1.5rem;
     clear: both;
+    font-size: .8rem;
     font-weight: 400;
     color: #212529;
     text-align: inherit;

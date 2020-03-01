@@ -34,6 +34,7 @@ import SectionGrid from "../../Components/Commons/SectionGrid/SectionGrid";
 import SectionGridItem from "../../Components/Commons/SectionGridItem/SectionGridItem";
 import Button from "../../Components/Commons/Button/Button";
 import CircleIcon from "../../Components/Commons/ArticleImage/CircleIcon";
+import BannerContainer from "../BannerContainer/BannerContainer";
 
 const carouselItems = [
     {
@@ -87,7 +88,10 @@ const QualityPackaging = () => {
 
 
             <Section className={'bg-patek-light-green mh-vh-50'}>
-                <BannerSection bgImagePosition={'right'} image={foodImage}/>
+                <BannerContainer>
+                    {(bannerImage) => <BannerSection bgImagePosition={'right'} image={bannerImage||foodImage}/>}
+                </BannerContainer>
+                {/*<BannerSection bgImagePosition={'right'} image={foodImage}/>*/}
                 <Row className='my-lg-5'>
                     <Col lg={{span: 8, offset: 2}} className={'text-lg-center'}>
                         <TextLabel className='patek-green'

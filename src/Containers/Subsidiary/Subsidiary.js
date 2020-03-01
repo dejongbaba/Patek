@@ -35,7 +35,7 @@ const Subsidiary = ({data, loading}) => {
                     <TextLabel positionClass={'justify-content-center'}
                                text={'we are patec'}
                     />
-                    <HeaderText className={'text-white'} text={'Subsidiary'}/>
+                    <HeaderText className={'text-white'} text={'Subsidiaries'}/>
                 </Header>
 
                 <Section bgImg={greenLeafBg} className={'py-5 pt-lg-5 pb-lg-3'}>
