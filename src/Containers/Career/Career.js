@@ -62,6 +62,9 @@ const Career = () => {
     const qpJobs = getQualityPackageJobs(jobs);
     const cfJobs = getColoradoFarmsJobs(jobs);
     const gfJobs = getGoldenFoodJobs(jobs);
+
+    console.log('job',jobs);
+
     const [show, setShow] = useState(false);
     const handleShow = () => setShow(true);
     const handleClose = () => setShow(false);
@@ -155,44 +158,44 @@ const Career = () => {
                                     'provide Quality and sublime \n' +
                                     'customer Service"'}
                         />
-                        <ParagraphText text={'Aminu Chigozie'}/>
+                        {/*<ParagraphText text={'Aminu Chigozie'}/>*/}
                         <ParagraphText className={'patek-green'}
                                        text={hrRole}
                         />
                     </Col>
                 </Row>
             </Section>
-            <Section className={'bg-gray-gradient-30'}>
-                <Row className='pt-5 text-center'>
-                    <Col lg={{span: 4, offset: 4}}>
-                        <TextLabel className='patek-green'
-                                   positionClass={'justify-content-center mb-4 mb-lg-0'}
-                                   icon={threeCircleIcon}
-                                   text='VACANCIES'/>
-                        <HeaderText
-                            className={'my-lg-3 fs-2-5 patek-deep-green  text-center'}
-                            text={'Open Vacancies'}
-                        />
-                    </Col>
-                </Row>
-                <Row className={'mt-5'}>
-                    <Col lg={{span: 10, offset: 1}}>
-                        <div className="job--card">
-                            <h1 className={'job--card-title'}>Associate Director</h1>
-                            <p className={'job--card-description'}>
-                                Our expanding company is seeking to hire an Operations
-                                Manager to join our leadership team. You will be in charge of providing inspired
-                                leadership for the operation for one of our organization's lines of business,
-                                which involves making important policy and strategic decisions,
-                                as well as the development and implementation of operational
-                                policies and procedures.
-                            </p>
-                            <span onClick={handleShow} className='job--link'>Apply Now</span>
 
-                        </div>
-                    </Col>
-                </Row>
-            </Section>
+            {
+                jobs.length ?
+                    <Section className={'bg-gray-gradient-30'}>
+                        <Row className='pt-5 text-center'>
+                            <Col lg={{span: 4, offset: 4}}>
+                                <TextLabel className='patek-green'
+                                           positionClass={'justify-content-center mb-4 mb-lg-0'}
+                                           icon={threeCircleIcon}
+                                           text='VACANCIES'/>
+                                <HeaderText
+                                    className={'my-lg-3 fs-2-5 patek-deep-green  text-center'}
+                                    text={'Open Vacancies'}
+                                />
+                            </Col>
+                        </Row>
+                        <Row className={'mt-5'}>
+                            <Col lg={{span: 10, offset: 1}}>
+                                <div className="job--card">
+                                    <h1 className={'job--card-title'}>{jobs[0].title}</h1>
+                                    <p className={'job--card-description'}>
+                                        {jobs[0].Description}
+                                    </p>
+                                    <span onClick={handleShow} className='job--link'>Apply Now</span>
+                                </div>
+                            </Col>
+                        </Row>
+                    </Section>:null
+
+            }
+
             <CareerSection header={'"An Amazing Company at the frontiers of agro allied \n' +
             'Development in West AFrica "'}/>
             <SubscriptionSection/>

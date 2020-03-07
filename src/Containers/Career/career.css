@@ -7,6 +7,9 @@
     transition: all .3s ease-in-out;
     margin-bottom: 3rem;
 }
+.job--card-description{
+    white-space: pre-wrap;
+}
 .job--card-title{
     color: #2A442E;
     font-weight: bolder;

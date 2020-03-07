@@ -239,5 +239,5 @@ const Sustainability = ({data}) => {
     );
 };
 
-const SustainabilityWithData = withData(Sustainability, getAllSustainabilities);
+const SustainabilityWithData = withData(Sustainability, getAllSustainabilities,null,"sustainability");
 export default SustainabilityWithData;

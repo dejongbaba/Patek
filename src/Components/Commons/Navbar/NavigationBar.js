@@ -7,7 +7,7 @@ import DropdownItem from "./DropdownItem";
 import {Link, NavLink, useHistory} from "react-router-dom";
 import inverseLogo from '../../../assets/img/patek-logo-inverse@2x.png';
 
-const NavigationBar = ({className, logo, type, data}) => {
+const NavigationBar = ({className, logo, type, data, ...props}) => {
 
     const navEl = useRef(null);
     const [isOpen, setIsOpen] = useState(false);

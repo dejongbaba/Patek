@@ -12,7 +12,7 @@ BannerContainer.propTypes = {
 
 function BannerContainer(props) {
 
-    const[banners,loading] = useApi(getAllBannerLinks);
+    const[banners,loading] = useApi(getAllBannerLinks,null,"banners");
 
 
     const setBannerImage = (banners) => {
@@ -35,7 +35,7 @@ function BannerContainer(props) {
 
     const bannerImage = banners.length && setBannerImage(banners);
 
-    return (props.children(bannerImage));
+    return (props.children({bannerImage,loading}));
 }
 
 export default BannerContainer;

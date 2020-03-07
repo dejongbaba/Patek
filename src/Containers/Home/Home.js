@@ -26,9 +26,10 @@ import {getAllHomeContent} from "../../Api/api";
 import withArticlesAndPrinciples from "../../Hoc/homeHoc/withArticlesAndPrinciples";
 import EmptyPlaceholder from "../../Components/Commons/EmptyPlaceHolder/EmptyPlaceholder";
 import Loader from "../../Components/Commons/Loader/Loader";
+import {about} from "../../routes/routes";
 
 
-const Home = ({data, articleLoading, firstFourArticles}) => {
+const Home = ({data, articleLoading, firstFourArticles,...props}) => {
 
     const valueText = 'Patec Group, founded in 2010 and headquartered \n' +
         'in Lagos is Africa\'s leading agro-allied conglomerate\n' +
@@ -82,7 +83,7 @@ const Home = ({data, articleLoading, firstFourArticles}) => {
                             {/*<HeaderText className={'my-lg-3 fs-2-5 '} text={'Patec - '}/>*/}
                             <ParagraphText text={valueText} className={'light-black pr-lg-5 mb-lg-3'}/>
                             <Button className={'btn-patek-green text-uppercase'}
-                                    onClick={() => redirectTo('/about')}
+                                    onClick={() => props.history.push(about)}
                                     text={'read more'}/>
                         </Col>
                     </Row>
@@ -209,5 +210,5 @@ const Home = ({data, articleLoading, firstFourArticles}) => {
     );
 };
 const HomeWithArticles = withArticlesAndPrinciples(Home);
-const HomeWithData = withData(HomeWithArticles, getAllHomeContent);
+const HomeWithData = withData(HomeWithArticles, getAllHomeContent,null,"home");
 export default HomeWithData;

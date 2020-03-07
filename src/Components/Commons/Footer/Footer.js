@@ -29,7 +29,7 @@ const Footer = ({className, text, logo, data, socialLinks}) => {
                                 {logo ? <img src={logo} alt="footer logo"/> :
                                     <img src={footerLogo} className={'w-30'} alt="footer logo"/>}
                             </div>
-                            <div className="flex-basis-60 d-flex flex-column flex-lg-row">
+                            <div className="flex-basis-60 d-flex flex-column text-capitalize flex-lg-row">
                                 <ul className='list-unstyled flex-basis-33'>
                                     {visibleMenu ?
                                         visibleMenu.slice(0, 2).map((menu, i) => <li key={i}>
@@ -86,4 +86,4 @@ const Footer = ({className, text, logo, data, socialLinks}) => {
     );
 };
 
-export default withSocialLinks(withData(Footer, getAllMenusContent));
+export default withSocialLinks(withData(Footer, getAllMenusContent,null,"footerMenu"));

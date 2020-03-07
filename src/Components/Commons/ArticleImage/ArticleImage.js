@@ -15,9 +15,8 @@ const ArticleImage = ({
 
     }
     if (type === 'fluid') {
-
         return (
-            <img src={image} className={`w-100 img-fluid ${imageClass ? imageClass : ''}`} alt="fluid article image"/>
+            <img src={image} className={`w-50 img-fluid ${imageClass ? imageClass : ''}`} alt="fluid article image"/>
         )
 
     }

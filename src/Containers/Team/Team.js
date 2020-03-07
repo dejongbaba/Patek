@@ -81,4 +81,4 @@ const Team = ({data}) => {
     );
 };
 
-export default withData(Team, getAllTeam);
+export default withData(Team, getAllTeam,null,"team");

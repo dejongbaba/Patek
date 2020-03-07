@@ -18,9 +18,16 @@ import Footer from "../../Components/Commons/Footer/Footer";
 import SecondaryNav from "../../Components/Commons/Navbar/SecondaryNav";
 import CareerSection from "../../Components/Commons/CareerSection/CareerSection";
 import BannerContainer from "../BannerContainer/BannerContainer";
+import {useApi} from "../../Effects/Effects";
+import {getAllColoradoFarms, getAllpatecFoodOperations} from "../../Api/api";
+import {getImageFromArticle} from "../../Facades/Facade";
 
 
 const Farm = () => {
+
+    const [coloradoFarms,loading] = useApi(getAllColoradoFarms, null, 'colorado-farm');
+
+    console.log('colorado Farms',coloradoFarms);
     return (
         <>
             <Header img={AboutBgImg} type='half'
@@ -38,97 +45,117 @@ const Farm = () => {
             </Header>
 
             <div className={'py-lg-5 bg-patek-light-green'}>
-                <SecondaryNav className={'pt-5'} />
+                <SecondaryNav className={'pt-5'}/>
             </div>
 
 
             <Section className={'bg-patek-light-green mh-vh-50'}>
                 <BannerContainer>
-                    {(bannerImage) => <BannerSection bgImagePosition={'right'} image={bannerImage||foodImage}/>}
+                    {({bannerImage, loading}) => <BannerSection loading={loading} bgImagePosition={'right'} image={bannerImage || foodImage}
+                    />}
                 </BannerContainer>
-                {/*<BannerSection bgImagePosition={'right'} image={foodImage}/>*/}
+                {
+                    coloradoFarms.length?
+                        <Col lg={{span: 8, offset: 2}} className={'text-lg-center'}>
+
+                            <TextLabel className='patek-green'
+                                       positionClass='justify-content-lg-center mb-3 mb-lg-0'
+                                       icon={threeCircleIcon} text={coloradoFarms[0].title}/>
+                            <HeaderText className={'my-5 fs-2 fs-lg-2 patek-deep-green '}
+                                        text={coloradoFarms[0].description}
+                            />
+                        </Col>
+                        :null
+                }
                 <Row className='pt-lg-5'>
-                    <Col lg={{span: 8, offset: 2}} className={'text-lg-center'}>
-                        <TextLabel className='patek-green'
-                                   positionClass='justify-content-lg-center mb-3 mb-lg-0'
-                                   icon={threeCircleIcon} text='COLORADO FARMS'/>
-                        <HeaderText className={'my-5 pb-lg-5 fs-2 fs-lg-2 patek-deep-green '}
-                                    text={'Colorado farms is a livestock production and \n' +
-                                    'processing business aimed at improving the quality of \n' +
-                                    'beef sold in Nigeria'}
-                        />
-                    </Col>
+
                 </Row>
                 <Row>
-                    <Col lg={{span: 6}} className={'pr-lg-5'}>
-                        <ArticleImage
-                            image={ArticlePlaceholder}
-                            type={'fluid'}
-                        />
-                    </Col>
-                    <Col lg={{span: 6}}>
-                        <ParagraphText
-                            className={'patek-deep-green mt-5 pt-lg-5 mt-lg-0 mb-3'}
-                            text={'- Some of our Packaging Solutions'}
-                        />
-                        <TextLabel className='patek-green'
-                                   positionClass={'mb-3 mb-lg-0'}
-                                   icon={threeCircleIcon} text='WHO WE ARE'/>
-                        <HeaderText className={'my-lg-3 fs-2-5 patek-deep-green '}
-                                    text={'Retail (food & Beverages)'}/>
-                        <ParagraphText
-                            text={'Patec Group is a dynamic organization that focuses \n' +
-                            'on providing home grown solutions to some of Nigeria’s \n' +
-                            'needs within the food production, processing and \n' +
-                            'packaging industries.'}/>
 
-                    </Col>
+                    {
+                        coloradoFarms.length?
+                            <>
+                                <Col lg={{span: 6}} className={'pr-lg-5'}>
+                                    <ArticleImage
+                                        image={getImageFromArticle(coloradoFarms[1])}
+                                        type={'fluid'}
+                                        imageClass={'w-100'}
+                                    />
+                                </Col>
+                                <Col lg={{span: 6}}>
+                                    {/*<ParagraphText*/}
+                                    {/*    className={'patek-deep-green mt-5 pt-lg-5 mt-lg-0 mb-3'}*/}
+                                    {/*    text={'- Some of our Packaging Solutions'}*/}
+                                    {/*/>*/}
+                                    {/*<TextLabel className='patek-green'*/}
+                                    {/*           positionClass={'mb-3 mb-lg-0'}*/}
+                                    {/*           icon={threeCircleIcon} text='WHO WE ARE'/>*/}
+                                    <HeaderText className={'my-3 mt-lg-5 mb-lg-2 pt-lg-5 fs-2-5 patek-deep-green '} text={coloradoFarms[1].title}/>
+                                    <ParagraphText text={coloradoFarms[1].description}/>
+                                </Col>
+                            </>
+                            :null
+                    }
+
                 </Row>
             </Section>
 
             <Section className={'bg-gray-gradient-30'}>
                 <Row className='pt-lg-5 mb-5 mb-lg-0'>
-                    <Col lg={{span: 6, order: 6}} className={'pr-lg-5'}>
-                        <ArticleImage
-                            image={ArticlePlaceholder}
-                            type={'fluid'}
-                        />
-                    </Col>
-                    <Col lg={{span: 6, order: 1}} className={'pr-lg-5'}>
-                        <TextLabel className='patek-green'
-                                   positionClass={'mb-3 mt-5 pt-lg-5 mb-lg-0'}
-                                   icon={threeCircleIcon} text='WHO WE ARE'/>
-                        <HeaderText className={'my-lg-3 fs-2-5 patek-deep-green '}
-                                    text={'Pharmaceutical'}/>
-                        <ParagraphText
-                            text={'Patec Group is a dynamic organization that focuses \n' +
-                            'on providing home grown solutions to some of Nigeria’s \n' +
-                            'needs within the food production, processing and \n' +
-                            'packaging industries.'}/>
-                    </Col>
+
+                    {
+                        coloradoFarms.length?
+                            <>
+                                <Col lg={{span: 6, order: 6}} className={'pr-lg-5'}>
+                                    <ArticleImage
+                                        image={getImageFromArticle(coloradoFarms[2])}
+                                        imageClass={'w-100'}
+                                        type={'fluid'}
+                                    />
+                                </Col>
+                                <Col lg={{span: 6, order: 1}} className={'pr-lg-5'}>
+                                    <TextLabel className='patek-green'
+                                               positionClass={'mb-3 mt-5 pt-lg-5 mb-lg-0'}
+                                               icon={threeCircleIcon} text='WHO WE ARE'/>
+                                    <HeaderText className={'my-lg-3 fs-2-5 patek-deep-green '}
+                                                text={coloradoFarms[2].title}/>
+                                    <ParagraphText
+                                        text={coloradoFarms[2].description}/>
+                                </Col>
+                            </>
+                            :null
+                    }
+
                 </Row>
             </Section>
 
             <Section className={'bg-patek-light-green mh-vh-50'}>
                 <Row className='pt-lg-5 mb-5 mb-lg-0'>
-                    <Col lg={{span: 6}} className={'pr-lg-5'}>
-                        <ArticleImage
-                            image={ArticlePlaceholder}
-                            type={'fluid'}
-                        />
-                    </Col>
-                    <Col lg={{span: 6}} className={'pr-lg-5'}>
-                        <TextLabel className='patek-green'
-                                   positionClass={'mb-3 mt-5 pt-lg-5 mb-lg-0'}
-                                   icon={threeCircleIcon} text='WHO WE ARE'/>
-                        <HeaderText className={'my-lg-3 fs-2-5 patek-deep-green '}
-                                    text={'Agriculture'}/>
-                        <ParagraphText
-                            text={'Patec Group is a dynamic organization that focuses \n' +
-                            'on providing home grown solutions to some of Nigeria’s \n' +
-                            'needs within the food production, processing and \n' +
-                            'packaging industries.'}/>
-                    </Col>
+
+                    {
+                        coloradoFarms.length?
+                            <>
+                                <Col lg={{span: 6}} className={'pr-lg-5'}>
+                                    <ArticleImage
+                                        image={getImageFromArticle(coloradoFarms[3])}
+                                        type={'fluid'}
+                                        imageClass={'w-100'}
+
+                                    />
+                                </Col>
+                                <Col lg={{span: 6}} className={'pr-lg-5'}>
+                                    <TextLabel className='patek-green'
+                                               positionClass={'mb-3 mt-5 pt-lg-5 mb-lg-0'}
+                                               icon={threeCircleIcon} text='WHO WE ARE'/>
+                                    <HeaderText className={'my-lg-3 fs-2-5 patek-deep-green '}
+                                                text={coloradoFarms[3].title}/>
+                                    <ParagraphText
+                                        text={coloradoFarms[3].description}/>
+                                </Col>
+                            </>
+                            :null
+                    }
+
                 </Row>
             </Section>
             <CareerSection header={'" An Amazing Company at the frontiers of agro allied \n' +

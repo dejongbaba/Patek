@@ -7,6 +7,7 @@ const withArticlesAndPrinciples = (component) => (props) => {
     const [allArticles, articleLoading] = useGetArticles();
     const [principles, isPrinciplesLoading] = useGetPrinciples();
     const firstFourArticles = getFirstFourArticles(allArticles);
+
     return <RenderComponent
                 articleLoading={articleLoading}
                 firstFourArticles={firstFourArticles}

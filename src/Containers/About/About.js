@@ -14,7 +14,6 @@ import ParagraphText from "../../Components/Commons/ParagraphText/ParagraphText"
 import Footer from "../../Components/Commons/Footer/Footer";
 import SubscriptionSection from "../../Components/Commons/SubscriptionSection/SubscriptionSection";
 import threeCircleIcon from "../../assets/img/three-circle-icon.svg";
-import dottedBottomAch from "../../assets/img/dotted-bottom-arch.svg";
 import dottedTopAch from "../../assets/img/arrow.png";
 import articleImage from "../../assets/img/about-art-img@2x.png";
 import multiDimensionalImage from "../../assets/img/multidimensional-img2x.png";
@@ -22,15 +21,15 @@ import SectionText from "../../Components/Commons/Section/SectionText";
 import "./about.css";
 import ArticleImage from "../../Components/Commons/ArticleImage/ArticleImage";
 import CareerSection from "../../Components/Commons/CareerSection/CareerSection";
-import {team} from "../../routes/routes";
-import {redirectTo} from "../../Facades/Facade";
+import {contact} from "../../routes/routes";
 import withData from "../../Hoc/withData";
 import {getAllAbouts} from "../../Api/api";
 import EmptyPlaceholder from "../../Components/Commons/EmptyPlaceHolder/EmptyPlaceholder";
 import Loader from "../../Components/Commons/Loader/Loader";
 import withArticlesAndPrinciples from "../../Hoc/homeHoc/withArticlesAndPrinciples";
 
-const About = ({data, loading, directors, principles, isDirectorsLoading}) => {
+const About = ({data, loading, directors, principles, isDirectorsLoading, ...otherProps}) => {
+
     return (
         <>
             <Loader loading={loading}>
@@ -47,13 +46,13 @@ const About = ({data, loading, directors, principles, isDirectorsLoading}) => {
 
                 <Section bgImg={greenLeafBg} className={'py-5 pt-lg-5 pb-lg-3'}>
                     <Row>
-                        <Col lg={{span: 6,order:6}}>
+                        <Col lg={{span: 6, order: 6}}>
                             {data && data.length ? (
                                 <ArticleImage imageClass={'w-100'} type={'fluid'} image={articleImage}/>
                             ) : <EmptyPlaceholder/>}
                         </Col>
 
-                        <Col lg={{span: 5,offset:1,order:1}}>
+                        <Col lg={{span: 5, offset: 1, order: 1}}>
                             {data && data.length ? (
                                 <>
                                     <TextLabel positionClass={'mb-3'} text={data[3].title}/>
@@ -204,14 +203,12 @@ const About = ({data, loading, directors, principles, isDirectorsLoading}) => {
                         </Col>
                     </Row>
                 </Section>
-                <CareerSection header={'Meet the Team'} button={'Meet Us'} func={() => redirectTo(team)}/>
+                <CareerSection header={'Meet the Team'} button={'Meet Us'} func={() => otherProps.history.push(contact)}/>
                 <SubscriptionSection/>
                 <Footer/>
             </Loader>
         </>
     );
 };
-const AboutWithData = withData(About, getAllAbouts);
-const AboutWithPrinciples = withArticlesAndPrinciples(AboutWithData);
 
-export default AboutWithPrinciples;
+export default withArticlesAndPrinciples(withData(About, getAllAbouts));

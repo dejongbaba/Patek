@@ -1,4 +1,4 @@
-import {IMAGE_URL} from "../Api/api";
+import {getArticles, IMAGE_URL} from "../Api/api";
 import noImgAvail from '../assets/img/noimageavailable.png';
 
 export const News = 'news';
@@ -53,6 +53,17 @@ export const isEmpty = (obj) => {
 export const getImageFromArticle = (article) => {
     if (article.image == null) return  noImgAvail;
     return !isEmpty(article) && article.image.length > 0 ? `${article.image[0].url}` : noImgAvail
+};
+
+export const getDataOrFetch = (key, setData, callBack) => {
+    let storedArticles = localStorage.getItem(key);
+    if (storedArticles) {
+        storedArticles = JSON.parse(storedArticles);
+        setData(storedArticles);
+    } else {
+        callBack()
+    }
+
 };
 
 export const redirectTo = (url) => {

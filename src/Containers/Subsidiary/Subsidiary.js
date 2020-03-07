@@ -45,7 +45,7 @@ const Subsidiary = ({data, loading}) => {
                                 return (
                                     <Row key={i} className={'mb-3 mb-lg-5'}>
                                         <Col lg={{span: 4,offset:1}}>
-                                            <ArticleImage type={'fluid'} image={getImageFromArticle(s)}/>
+                                            <ArticleImage imageClass={'w-100'} type={'fluid'} image={getImageFromArticle(s)}/>
                                         </Col>
                                         <Col lg={{span: 5, offset: 1}}>
                                             <HeaderText className={'mt-lg-3 pt-lg-5 fs-2-5 mh-lg-90'}
@@ -85,4 +85,4 @@ const Subsidiary = ({data, loading}) => {
 };
 
 
-export default withData(Subsidiary, getAllHomeContent);
+export default withData(Subsidiary, getAllHomeContent,null,'subsidiary');
