@@ -3,7 +3,6 @@ import BannerSection from "../../Components/Commons/BannerSection/BannerSection"
 import foodImage from "../../assets/img/food-image@2x.png";
 import ParagraphText from "../../Components/Commons/ParagraphText/ParagraphText";
 import ArticleImage from "../../Components/Commons/ArticleImage/ArticleImage";
-import ArticlePlaceholder from "../../assets/img/colorado-article-image.png";
 import {Col, Row} from "react-bootstrap";
 import Header from "../../Components/Commons/Header/Header";
 import AboutBgImg from "../../assets/img/about-bg-image.svg";
@@ -19,15 +18,15 @@ import SecondaryNav from "../../Components/Commons/Navbar/SecondaryNav";
 import CareerSection from "../../Components/Commons/CareerSection/CareerSection";
 import BannerContainer from "../BannerContainer/BannerContainer";
 import {useApi} from "../../Effects/Effects";
-import {getAllColoradoFarms, getAllpatecFoodOperations} from "../../Api/api";
+import {getAllColoradoFarms} from "../../Api/api";
 import {getImageFromArticle} from "../../Facades/Facade";
 
 
 const Farm = () => {
 
-    const [coloradoFarms,loading] = useApi(getAllColoradoFarms, null, 'colorado-farm');
+    const [coloradoFarms, loading] = useApi(getAllColoradoFarms, null, 'colorado-farm');
 
-    console.log('colorado Farms',coloradoFarms);
+    console.log('colorado Farms', coloradoFarms);
     return (
         <>
             <Header img={AboutBgImg} type='half'
@@ -51,11 +50,12 @@ const Farm = () => {
 
             <Section className={'bg-patek-light-green mh-vh-50'}>
                 <BannerContainer>
-                    {({bannerImage, loading}) => <BannerSection loading={loading} bgImagePosition={'right'} image={bannerImage || foodImage}
+                    {({bannerImage, loading}) => <BannerSection loading={loading} bgImagePosition={'right'}
+                                                                image={bannerImage || foodImage}
                     />}
                 </BannerContainer>
                 {
-                    coloradoFarms.length?
+                    coloradoFarms.length ?
                         <Col lg={{span: 8, offset: 2}} className={'text-lg-center'}>
 
                             <TextLabel className='patek-green'
@@ -65,7 +65,7 @@ const Farm = () => {
                                         text={coloradoFarms[0].description}
                             />
                         </Col>
-                        :null
+                        : null
                 }
                 <Row className='pt-lg-5'>
 
@@ -73,7 +73,7 @@ const Farm = () => {
                 <Row>
 
                     {
-                        coloradoFarms.length?
+                        coloradoFarms.length ?
                             <>
                                 <Col lg={{span: 6}} className={'pr-lg-5'}>
                                     <ArticleImage
@@ -90,11 +90,12 @@ const Farm = () => {
                                     {/*<TextLabel className='patek-green'*/}
                                     {/*           positionClass={'mb-3 mb-lg-0'}*/}
                                     {/*           icon={threeCircleIcon} text='WHO WE ARE'/>*/}
-                                    <HeaderText className={'my-3 mt-lg-5 mb-lg-2 pt-lg-5 fs-2-5 patek-deep-green '} text={coloradoFarms[1].title}/>
+                                    <HeaderText className={'my-3 mt-lg-5 mb-lg-2 pt-lg-5 fs-2-5 patek-deep-green '}
+                                                text={coloradoFarms[1].title}/>
                                     <ParagraphText text={coloradoFarms[1].description}/>
                                 </Col>
                             </>
-                            :null
+                            : null
                     }
 
                 </Row>
@@ -104,7 +105,7 @@ const Farm = () => {
                 <Row className='pt-lg-5 mb-5 mb-lg-0'>
 
                     {
-                        coloradoFarms.length?
+                        coloradoFarms.length ?
                             <>
                                 <Col lg={{span: 6, order: 6}} className={'pr-lg-5'}>
                                     <ArticleImage
@@ -123,7 +124,7 @@ const Farm = () => {
                                         text={coloradoFarms[2].description}/>
                                 </Col>
                             </>
-                            :null
+                            : null
                     }
 
                 </Row>
@@ -133,7 +134,7 @@ const Farm = () => {
                 <Row className='pt-lg-5 mb-5 mb-lg-0'>
 
                     {
-                        coloradoFarms.length?
+                        coloradoFarms.length ?
                             <>
                                 <Col lg={{span: 6}} className={'pr-lg-5'}>
                                     <ArticleImage
@@ -153,7 +154,7 @@ const Farm = () => {
                                         text={coloradoFarms[3].description}/>
                                 </Col>
                             </>
-                            :null
+                            : null
                     }
 
                 </Row>

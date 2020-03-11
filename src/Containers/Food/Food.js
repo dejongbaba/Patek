@@ -31,7 +31,6 @@ import {getImageFromArticle} from "../../Facades/Facade";
 
 const Food = ({data, loading, ...props}) => {
 
-    console.log('dtaa', data);
     const [foodOperation, operationsLoading] = useApi(getAllpatecFoodOperations, null, 'patec-food-operations');
 
     return (

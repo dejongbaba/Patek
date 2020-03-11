@@ -1,7 +1,6 @@
 import React, {useState} from 'react';
 import AboutBgImg from "../../assets/img/about-bg-image.svg";
 import {Col, Row} from "react-bootstrap";
-import TextLabel from "../../Components/Commons/TextLabel/TextLabel";
 import HeaderText from "../../Components/Commons/HeaderText/HeaderText";
 import Header from "../../Components/Commons/Header/Header";
 import SubscriptionSection from "../../Components/Commons/SubscriptionSection/SubscriptionSection";
@@ -12,7 +11,6 @@ import contactEmailIcon from "../../assets/img/contact-email-icon.svg";
 import contactPhoneIcon from "../../assets/img/contact-phone-icon.svg";
 import ContactInfo from "./ContactInfo";
 import LocationListItem from "./LocationListItem";
-import threeWhiteDots from "../../assets/img/three-white-dots.svg";
 import ContactForm from "./ContactForm";
 import CareerSection from "../../Components/Commons/CareerSection/CareerSection";
 import PatecModal from "../../Components/Commons/Modal/PatecModal";
@@ -28,7 +26,7 @@ const Contact = () => {
     return (
         <div>
             <PatecModal header={true} modalHeading={'Map Address'} show={show} closeModal={handleClose}>
-                    <MapContainer/>
+                <MapContainer/>
             </PatecModal>
             <Header img={AboutBgImg} type='half'
                     align={'left'}

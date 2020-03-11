@@ -63,7 +63,7 @@ const Career = () => {
     const cfJobs = getColoradoFarmsJobs(jobs);
     const gfJobs = getGoldenFoodJobs(jobs);
 
-    console.log('job',jobs);
+    console.log('job', jobs);
 
     const [show, setShow] = useState(false);
     const handleShow = () => setShow(true);
@@ -104,7 +104,8 @@ const Career = () => {
                         <HeaderText
                             className={'text-left career--article-header mt-lg-2 fs-1-5 fs-lg-2-5'}
                             text={'PATEC GROUP LIFE'}/>
-                        <ParagraphText className={'mb-5 mb-lg-0'} text={'When you join Patec Group you will have the opportunity' +
+                        <ParagraphText className={'mb-5 mb-lg-0'}
+                                       text={'When you join Patec Group you will have the opportunity' +
                                        ' to improve your professional skills; develop industry knowledge;' +
                                        ' gain career growth and contribute to different industries across ' +
                                        'the Agriculture and Food processing sector. We offer training ' +
@@ -116,7 +117,7 @@ const Career = () => {
                     </Col>
                 </Row>
                 <Row>
-                    <Col lg={{span: 5,offset:1, order: 6}}>
+                    <Col lg={{span: 5, offset: 1, order: 6}}>
                         <img src={careerWoman} className='img-fluid mb-3 mb-lg-0' alt="career woman "/>
                     </Col>
                     <Col lg={{span: 6, order: 1}}>
@@ -125,15 +126,16 @@ const Career = () => {
                             className={'text-left career--article-header fs-1-5 fs-lg-2-5'}
                             text={'WHAT WE LOOK FOR'}
                         />
-                        <ParagraphText className={'mb-5 mb-lg-0'} text={'We hire exceptional people that seek after innovation ' +
-                        'and are passionate about the development and sustainability of' +
-                        ' Nigeria’s food production; processing and packaging industry.' +
-                        ' We welcome experienced professionals with bachelors’ degrees' +
-                        ' and excellent academic records.\n' +
-                        'We are developing an amazing workforce of Business analysts: Financial analysts;' +
-                        ' Project managers; Plant managers; \nConstruction workers and people who thrive ' +
-                        'in entrepreneurial environments that are enthusiastic about providing home-grown ' +
-                        'solutions for the needs of Nigerians. '}
+                        <ParagraphText className={'mb-5 mb-lg-0'}
+                                       text={'We hire exceptional people that seek after innovation ' +
+                                       'and are passionate about the development and sustainability of' +
+                                       ' Nigeria’s food production; processing and packaging industry.' +
+                                       ' We welcome experienced professionals with bachelors’ degrees' +
+                                       ' and excellent academic records.\n' +
+                                       'We are developing an amazing workforce of Business analysts: Financial analysts;' +
+                                       ' Project managers; Plant managers; \nConstruction workers and people who thrive ' +
+                                       'in entrepreneurial environments that are enthusiastic about providing home-grown ' +
+                                       'solutions for the needs of Nigerians. '}
                         />
                     </Col>
                 </Row>
@@ -192,7 +194,7 @@ const Career = () => {
                                 </div>
                             </Col>
                         </Row>
-                    </Section>:null
+                    </Section> : null
 
             }
 

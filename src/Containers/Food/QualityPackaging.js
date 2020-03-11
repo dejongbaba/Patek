@@ -9,8 +9,6 @@ import ArticleImage from "../../Components/Commons/ArticleImage/ArticleImage";
 import {Col, Row} from "react-bootstrap";
 import Header from "../../Components/Commons/Header/Header";
 import qpBanner from "../../assets/img/qp-banner@2x.png";
-import qpStrategyImg from "../../assets/img/qp-strategy-img@2x.png";
-import qpInnovativeImg from "../../assets/img/qp-innovative-img@2x.png";
 import Breadcrumb from "../../Components/Commons/Breadcrumb/Breadcrumb";
 import {contact, home, patecFood} from "../../routes/routes";
 import TextLabel from "../../Components/Commons/TextLabel/TextLabel";
@@ -23,7 +21,6 @@ import Footer from "../../Components/Commons/Footer/Footer";
 import SecondaryNav from "../../Components/Commons/Navbar/SecondaryNav";
 import CareerSection from "../../Components/Commons/CareerSection/CareerSection";
 import Button from "../../Components/Commons/Button/Button";
-import CircleIcon from "../../Components/Commons/ArticleImage/CircleIcon";
 import BannerContainer from "../BannerContainer/BannerContainer";
 import {useApi} from "../../Effects/Effects";
 import {getAllQualityPackaging} from "../../Api/api";
@@ -117,12 +114,14 @@ const QualityPackaging = (props) => {
                         qualityPackaging.length ?
                             <>
                                 <Col lg={{span: 5}} className={'mb-5 mb-lg-0'}>
-                                    <ArticleImage type={'fluid'} imageClass={'w-100'} image={getImageFromArticle(qualityPackaging[2])}/>
+                                    <ArticleImage type={'fluid'} imageClass={'w-100'}
+                                                  image={getImageFromArticle(qualityPackaging[2])}/>
                                 </Col>
                                 <Col lg={{span: 6, offset: 1}}>
                                     {/*<TextLabel className='patek-green' positionClass={'mt-lg-5 pl-lg-3'} icon={threeCircleIcon}*/}
                                     {/*           text='STRATEGIC OBJECTIVES'/>*/}
-                                    <HeaderText className={'my-3 mt-lg-5  pt-lg-3 fs-2-5 patek-deep-green '} text={qualityPackaging[2].title}/>
+                                    <HeaderText className={'my-3 mt-lg-5  pt-lg-3 fs-2-5 patek-deep-green '}
+                                                text={qualityPackaging[2].title}/>
                                     <ParagraphText className={'mb-3'}
                                                    text={qualityPackaging[2].description}/>
                                     {/*<ParagraphText className={'mb-3'}*/}
@@ -143,11 +142,13 @@ const QualityPackaging = (props) => {
                         qualityPackaging.length ?
                             <>
                                 <Col lg={{span: 6, order: 6}} className={'mb-5 mb-lg-0'}>
-                                    <ArticleImage type={'fluid'} imageClass={'w-100'} image={getImageFromArticle(qualityPackaging[3])}/>
+                                    <ArticleImage type={'fluid'} imageClass={'w-100'}
+                                                  image={getImageFromArticle(qualityPackaging[3])}/>
                                 </Col>
                                 <Col lg={{span: 6, order: 1}}>
                                     {/*<TextLabel className='patek-green' icon={threeCircleIcon} text='INNOVATION'/>*/}
-                                    <HeaderText className={'my-3 mt-lg-5 pt-lg-5 fs-2-5 patek-deep-green '} text={qualityPackaging[3].title}/>
+                                    <HeaderText className={'my-3 mt-lg-5 pt-lg-5 fs-2-5 patek-deep-green '}
+                                                text={qualityPackaging[3].title}/>
                                     <ParagraphText className={'mb-3'}
                                                    text={qualityPackaging[3].description}/>
                                     {/*<CircleIcon/>*/}

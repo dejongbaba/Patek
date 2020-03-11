@@ -8,7 +8,7 @@ import {Col, Row} from "react-bootstrap";
 import Header from "../../Components/Commons/Header/Header";
 import AboutBgImg from "../../assets/img/subscidiaries-header@2x.png";
 import Breadcrumb from "../../Components/Commons/Breadcrumb/Breadcrumb";
-import {coloradoFarm, goldenFood, home} from "../../routes/routes";
+import {goldenFood, home} from "../../routes/routes";
 import TextLabel from "../../Components/Commons/TextLabel/TextLabel";
 import HeaderText from "../../Components/Commons/HeaderText/HeaderText";
 import threeCircleIcon from "../../assets/img/three-circle-icon.svg";
@@ -37,7 +37,7 @@ const TraveliFood = () => {
             </Header>
 
             <div className={'py-lg-5 bg-patek-light-green'}>
-                <SecondaryNav className={'pt-5'} />
+                <SecondaryNav className={'pt-5'}/>
             </div>
 
 
@@ -134,13 +134,13 @@ const TraveliFood = () => {
 
             <Section className={'bg-gray-gradient-30 mh-vh-50'}>
                 <Row className='pt-lg-5'>
-                    <Col lg={{span: 6,order:6}} className={'pr-lg-5'}>
+                    <Col lg={{span: 6, order: 6}} className={'pr-lg-5'}>
                         <ArticleImage
                             image={ArticlePlaceholder}
                             type={'fluid'}
                         />
                     </Col>
-                    <Col lg={{span: 6,order:1}} className={'pr-lg-5'}>
+                    <Col lg={{span: 6, order: 1}} className={'pr-lg-5'}>
                         <TextLabel className='patek-green'
                                    positionClass={'mb-5 mt-5 mt-lg-0 mb-lg-0'}
                                    icon={threeCircleIcon} text='WHO WE ARE'/>

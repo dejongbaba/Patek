@@ -203,7 +203,8 @@ const About = ({data, loading, directors, principles, isDirectorsLoading, ...oth
                         </Col>
                     </Row>
                 </Section>
-                <CareerSection header={'Meet the Team'} button={'Meet Us'} func={() => otherProps.history.push(contact)}/>
+                <CareerSection header={'Meet the Team'} button={'Contact Us'}
+                               func={() => otherProps.history.push(contact)}/>
                 <SubscriptionSection/>
                 <Footer/>
             </Loader>
