@@ -56,7 +56,7 @@ export const getImageFromArticle = (article) => {
 };
 
 export const getDataOrFetch = (key, setData, callBack) => {
-    let storedArticles = localStorage.getItem(key);
+    let storedArticles = sessionStorage.getItem(key);
     if (storedArticles) {
         storedArticles = JSON.parse(storedArticles);
         setData(storedArticles);

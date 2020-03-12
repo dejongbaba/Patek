@@ -114,7 +114,7 @@ export const useSocialLinks = () => {
 
 export function storeData(key, setData, data) {
     setData(data);
-    localStorage.setItem(key, JSON.stringify(data));
+    sessionStorage.setItem(key, JSON.stringify(data));
 }
 
 export const useGetJobs = () => {
@@ -150,7 +150,6 @@ export const useApi = (url, config, key) => {
                 setLoading(true);
                 axios(url, config).then(result => {
                     setLoading(false);
-                    console.log('result',result);
                     if (result) {
                         storeData(key, setData, result.data);
                     }
