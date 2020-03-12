@@ -7,7 +7,7 @@ const SectionText = ({icon, title, description, iconClass, textAlign,bigIcon, de
             <div className='min-height-200'>
                 <div className="d-flex align-items-start align-items-lg-center mb-3">
                     <img src={icon} className={`${iconClass?iconClass:""} ${bigIcon ? "w-lg-25":'w-lg-15'}  w-25 mb-lg-2 mr-2`} alt="section text icon"/>
-                    <div>
+                    <div className='section-text'>
                         <h3 className='mb-0'>{title}</h3>
                         {descType === 'list' ? <div>{description}</div> : ''}
                     </div>

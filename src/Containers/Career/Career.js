@@ -16,7 +16,7 @@ import threeCircleIcon from "../../assets/img/three-circle-icon.svg"
 import "./career.css";
 import {career, home} from "../../routes/routes";
 import CareerSection from "../../Components/Commons/CareerSection/CareerSection";
-import {useGetJobs} from "../../Effects/Effects";
+import {useGetJobs, useScrollToTop} from "../../Effects/Effects";
 import {getColoradoFarmsJobs, getGoldenFoodJobs, getPatekFoodJobs, getQualityPackageJobs} from "../../Facades/Facade";
 import PatecModal from "../../Components/Commons/Modal/PatecModal";
 import CareerForm from "./CareerForm";
@@ -62,6 +62,9 @@ const Career = () => {
     const qpJobs = getQualityPackageJobs(jobs);
     const cfJobs = getColoradoFarmsJobs(jobs);
     const gfJobs = getGoldenFoodJobs(jobs);
+
+    useScrollToTop();
+
 
     console.log('job', jobs);
 

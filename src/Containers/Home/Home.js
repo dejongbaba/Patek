@@ -27,6 +27,7 @@ import withArticlesAndPrinciples from "../../Hoc/homeHoc/withArticlesAndPrincipl
 import EmptyPlaceholder from "../../Components/Commons/EmptyPlaceHolder/EmptyPlaceholder";
 import Loader from "../../Components/Commons/Loader/Loader";
 import {about} from "../../routes/routes";
+import {useScrollToTop} from "../../Effects/Effects";
 
 
 const Home = ({data, articleLoading, firstFourArticles,...props}) => {
@@ -37,6 +38,8 @@ const Home = ({data, articleLoading, firstFourArticles,...props}) => {
         'distribution of food products and agro commodities\n' +
         'poised to contribute the food security in Africa. ';
 
+
+    useScrollToTop();
 
     return (
         <Loader loading={articleLoading}>

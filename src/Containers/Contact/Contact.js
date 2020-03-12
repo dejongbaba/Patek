@@ -15,6 +15,7 @@ import ContactForm from "./ContactForm";
 import CareerSection from "../../Components/Commons/CareerSection/CareerSection";
 import PatecModal from "../../Components/Commons/Modal/PatecModal";
 import MapContainer from "../../Components/Commons/MapConatainer/MapContainer";
+import {useScrollToTop} from "../../Effects/Effects";
 
 const Contact = () => {
 
@@ -22,6 +23,8 @@ const Contact = () => {
 
     const handleShow = () => setShow(true);
     const handleClose = () => setShow(false);
+    useScrollToTop();
+
 
     return (
         <div>

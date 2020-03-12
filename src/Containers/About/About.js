@@ -27,8 +27,11 @@ import {getAllAbouts} from "../../Api/api";
 import EmptyPlaceholder from "../../Components/Commons/EmptyPlaceHolder/EmptyPlaceholder";
 import Loader from "../../Components/Commons/Loader/Loader";
 import withArticlesAndPrinciples from "../../Hoc/homeHoc/withArticlesAndPrinciples";
+import {useScrollToTop} from "../../Effects/Effects";
 
 const About = ({data, loading, directors, principles, isDirectorsLoading, ...otherProps}) => {
+
+    useScrollToTop();
 
     return (
         <>

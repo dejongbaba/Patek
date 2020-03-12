@@ -20,8 +20,11 @@ import ParagraphText from "../../Components/Commons/ParagraphText/ParagraphText"
 import ArticleImage from "../../Components/Commons/ArticleImage/ArticleImage";
 import EmptyPlaceholder from "../../Components/Commons/EmptyPlaceHolder/EmptyPlaceholder";
 import {Col, Row} from "react-bootstrap";
+import {useScrollToTop} from "../../Effects/Effects";
 
 const Subsidiary = ({data, loading}) => {
+
+    useScrollToTop();
 
     const subsidiaries = data.slice(4, data.length);
     return (

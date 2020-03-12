@@ -25,13 +25,14 @@ import CareerSection from "../../Components/Commons/CareerSection/CareerSection"
 import BannerContainer from "../BannerContainer/BannerContainer";
 import withData from "../../Hoc/withData";
 import {getAllPatecFood, getAllpatecFoodOperations} from "../../Api/api";
-import {useApi} from "../../Effects/Effects";
+import {useApi, useScrollToTop} from "../../Effects/Effects";
 import Loader from "../../Components/Commons/Loader/Loader";
 import {getImageFromArticle} from "../../Facades/Facade";
 
 const Food = ({data, loading, ...props}) => {
 
     const [foodOperation, operationsLoading] = useApi(getAllpatecFoodOperations, null, 'patec-food-operations');
+    useScrollToTop();
 
     return (
         <>

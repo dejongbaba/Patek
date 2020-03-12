@@ -22,13 +22,14 @@ import SecondaryNav from "../../Components/Commons/Navbar/SecondaryNav";
 import CareerSection from "../../Components/Commons/CareerSection/CareerSection";
 import Button from "../../Components/Commons/Button/Button";
 import BannerContainer from "../BannerContainer/BannerContainer";
-import {useApi} from "../../Effects/Effects";
+import {useApi, useScrollToTop} from "../../Effects/Effects";
 import {getAllQualityPackaging} from "../../Api/api";
 import {getImageFromArticle} from "../../Facades/Facade";
 
 
 const QualityPackaging = (props) => {
 
+    useScrollToTop();
 
     const [qualityPackaging] = useApi(getAllQualityPackaging, null, 'quality-packaging');
 

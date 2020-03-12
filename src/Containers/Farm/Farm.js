@@ -17,7 +17,7 @@ import Footer from "../../Components/Commons/Footer/Footer";
 import SecondaryNav from "../../Components/Commons/Navbar/SecondaryNav";
 import CareerSection from "../../Components/Commons/CareerSection/CareerSection";
 import BannerContainer from "../BannerContainer/BannerContainer";
-import {useApi} from "../../Effects/Effects";
+import {useApi, useScrollToTop} from "../../Effects/Effects";
 import {getAllColoradoFarms} from "../../Api/api";
 import {getImageFromArticle} from "../../Facades/Facade";
 
@@ -25,6 +25,7 @@ import {getImageFromArticle} from "../../Facades/Facade";
 const Farm = () => {
 
     const [coloradoFarms, loading] = useApi(getAllColoradoFarms, null, 'colorado-farm');
+    useScrollToTop();
 
     console.log('colorado Farms', coloradoFarms);
     return (

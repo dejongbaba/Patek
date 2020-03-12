@@ -67,6 +67,13 @@ export const useGetDirectors = () => {
     }, []);
     return [directors, loading];
 };
+export const useScrollToTop = () => {
+    useEffect(() => {
+
+        window.scrollTo(0, 0);
+
+    }, []);
+};
 
 
 export const useGetArticle = (id) => {

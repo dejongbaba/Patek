@@ -18,7 +18,7 @@ import Footer from "../../Components/Commons/Footer/Footer";
 import SecondaryNav from "../../Components/Commons/Navbar/SecondaryNav";
 import CareerSection from "../../Components/Commons/CareerSection/CareerSection";
 import BannerContainer from "../BannerContainer/BannerContainer";
-import {useApi} from "../../Effects/Effects";
+import {useApi, useScrollToTop} from "../../Effects/Effects";
 import {getAllGoldenFood} from "../../Api/api";
 import {getImageFromArticle} from "../../Facades/Facade";
 
@@ -26,6 +26,7 @@ import {getImageFromArticle} from "../../Facades/Facade";
 const GoldenFood = () => {
 
     const [goldenFoods, loading] = useApi(getAllGoldenFood, null, 'golden-food');
+    useScrollToTop();
 
     return (
         <>

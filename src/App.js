@@ -35,14 +35,21 @@ import 'aos/dist/aos.css';
 import ArticleViewer from "./Containers/ArticleViewer/ArticleViewer";
 import QualityPackaging from "./Containers/Food/QualityPackaging";
 import Subsidiary from "./Containers/Subsidiary/Subsidiary";
+import ReactGA from 'react-ga';
 
 class App extends Component {
 
     constructor(props) {
         super(props);
         AOS.init();
+
     }
 
+
+    componentDidMount() {
+        ReactGA.initialize(process.env.REACT_APP_GA_TRACKING_ID);
+        ReactGA.pageview(window.location.pathname + window.location.search);
+    }
 
     render() {
         return (
