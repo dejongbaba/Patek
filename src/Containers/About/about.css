@@ -30,16 +30,20 @@
 }
 
 @media all and (min-width:1200px){
+    .section-text h3{
+        font-size: 1.7rem;
+        padding-right: 2rem;
+    }
     .dotted-arch-position-1,.dotted-arch-position-2{
-        top: 34% ;
-        left: 29%;
+        top: 42% ;
+        left: 31%;
         width: 4%;
         transform: rotate(0deg);
         opacity: .7;
         filter: hue-rotate(-25deg);
     }
     .dotted-arch-position-2{
-        left: 61%;
+        left: 59%;
     }
 
 }

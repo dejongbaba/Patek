@@ -79,7 +79,7 @@ const Subsidiary = ({data, loading}) => {
                         }) : <EmptyPlaceholder/>}
                 </Section>
 
-                <CareerSection header={'Meet the Team'} button={'Meet Us'} func={() => redirectTo(team)}/>
+                <CareerSection header={'Meet the Team'} button={'Contact Us'} func={() => redirectTo(team)}/>
                 <SubscriptionSection/>
                 <Footer/>
             </Loader>
