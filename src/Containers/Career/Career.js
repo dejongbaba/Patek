@@ -12,6 +12,7 @@ import Footer from "../../Components/Commons/Footer/Footer";
 import SubscriptionSection from "../../Components/Commons/SubscriptionSection/SubscriptionSection";
 import rolePlaceholderimg from "../../assets/img/role-placeholder-img@2x.png";
 import careerWoman from "../../assets/img/career-woman2x.png";
+import careerWomanTwo from "../../assets/img/careerWomanTwo.png";
 import threeCircleIcon from "../../assets/img/three-circle-icon.svg"
 import "./career.css";
 import {career, home} from "../../routes/routes";
@@ -121,7 +122,7 @@ const Career = () => {
                 </Row>
                 <Row>
                     <Col lg={{span: 5, offset: 1, order: 6}}>
-                        <img src={careerWoman} className='img-fluid mb-3 mb-lg-0' alt="career woman "/>
+                        <img src={careerWomanTwo} className='img-fluid mb-3 mb-lg-0' alt="career woman "/>
                     </Col>
                     <Col lg={{span: 6, order: 1}}>
                         <img src={threeCircleIcon} alt="three icon cirlce"/>

@@ -2,11 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="ca32b7da-1c42-4fd2-8b2a-9c094f46556e" name="Default Changelist" comment="c">
+      <change afterPath="$PROJECT_DIR$/src/assets/img/careerWomanTwo.png" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/Components/Commons/Carousel/carousel.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Commons/Carousel/carousel.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Commons/GridLines/gridline.css" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Commons/GridLines/gridline.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Components/Commons/Section/SectionText.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Components/Commons/Section/SectionText.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/Containers/Home/Home.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Containers/Home/Home.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Containers/Career/Career.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/Containers/Career/Career.js" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -39,19 +38,16 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/Containers/Career/Career.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="171">
-              <caret line="60" column="42" selection-start-line="60" selection-start-column="42" selection-end-line="60" selection-end-column="42" />
-              <folding>
-                <element signature="e#0#38#0" expanded="true" />
-              </folding>
+            <state relative-caret-position="210">
+              <caret line="14" column="53" lean-forward="true" selection-start-line="14" selection-start-column="53" selection-end-line="14" selection-end-column="53" />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Containers/Home/Home.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="253">
@@ -84,8 +80,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/Components/Commons/Carousel/carousel.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="175">
-              <caret line="31" column="1" selection-start-line="31" selection-start-column="1" selection-end-line="31" selection-end-column="1" />
+            <state relative-caret-position="240">
+              <caret line="16" column="16" lean-forward="true" selection-start-line="16" selection-start-column="16" selection-end-line="16" selection-end-column="16" />
             </state>
           </provider>
         </entry>
@@ -123,7 +119,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>.navigation .navbar-nav .nav-link:hover</find>
       <find>'w-60</find>
       <find>.navigation .navbar-nav .nav-link.active</find>
       <find>WithAboutAndDirectors</find>
@@ -153,6 +148,7 @@
       <find>sessi</find>
       <find>sess</find>
       <find>.grid-line-item</find>
+      <find>careerWoman</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -207,7 +203,6 @@
         <option value="$PROJECT_DIR$/src/App.js" />
         <option value="$PROJECT_DIR$/src/Containers/About/About.js" />
         <option value="$PROJECT_DIR$/src/Containers/Food/Food.js" />
-        <option value="$PROJECT_DIR$/src/Containers/Career/Career.js" />
         <option value="$PROJECT_DIR$/src/Containers/Contact/Contact.js" />
         <option value="$PROJECT_DIR$/src/Containers/Food/QualityPackaging.js" />
         <option value="$PROJECT_DIR$/src/Containers/Farm/Farm.js" />
@@ -218,8 +213,9 @@
         <option value="$PROJECT_DIR$/src/Containers/Subsidiary/Subsidiary.js" />
         <option value="$PROJECT_DIR$/src/Components/Commons/Section/SectionText.js" />
         <option value="$PROJECT_DIR$/src/Components/Commons/GridLines/gridline.css" />
-        <option value="$PROJECT_DIR$/src/Components/Commons/Carousel/carousel.css" />
         <option value="$PROJECT_DIR$/src/Containers/Home/Home.js" />
+        <option value="$PROJECT_DIR$/src/Components/Commons/Carousel/carousel.css" />
+        <option value="$PROJECT_DIR$/src/Containers/Career/Career.js" />
       </list>
     </option>
   </component>
@@ -251,6 +247,19 @@
               <item name="patek" type="b2602c69:ProjectViewProjectNode" />
               <item name="patek" type="462c0819:PsiDirectoryNode" />
               <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="patek" type="b2602c69:ProjectViewProjectNode" />
+              <item name="patek" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="assets" type="462c0819:PsiDirectoryNode" />
+              <item name="img" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="patek" type="b2602c69:ProjectViewProjectNode" />
+              <item name="patek" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
               <item name="Effects" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
@@ -263,7 +272,7 @@
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="js.linters.configure.manually.selectedeslint" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/Hoc/homeHoc" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/assets/img" />
     <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.standard" value="true" />
@@ -280,19 +289,19 @@
     <property name="ts.external.directory.path" value="$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/jsLanguageServicesImpl/external" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/src/assets/img" />
+      <recent name="$PROJECT_DIR$/src/Hoc/homeHoc" />
+      <recent name="$PROJECT_DIR$/src/Containers" />
+      <recent name="$PROJECT_DIR$/src/Containers/Career" />
+      <recent name="$PROJECT_DIR$/src/Hoc/sustainabilityHoc" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/src/Hoc/aboutHoc" />
       <recent name="$PROJECT_DIR$/src/Hoc/homeHoc" />
       <recent name="$PROJECT_DIR$/src/Components/Commons" />
       <recent name="$PROJECT_DIR$" />
       <recent name="$PROJECT_DIR$/src/Components" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/src/Hoc/homeHoc" />
-      <recent name="$PROJECT_DIR$/src/Containers" />
-      <recent name="$PROJECT_DIR$/src/assets/img" />
-      <recent name="$PROJECT_DIR$/src/Containers/Career" />
-      <recent name="$PROJECT_DIR$/src/Hoc/sustainabilityHoc" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -391,12 +400,12 @@
       <workItem from="1583501384558" duration="16307000" />
       <workItem from="1583841414596" duration="1495000" />
       <workItem from="1583941166917" duration="3884000" />
-      <workItem from="1584195825628" duration="785000" />
+      <workItem from="1584195825628" duration="1374000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="410485000" />
+    <option name="totallyTimeSpent" value="411074000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -461,26 +470,6 @@
     <option name="version" value="1" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/Hoc/aboutHoc/withDirectors.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="75">
-          <caret line="5" column="40" selection-start-line="5" selection-start-column="40" selection-end-line="5" selection-end-column="40" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Hoc/homeHoc/withSocialLinks.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="19" selection-start-line="3" selection-start-column="19" selection-end-line="3" selection-end-column="19" />
-          <folding>
-            <element signature="e#0#26#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Components/Commons/SubscriptionSection/SubscriptionSection.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="215">
@@ -807,16 +796,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/Containers/Career/Career.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="60" column="42" selection-start-line="60" selection-start-column="42" selection-end-line="60" selection-end-column="42" />
-          <folding>
-            <element signature="e#0#38#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/Components/Commons/Section/SectionText.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
@@ -828,13 +807,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="30">
           <caret line="2" column="18" lean-forward="true" selection-start-line="2" selection-start-column="18" selection-end-line="2" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/Components/Commons/Carousel/carousel.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="175">
-          <caret line="31" column="1" selection-start-line="31" selection-start-column="1" selection-end-line="31" selection-end-column="1" />
         </state>
       </provider>
     </entry>
@@ -862,6 +834,26 @@
           <folding>
             <element signature="e#0#26#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Components/Commons/Carousel/carousel.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="16" lean-forward="true" selection-start-line="16" selection-start-column="16" selection-end-line="16" selection-end-column="16" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/assets/img/career-woman2x.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/assets/img/careerWomanTwo.png">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/Containers/Career/Career.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" column="53" lean-forward="true" selection-start-line="14" selection-start-column="53" selection-end-line="14" selection-end-column="53" />
         </state>
       </provider>
     </entry>
