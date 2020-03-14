@@ -23,6 +23,14 @@
     background-image: url("../../../assets/img/carousel-next-icon.svg");
 }
 
+.slide-header{
+    margin-top: 2rem!important;
+}
+
+.slide-p{
+    min-height: 280px;
+}
+
 @media screen  and (max-width: 480px){
 
     .slide-carousel .carousel-control-prev {
@@ -33,5 +41,7 @@
         left: 20%;
         bottom: -12%;
     }
+
+
 
 }

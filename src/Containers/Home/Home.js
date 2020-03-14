@@ -93,7 +93,7 @@ const Home = ({data, articleLoading, firstFourArticles,...props}) => {
                 </Section>
 
                 <Section className={'bg-patek-light-green'}>
-                    <Row className='pt-5 pb-3 pb-lg-0'>
+                    <Row className='pt-4 pb-4 pb-lg-0'>
                         <Col lg={{span: 4}}>
                             <TextLabel className='patek-green'
                                        positionClass={'mb-1 mb-lg-0'}
@@ -123,7 +123,7 @@ const Home = ({data, articleLoading, firstFourArticles,...props}) => {
                 </Section>
                 <Section className={'bg-gray-gradient-30 pb-3  pb-lg-0'}
                          bgImg={leafBGImg}>
-                    <Row className='pt-5 pb-3'>
+                    <Row className='pt-4 pb-4'>
                         <Col lg={{span: 4}}>
                             <TextLabel className='patek-green'
                                        icon={threeCircleIcon} text='SUBSIDIARIES'/>
@@ -142,10 +142,10 @@ const Home = ({data, articleLoading, firstFourArticles,...props}) => {
                                                                 className={'w-70'} alt="patek carousel image"/>
                                                        </Col>
                                                        <Col lg={5}>
-                                                           <HeaderText className={'mt-lg-3 pt-lg-5 fs-2-5 mh-lg-90'}
+                                                           <HeaderText className={'mt-lg-3 slide-header pt-lg-3 fs-2-5'}
                                                                        text={item.title} link={item.link}/>
                                                            <ParagraphText text={item.description}
-                                                                          className={'light-black pr-lg-5 pb-lg-5 mb-lg-5'}/>
+                                                                          className={'light-black slide-p pr-lg-5 pb-lg-5 mb-lg-5'}/>
                                                        </Col>
                                                    </Row>
                                                }/> :
@@ -153,60 +153,6 @@ const Home = ({data, articleLoading, firstFourArticles,...props}) => {
                         </Col>
                     </Row>
                 </Section>
-                {/*<Section className={'bg-patek-light-green min-height-auto'}>*/}
-                {/*    <Row className='py-5 pb-lg-5 text-lg-center'>*/}
-                {/*        <Col lg={{span: 8, offset: 2}}>*/}
-                {/*            <TextLabel className='patek-green'*/}
-                {/*                       positionClass='justify-content-lg-center'*/}
-                {/*                       icon={threeCircleIcon} text='DYNAMIC'/>*/}
-                {/*            <HeaderText className={'my-lg-2 fs-2 patek-deep-green'}*/}
-                {/*                        text={'" An Amazing Company at the frontiers ' +*/}
-                {/*                        'of agro allied Development in West AFrica "'}*/}
-                {/*            />*/}
-
-                {/*        </Col>*/}
-                {/*    </Row>*/}
-                {/*</Section>*/}
-                {/*<Section className={'px-lg-5 py-5 bg-black mh-vh-130'}>*/}
-                {/*    <div*/}
-                {/*        className="d-grid my-lg-5 w-100 calc-height-100-10*/}
-                {/*    grid-template-3-3 grid-row-gap-1 grid-column-gap-1">*/}
-                {/*        <div className="first-item">*/}
-                {/*            <TextLabel positionClass={'my-lg-4'}*/}
-                {/*                       className={'text-white'} text={'updates'}*/}
-                {/*                       icon={whiteCircle}/>*/}
-                {/*            <HeaderText text={'In the News'}*/}
-                {/*                        className='text-white fs-2-5'/>*/}
-                {/*        </div>*/}
-
-                {/*        {articleLoading ? <>*/}
-                {/*                <Skeleton active loading={articleLoading}/>*/}
-                {/*                <Skeleton active loading={articleLoading}/>*/}
-                {/*                <Skeleton active loading={articleLoading}/>*/}
-                {/*                <Skeleton active loading={articleLoading}/>*/}
-                {/*            </> :*/}
-                {/*            firstFourArticles.length ?*/}
-                {/*                firstFourArticles.map((a, i) => {*/}
-                {/*                    return (*/}
-                {/*                        <ArticleLayout key={i}*/}
-                {/*                                       img={getImageFromArticle(a)}*/}
-                {/*                                       category={a.category.name}*/}
-                {/*                                       topic={a.title}*/}
-                {/*                                       text={<span className={'cursor-pointer'}*/}
-                {/*                                                   onClick={() => redirectTo('/view/' + a.id)}*/}
-                {/*                                       >Read more...</span>}*/}
-                {/*                                       className={*/}
-                {/*                                           i === 0 ?*/}
-                {/*                                               'second-item grid-row-span-1-3 grid-column-span-2-4' :*/}
-                {/*                                               i === 3 ? "fifth-item grid-column-span-2-4" : ''}*/}
-                {/*                        />*/}
-                {/*                    )*/}
-                {/*                }) :*/}
-                {/*                <EmptyPlaceholder/>*/}
-                {/*        }*/}
-                {/*    </div>*/}
-                {/*</Section>*/}
-                {/*<SubscriptionSection/>*/}
                 <Footer/>
             </div>
         </Loader>
