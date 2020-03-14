@@ -105,6 +105,11 @@
     outline: 1px solid var(--nav-green, #64B900);
 }
 
+@media all and (max-width:992px){
+    .navbar-light .navbar-toggler-icon {
+        filter: invert(1) brightness(1)!important;
+    }
+}
 @media all and (max-width: 480px) {
     .w-25{
         width: 17%!important;
@@ -143,9 +148,7 @@
         padding-top: 2rem;
     }
 
-    .navbar-light .navbar-toggler-icon {
-        filter: invert(1) brightness(1)!important;
-    }
+
 
     .navbar-light .navbar-toggler {
         color: rgb(255, 255, 255);

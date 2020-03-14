@@ -247,7 +247,7 @@ const Food = ({data, loading, ...props}) => {
                         }
 
                     </Row>
-                    <Row className={'mt-3'}>
+                    <Row className={'mt-3 pb-4'}>
                         {
                             data.length ?
                                 <>

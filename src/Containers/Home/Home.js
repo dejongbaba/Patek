@@ -51,13 +51,13 @@ const Home = ({data, articleLoading, firstFourArticles,...props}) => {
                         SecondaryLeftImg={fadedLeaf}
                 >
                     <Row>
-                        <Col lg={{span: 6, offset: 6}} className={'my-lg-5'}>
+                        <Col md={{span: 6, offset: 6}} className={'my-lg-5'}>
                             <div className="pt-lg-5 mt-lg-5 pb-5 pb-lg-0">
                                 <HeaderText
                                     animation={'fade-up'}
                                     animationDelay={'1000'}
                                     animationDuration={'1000'}
-                                    className={'text-white mt-5 fs-lg-4-5 header__text--bold' +
+                                    className={'text-white header__text  mt-5 fs-lg-4-5 header__text--bold' +
                                     ' pt-lg-5 with-square mb-3 mb-lg-0'}
                                     text={<>We Stay ahead <br/> of the Curve</>}/>
                                 <ParagraphText

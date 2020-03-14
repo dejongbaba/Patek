@@ -20,10 +20,26 @@
     animation-timing-function: ease-in-out;
 }
 
+
+@media all and (min-width:992px){
+
+
+    .header__text{
+        margin-top: 0 !important;
+        padding-top: 0 !important;
+    }
+}
+
+
 @media all and (min-width:1200px){
 
 
     .header__text--bold{
         font-size: 4.72rem;
+    }
+
+    .header__text{
+        margin-top: 6rem !important;
+        padding-top: 0 !important;
     }
 }
