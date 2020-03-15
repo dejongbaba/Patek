@@ -51,7 +51,7 @@ const Subsidiary = ({data, loading}) => {
                                             <ArticleImage imageClass={'w-100'} type={'fluid'} image={getImageFromArticle(s)}/>
                                         </Col>
                                         <Col lg={{span: 5, offset: 1}}>
-                                            <HeaderText className={'mt-lg-3 pt-lg-5 fs-2-5 mh-lg-90'}
+                                            <HeaderText className={'mt-lg-3 pt-lg-5 fs-2-5 '}
                                                         text={s.title} link={s.link}/>
                                             <ParagraphText
                                                 text={s.description}
@@ -67,7 +67,7 @@ const Subsidiary = ({data, loading}) => {
                                     </Col>
 
                                     <Col lg={{span: 5, offset: 1,order:1}}>
-                                        <HeaderText className={'mt-lg-3 pt-lg-5 fs-2-5 mh-lg-90'}
+                                        <HeaderText className={'mt-lg-3 pt-lg-5 fs-2-5 '}
                                                     text={s.title} link={s.link}/>
                                         <ParagraphText
                                             text={s.description}
